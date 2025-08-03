@@ -1,14 +1,8 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, ArrowLeft, Bot } from 'lucide-react';
+import { FileText, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -34,7 +28,7 @@ const getSubjectsFromTimetable = (semester: string, branch: string, section: str
     Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
       Object.values(daySchedule).forEach((classInfo) => {
           // Extract subject code, e.g., "MA 201" from "MA 201 (TA1)"
-          const match = classInfo.match(/^([A-Z]{2}\s?\d{3,})/);
+          const match = classInfo.match(/^([A-Z]{2,3}\s?\d{3,})/);
           if (match) {
               subjects.add(match[1].trim());
           }
@@ -90,7 +84,7 @@ export default function BranchResourcesPage() {
         <CardHeader>
           <CardTitle className="font-headline">Find Your Subjects</CardTitle>
           <CardDescription>
-            Select your semester and branch to find the subjects for your course.
+            Select your semester and branch to find available resources for your subjects.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -123,20 +117,25 @@ export default function BranchResourcesPage() {
                 </div>
             </div>
 
-            <Card>
+            <Card className="bg-muted/50">
                 <CardHeader>
-                    <CardTitle>Subjects for {selectedBranch} - {selectedSemester}{['st', 'nd', 'rd'][parseInt(selectedSemester)-1] || 'th'} Semester</CardTitle>
+                    <CardTitle className="text-xl font-headline">Subjects for {selectedBranch} - {selectedSemester}{['st', 'nd', 'rd'][parseInt(selectedSemester)-1] || 'th'} Semester</CardTitle>
                 </CardHeader>
                 <CardContent>
                     {subjects.length > 0 ? (
-                        <ul className="space-y-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {subjects.map(subject => (
-                                <li key={subject.code} className="flex items-center gap-3 p-3 bg-muted rounded-md">
-                                    <FileText className="h-5 w-5 text-primary" />
-                                    <span>{subject.name} ({subject.code})</span>
-                                </li>
+                                <Card key={subject.code} className="hover:shadow-md transition-shadow">
+                                  <CardContent className="p-4 flex items-center gap-4">
+                                      <FileText className="h-8 w-8 text-primary" />
+                                      <div>
+                                          <p className="font-semibold">{subject.name}</p>
+                                          <p className="text-sm text-muted-foreground">{subject.code}</p>
+                                      </div>
+                                  </CardContent>
+                                </Card>
                             ))}
-                        </ul>
+                        </div>
                     ) : (
                         <div className="text-center py-10 text-muted-foreground">
                             <p>Select a semester and branch to see the subjects.</p>

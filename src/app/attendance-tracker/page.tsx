@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Trash2, ArrowLeft, Bot } from 'lucide-react';
+import { Trash2, ArrowLeft, Bot, PlusCircle, Plus, Minus } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { timetableData } from '@/lib/timetable-data';
 import { useRouter } from 'next/navigation';
@@ -71,6 +71,13 @@ export default function AttendanceTrackerPage() {
 
   const handleDeleteSubject = (id: string) => {
     setSubjects(subjects.filter((s) => s.id !== id));
+  };
+  
+  const handleAddSubject = () => {
+    setSubjects([
+        ...subjects,
+        { id: `custom-${Date.now()}`, name: 'New Subject', code: 'Custom', total: 0, attended: 0 },
+    ]);
   };
 
   const handleAttendanceChange = (id: string, type: 'attended' | 'total', value: number) => {
@@ -146,8 +153,8 @@ export default function AttendanceTrackerPage() {
             <TableHeader>
               <TableRow>
                 <TableHead>Subject</TableHead>
-                <TableHead className="w-[100px]">Attended</TableHead>
-                <TableHead className="w-[100px]">Total</TableHead>
+                <TableHead className="w-[150px]">Attended</TableHead>
+                <TableHead className="w-[150px]">Total</TableHead>
                 <TableHead className="w-[200px]">Percentage</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
@@ -158,24 +165,36 @@ export default function AttendanceTrackerPage() {
                   return (
                       <TableRow key={subject.id}>
                           <TableCell>
-                              <div className="font-medium">{subject.name}</div>
-                              <div className="text-sm text-muted-foreground">{subject.code}</div>
+                              <Input 
+                                defaultValue={subject.name}
+                                onBlur={(e) => setSubjects(subjects.map(s => s.id === subject.id ? {...s, name: e.target.value} : s))}
+                                className="font-medium border-none focus-visible:ring-1"
+                              />
+                              <div className="text-sm text-muted-foreground pl-3">{subject.code}</div>
                           </TableCell>
                           <TableCell>
-                              <Input
-                              type="number"
-                              value={subject.attended}
-                              onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
-                              className="w-20"
-                              />
+                            <div className="flex items-center gap-2">
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
+                                <Input
+                                    type="number"
+                                    value={subject.attended}
+                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
+                                    className="w-16 text-center"
+                                />
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
                           </TableCell>
                           <TableCell>
-                              <Input
-                              type="number"
-                              value={subject.total}
-                              onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
-                              className="w-20"
-                              />
+                            <div className="flex items-center gap-2">
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
+                                <Input
+                                    type="number"
+                                    value={subject.total}
+                                    onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
+                                    className="w-16 text-center"
+                                />
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
                           </TableCell>
                           <TableCell>
                               <div className="flex items-center gap-2">
@@ -198,6 +217,11 @@ export default function AttendanceTrackerPage() {
                     Please load your subjects to begin tracking.
                 </div>
             )}
+            <div className="flex justify-start mt-4">
+                <Button onClick={handleAddSubject} variant="outline">
+                    <PlusCircle className="mr-2 h-4 w-4"/> Add Custom Subject
+                </Button>
+            </div>
         </CardContent>
       </Card>
     </div>

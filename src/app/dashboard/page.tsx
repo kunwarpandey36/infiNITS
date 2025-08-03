@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from '@/components/ui/card';
-import WhatToDo from '@/components/what-to-do';
+import UpcomingEvents from '@/components/upcoming-events';
 import {
   LayoutDashboard,
   Calendar,
@@ -111,7 +111,7 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between space-y-2">
       </div>
       <div className="space-y-6">
-        <WhatToDo />
+        <UpcomingEvents />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>
