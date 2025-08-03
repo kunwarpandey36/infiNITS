@@ -55,9 +55,9 @@ export default function WhatToDo() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      scholarId: '',
-      branch: '',
+      name: 'Manish Oraon',
+      scholarId: '2415005',
+      branch: 'EIE',
       interests: '',
     },
   });
@@ -105,7 +105,7 @@ export default function WhatToDo() {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="e.g. Manish Oraon" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -118,7 +118,7 @@ export default function WhatToDo() {
                   <FormItem>
                     <FormLabel>Scholar ID</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g. 2211001" {...field} />
+                      <Input placeholder="e.g. 2415005" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -131,7 +131,7 @@ export default function WhatToDo() {
                   <FormItem>
                     <FormLabel>Branch</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g. CSE" {...field} />
+                      <Input placeholder="e.g. EIE" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
