@@ -55,7 +55,7 @@ export function MainNav() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/dashboard" legacyBehavior passHref>
+            <Link href="/dashboard" passHref>
               <NavigationMenuLink
                 className={cn(
                   navigationMenuTriggerStyle(),
