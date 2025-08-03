@@ -12,9 +12,16 @@ import { Sun, Moon, BookOpen } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MainNav } from './main-nav';
+import { usePathname } from 'next/navigation';
 
 export function SiteHeader() {
   const { setTheme } = useTheme();
+  const pathname = usePathname();
+
+  // Do not show header on the login page
+  if (pathname === '/') {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

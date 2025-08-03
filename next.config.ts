@@ -18,20 +18,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/login',
-        permanent: true,
-      },
-      {
-        source: '/dashboard',
-        destination: '/page.tsx',
-        permanent: true,
-      }
-    ]
-  }
 };
 
 export default nextConfig;

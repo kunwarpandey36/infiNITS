@@ -50,7 +50,7 @@ export default function LoginPage() {
         title: 'Login Successful',
         description: `Welcome, ${scholarId}!`,
       });
-      router.push('/dashboard');
+      router.push('/');
     }, 1000);
   };
 
