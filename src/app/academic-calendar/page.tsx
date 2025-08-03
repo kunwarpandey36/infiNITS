@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { format, parseISO, isPast } from 'date-fns';
 import { Separator } from '@/components/ui/separator';
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
@@ -22,9 +23,9 @@ const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event'
   '2025-11-28': { title: 'Last Date of Instructions & End-Semester Lab Exams End', type: 'event' },
   '2025-12-01': { title: 'End-Semester Theory Examinations Begin', type: 'exam' },
   '2025-12-09': { title: 'End-Semester Theory Examinations End', type: 'exam' },
-  '2025-12-15': { title: 'Winter Break Begins', type: 'holiday' },
+  '2025-12-15': { title: 'Winter Break for Students Begins', type: 'holiday' },
   '2025-12-23': { title: 'End-Semester Results Declaration', type: 'event' },
-  '2026-01-04': { title: 'Winter Break Ends', type: 'holiday' },
+  '2026-01-04': { title: 'Winter Break for Students Ends', type: 'holiday' },
   '2026-01-05': { title: 'Even Semester Registration', type: 'event' },
   '2026-01-06': { title: 'Even Semester Registration', type: 'event' },
   '2026-01-07': { title: 'Even Semester Registration', type: 'event' },
@@ -40,10 +41,10 @@ const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event'
   '2026-05-01': { title: 'Last Date of Instructions & End-Semester Lab Exams End', type: 'event' },
   '2026-05-04': { title: 'End-Semester Theory Examinations Begin', type: 'exam' },
   '2026-05-12': { title: 'End-Semester Theory Examinations End', type: 'exam' },
-  '2026-05-13': { title: 'Summer Break Begins', type: 'holiday' },
+  '2026-05-13': { title: 'Summer Break for Students Begins', type: 'holiday' },
   '2026-05-18': { title: 'End-Semester Project Completion', type: 'event' },
   '2026-05-29': { title: 'End-Semester Results Declaration', type: 'event' },
-  '2026-07-12': { title: 'Summer Break Ends', type: 'holiday' },
+  '2026-07-12': { title: 'Summer Break for Students Ends', type: 'holiday' },
 };
 
 const sortedEvents = Object.entries(events).sort(([dateA], [dateB]) => new Date(dateA).getTime() - new Date(dateB).getTime());
