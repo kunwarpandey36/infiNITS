@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
-import { SiteSidebar } from '@/components/site-sidebar';
+import { SiteHeader } from '@/components/site-header';
+import { ThemeProvider } from '@/components/theme-provider';
 import { Inter, Space_Grotesk } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body' });
@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Infinites Hub',
+  title: 'InfiniTS Hub',
   description: 'Your NIT Silchar student companion.',
 };
 
@@ -34,17 +34,18 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}
       >
-        <SidebarProvider>
-          <div className="relative flex min-h-screen">
-            <SiteSidebar />
-            <SidebarInset className="flex-1">
-              <div className="flex flex-col h-full">
-                {children}
-              </div>
-            </SidebarInset>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <div className="flex-1">{children}</div>
           </div>
-        </SidebarProvider>
-        <Toaster />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

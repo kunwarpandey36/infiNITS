@@ -4,6 +4,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
+  CardContent,
 } from '@/components/ui/card';
 import WhatToDo from '@/components/what-to-do';
 import {
@@ -108,29 +109,38 @@ export default function HomePage() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight font-headline">
-          Dashboard
-        </h1>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="lg:col-span-3">
-          <WhatToDo />
-        </div>
-        {features.map((feature) => (
-          <Link href={feature.href} key={feature.title}>
-            <Card className="h-full transition-all hover:shadow-md hover:-translate-y-1">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-lg font-medium font-headline">
-                  {feature.title}
-                </CardTitle>
-                {feature.icon}
-              </CardHeader>
-              <CardDescription className="p-6 pt-0">
-                {feature.description}
-              </CardDescription>
-            </Card>
-          </Link>
-        ))}
+      <div className="space-y-6">
+        <WhatToDo />
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-headline">Explore Features</CardTitle>
+            <CardDescription>
+              All the tools and information you need for your campus life.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature) => (
+              <Link href={feature.href} key={feature.title} className="group">
+                <Card className="h-full transition-all group-hover:shadow-md group-hover:-translate-y-1 flex flex-col">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                       {feature.icon}
+                       <CardTitle className="text-lg font-medium font-headline leading-tight">
+                         {feature.title}
+                       </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow pt-0">
+                    <CardDescription>
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

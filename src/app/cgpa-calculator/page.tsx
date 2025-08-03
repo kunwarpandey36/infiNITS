@@ -1,21 +1,153 @@
+'use client';
+
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Calculator } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Trash2, PlusCircle, Calculator } from 'lucide-react';
+
+interface Subject {
+  id: number;
+  code: string;
+  credits: number;
+  yourMarks: number;
+  topperMarks: number;
+}
+
+interface Grade {
+    grade: string;
+    points: number;
+}
+
+const gradePoints: Record<string, number> = {
+    'A+': 10, 'A': 9, 'B+': 8, 'B': 7,
+    'C+': 6, 'C': 5, 'D': 4, 'F': 0
+};
 
 export default function CgpaCalculatorPage() {
+    const [subjects, setSubjects] = useState<Subject[]>([
+        { id: 1, code: 'MA101', credits: 4, yourMarks: 85, topperMarks: 95 },
+        { id: 2, code: 'PH101', credits: 3, yourMarks: 75, topperMarks: 90 },
+    ]);
+    const [sgpa, setSgpa] = useState<number | null>(null);
+
+    const handleAddSubject = () => {
+        setSubjects([
+            ...subjects,
+            { id: Date.now(), code: '', credits: 0, yourMarks: 0, topperMarks: 0 },
+        ]);
+    };
+
+    const handleDeleteSubject = (id: number) => {
+        setSubjects(subjects.filter((s) => s.id !== id));
+    };
+
+    const handleSubjectChange = (id: number, field: keyof Subject, value: string | number) => {
+        setSubjects(
+            subjects.map((s) =>
+                s.id === id ? { ...s, [field]: typeof value === 'number' ? value : value.toUpperCase() } : s
+            )
+        );
+    };
+
+    const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
+        if (topperMarks === 0) return { grade: 'N/A', points: 0 };
+        const percentage = (yourMarks / topperMarks) * 100;
+        if (percentage >= 90) return { grade: 'A+', points: 10 };
+        if (percentage >= 80) return { grade: 'A', points: 9 };
+        if (percentage >= 70) return { grade: 'B+', points: 8 };
+        if (percentage >= 60) return { grade: 'B', points: 7 };
+        if (percentage >= 50) return { grade: 'C+', points: 6 };
+        if (percentage >= 40) return { grade: 'C', points: 5 };
+        if (percentage >= 35) return { grade: 'D', points: 4 };
+        return { grade: 'F', points: 0 };
+    };
+
+    const handleCalculateSgpa = () => {
+        let totalCredits = 0;
+        let totalPoints = 0;
+        subjects.forEach(subject => {
+            if(subject.credits > 0 && subject.topperMarks > 0) {
+                const grade = calculateGrade(subject.yourMarks, subject.topperMarks);
+                totalPoints += grade.points * subject.credits;
+                totalCredits += subject.credits;
+            }
+        });
+        if (totalCredits === 0) {
+            setSgpa(0);
+        } else {
+            setSgpa(totalPoints / totalCredits);
+        }
+    };
+
+
   return (
     <div className="container mx-auto p-4 md:p-8">
       <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        CGPA Calculator
+        Relative CGPA Calculator
       </h1>
-      <Card className="flex flex-col items-center justify-center text-center p-10 min-h-[400px]">
+      <Card>
         <CardHeader>
-          <Calculator className="h-16 w-16 mx-auto text-primary" />
-          <CardTitle className="font-headline mt-4">Coming Soon</CardTitle>
+            <CardTitle className="font-headline">Calculate Your SGPA</CardTitle>
+            <CardDescription>Enter your subjects, credits, and marks to calculate your Semester Grade Point Average based on relative grading.</CardDescription>
         </CardHeader>
         <CardContent>
-          <CardDescription>
-            This feature is under construction. You'll soon be able to calculate your SGPA and CGPA here.
-          </CardDescription>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Subject Code</TableHead>
+                        <TableHead>Credits</TableHead>
+                        <TableHead>Your Marks</TableHead>
+                        <TableHead>Topper's Marks</TableHead>
+                        <TableHead>Grade</TableHead>
+                        <TableHead>Action</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    {subjects.map(subject => {
+                        const grade = calculateGrade(subject.yourMarks, subject.topperMarks);
+                        return (
+                            <TableRow key={subject.id}>
+                                <TableCell>
+                                    <Input value={subject.code} onChange={e => handleSubjectChange(subject.id, 'code', e.target.value)} placeholder="e.g. CS201" />
+                                </TableCell>
+                                <TableCell>
+                                    <Input type="number" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value))} placeholder="e.g. 4" />
+                                </TableCell>
+                                <TableCell>
+                                    <Input type="number" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value))} placeholder="e.g. 85" />
+                                </TableCell>
+                                <TableCell>
+                                    <Input type="number" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value))} placeholder="e.g. 98" />
+                                </TableCell>
+                                <TableCell className="font-semibold">{grade.grade}</TableCell>
+                                <TableCell>
+                                    <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
+                                        <Trash2 className="h-4 w-4" />
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        );
+                    })}
+                </TableBody>
+            </Table>
+            <div className="flex justify-between items-center mt-4">
+                <Button onClick={handleAddSubject} variant="outline">
+                    <PlusCircle className="mr-2 h-4 w-4"/> Add Subject
+                </Button>
+                <Button onClick={handleCalculateSgpa}>
+                    <Calculator className="mr-2 h-4 w-4"/> Calculate SGPA
+                </Button>
+            </div>
+             {sgpa !== null && (
+                <div className="mt-6 text-center">
+                    <Card className="inline-block p-6 bg-secondary">
+                        <CardTitle className="font-headline">Your Calculated SGPA is:</CardTitle>
+                        <p className="text-4xl font-bold text-primary mt-2">{sgpa.toFixed(2)}</p>
+                    </Card>
+                </div>
+            )}
         </CardContent>
       </Card>
     </div>
