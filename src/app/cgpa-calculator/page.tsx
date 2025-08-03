@@ -9,6 +9,7 @@ import { Trash2, PlusCircle, Calculator, ArrowLeft, Bot } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { timetableData } from '@/lib/timetable-data';
+import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
   id: string; // Use subject code as ID
@@ -54,6 +55,7 @@ interface Grade {
 }
 
 export default function CgpaCalculatorPage() {
+    const student = useStudentData();
     const [subjects, setSubjects] = useState<Subject[]>([]);
     const [sgpa, setSgpa] = useState<number | null>(null);
     const router = useRouter();
@@ -64,12 +66,25 @@ export default function CgpaCalculatorPage() {
         const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
         return semesterData ? Object.keys(semesterData) : [];
       }, [selectedSemester]);
+
+      useEffect(() => {
+        if (student) {
+          setSelectedSemester(student.semester);
+          setSelectedBranch(student.branch);
+        }
+      }, [student]);
     
       useEffect(() => {
         if (!availableBranches.includes(selectedBranch)) {
           setSelectedBranch(availableBranches[0] || '');
         }
       }, [selectedSemester, availableBranches, selectedBranch]);
+
+      useEffect(() => {
+        if (selectedBranch && selectedSemester) {
+          handleLoadSubjects();
+        }
+      }, [selectedBranch, selectedSemester]);
 
     const handleLoadSubjects = () => {
         if(selectedBranch) {
@@ -141,9 +156,9 @@ export default function CgpaCalculatorPage() {
       </div>
       <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="font-headline">Load Your Subjects</CardTitle>
+            <CardTitle className="font-headline">Your Subjects</CardTitle>
             <CardDescription>
-              Select your semester and branch to automatically load your subjects from the timetable.
+              Your subjects are loaded automatically based on your profile. You can also change the selection.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row gap-4 items-end">
@@ -173,9 +188,6 @@ export default function CgpaCalculatorPage() {
                     </SelectContent>
                 </Select>
             </div>
-            <Button onClick={handleLoadSubjects} className="w-full md:w-auto">
-                <Bot className="mr-2 h-4 w-4" /> Load Subjects
-            </Button>
           </CardContent>
         </Card>
       <Card>

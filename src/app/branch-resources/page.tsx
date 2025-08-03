@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { timetableData } from '@/lib/timetable-data';
+import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
     code: string;
@@ -44,6 +45,7 @@ const getSubjectsFromTimetable = (semester: string, branch: string, section: str
 
 export default function BranchResourcesPage() {
   const router = useRouter();
+  const student = useStudentData();
   const [selectedSemester, setSelectedSemester] = useState('3');
   const [selectedBranch, setSelectedBranch] = useState('CSE');
   const [subjects, setSubjects] = useState<Subject[]>([]);
@@ -52,6 +54,13 @@ export default function BranchResourcesPage() {
     const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
     return semesterData ? Object.keys(semesterData) : [];
   }, [selectedSemester]);
+
+  useEffect(() => {
+    if (student) {
+      setSelectedSemester(student.semester);
+      setSelectedBranch(student.branch);
+    }
+  }, [student]);
 
   // Adjust selected branch if it's not available in the new semester
   useEffect(() => {
@@ -84,7 +93,7 @@ export default function BranchResourcesPage() {
         <CardHeader>
           <CardTitle className="font-headline">Find Your Subjects</CardTitle>
           <CardDescription>
-            Select your semester and branch to find available resources for your subjects.
+            Select your semester and branch to find available resources for your subjects. Your profile defaults are pre-selected.
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -10,6 +10,7 @@ import { Trash2, ArrowLeft, Bot, PlusCircle, Plus, Minus } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { timetableData } from '@/lib/timetable-data';
 import { useRouter } from 'next/navigation';
+import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
   id: string; // Use subject code as ID
@@ -49,6 +50,7 @@ const getSubjectsFromTimetable = (semester: string, branch: string, section: str
 
 
 export default function AttendanceTrackerPage() {
+  const student = useStudentData();
   const [subjects, setSubjects] = useState<Subject[]>([]);
   const [selectedSemester, setSelectedSemester] = useState('3');
   const [selectedBranch, setSelectedBranch] = useState('CSE');
@@ -56,6 +58,19 @@ export default function AttendanceTrackerPage() {
   
   const availableBranches = useMemo(() => Object.keys(timetableData[selectedSemester as keyof typeof timetableData] || {}), [selectedSemester]);
 
+  useEffect(() => {
+    if (student) {
+      setSelectedSemester(student.semester);
+      setSelectedBranch(student.branch);
+    }
+  }, [student]);
+
+  useEffect(() => {
+    if (selectedBranch && selectedSemester) {
+      handleLoadSubjects();
+    }
+  }, [selectedBranch, selectedSemester]);
+  
   useEffect(() => {
     if (!availableBranches.includes(selectedBranch)) {
         setSelectedBranch(availableBranches[0] || '');
@@ -103,9 +118,9 @@ export default function AttendanceTrackerPage() {
       </div>
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="font-headline">Load Your Subjects</CardTitle>
+            <CardTitle className="font-headline">Your Subjects</CardTitle>
             <CardDescription>
-              Select your semester and branch to automatically load your subjects from the timetable.
+              Your subjects are loaded automatically based on your profile. You can also change the selection.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row gap-4 items-end">
@@ -135,15 +150,12 @@ export default function AttendanceTrackerPage() {
                     </SelectContent>
                 </Select>
             </div>
-            <Button onClick={handleLoadSubjects} className="w-full md:w-auto">
-                <Bot className="mr-2 h-4 w-4" /> Load Subjects
-            </Button>
           </CardContent>
         </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle className="font-headline">Your Subjects</CardTitle>
+          <CardTitle className="font-headline">Track Attendance</CardTitle>
           <CardDescription>
             Update your attended and total classes to see your attendance percentage.
           </CardDescription>

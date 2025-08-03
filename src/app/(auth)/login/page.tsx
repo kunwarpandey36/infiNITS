@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Home, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-
+import { studentData } from '@/lib/student-data';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -21,7 +21,6 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Basic validation
     if (!scholarId || !password) {
       toast({
         variant: 'destructive',
@@ -32,8 +31,9 @@ export default function LoginPage() {
       return;
     }
     
-    // As per instruction, password is the same as scholar ID
-    if (scholarId !== password) {
+    const student = studentData.find(s => s.scholarId === scholarId);
+
+    if (!student || scholarId !== password) {
       toast({
         variant: 'destructive',
         title: 'Login Failed',
@@ -43,12 +43,33 @@ export default function LoginPage() {
       return;
     }
 
-    // Simulate network request
+    // Determine branch and semester from scholar ID
+    const year = parseInt(scholarId.substring(0, 2), 10);
+    const branchCode = parseInt(scholarId.substring(4, 5), 10);
+    const currentYear = new Date().getFullYear() % 100;
+    
+    let semester = '1';
+    if (currentYear - year === 1) semester = '3';
+    if (currentYear - year === 2) semester = '5';
+    if (currentYear - year === 3) semester = '7';
+
+    const branches: { [key: number]: string } = { 1: 'CE', 2: 'CSE', 3: 'EE', 4: 'ECE', 5: 'EIE', 6: 'ME' };
+    const branch = branches[branchCode] || 'Unknown';
+
+    const userProfile = {
+      scholarId: student.scholarId,
+      name: student.name,
+      branch: branch,
+      semester: semester,
+    };
+
+    // Store user profile in local storage to simulate a session
+    localStorage.setItem('userProfile', JSON.stringify(userProfile));
+    
     setTimeout(() => {
-      // On successful login, redirect to dashboard
       toast({
         title: 'Login Successful',
-        description: `Welcome, ${scholarId}!`,
+        description: `Welcome, ${student.name}!`,
       });
       router.push('/dashboard');
     }, 1000);
