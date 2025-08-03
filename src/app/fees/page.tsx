@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react';
@@ -235,8 +236,8 @@ export default function FeesPage() {
                         <SelectTrigger><SelectValue placeholder="Select Semester" /></SelectTrigger>
                         <SelectContent>
                             {/* Filter out duplicate semesters for B.Tech display */}
-                            {Array.from(new Set(availableSemesters)).map(semKey => (
-                                <SelectItem key={semKey} value={semKey}>{feeData[selectedDegree].semesters[semKey].label}</SelectItem>
+                            {Object.values(feeData[selectedDegree].semesters).filter((value, index, self) => self.findIndex(v => v.label === value.label) === index).map(semester => (
+                                <SelectItem key={semester.label} value={Object.keys(feeData[selectedDegree].semesters).find(key => feeData[selectedDegree].semesters[key].label === semester.label)!}>{semester.label}</SelectItem>
                             ))}
                         </SelectContent>
                     </Select>
