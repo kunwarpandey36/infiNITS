@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -5,116 +6,289 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-const timetableData = {
-  CE: {
-    A: {
-      Monday: { '8:00-9:00': 'MA 201 (TA1)', '10:00-11:00': 'CE 202 (PD)', '11:00-12:00': 'CE 201 (A Sahu)', '1:00-2:00': 'CE 204 (MH)', '2:00-5:00': 'CE 212 A1 (NA), CE 211 A2 (MH)' },
-      Tuesday: { '8:00-9:00': 'CE 201 T A2 (A Sahu)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CE 202 (PD)', '11:00-12:00': 'CE 201 (A Sahu)', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'CE 213 A1 (DM), CE 212 A2 (TR)' },
-      Wednesday: { '8:00-9:00': 'CE 204 (MH)', '9:00-10:00': 'CE 202 (PD)', '10:00-11:00': 'MA 201', '11:00-12:00': 'CE 203 (OB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 213 A2 (PJ)' },
-      Thursday: { '8:00-9:00': 'CE 204 T A2 (MH)', '9:00-10:00': 'CE 203 (OB)', '10:00-11:00': 'MA 201', '11:00-12:00': 'CE 204 T A1 (MH)', '1:00-2:00': 'CE 201 T A1 (A Sahu)', '2:00-5:00': 'CE 211 A1 (DM)' },
-      Friday: { '9:00-10:00': 'CE 204 T A2 (MH)', '10:00-11:00': 'CE 203 (OB)', '11:00-12:00': 'CE 205 (PR)', '1:00-2:00': 'CE 201 (A Sahu)' },
+const timetableData: Record<string, any> = {
+  '3': {
+      CE: {
+        A: {
+          Monday: { '8:00-9:00': 'MA 201 (TA1)', '10:00-11:00': 'CE 202 (PD)', '11:00-12:00': 'CE 201 (A Sahu)', '1:00-2:00': 'CE 204 (MH)', '2:00-5:00': 'CE 212 A1 (NA), CE 211 A2 (MH)' },
+          Tuesday: { '8:00-9:00': 'CE 201 T A2 (A Sahu)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CE 202 (PD)', '11:00-12:00': 'CE 201 (A Sahu)', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'CE 213 A1 (DM), CE 212 A2 (TR)' },
+          Wednesday: { '8:00-9:00': 'CE 204 (MH)', '9:00-10:00': 'CE 202 (PD)', '10:00-11:00': 'MA 201', '11:00-12:00': 'CE 203 (OB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 213 A2 (PJ)' },
+          Thursday: { '8:00-9:00': 'CE 204 T A2 (MH)', '9:00-10:00': 'CE 203 (OB)', '10:00-11:00': 'MA 201', '11:00-12:00': 'CE 204 T A1 (MH)', '1:00-2:00': 'CE 201 T A1 (A Sahu)', '2:00-5:00': 'CE 211 A1 (DM)' },
+          Friday: { '9:00-10:00': 'CE 204 T A2 (MH)', '10:00-11:00': 'CE 203 (OB)', '11:00-12:00': 'CE 205 (PR)', '1:00-2:00': 'CE 201 (A Sahu)' },
+        },
+        B: {
+          Monday: { '11:00-12:00': 'MA 201', '1:00-2:00': 'CE 201 (SB)', '2:00-5:00': 'CE 204 (Kh.LS)' },
+          Tuesday: { '8:00-9:00': 'CE 205 (J Hazarika)', '9:00-10:00': 'CE 204 T B1 (Kh.LS)', '10:00-11:00': 'CE 202 (PJ)', '11:00-12:00': 'CE 201 (SB)', '2:00-5:00': 'CE 211 B2 (DP)' },
+          Wednesday: { '8:00-9:00': 'CE 204 (Kh.LS)', '9:00-10:00': 'CE 203 (DP)', '10:00-11:00': 'CE 205 (J Hazarika)', '11:00-12:00': 'CE 202 (PJ)', '1:00-2:00': 'MA 201', '2:00-5:00': 'CE 211 B1 (VVK)' },
+          Thursday: { '8:00-9:00': 'CE 204 T B2 (Kh.LS)', '9:00-10:00': 'CE 205 (J Hazarika)', '10:00-11:00': 'CE 203 (DP)', '11:00-12:00': 'CE 201 (SB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 212 B1 (DKG)' },
+          Friday: { '9:00-10:00': 'CE 204 T B2 (Kh.LS)', '10:00-11:00': 'CE 205 (J Hazarika)', '11:00-12:00': 'CE 201 T B1 (SB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 213 B1 (J Haloi), CE 212 B2 (AS)' },
+        },
+      },
+      ME: {
+        A: {
+            Monday: { '8:00-9:00': 'MA 201 (TA1)', '9:00-10:00': 'ME 204 (L) SK/PKP', '11:00-12:00': 'ME 203 (L) AB', '2:00-5:00': 'ME 213 (Thermo Fluid Lab-I) A1, ME 211 (Machine Drawing Lab) A2' },
+            Tuesday: { '9:00-10:00': 'ME 202 (L) VM/ABD', '10:00-11:00': 'ME 201 (L) SP', '11:00-12:00': 'ME 204 (L) SK/PKP', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'ME 212 (Manufacturing Lab) A1, ME 213 (Thermo Fluid Lab-I) A2' },
+            Wednesday: { '8:00-9:00': 'ME 202 (L) VM/ABD', '9:00-10:00': 'ME 203 (L) AB', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 205 (SH)', '1:00-2:00': 'ME 204 (L) SK/PKP', '2:00-5:00': 'ME 211 (Machine Drawing Lab) A1, ME 212 (Manufacturing Lab) A2' },
+            Thursday: { '8:00-9:00': 'ME 201 (L) SP', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 201 (T) A2 SP', '1:00-2:00': 'CE 201 (A Sahu)', '2:00-5:00': 'ME 212 (Manufacturing Lab) B1' },
+            Friday: { '8:00-9:00': 'ME 201 (T) A1 SP', '9:00-10:00': 'ME 202 (T) A2', '10:00-11:00': 'MA 201', '11:00-12:00': 'MA 201 (T B1)', '1:00-2:00': 'ME 203 (T) A1 AB' }
+          },
+          B: {
+            Monday: { '8:00-9:00': 'ME 205 (L) SKD', '9:00-10:00': 'ME 203 (L) SSTR', '11:00-12:00': 'MA 201', '1:00-2:00': 'ME 201 (RDM)', '2:00-5:00': 'ME 201 (L) SP, ME 203 (T) B1 SSTR' },
+            Tuesday: { '8:00-9:00': 'ME 201 (RDM)', '9:00-10:00': 'ME 204 (L) BD', '10:00-11:00': 'ME 202 (L) ABI', '11:00-12:00': 'MA 201', '2:00-5:00': 'ME 211 (Machine Drawing Lab) B1' },
+            Wednesday: { '8:00-9:00': 'ME 203 (L) SSTR', '9:00-10:00': 'ME 205 (L) SKD', '10:00-11:00': 'ME 204 (L) BD', '11:00-12:00': 'ME 202 (L) ABI', '1:00-2:00': 'MA 201', '2:00-5:00': 'ME 213 (Thermo Fluid Lab-I) B1' },
+            Thursday: { '8:00-9:00': 'ME 204 (L) BD', '9:00-10:00': 'ME 203 (L) SSTR', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 201 (T)B1 (RDM)', '1:00-2:00': 'ME 202 (T) B1 ABI', '2:00-5:00': 'ME 211 Machine Drawing Lab) B2' },
+            Friday: { '8:00-9:00': 'ME 201 (T)B1 (RDM)', '11:00-12:00': 'MA 201 (T B1)', '1:00-2:00': 'ME 212 (Manufacturing Lab) B1' }
+          },
+      },
+      EE: {
+        A: {
+            Monday: { '8:00-9:00': 'MA 201 (TAI)', '9:00-10:00': 'EE 205 (MB)', '10:00-11:00': 'EC 226 (A1) (KLB)', '11:00-12:00': 'EE 205 (T/A2) (PR)', '1:00-2:00': 'EE 204 (CB)', '2:00-5:00': 'EE 211 (B1) (APa), EE 212 (B2) (SR)' },
+            Tuesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EE 201 (AP)', '11:00-12:00': 'EE 201 (AP)', '1:00-2:00': 'EE 203 (SM)', '2:00-5:00': 'EE 211: Prog. & Simulation Lab (A1) (AKG)' },
+            Wednesday: { '8:00-9:00': 'EE 202 (T/A1) (SSK)', '9:00-10:00': 'EE 202 (SSK)', '10:00-11:00': 'MA 201', '11:00-12:00': 'EE 205 (PR)', '1:00-2:00': 'EE 203 (SM)', '2:00-5:00': 'EE 212: Measurement Lab (Al) (VS)' },
+            Thursday: { '8:00-9:00': 'ME 201 (T)B2 (RDM)', '9:00-10:00': 'EE 204 (T/A1) (CB)', '10:00-11:00': 'EE 201 (T/A1) (AP)', '11:00-12:00': 'EE 205 (T/A1) (PR)', '1:00-2:00': 'EE 204 (CB)' },
+            Friday: { '8:00-9:00': 'EE 205 (PR)', '9:00-10:00': 'EC 226: Analog Lab- A2', '10:00-11:00': 'EE 202 (SSK)', '11:00-12:00': 'EE 202 (SSK)' }
+          },
+          B: {
+            Monday: { '8:00-9:00': 'MA 201 (TAI)', '9:00-10:00': 'EE221 APa', '10:00-11:00': 'EE 204 (T/A2) (CB)', '11:00-12:00': 'EE 202 (SC)', '1:00-2:00': 'EE 201 EE 202', '2:00-5:00': 'EE 211: Prog. & Simulation Lab (B1) (APa), EE 212: Measurement Lab (B2) (SR)' },
+            Tuesday: { '9:00-10:00': 'EC 226', '10:00-11:00': 'Analog Laboratory (B1)', '11:00-12:00': 'EE 205 (T/B2) (MB)', '1:00-2:00': 'MA 201', '2:00-5:00': 'EE 212: Measurement Lab (A2) (DS)' },
+            Wednesday: { '9:00-10:00': 'EE 202 (SC)', '10:00-11:00': 'EE 205 (MB)', '11:00-12:00': 'EE 201 (BG)', '1:00-2:00': 'EE 204 (SR)', '2:00-5:00': 'EE 204 (T/B2) (SR)' },
+            Thursday: { '8:00-9:00': 'MA 201 (TB1)', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE 202 (SC)', '11:00-12:00': 'EE 205 (MB)', '1:00-2:00': 'EE 203 (VS)', '2:00-5:00': 'EE 212: Measurement Lab (B1) (SR)' },
+            Friday: { '8:00-9:00': 'MA 201 (T B2)', '1:00-2:00': 'EE 203 (VS)' }
+          },
+      },
+      ECE: {
+        A: {
+            Monday: { '8:00-9:00': 'CS-222 Sec-B T/B1 PS', '10:00-11:00': 'MA 201', '11:00-12:00': 'CS-222 Sec-A PKN', '1:00-2:00': 'EE 202 (SSK)', '2:00-5:00': 'EE 202 (T/A2) (SSK)' },
+            Tuesday: { '8:00-9:00': 'EE221 APa', '9:00-10:00': 'MA 201', '10:00-11:00': 'EC-201 (HK)', '11:00-12:00': 'EC-203 (BB)', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'EE-222' },
+            Wednesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EC-201 (DD)', '11:00-12:00': 'CS-222 Sec-A PKN', '1:00-2:00': 'EC-221 T/A2 Apa', '2:00-5:00': 'EC-211 (A1) (FAT)' },
+            Thursday: { '8:00-9:00': 'CS-222 T/A1 PKN', '9:00-10:00': 'EC-203 BB)(T A2)', '10:00-11:00': 'EC-202 (KM)', '11:00-12:00': 'EC-201 (HK)', '1:00-2:00': 'EE221 T/AI APa', '2:00-5:00': 'EE-222 (A1)' },
+            Friday: { '10:00-11:00': 'CS201 (B) (BS)', '11:00-12:00': 'CE 201 T A1 (A Sahu)' }
+          },
+          B: {
+            Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EC-203 (MVS)(T B1)', '10:00-11:00': 'EC-201 (DD)', '11:00-12:00': 'EC-201 (DD)', '1:00-2:00': 'EE 202 (T/A2) (SSK)', '2:00-5:00': 'EC-203 EC-202 (KM) (T A1)' },
+            Tuesday: { '8:00-9:00': 'EE-221 PK T/BI', '9:00-10:00': 'EC-202 (RS)(T B1)', '10:00-11:00': 'EC-202 (RS)', '11:00-12:00': 'EC-203 (MVS)', '1:00-2:00': 'EE-221 PK', '2:00-5:00': 'EC-211 (A2) (AK' },
+            Wednesday: { '8:00-9:00': 'EC-202 (RS)(T B2)', '9:00-10:00': 'EC-203 (BB)', '10:00-11:00': 'EC-202 (KM)', '11:00-12:00': 'MA 201', '2:00-5:00': 'EE-221 PK T/B2' },
+            Thursday: { '8:00-9:00': 'MA 201 (T B1)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CS-222 Sec-B PS', '11:00-12:00': 'EC-202 (RS)', '1:00-2:00': 'EC-203 MVS)(T B2)' },
+            Friday: { '8:00-9:00': 'EC-221 (PPD) (T B1)', '9:00-10:00': 'MA 201 (T B2)', '11:00-12:00': 'MA 201' }
+          },
+      },
+      CSE: {
+        A: {
+            Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EC221 (SKT/WA)', '10:00-11:00': 'CS201 (RP)', '11:00-12:00': 'EF223', '1:00-2:00': 'EE223 T(A2)', '2:00-5:00': 'EC-211 (B2) (RS), CS211 A (SP)' },
+            Tuesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EC221 (A)', '11:00-12:00': 'EE223 (A)', '1:00-2:00': 'CS202 T (A2) LDS', '2:00-5:00': 'EE224 (A1)' },
+            Wednesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'CS201 (RP)', '11:00-12:00': 'CS201 (RP)', '1:00-2:00': 'MA 201 T (A2)', '2:00-5:00': 'CS-222 Sec-A T/A2 PKN' },
+            Thursday: { '8:00-9:00': 'CS202 T (A1) LDS', '9:00-10:00': 'EC-221 (SKT/WA) (TA2)', '10:00-11:00': 'CS202 (A) LDS', '11:00-12:00': 'EC-221 (SKT/WA)', '1:00-2:00': 'EE223 T(A2)', '2:00-5:00': 'EF224 (A2)' },
+            Friday: { '8:00-9:00': 'MA 201 (T2)', '11:00-12:00': 'ME 203 (T) A1 AB' }
+          },
+          B: {
+            Monday: { '8:00-9:00': 'CS201 T (B2) BS', '9:00-10:00': 'EC-221 (PPD) (T B2)', '10:00-11:00': 'EC-221 (PPD)', '11:00-12:00': 'EE223', '1:00-2:00': 'MA 201 (T B1)', '2:00-5:00': 'EE224 (B1), EI 213-CN Lab (G2)' },
+            Tuesday: { '8:00-9:00': 'EC-221 (PPD), CS202 T (B2) DPC', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE223 (B), CS 222 (UM)', '11:00-12:00': 'CS201 (B) (BS)', '2:00-5:00': 'EC222 (B1) (PPD)' },
+            Wednesday: { '8:00-9:00': 'CS201 T (A1)(RP)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CS201 (B) (BS)', '11:00-12:00': 'CS201 (B) (BS)', '2:00-5:00': 'CS211 (B) BS' },
+            Thursday: { '8:00-9:00': 'MA 201 (T B2)', '10:00-11:00': 'EE223 (B)', '11:00-12:00': 'CS202 (B) DPC', '1:00-2:00': 'MA 201', '2:00-5:00': 'EC222 (B2) (DSG)' },
+            Friday: { '8:00-9:00': 'CS202 T (B1) DPC', '9:00-10:00': 'MA 201 (T1)', '1:00-2:00': 'El 213-CN Lab (G1)/CS 223 (G2)' }
+          },
+      },
+      EIE: {
+        '': {
+          Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EI 202 (RD)', '10:00-11:00': 'El 201 (SHL/VCP)', '11:00-12:00': 'CS 222 (UM)', '1:00-2:00': 'El 203 TI (AKS)', '2:00-5:00': 'EI 213-CN Lab (G2)' },
+          Tuesday: { '8:00-9:00': 'El 202 (RD)', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE223 (B), CS 222 (UM)', '11:00-12:00': 'EI 203 (AKS)', '1:00-2:00': 'El 202 TI (RD)', '2:00-5:00': 'CS 223 Lab (G1 and G2) (UM)' },
+          Wednesday: { '8:00-9:00': 'CS202 T (A2) LDS', '9:00-10:00': 'EC-201 (DD)', '11:00-12:00': 'EI 203 (AKS)', '1:00-2:00': 'EI 202 (RD)', '2:00-5:00': 'EI 212 G2/EI 211 G1' },
+          Thursday: { '8:00-9:00': 'EI 203 (AKS)', '9:00-10:00': 'EI 201 (SHL/VCP)', '10:00-11:00': 'CS 222 T/G2 (UM)', '11:00-12:00': 'EI 202 T2', '1:00-2:00': 'El 201 T1 (SHL/VCP)', '2:00-5:00': 'EI 212 (G1)/ EI 211(G2)' },
+          Friday: { '9:00-10:00': 'CS 222 T/G1 (UM)', '10:00-11:00': 'EI 201 (SHL/VCP)', '11:00-12:00': 'CE 201 T A1 (A Sahu)' },
+        },
+      },
+  },
+  '5': {
+    CE: {
+      A: {
+        Monday: { '8:00-9:00': 'CE 303 (S Dutta)', '9:00-12:00': 'CE 305 (UK), CE 302 (AK Dey), CE 304 (BS)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'CE 311 A1 (PD), CE 312 A2 (PS)' },
+        Tuesday: { '8:00-9:00': 'CE 303 (AK Dey), CE 304 (BS)', '9:00-12:00': 'CE 302 (AK Dey), CE 303 (S Dutta)', '1:00-2:00': 'CE 301 (BKR)', '2:00-5:00': 'CE 305 (UK), CE 304 T A2 (BS), CE 305 T A2 (UK)' },
+      },
+      B: {
+        Monday: { '8:00-9:00': 'CE 303 (DP)', '9:00-12:00': 'CE 302 (PS), CE 304 (DKG), CE 305 (VVK)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'CE 313 B1 (Kh.L), CE 314 B2 (PC)' },
+        Tuesday: { '8:00-9:00': 'CE 303 (DP), CE 304 (DKG)', '9:00-12:00': 'CE 302 (PS), CE 303 (DP)', '1:00-2:00': 'CE 301 (S Das)', '2:00-5:00': 'CE 305 (VVK), CE 304 T B2, CE 305 T B2 (VVK), CE 314 B1, CE 313 B2' },
+      },
     },
-    B: {
-      Monday: { '11:00-12:00': 'MA 201', '1:00-2:00': 'CE 201 (SB)', '2:00-5:00': 'CE 204 (Kh.LS)' },
-      Tuesday: { '8:00-9:00': 'CE 205 (J Hazarika)', '9:00-10:00': 'CE 204 T B1 (Kh.LS)', '10:00-11:00': 'CE 202 (PJ)', '11:00-12:00': 'CE 201 (SB)', '2:00-5:00': 'CE 211 B2 (DP)' },
-      Wednesday: { '8:00-9:00': 'CE 204 (Kh.LS)', '9:00-10:00': 'CE 203 (DP)', '10:00-11:00': 'CE 205 (J Hazarika)', '11:00-12:00': 'CE 202 (PJ)', '1:00-2:00': 'MA 201', '2:00-5:00': 'CE 211 B1 (VVK)' },
-      Thursday: { '8:00-9:00': 'CE 204 T B2 (Kh.LS)', '9:00-10:00': 'CE 205 (J Hazarika)', '10:00-11:00': 'CE 203 (DP)', '11:00-12:00': 'CE 201 (SB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 212 B1 (DKG)' },
-      Friday: { '9:00-10:00': 'CE 204 T B2 (Kh.LS)', '10:00-11:00': 'CE 205 (J Hazarika)', '11:00-12:00': 'CE 201 T B1 (SB)', '1:00-2:00': 'CE 205 (PR)', '2:00-5:00': 'CE 213 B1 (J Haloi), CE 212 B2 (AS)' },
+    ME: {
+      A: {
+        Monday: { '8:00-9:00': 'ME 301 (L) BN', '9:00-12:00': 'ME 311 (Fluid Machinery Lab) A1, ME 312 (Machining Lab) A2', '1:00-2:00': 'ME 304 (L) SNG/PLC', '2:00-5:00': 'ME 303(L), ME 302 () A1 OS, ME 306 (L) CKS' },
+        Tuesday: { '8:00-9:00': 'ME 303(L) OS', '9:00-12:00': 'ME 312 (Machining Lab) Al', '1:00-2:00': 'ME 304 (T) A1', '2:00-5:00': 'ME 303 (T) A1, ME 301 (T)A1' },
+      },
+      B: {
+        Monday: { '8:00-9:00': 'ME 303 (L) GC', '9:00-12:00': 'ME 302 (L) RNG, ME 301 (L) DB, ME 304 (L) VM', '1:00-2:00': 'ME 303 (T) B1', '2:00-5:00': 'ME 302 () A1 OS, ME 306 (L) CKS, ME 313 (Heat Transfer Lab) B2' },
+        Tuesday: { '9:00-12:00': 'ME 311 (Fluid Machinery Lab) A2' },
+      },
+    },
+    EE: {
+      A: {
+        Monday: { '8:00-9:00': 'EE 304 (T/A1) (AK)', '9:00-12:00': 'EE 302 (LCS), EE 303 (JPM), EE 304 (AK)', '2:00-5:00': 'EE 313: CS Lab (A1) (PR), EE 314: SP Lab (A2) (TP)' },
+        Tuesday: { '8:00-9:00': 'EE 301 (T/Al) (RD)', '9:00-12:00': 'ME 301 (L) DB, ME 305 (L) SDB, ME 306 (L) KC', '2:00-5:00': 'EE 311: EM Lab-1 (A1) (SSK), EE 312: PS Lab-I (A2) (LCS)' },
+      },
+      B: {
+        Monday: { '8:00-9:00': 'EE 301 (RKB)', '9:00-12:00': 'EE 303 (SSK), EE 305 (AP), EE 305 (AP)', '1:00-2:00': 'EC-306 (MB)', '2:00-5:00': 'EE 311: EM Lab-I (B1) (JPM), EE 312: PS Lab-I (B2) (PK)' },
+        Tuesday: { '8:00-9:00': 'EE 301 (T/ B1) (RKB)', '9:00-12:00': 'EE 304 (ARM), EE 302 (AKG), EE 301 (RKB)', '1:00-2:00': 'ME 303 (L) GC', '2:00-5:00': 'EE 314: SP Lab (B2) (SC), EE 313: CS Lab (B2) (ARM)' },
+      },
+    },
+    ECE: {
+      A: {
+        Monday: { '8:00-9:00': 'CS305 (A) (SP)', '9:00-12:00': 'EC-311 Lab. (A1) (AN), EC-301(T) (A2) (RHL), EC-303(T) (A2) (AK)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'EC-303 (FAT), EC-301 (RHL), EC305 (FAT)' },
+        Tuesday: { '8:00-9:00': 'EC-302 (GP)', '9:00-12:00': 'EC-305 (FAT), EC-306 (MB), EC-304 (CC)', '1:00-2:00': 'EC-301 (RHL)', '2:00-5:00': 'EC-312 Lab. (A2) (RM)' },
+      },
+      B: {
+        Monday: { '8:00-9:00': 'EC-304(T) (A2) (CC)', '9:00-12:00': 'EC-304(T) (A2) (CC), EC302 (TG), EC-301 (SC)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'EC-312 Lab. (B2) (RKK), EC-303 (AK)' },
+        Tuesday: { '8:00-9:00': 'EC-304 (UC/BB)', '9:00-12:00': 'EC-304 (UC/BB), EC-302 (TG), EC-306 (PPD)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'EC-304 (T) (B1) (UC/BB), EC-301 (T) (B1) SC, EC-303 (T) (B1) (RS)' },
+      },
+    },
+    CSE: {
+      A: {
+        Monday: { '8:00-9:00': 'CS303 (A) (SKB)', '9:00-12:00': 'CS 304(A) (MDB), CS303 (A) (SKB), CS301 (T)A1 (CC)', '1:00-2:00': 'CS304(T) A2 (MDB)', '2:00-5:00': 'CS312 (A) (BD)' },
+        Tuesday: { '8:00-9:00': 'CS305 (A) (SP)', '9:00-12:00': 'CS301(A) (CC), CS302 (T) A2 (BD)', '1:00-2:00': 'CS313 (A)(SKB)', '2:00-5:00': 'CS313 (A)(SKB), CS302 (T) A2 (BD)' },
+      },
+      B: {
+        Monday: { '8:00-9:00': 'CS301(B) (Abiswas)', '9:00-12:00': 'CS301(B) (Abiswas), CS314 (B) (PSN)', '1:00-2:00': 'Open Elective', '2:00-5:00': 'CS305 T (B1) (UM), CS 304(B) (MDB), CS302 (T)B2 (AKS)' },
+        Tuesday: { '8:00-9:00': 'CS 304(B) (MDB)', '9:00-12:00': 'CS313 (B) (UB), CS305 (T)B2 (UM), CS304(T) B1 (MDB), CS302 (B) (AKS)', '1:00-2:00': 'CS304(T) B1 (MDB)', '2:00-5:00': 'CS302 (B) (AKS)' },
+      },
+    },
+    EIE: {
+      '': {
+        Monday: { '9:00-12:00': 'El-311(G2)/El-314 (G1)', '1:00-2:00': 'EL301 (KM) (T1)', '2:00-5:00': 'EI 303 (SK), El 301 (KM/JH), EI 302 T2 (SKP/AKS)' },
+        Tuesday: { '8:00-9:00': 'EI-313(G1)/EI1-314 (G2)', '9:00-12:00': 'ΕΙ 305 (RH/AKSH), ΕΙ 302 (SKP/AKS), EI 304 (LS)', '1:00-2:00': 'EI 301 T-1 (KM/JH)', '2:00-5:00': 'EI 302 T2 (SKP/AKS)' },
+      },
     },
   },
-  ME: {
-    A: {
-        Monday: { '8:00-9:00': 'MA 201 (TA1)', '9:00-10:00': 'ME 204 (L) SK/PKP', '11:00-12:00': 'ME 203 (L) AB', '2:00-5:00': 'ME 213 (Thermo Fluid Lab-I) A1, ME 211 (Machine Drawing Lab) A2' },
-        Tuesday: { '9:00-10:00': 'ME 202 (L) VM/ABD', '10:00-11:00': 'ME 201 (L) SP', '11:00-12:00': 'ME 204 (L) SK/PKP', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'ME 212 (Manufacturing Lab) A1, ME 213 (Thermo Fluid Lab-I) A2' },
-        Wednesday: { '8:00-9:00': 'ME 202 (L) VM/ABD', '9:00-10:00': 'ME 203 (L) AB', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 205 (SH)', '1:00-2:00': 'ME 204 (L) SK/PKP', '2:00-5:00': 'ME 211 (Machine Drawing Lab) A1, ME 212 (Manufacturing Lab) A2' },
-        Thursday: { '8:00-9:00': 'ME 201 (L) SP', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 201 (T) A2 SP', '1:00-2:00': 'CE 201 (A Sahu)', '2:00-5:00': 'ME 212 (Manufacturing Lab) B1' },
-        Friday: { '8:00-9:00': 'ME 201 (T) A1 SP', '9:00-10:00': 'ME 202 (T) A2', '10:00-11:00': 'MA 201', '11:00-12:00': 'MA 201 (T B1)', '1:00-2:00': 'ME 203 (T) A1 AB' }
-      },
-      B: {
-        Monday: { '8:00-9:00': 'ME 205 (L) SKD', '9:00-10:00': 'ME 203 (L) SSTR', '11:00-12:00': 'MA 201', '1:00-2:00': 'ME 201 (RDM)', '2:00-5:00': 'ME 201 (L) SP, ME 203 (T) B1 SSTR' },
-        Tuesday: { '8:00-9:00': 'ME 201 (RDM)', '9:00-10:00': 'ME 204 (L) BD', '10:00-11:00': 'ME 202 (L) ABI', '11:00-12:00': 'MA 201', '2:00-5:00': 'ME 211 (Machine Drawing Lab) B1' },
-        Wednesday: { '8:00-9:00': 'ME 203 (L) SSTR', '9:00-10:00': 'ME 205 (L) SKD', '10:00-11:00': 'ME 204 (L) BD', '11:00-12:00': 'ME 202 (L) ABI', '1:00-2:00': 'MA 201', '2:00-5:00': 'ME 213 (Thermo Fluid Lab-I) B1' },
-        Thursday: { '8:00-9:00': 'ME 204 (L) BD', '9:00-10:00': 'ME 203 (L) SSTR', '10:00-11:00': 'MA 201', '11:00-12:00': 'ME 201 (T)B1 (RDM)', '1:00-2:00': 'ME 202 (T) B1 ABI', '2:00-5:00': 'ME 211 Machine Drawing Lab) B2' },
-        Friday: { '8:00-9:00': 'ME 201 (T)B1 (RDM)', '11:00-12:00': 'MA 201 (T B1)', '1:00-2:00': 'ME 212 (Manufacturing Lab) B1' }
-      },
-  },
-  EE: {
-    A: {
-        Monday: { '8:00-9:00': 'MA 201 (TAI)', '9:00-10:00': 'EE 205 (MB)', '10:00-11:00': 'EC 226 (A1) (KLB)', '11:00-12:00': 'EE 205 (T/A2) (PR)', '1:00-2:00': 'EE 204 (CB)', '2:00-5:00': 'EE 211 (B1) (APa), EE 212 (B2) (SR)' },
-        Tuesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EE 201 (AP)', '11:00-12:00': 'EE 201 (AP)', '1:00-2:00': 'EE 203 (SM)', '2:00-5:00': 'EE 211: Prog. & Simulation Lab (A1) (AKG)' },
-        Wednesday: { '8:00-9:00': 'EE 202 (T/A1) (SSK)', '9:00-10:00': 'EE 202 (SSK)', '10:00-11:00': 'MA 201', '11:00-12:00': 'EE 205 (PR)', '1:00-2:00': 'EE 203 (SM)', '2:00-5:00': 'EE 212: Measurement Lab (Al) (VS)' },
-        Thursday: { '8:00-9:00': 'ME 201 (T)B2 (RDM)', '9:00-10:00': 'EE 204 (T/A1) (CB)', '10:00-11:00': 'EE 201 (T/A1) (AP)', '11:00-12:00': 'EE 205 (T/A1) (PR)', '1:00-2:00': 'EE 204 (CB)' },
-        Friday: { '8:00-9:00': 'EE 205 (PR)', '9:00-10:00': 'EC 226: Analog Lab- A2', '10:00-11:00': 'EE 202 (SSK)', '11:00-12:00': 'EE 202 (SSK)' }
-      },
-      B: {
-        Monday: { '8:00-9:00': 'MA 201 (TAI)', '9:00-10:00': 'EE221 APa', '10:00-11:00': 'EE 204 (T/A2) (CB)', '11:00-12:00': 'EE 202 (SC)', '1:00-2:00': 'EE 201 EE 202', '2:00-5:00': 'EE 211: Prog. & Simulation Lab (B1) (APa), EE 212: Measurement Lab (B2) (SR)' },
-        Tuesday: { '9:00-10:00': 'EC 226', '10:00-11:00': 'Analog Laboratory (B1)', '11:00-12:00': 'EE 205 (T/B2) (MB)', '1:00-2:00': 'MA 201', '2:00-5:00': 'EE 212: Measurement Lab (A2) (DS)' },
-        Wednesday: { '9:00-10:00': 'EE 202 (SC)', '10:00-11:00': 'EE 205 (MB)', '11:00-12:00': 'EE 201 (BG)', '1:00-2:00': 'EE 204 (SR)', '2:00-5:00': 'EE 204 (T/B2) (SR)' },
-        Thursday: { '8:00-9:00': 'MA 201 (TB1)', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE 202 (SC)', '11:00-12:00': 'EE 205 (MB)', '1:00-2:00': 'EE 203 (VS)', '2:00-5:00': 'EE 212: Measurement Lab (B1) (SR)' },
-        Friday: { '8:00-9:00': 'MA 201 (T B2)', '1:00-2:00': 'EE 203 (VS)' }
-      },
-  },
-  ECE: {
-    A: {
-        Monday: { '8:00-9:00': 'CS-222 Sec-B T/B1 PS', '10:00-11:00': 'MA 201', '11:00-12:00': 'CS-222 Sec-A PKN', '1:00-2:00': 'EE 202 (SSK)', '2:00-5:00': 'EE 202 (T/A2) (SSK)' },
-        Tuesday: { '8:00-9:00': 'EE221 APa', '9:00-10:00': 'MA 201', '10:00-11:00': 'EC-201 (HK)', '11:00-12:00': 'EC-203 (BB)', '1:00-2:00': 'MA 201 (T A2)', '2:00-5:00': 'EE-222' },
-        Wednesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EC-201 (DD)', '11:00-12:00': 'CS-222 Sec-A PKN', '1:00-2:00': 'EC-221 T/A2 Apa', '2:00-5:00': 'EC-211 (A1) (FAT)' },
-        Thursday: { '8:00-9:00': 'CS-222 T/A1 PKN', '9:00-10:00': 'EC-203 BB)(T A2)', '10:00-11:00': 'EC-202 (KM)', '11:00-12:00': 'EC-201 (HK)', '1:00-2:00': 'EE221 T/AI APa', '2:00-5:00': 'EE-222 (A1)' },
-        Friday: { '10:00-11:00': 'CS201 (B) (BS)', '11:00-12:00': 'CE 201 T A1 (A Sahu)' }
-      },
-      B: {
-        Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EC-203 (MVS)(T B1)', '10:00-11:00': 'EC-201 (DD)', '11:00-12:00': 'EC-201 (DD)', '1:00-2:00': 'EE 202 (T/A2) (SSK)', '2:00-5:00': 'EC-203 EC-202 (KM) (T A1)' },
-        Tuesday: { '8:00-9:00': 'EE-221 PK T/BI', '9:00-10:00': 'EC-202 (RS)(T B1)', '10:00-11:00': 'EC-202 (RS)', '11:00-12:00': 'EC-203 (MVS)', '1:00-2:00': 'EE-221 PK', '2:00-5:00': 'EC-211 (A2) (AK' },
-        Wednesday: { '8:00-9:00': 'EC-202 (RS)(T B2)', '9:00-10:00': 'EC-203 (BB)', '10:00-11:00': 'EC-202 (KM)', '11:00-12:00': 'MA 201', '2:00-5:00': 'EE-221 PK T/B2' },
-        Thursday: { '8:00-9:00': 'MA 201 (T B1)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CS-222 Sec-B PS', '11:00-12:00': 'EC-202 (RS)', '1:00-2:00': 'EC-203 MVS)(T B2)' },
-        Friday: { '8:00-9:00': 'EC-221 (PPD) (T B1)', '9:00-10:00': 'MA 201 (T B2)', '11:00-12:00': 'MA 201' }
-      },
-  },
-  CSE: {
-    A: {
-        Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EC221 (SKT/WA)', '10:00-11:00': 'CS201 (RP)', '11:00-12:00': 'EF223', '1:00-2:00': 'EE223 T(A2)', '2:00-5:00': 'EC-211 (B2) (RS), CS211 A (SP)' },
-        Tuesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'EC221 (A)', '11:00-12:00': 'EE223 (A)', '1:00-2:00': 'CS202 T (A2) LDS', '2:00-5:00': 'EE224 (A1)' },
-        Wednesday: { '9:00-10:00': 'MA 201', '10:00-11:00': 'CS201 (RP)', '11:00-12:00': 'CS201 (RP)', '1:00-2:00': 'MA 201 T (A2)', '2:00-5:00': 'CS-222 Sec-A T/A2 PKN' },
-        Thursday: { '8:00-9:00': 'CS202 T (A1) LDS', '9:00-10:00': 'EC-221 (SKT/WA) (TA2)', '10:00-11:00': 'CS202 (A) LDS', '11:00-12:00': 'EC-221 (SKT/WA)', '1:00-2:00': 'EE223 T(A2)', '2:00-5:00': 'EF224 (A2)' },
-        Friday: { '8:00-9:00': 'MA 201 (T2)', '11:00-12:00': 'ME 203 (T) A1 AB' }
-      },
-      B: {
-        Monday: { '8:00-9:00': 'CS201 T (B2) BS', '9:00-10:00': 'EC-221 (PPD) (T B2)', '10:00-11:00': 'EC-221 (PPD)', '11:00-12:00': 'EE223', '1:00-2:00': 'MA 201 (T B1)', '2:00-5:00': 'EE224 (B1), EI 213-CN Lab (G2)' },
-        Tuesday: { '8:00-9:00': 'EC-221 (PPD), CS202 T (B2) DPC', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE223 (B), CS 222 (UM)', '11:00-12:00': 'CS201 (B) (BS)', '2:00-5:00': 'EC222 (B1) (PPD)' },
-        Wednesday: { '8:00-9:00': 'CS201 T (A1)(RP)', '9:00-10:00': 'MA 201', '10:00-11:00': 'CS201 (B) (BS)', '11:00-12:00': 'CS201 (B) (BS)', '2:00-5:00': 'CS211 (B) BS' },
-        Thursday: { '8:00-9:00': 'MA 201 (T B2)', '10:00-11:00': 'EE223 (B)', '11:00-12:00': 'CS202 (B) DPC', '1:00-2:00': 'MA 201', '2:00-5:00': 'EC222 (B2) (DSG)' },
-        Friday: { '8:00-9:00': 'CS202 T (B1) DPC', '9:00-10:00': 'MA 201 (T1)', '1:00-2:00': 'El 213-CN Lab (G1)/CS 223 (G2)' }
-      },
-  },
-  EIE: {
-    '': {
-      Monday: { '8:00-9:00': 'MA 201', '9:00-10:00': 'EI 202 (RD)', '10:00-11:00': 'El 201 (SHL/VCP)', '11:00-12:00': 'CS 222 (UM)', '1:00-2:00': 'El 203 TI (AKS)', '2:00-5:00': 'EI 213-CN Lab (G2)' },
-      Tuesday: { '8:00-9:00': 'El 202 (RD)', '9:00-10:00': 'MA 201', '10:00-11:00': 'EE223 (B), CS 222 (UM)', '11:00-12:00': 'EI 203 (AKS)', '1:00-2:00': 'El 202 TI (RD)', '2:00-5:00': 'CS 223 Lab (G1 and G2) (UM)' },
-      Wednesday: { '8:00-9:00': 'CS202 T (A2) LDS', '9:00-10:00': 'EC-201 (DD)', '11:00-12:00': 'EI 203 (AKS)', '1:00-2:00': 'EI 202 (RD)', '2:00-5:00': 'EI 212 G2/EI 211 G1' },
-      Thursday: { '8:00-9:00': 'EI 203 (AKS)', '9:00-10:00': 'EI 201 (SHL/VCP)', '10:00-11:00': 'CS 222 T/G2 (UM)', '11:00-12:00': 'EI 202 T2', '1:00-2:00': 'El 201 T1 (SHL/VCP)', '2:00-5:00': 'EI 212 (G1)/ EI 211(G2)' },
-      Friday: { '9:00-10:00': 'CS 222 T/G1 (UM)', '10:00-11:00': 'EI 201 (SHL/VCP)', '11:00-12:00': 'CE 201 T A1 (A Sahu)' },
+  '7': {
+    CE: {
+        A: {
+          Monday: { '8:00-9:00': 'CE 401 (MLVP)', '10:00-11:00': 'HS 401', '11:00-12:00': 'CE 435 EL II (SG)', '1:00-2:00': 'CE 432 EL II (NA)', '2:00-3:00': 'CE 481 OP EL II (AS)', '3:00-4:00': 'CE 482 OP EL II (ND)', '4:00-5:00': 'CE 432 EL II (NA)' },
+          Tuesday: { '8:00-9:00': 'CE 435 EL II T (SG)', '1:00-2:00': 'CE 483 OP EL II (SB)', '2:00-3:00': 'CE 401 (MLVP)', '4:00-5:00': 'CE 401 (MLVP)' },
+          Wednesday: { '8:00-9:00': 'CE 401 (BD)', '9:00-10:00': 'CE 433 EL II (DB/DKB)', '10:00-11:00': 'HS 401', '11:00-12:00': 'CE 432 EL II (NA)', '1:00-2:00': 'CE 481 OP EL II (AS)', '2:00-3:00': 'CE 482 OP EL II (ND)', '3:00-4:00': 'CE 433 EL II T (DB/DKB)' },
+          Thursday: { '8:00-9:00': 'CE 435 EL II (SG)', '11:00-12:00': 'CE 433 EL II (DB/DKB)', '1:00-2:00': 'CE 483 OP EL II (SB)', '2:00-3:00': 'CE 482 OP EL II (ND)', '4:00-5:00': 'CE 401 (MLVP)' },
+          Friday: { '8:00-9:00': 'CE 435 (SG)', '9:00-10:00': 'CE 433 EL IL (DB/DKB)', '10:00-11:00': 'HS 401', '1:00-2:00': 'CE 483 OP EL II (SB)', '4:00-5:00': 'CE 401 (BD)' },
+        },
+        B: {
+          Monday: { '8:00-9:00': 'CE 435 EL II (SG)', '2:00-3:00': 'HS 401', '3:00-4:00': 'PCE-II: EE 437 (TM) (G-313)', '1:00-2:00': 'CE 401 (BD)' },
+          Tuesday: { '1:00-2:00': 'CE 401 (MLVP)', '2:00-3:00': 'ME5232 YS', '4:00-5:00': 'CE 401 (MLVP)' },
+          Wednesday: { '8:00-9:00': 'CE 401 (BD)', '9:00-10:00': 'CE 433 EL II (DB/DKB)', '10:00-11:00': 'HS 401', '11:00-12:00': 'CE 432 EL II (NA)', '1:00-2:00': 'CE 481 OP EL II (AS)', '2:00-3:00': 'CE 482 OP EL II (ND)', '3:00-4:00': 'CE 433 EL II T (DB/DKB)' },
+          Thursday: { '8:00-9:00': 'CE 435 EL II (SG)', '11:00-12:00': 'CE 433 EL II (DB/DKB)', '1:00-2:00': 'CE 481 OP EL II (AS)', '2:00-3:00': 'CE 482 OP EL II (ND)', '4:00-5:00': 'CE 401 (MLVP)' },
+          Friday: { '8:00-9:00': 'CE 433 EL IL (DB/DKB)', '9:00-10:00': 'HS 401', '1:00-2:00': 'CE 483 OP EL II (SB)', '4:00-5:00': 'CE 401 (BD)' },
+        },
+    },
+    ME: {
+        A: {
+          Monday: { '8:00-9:00': 'ME 498', '9:00-10:00': 'SKP, SKD, OS, PM, RDM', '2:00-3:00': 'ME5232 YS (2103)', '3:00-4:00': 'Open Elective' },
+          Tuesday: { '8:00-9:00': 'ME 431 (L) SS', '1:00-2:00': 'ME 498', '2:00-3:00': 'ME486 SD (2203)', '3:00-4:00': 'ME481 (AP) (2103)', '4:00-5:00': 'ME 435/5303 (2103)' },
+          Wednesday: { '10:00-11:00': 'ME 436 (L)/5202 (L) SNG', '2:00-3:00': 'ME5232 (2103)', '3:00-4:00': 'Open Elective' },
+          Thursday: { '8:00-9:00': 'ME 498', '9:00-10:00': 'ME 498', '1:00-2:00': 'IC 401 (SB/NBDC)', '2:00-3:00': 'ME481 (AP) (G 304)/ME486 SD (G 306)', '4:00-5:00': 'PCE-II: EE 437 (TM) (G-313)/EE 445 (DCD) (G-202)' },
+          Friday: { '8:00-9:00': 'ME 401 (L) PM (2103)', '10:00-11:00': 'ME 436 (L)/5202 (L) SNG', '2:00-3:00': 'ME 435/5303 (2103)' },
+        },
+        B: {
+          Monday: { '8:00-9:00': 'ME 401 (L) SKP', '10:00-11:00': 'ME 432 (L) SNT', '2:00-3:00': 'ME486 SD (G306)', '3:00-4:00': 'ME481 (AP) (G 306)', '4:00-5:00': 'Open Elective' },
+          Tuesday: { '8:00-9:00': 'ME 434 (L) PDR', '1:00-2:00': 'ME 481 (AP)' },
+          Wednesday: { '8:00-9:00': 'ME 434 (L) PDR', '10:00-11:00': 'ME 432 (L) SNT', '1:00-2:00': 'ME 436 (T) SNG (Indo-3)', '2:00-3:00': 'IC 401 (SB/NBDC) (2103)', '3:00-4:00': 'ME 435/5303 (2103)' },
+          Thursday: { '8:00-9:00': 'ME 498', '9:00-10:00': 'ME 431 (L) SS', '2:00-3:00': 'ME481 (AP) (G 304)/ME486 SD (G 306)', '4:00-5:00': 'PCE-II: EE 437 (TM) (G-313)/EE 445 (DCD) (G-202)' },
+          Friday: { '8:00-9:00': 'ME 401 (L) SKP(2203)', '9:00-10:00': 'ME 434 (L) PDR', '1:00-2:00': 'IC 401 (SB/NBDC)', '4:00-5:00': 'HS 401 (G201)' },
+        },
+    },
+    EE: {
+        A: {
+          Monday: { '8:00-9:00': 'EE 498 (Project I)', '9:00-10:00': 'MS 401', '10:00-11:00': 'EE 401 (NS)', '1:00-2:00': 'EE 498' },
+          Tuesday: { '8:00-9:00': 'EE 401 (NS)', '2:00-3:00': 'EE 498' },
+          Wednesday: { '8:00-9:00': 'CS 401(A) (PP)', '9:00-10:00': 'EE 498', '10:00-11:00': 'MS 401', '11:00-12:00': 'MS 401', '1:00-2:00': 'EE 498' },
+          Thursday: { '8:00-9:00': 'EE 401 (NS)', '9:00-10:00': 'EE 401 (NS)', '10:00-11:00': 'EE 401 (NS)', '11:00-12:00': 'CS 401(A)(PP)', '1:00-2:00': 'ME 498' },
+          Friday: { '8:00-9:00': 'EE 498', '9:00-10:00': 'MS 401', '10:00-11:00': 'MS 401', '1:00-2:00': 'EE 498', '2:00-3:00': 'EE 498' },
+        },
+        B: {
+          Monday: { '8:00-9:00': 'ME 498', '9:00-10:00': 'MS 401', '10:00-11:00': 'EI 401 RD/SK)', '3:00-4:00': 'EE 445 (DCD) (G-202)' },
+          Tuesday: { '10:00-11:00': 'PCE-II: EE 437 (TM) (G-313)/ EE 445 (DCD) (G-202)', '1:00-2:00': 'OE-II: EE 483 (TP) (G-313)', '2:00-3:00': 'EE 484 (RD) (G-202)' },
+          Wednesday: { '10:00-11:00': 'MS 401', '11:00-12:00': 'MS 401', '1:00-2:00': 'IC 401 (SB/NBDC) (2103)', '2:00-3:00': 'OE-II: EE 483 (TP) (CIA Classroom)' },
+          Thursday: { '9:00-10:00': 'EE 401 (NS)', '10:00-11:00': 'EE 401 (NS)', '2:00-3:00': 'OE-II: EE 483 (TP)' },
+          Friday: { '8:00-9:00': 'EE 498', '9:00-10:00': 'MS 401', '10:00-11:00': 'MS 401', '1:00-2:00': 'IC 401 (SB/NBDC)' },
+        },
+    },
+    ECE: {
+        A: {
+          Monday: { '8:00-9:00': 'MS 401 (LDS)', '9:00-10:00': 'MS 401', '10:00-11:00': 'EE 401 (NS)', '3:00-4:00': 'EC 482 (PP)' },
+          Tuesday: { '8:00-9:00': 'EC 401 (WA)', '9:00-10:00': 'EC 433 (AN)', '10:00-11:00': 'EC 437 (GSB)', '1:00-2:00': 'EC 481 (TK)', '2:00-3:00': 'EC 482 (PP)', '3:00-4:00': 'Open Elective', '4:00-5:00': 'Open Elective' },
+          Wednesday: { '8:00-9:00': 'MS 401', '9:00-10:00': 'EE 498', '10:00-11:00': 'EC 433 (AN)', '11:00-12:00': 'MS 401', '2:00-3:00': 'Open Elective', '3:00-4:00': 'Open Elective' },
+          Thursday: { '9:00-10:00': 'EC 401 (WA)', '2:00-3:00': 'OE-II: EE 484 (RD) (G-202)', '4:00-5:00': 'EC 437 (GSB)' },
+          Friday: { '8:00-9:00': 'MS 401', '9:00-10:00': 'EC 401 (WA)', '10:00-11:00': 'EC 482 (PP)', '1:00-2:00': 'EC 401 (WA)', '2:00-3:00': 'EC 482 (PP)', '3:00-4:00': 'EC 433 (AN)' },
+        },
+        B: {
+          Monday: { '8:00-9:00': 'EC 436 (BJC)', '10:00-11:00': 'EC 437 (GSB)', '3:00-4:00': 'Open Elective' },
+          Tuesday: { '8:00-9:00': 'EC 436 (BJC)', '9:00-10:00': 'EC 401 (AH)', '1:00-2:00': 'EC 482 (PP)', '3:00-4:00': 'Open Elective', '4:00-5:00': 'Open Elective' },
+          Wednesday: { '8:00-9:00': 'MS 401', '9:00-10:00': 'MS 401', '1:00-2:00': 'EC 436 (BJC) (G201)', '2:00-3:00': 'Open Elective', '3:00-4:00': 'Open Elective' },
+          Thursday: { '9:00-10:00': 'EC 401 (AH)', '1:00-2:00': 'EC 485 (DD)', '2:00-3:00': 'EC 481 (TK)' },
+          Friday: { '8:00-9:00': 'EC 401 (WA)', '9:00-10:00': 'EC 485 (DD)', '10:00-11:00': 'EC 433 (AN)', '11:00-12:00': 'EC 401 (AH)', '1:00-2:00': 'EC 485 (DD)', '3:00-4:00': 'EC 401 (AH)' },
+        },
+    },
+    CSE: {
+        A: {
+          Monday: { '8:00-9:00': 'CS 498 (Project I)', '9:00-10:00': 'MS 401', '10:00-11:00': 'CS434', '11:00-12:00': 'CS 498 (Project I)', '3:00-4:00': 'CS401 (T/A1) (PP)' },
+          Tuesday: { '9:00-10:00': 'CS434(LDS)', '10:00-11:00': 'CS 498 (Project I)', '3:00-4:00': 'CS401(T/A2) (PP)' },
+          Wednesday: { '8:00-9:00': 'CS 401(A) (PP)', '9:00-10:00': 'EE 498', '10:00-11:00': 'CS 498', '1:00-2:00': 'Open Elective' },
+          Thursday: { '8:00-9:00': 'CS 498 (Project I)', '9:00-10:00': 'CS431(SKBiswas)', '10:00-11:00': 'CS 401(A)(PP)', '1:00-2:00': 'CS481(PSN)', '4:00-5:00': 'CS 498 (Project I)' },
+          Friday: { '8:00-9:00': 'CS 498', '9:00-10:00': 'MS 401', '10:00-11:00': 'CS 401(A)(PP)', '11:00-12:00': 'CS431(SKBiswas)', '1:00-2:00': 'CS434(LDS)', '2:00-3:00': 'CS481(PSN)', '3:00-4:00': 'Open Elective', '4:00-5:00': 'CS 498 (Project I)' },
+        },
+        B: {
+          Monday: { '3:00-4:00': 'Open Elective', '4:00-5:00': 'CS401(SP) T/B2 G312' },
+          Tuesday: { '9:00-10:00': 'CS 498 (Project I)', '10:00-11:00': 'G305', '2:00-3:00': 'Open Elective' },
+          Wednesday: { '8:00-9:00': 'CS401(SP)', '1:00-2:00': 'CS481(PSN) (G305)' },
+          Thursday: { '8:00-9:00': 'CS 498 (Project I)', '9:00-10:00': 'CS 401(A)(PP)', '10:00-11:00': 'CS431(SKBiswas)', '2:00-3:00': 'Open Elective', '3:00-4:00': 'Open Elective', '4:00-5:00': 'CS481 (RE)' },
+          Friday: { '8:00-9:00': 'MS 401', '9:00-10:00': 'CS 401(A)(PP)', '11:00-12:00': 'CS401(SP)', '1:00-2:00': 'CS481(PSN)', '2:00-3:00': 'Open Elective', '3:00-4:00': 'Open Elective', '4:00-5:00': 'CS 498 (Project I)' },
+        },
+    },
+    EIE: {
+        '': {
+          Monday: { '8:00-9:00': 'HS 401 (Indo 03)', '9:00-10:00': 'El 498', '10:00-11:00': 'PC EI-II E1 438/El 434 (RH/SC)', '2:00-3:00': 'EI 483 JH/EI 481 KM', '3:00-4:00': 'Open Elective' },
+          Tuesday: { '8:00-9:00': 'El 498', '9:00-10:00': 'EI 401 RD/SK)', '10:00-11:00': 'PC EI-II EI 438/El 434 (RH/SC)', '1:00-2:00': 'EI 483 JH/EI 481 KM' },
+          Wednesday: { '9:00-10:00': 'HS 401 (Indo 03)', '10:00-11:00': 'El 498', '1:00-2:00': 'EI 483 JH/ EI 481 KM' },
+          Thursday: { '9:00-10:00': 'EI 498', '11:00-12:00': 'EI 401 RD/SK)' },
+          Friday: { '8:00-9:00': 'HS 401', '9:00-10:00': 'El 498', '10:00-11:00': 'PC EI-II EI 438/El 434 (RH/SC)' },
+        },
     },
   },
 };
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-const timeSlots = ['8:00-9:00', '9:00-10:00', '10:00-11:00', '11:00-12:00', '1:00-2:00', '2:00-5:00'];
+const timeSlots = ['8:00-9:00', '9:00-12:00', '1:00-2:00', '2:00-5:00', '9:00-10:00', '10:00-11:00', '11:00-12:00', '2:00-3:00', '3:00-4:00', '4:00-5:00'];
 const branches = ['CE', 'ME', 'EE', 'ECE', 'CSE', 'EIE'];
-const branchFullNames: { [key: string]: string } = {
-    CE: 'Civil Engineering',
-    ME: 'Mechanical Engineering',
-    EE: 'Electrical Engineering',
-    ECE: 'Electronics & Communication Engineering',
-    CSE: 'Computer Science & Engineering',
-    EIE: 'Electronics & Instrumentation Engineering',
-};
+
 
 export default function TimetablePage() {
+  const [activeSemester, setActiveSemester] = useState('3');
   const [activeBranch, setActiveBranch] = useState('CSE');
   const [activeSection, setActiveSection] = useState('A');
 
-  const currentBranchSections = Object.keys(timetableData[activeBranch as keyof typeof timetableData]);
-  const hasSections = currentBranchSections.length > 1;
+  const currentSemesterData = timetableData[activeSemester] || {};
+  const currentBranchData = currentSemesterData[activeBranch] || {};
+  const currentBranchSections = Object.keys(currentBranchData);
+  const hasSections = currentBranchSections.length > 1 && !(currentBranchSections.length === 1 && currentBranchSections[0] === '');
+  
+  // A helper function to get all unique time slots for the selected semester
+  const getUniqueTimeSlotsForSemester = (semester: string) => {
+    const slots = new Set<string>();
+    const semesterData = timetableData[semester] || {};
+    for (const branch in semesterData) {
+      for (const section in semesterData[branch]) {
+        for (const day in semesterData[branch][section]) {
+          for (const slot in semesterData[branch][section][day]) {
+            slots.add(slot);
+          }
+        }
+      }
+    }
+    // A bit of custom sorting to make the order logical
+    return Array.from(slots).sort((a, b) => {
+        const aStart = parseInt(a.split(':')[0]);
+        const bStart = parseInt(b.split(':')[0]);
+        if (aStart !== bStart) return aStart - bStart;
+        const aEnd = parseInt(a.split(':')[1].split('-')[0]);
+        const bEnd = parseInt(b.split(':')[1].split('-')[0]);
+        return aEnd - bEnd;
+    });
+  };
+
+  const activeTimeSlots = getUniqueTimeSlotsForSemester(activeSemester);
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -123,11 +297,19 @@ export default function TimetablePage() {
       </h1>
       <Card>
         <CardHeader>
-            <CardTitle>3rd Semester Timetable (July-Dec 2025)</CardTitle>
-            <CardDescription>Select your branch to view the schedule.</CardDescription>
+            <CardTitle>Timetable (July-Dec 2025)</CardTitle>
+            <CardDescription>Select your semester and branch to view the schedule.</CardDescription>
         </CardHeader>
         <CardContent>
-          <Tabs value={activeBranch} onValueChange={setActiveBranch} className="w-full">
+            <Tabs value={activeSemester} onValueChange={(sem) => {setActiveSemester(sem); setActiveBranch('CSE'); setActiveSection('A')}} className="w-full mb-4">
+                <TabsList className="grid w-full grid-cols-3">
+                    <TabsTrigger value="3">3rd Semester</TabsTrigger>
+                    <TabsTrigger value="5">5th Semester</TabsTrigger>
+                    <TabsTrigger value="7">7th Semester</TabsTrigger>
+                </TabsList>
+            </Tabs>
+            
+          <Tabs value={activeBranch} onValueChange={(branch) => {setActiveBranch(branch); setActiveSection(Object.keys(currentSemesterData[branch] || {})[0] || 'A')}} className="w-full">
             <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 mb-4">
                 {branches.map(branch => (
                     <TabsTrigger key={branch} value={branch}>{branch}</TabsTrigger>
@@ -155,13 +337,13 @@ export default function TimetablePage() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {timeSlots.map(slot => (
+                        {activeTimeSlots.map(slot => (
                             <TableRow key={slot}>
                                 <TableCell className="font-medium">{slot}</TableCell>
                                 {days.map(day => {
-                                    const schedule = timetableData[activeBranch as keyof typeof timetableData];
-                                    const sectionSchedule = schedule[activeSection as keyof typeof schedule];
-                                    const daySchedule = sectionSchedule[day as keyof typeof sectionSchedule] || {};
+                                    const sectionKey = hasSections ? activeSection : '';
+                                    const schedule = currentBranchData[sectionKey] || {};
+                                    const daySchedule = schedule[day as keyof typeof schedule] || {};
                                     const classInfo = daySchedule[slot] || '-';
 
                                     return (
@@ -181,3 +363,4 @@ export default function TimetablePage() {
     </div>
   );
 }
+
