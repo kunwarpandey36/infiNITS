@@ -1,6 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const clubs = [
   {
@@ -48,11 +53,18 @@ const clubs = [
 ];
 
 export default function ClubsPage() {
+  const router = useRouter();
+
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        Student Clubs
-      </h1>
+      <div className="flex items-center gap-4 mb-6">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">
+          Student Clubs
+        </h1>
+      </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {clubs.map((club) => (
           <Card key={club.name} className="overflow-hidden transition-all hover:shadow-lg">

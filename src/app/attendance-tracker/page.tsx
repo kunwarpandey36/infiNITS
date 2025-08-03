@@ -1,49 +1,79 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { PlusCircle, Trash2 } from 'lucide-react';
+import { Trash2, ArrowLeft, Bot } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { timetableData } from '@/lib/timetable-data';
+import { useRouter } from 'next/navigation';
 
 interface Subject {
-  id: number;
+  id: string; // Use subject code as ID
   name: string;
   code: string;
   total: number;
   attended: number;
 }
 
-export default function AttendanceTrackerPage() {
-  const [subjects, setSubjects] = useState<Subject[]>([
-    { id: 1, name: 'Data Structures', code: 'CS201', total: 20, attended: 18 },
-    { id: 2, name: 'Algorithms', code: 'CS202', total: 22, attended: 15 },
-  ]);
-  const [newSubjectName, setNewSubjectName] = useState('');
-  const [newSubjectCode, setNewSubjectCode] = useState('');
+const getSubjectsFromTimetable = (semester: string, branch: string, section: string): Subject[] => {
+  const semesterData = timetableData[semester as keyof typeof timetableData];
+  if (!semesterData) return [];
+  const branchData = semesterData[branch as keyof typeof semesterData];
+  if (!branchData) return [];
+  const sectionData = branchData[section as keyof typeof branchData] || branchData['' as keyof typeof branchData];
+  if (!sectionData) return [];
 
-  const handleAddSubject = (e: FormEvent) => {
-    e.preventDefault();
-    if (newSubjectName.trim() === '' || newSubjectCode.trim() === '') return;
-    const newSubject: Subject = {
-      id: Date.now(),
-      name: newSubjectName,
-      code: newSubjectCode,
-      total: 0,
-      attended: 0,
-    };
-    setSubjects([...subjects, newSubject]);
-    setNewSubjectName('');
-    setNewSubjectCode('');
+  const subjects = new Set<string>();
+  Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
+    Object.values(daySchedule).forEach((classInfo) => {
+        // Extract subject code, e.g., "MA 201" from "MA 201 (TA1)"
+        const match = classInfo.match(/^([A-Z]{2}\s?\d{3,})/);
+        if (match) {
+            subjects.add(match[1]);
+        }
+    });
+  });
+
+  return Array.from(subjects).map(code => ({
+    id: code,
+    name: code, // We don't have full names, so use code for now
+    code: code,
+    total: 0,
+    attended: 0,
+  }));
+};
+
+
+export default function AttendanceTrackerPage() {
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [selectedSemester, setSelectedSemester] = useState('3');
+  const [selectedBranch, setSelectedBranch] = useState('CSE');
+  const router = useRouter();
+  
+  const availableBranches = useMemo(() => Object.keys(timetableData[selectedSemester as keyof typeof timetableData] || {}), [selectedSemester]);
+
+  useEffect(() => {
+    if (!availableBranches.includes(selectedBranch)) {
+        setSelectedBranch(availableBranches[0] || '');
+    }
+  }, [selectedSemester, availableBranches, selectedBranch]);
+
+  const handleLoadSubjects = () => {
+    // For simplicity, we'll assume Section A for all. 
+    // This could be enhanced with a section selector.
+    const newSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+    setSubjects(newSubjects);
   };
 
-  const handleDeleteSubject = (id: number) => {
+  const handleDeleteSubject = (id: string) => {
     setSubjects(subjects.filter((s) => s.id !== id));
   };
 
-  const handleAttendanceChange = (id: number, type: 'attended' | 'total', value: number) => {
+  const handleAttendanceChange = (id: string, type: 'attended' | 'total', value: number) => {
     setSubjects(
       subjects.map((s) => (s.id === id ? { ...s, [type]: Math.max(0, value) } : s))
     );
@@ -56,97 +86,120 @@ export default function AttendanceTrackerPage() {
 
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        Attendance Tracker
-      </h1>
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card className="md:col-span-2">
+       <div className="flex items-center gap-4 mb-6">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">
+          Attendance Tracker
+        </h1>
+      </div>
+        <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="font-headline">Your Subjects</CardTitle>
+            <CardTitle className="font-headline">Load Your Subjects</CardTitle>
             <CardDescription>
-              Update your attended and total classes to see your attendance percentage.
+              Select your semester and branch to automatically load your subjects from the timetable.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Subject</TableHead>
-                  <TableHead className="w-[100px]">Attended</TableHead>
-                  <TableHead className="w-[100px]">Total</TableHead>
-                  <TableHead className="w-[200px]">Percentage</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {subjects.map((subject) => {
-                    const percentage = getPercentage(subject.attended, subject.total);
-                    return (
-                        <TableRow key={subject.id}>
-                            <TableCell>
-                                <div className="font-medium">{subject.name}</div>
-                                <div className="text-sm text-muted-foreground">{subject.code}</div>
-                            </TableCell>
-                            <TableCell>
-                                <Input
-                                type="number"
-                                value={subject.attended}
-                                onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value))}
-                                className="w-20"
-                                />
-                            </TableCell>
-                            <TableCell>
-                                <Input
-                                type="number"
-                                value={subject.total}
-                                onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value))}
-                                className="w-20"
-                                />
-                            </TableCell>
-                            <TableCell>
-                                <div className="flex items-center gap-2">
-                                <Progress value={percentage} className="w-full" />
-                                <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : ''}`}>{percentage}%</span>
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-right">
-                                <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
-                                    <Trash2 className="h-4 w-4" />
-                                </Button>
-                            </TableCell>
-                        </TableRow>
-                    );
-                })}
-              </TableBody>
-            </Table>
+          <CardContent className="flex flex-col md:flex-row gap-4 items-end">
+            <div className="grid gap-2 w-full">
+                <label>Semester</label>
+                <Select value={selectedSemester} onValueChange={setSelectedSemester}>
+                    <SelectTrigger>
+                        <SelectValue placeholder="Select Semester" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="3">3rd Semester</SelectItem>
+                        <SelectItem value="5">5th Semester</SelectItem>
+                        <SelectItem value="7">7th Semester</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+             <div className="grid gap-2 w-full">
+                <label>Branch</label>
+                <Select value={selectedBranch} onValueChange={setSelectedBranch} disabled={!availableBranches.length}>
+                    <SelectTrigger>
+                        <SelectValue placeholder="Select Branch" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        {availableBranches.map(branch => (
+                             <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
+            </div>
+            <Button onClick={handleLoadSubjects} className="w-full md:w-auto">
+                <Bot className="mr-2 h-4 w-4" /> Load Subjects
+            </Button>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-headline">Add New Subject</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleAddSubject} className="space-y-4">
-              <Input
-                placeholder="Subject Name"
-                value={newSubjectName}
-                onChange={(e) => setNewSubjectName(e.target.value)}
-                required
-              />
-              <Input
-                placeholder="Subject Code"
-                value={newSubjectCode}
-                onChange={(e) => setNewSubjectCode(e.target.value)}
-                required
-              />
-              <Button type="submit" className="w-full">
-                <PlusCircle className="mr-2 h-4 w-4" /> Add Subject
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-headline">Your Subjects</CardTitle>
+          <CardDescription>
+            Update your attended and total classes to see your attendance percentage.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Subject</TableHead>
+                <TableHead className="w-[100px]">Attended</TableHead>
+                <TableHead className="w-[100px]">Total</TableHead>
+                <TableHead className="w-[200px]">Percentage</TableHead>
+                <TableHead className="text-right">Action</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {subjects.map((subject) => {
+                  const percentage = getPercentage(subject.attended, subject.total);
+                  return (
+                      <TableRow key={subject.id}>
+                          <TableCell>
+                              <div className="font-medium">{subject.name}</div>
+                              <div className="text-sm text-muted-foreground">{subject.code}</div>
+                          </TableCell>
+                          <TableCell>
+                              <Input
+                              type="number"
+                              value={subject.attended}
+                              onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
+                              className="w-20"
+                              />
+                          </TableCell>
+                          <TableCell>
+                              <Input
+                              type="number"
+                              value={subject.total}
+                              onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
+                              className="w-20"
+                              />
+                          </TableCell>
+                          <TableCell>
+                              <div className="flex items-center gap-2">
+                              <Progress value={percentage} className="w-full" />
+                              <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : ''}`}>{percentage}%</span>
+                              </div>
+                          </TableCell>
+                          <TableCell className="text-right">
+                              <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
+                                  <Trash2 className="h-4 w-4" />
+                              </Button>
+                          </TableCell>
+                      </TableRow>
+                  );
+              })}
+            </TableBody>
+          </Table>
+           {subjects.length === 0 && (
+                <div className="text-center py-10 text-muted-foreground">
+                    Please load your subjects to begin tracking.
+                </div>
+            )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

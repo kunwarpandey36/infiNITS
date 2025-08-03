@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Trash2, PlusCircle, Calculator } from 'lucide-react';
+import { Trash2, PlusCircle, Calculator, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface Subject {
   id: number;
@@ -31,6 +32,7 @@ export default function CgpaCalculatorPage() {
         { id: 2, code: 'PH101', credits: 3, yourMarks: 75, topperMarks: 90 },
     ]);
     const [sgpa, setSgpa] = useState<number | null>(null);
+    const router = useRouter();
 
     const handleAddSubject = () => {
         setSubjects([
@@ -84,9 +86,14 @@ export default function CgpaCalculatorPage() {
 
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        Relative CGPA Calculator
-      </h1>
+      <div className="flex items-center gap-4 mb-6">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">
+          Relative CGPA Calculator
+        </h1>
+      </div>
       <Card>
         <CardHeader>
             <CardTitle className="font-headline">Calculate Your SGPA</CardTitle>

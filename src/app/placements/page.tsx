@@ -33,6 +33,9 @@ import {
   Legend,
 } from 'recharts';
 import { Badge } from '@/components/ui/badge';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const placementData22_23 = [
   { branch: 'CE', total: 132, placed: 85, avg: 9.39, median: 7.5, highest: 28.8 },
@@ -190,10 +193,17 @@ const PlacementStatsComponent = ({ data, year }: { data: typeof placementData22_
 };
 
 export default function PlacementsPage() {
+    const router = useRouter();
+
     return (
         <div className="container mx-auto p-4 md:p-8">
-            <h1 className="text-3xl font-bold tracking-tight font-headline mb-2">Placement Statistics</h1>
-            <p className="text-muted-foreground mb-6">Based on RTI response NITS/T&P/125/456 dt. 15 Jul 2024.</p>
+            <div className="flex items-center gap-4 mb-2">
+                 <Button variant="outline" size="icon" onClick={() => router.back()}>
+                    <ArrowLeft className="h-4 w-4" />
+                </Button>
+                <h1 className="text-3xl font-bold tracking-tight font-headline">Placement Statistics</h1>
+            </div>
+            <p className="text-muted-foreground mb-6 ml-14">Based on RTI response NITS/T&P/125/456 dt. 15 Jul 2024.</p>
             <Tabs defaultValue="2023-24" className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="2023-24">2023-24</TabsTrigger>

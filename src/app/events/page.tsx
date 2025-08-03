@@ -1,6 +1,10 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Pin } from 'lucide-react';
+import { Calendar, Pin, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 const events = [
   {
@@ -38,11 +42,18 @@ const events = [
 ];
 
 export default function EventsPage() {
+  const router = useRouter();
+  
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        Upcoming Events
-      </h1>
+       <div className="flex items-center gap-4 mb-6">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">
+          Upcoming Events
+        </h1>
+      </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {events.map((event) => (
           <Card key={event.title} className="flex flex-col">

@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableFooter } from '@/components/ui/table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Banknote } from 'lucide-react';
+import { Banknote, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 const feeData = [
   { "sl_no": 1, "components": "Development fee", "sc_st": "3,000", "general_obc": "3,000", "annual_family_income_less_than_1_lakh": "3,000", "annual_family_income_1_lakh_to_5_lakhs": "3,000", "annual_family_income_greater_than_5_lakhs": "3,000" },
@@ -44,12 +46,18 @@ type CategoryKey = keyof typeof totals & keyof (typeof feeData)[0];
 
 export default function FeesPage() {
     const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('general_obc');
+    const router = useRouter();
 
   return (
     <div className="container mx-auto p-4 md:p-8">
-      <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
-        Institute Fees
-      </h1>
+      <div className="flex items-center gap-4 mb-6">
+        <Button variant="outline" size="icon" onClick={() => router.back()}>
+          <ArrowLeft className="h-4 w-4" />
+        </Button>
+        <h1 className="text-3xl font-bold tracking-tight font-headline">
+          Institute Fees
+        </h1>
+      </div>
       <Card>
         <CardHeader>
             <div className="flex flex-col md:flex-row justify-between md:items-center">
