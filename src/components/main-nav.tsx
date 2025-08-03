@@ -56,13 +56,12 @@ export function MainNav() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/dashboard" legacyBehavior passHref>
-              <NavigationMenuLink
-                className={cn(
-                  navigationMenuTriggerStyle(),
-                  pathname === '/dashboard' ? 'bg-accent' : ''
-                )}
-              >
-                Dashboard
+              <NavigationMenuLink asChild>
+                 <a
+                  className={cn(navigationMenuTriggerStyle(), pathname === '/dashboard' ? 'bg-accent' : '')}
+                >
+                  Dashboard
+                </a>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
