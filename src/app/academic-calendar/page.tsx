@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
+import { Separator } from '@/components/ui/separator';
 
 const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
@@ -46,73 +45,70 @@ const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event'
   '2026-07-12': { title: 'Summer Break Ends', type: 'holiday' },
 };
 
+const sortedEvents = Object.entries(events).sort(([dateA], [dateB]) => new Date(dateA).getTime() - new Date(dateB).getTime());
+
+const oddSemesterEvents = sortedEvents.filter(([date]) => new Date(date).getFullYear() === 2025);
+const evenSemesterEvents = sortedEvents.filter(([date]) => new Date(date).getFullYear() === 2026);
+
 
 export default function AcademicCalendarPage() {
-  const [date, setDate] = useState<Date | undefined>(new Date('2025-07-21'));
-
-  const selectedEvent = date ? events[format(date, 'yyyy-MM-dd')] : null;
+  const EventItem = ({ date, event }: { date: string, event: { title: string; type: 'holiday' | 'exam' | 'event' }}) => (
+    <div className="flex items-center justify-between py-3">
+        <div>
+            <p className="font-medium">{event.title}</p>
+            <p className="text-sm text-muted-foreground">{format(parseISO(date), 'MMMM d, yyyy')}</p>
+        </div>
+        <Badge variant={event.type === 'exam' ? 'destructive' : event.type === 'holiday' ? 'default' : 'secondary'}>
+            {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
+        </Badge>
+    </div>
+  );
 
   return (
     <div className="container mx-auto p-4 md:p-8">
       <h1 className="text-3xl font-bold tracking-tight font-headline mb-6">
         Academic Calendar
       </h1>
-      <div className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-2">
-            <CardContent className="p-0">
-                <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    className="p-0"
-                    classNames={{
-                        day_selected: "bg-primary text-primary-foreground hover:bg-primary/90 focus:bg-primary/90",
-                        day_today: "bg-accent text-accent-foreground",
-                    }}
-                    components={{
-                      DayContent: ({ date }) => {
-                        const event = events[format(date, 'yyyy-MM-dd')];
-                        if (event) {
-                          return (
-                            <div className="relative h-full w-full flex items-center justify-center">
-                               <span>{date.getDate()}</span>
-                               <div className={`absolute bottom-1 w-1 h-1 rounded-full ${
-                                    event.type === 'holiday' ? 'bg-green-500' :
-                                    event.type === 'exam' ? 'bg-red-500' :
-                                    'bg-blue-500'
-                                }`}></div>
-                            </div>
-                          );
-                        }
-                        return <span>{date.getDate()}</span>;
-                      },
-                    }}
-                />
+      <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+        <Card>
+            <CardHeader>
+                <CardTitle className="font-headline">Odd Semester (2025)</CardTitle>
+                <CardDescription>July 2025 - December 2025</CardDescription>
+            </CardHeader>
+            <CardContent>
+                {oddSemesterEvents.map(([date, event], index) => (
+                   <div key={date}>
+                     <EventItem date={date} event={event} />
+                     {index < oddSemesterEvents.length - 1 && <Separator />}
+                   </div>
+                ))}
             </CardContent>
         </Card>
         <Card>
             <CardHeader>
-                <CardTitle className="font-headline">
-                    {date ? format(date, 'PPP') : 'Select a date'}
-                </CardTitle>
+                <CardTitle className="font-headline">Even Semester (2026)</CardTitle>
+                <CardDescription>January 2026 - July 2026</CardDescription>
             </CardHeader>
             <CardContent>
-                {selectedEvent ? (
-                    <div>
-                        <Badge variant={selectedEvent.type === 'exam' ? 'destructive' : selectedEvent.type === 'holiday' ? 'default' : 'secondary'}>{selectedEvent.type.charAt(0).toUpperCase() + selectedEvent.type.slice(1)}</Badge>
-                        <p className="mt-2 text-lg">{selectedEvent.title}</p>
+                {evenSemesterEvents.map(([date, event], index) => (
+                    <div key={date}>
+                        <EventItem date={date} event={event} />
+                        {index < evenSemesterEvents.length - 1 && <Separator />}
                     </div>
-                ) : (
-                    <p className="text-muted-foreground">No events for this day.</p>
-                )}
-                 <div className="mt-6 space-y-2 text-sm">
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-red-500"/> Exam</div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-green-500"/> Holiday</div>
-                    <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-blue-500"/> Event</div>
-                 </div>
+                ))}
             </CardContent>
         </Card>
       </div>
+       <Card className="mt-8">
+            <CardHeader>
+                <CardTitle className="font-headline">Legend</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2"><Badge variant="destructive">Exam</Badge><span>Mid-semester and End-semester examinations.</span></div>
+                <div className="flex items-center gap-2"><Badge variant="default">Holiday</Badge><span>Semester breaks and holidays.</span></div>
+                <div className="flex items-center gap-2"><Badge variant="secondary">Event</Badge><span>Registrations, fests, and other college events.</span></div>
+            </CardContent>
+        </Card>
     </div>
   );
 }
