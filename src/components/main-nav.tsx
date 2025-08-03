@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -56,12 +57,13 @@ export function MainNav() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/dashboard" legacyBehavior passHref>
-              <NavigationMenuLink asChild>
-                 <a
-                  className={cn(navigationMenuTriggerStyle(), pathname === '/dashboard' ? 'bg-accent' : '')}
-                >
-                  Dashboard
-                </a>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  pathname === '/dashboard' ? 'bg-accent' : ''
+                )}
+              >
+                Dashboard
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
