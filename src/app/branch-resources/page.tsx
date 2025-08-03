@@ -1,35 +1,80 @@
 'use client';
 
+import { useState, useMemo, useEffect } from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, ArrowLeft } from 'lucide-react';
+import { FileText, ArrowLeft, Bot } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { timetableData } from '@/lib/timetable-data';
 
-const branches = [
-  { name: 'Computer Science & Engineering', value: 'cse' },
-  { name: 'Mechanical Engineering', value: 'me' },
-  { name: 'Civil Engineering', value: 'ce' },
-  { name: 'Electrical Engineering', value: 'ee' },
-  { name: 'Electronics & Communication Engineering', value: 'ece' },
-  { name: 'Electronics & Instrumentation Engineering', value: 'eie' },
-];
+interface Subject {
+    code: string;
+    name: string;
+}
 
-const semesters = Array.from({ length: 8 }, (_, i) => `Semester ${i + 1}`);
+const getSubjectsFromTimetable = (semester: string, branch: string, section: string): Subject[] => {
+    const semesterData = timetableData[semester as keyof typeof timetableData];
+    if (!semesterData) return [];
+    const branchData = semesterData[branch as keyof typeof semesterData];
+    if (!branchData) return [];
+    // Use section 'A' as a default or the first available section if 'A' doesn't exist
+    const sections = Object.keys(branchData);
+    const selectedSection = sections.includes(section) ? section : sections[0];
+    const sectionData = branchData[selectedSection as keyof typeof branchData] || branchData['' as keyof typeof branchData];
+    if (!sectionData) return [];
+  
+    const subjects = new Set<string>();
+    Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
+      Object.values(daySchedule).forEach((classInfo) => {
+          // Extract subject code, e.g., "MA 201" from "MA 201 (TA1)"
+          const match = classInfo.match(/^([A-Z]{2}\s?\d{3,})/);
+          if (match) {
+              subjects.add(match[1].trim());
+          }
+      });
+    });
+  
+    return Array.from(subjects).map(code => ({
+      code: code,
+      name: code, // We can expand this later if we have a mapping of codes to full names
+    }));
+  };
+  
 
 export default function BranchResourcesPage() {
   const router = useRouter();
+  const [selectedSemester, setSelectedSemester] = useState('3');
+  const [selectedBranch, setSelectedBranch] = useState('CSE');
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  
+  const availableBranches = useMemo(() => {
+    const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
+    return semesterData ? Object.keys(semesterData) : [];
+  }, [selectedSemester]);
+
+  // Adjust selected branch if it's not available in the new semester
+  useEffect(() => {
+    if (!availableBranches.includes(selectedBranch)) {
+      setSelectedBranch(availableBranches[0] || '');
+    }
+  }, [selectedSemester, availableBranches, selectedBranch]);
+
+  useEffect(() => {
+    if(selectedBranch) {
+        // We'll use section 'A' as a default for fetching resources.
+        const loadedSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+        setSubjects(loadedSubjects);
+    } else {
+        setSubjects([]);
+    }
+  }, [selectedSemester, selectedBranch]);
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -43,55 +88,63 @@ export default function BranchResourcesPage() {
       </div>
       <Card>
         <CardHeader>
-          <CardTitle className="font-headline">Find Your Resources</CardTitle>
+          <CardTitle className="font-headline">Find Your Subjects</CardTitle>
           <CardDescription>
-            Select your branch and semester to find notes, previous year papers, and other materials.
+            Select your semester and branch to find the subjects for your course.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Accordion type="single" collapsible className="w-full">
-            {branches.map((branch) => (
-              <AccordionItem value={branch.value} key={branch.value}>
-                <AccordionTrigger className="text-lg font-medium font-headline">{branch.name}</AccordionTrigger>
-                <AccordionContent>
-                  <Tabs defaultValue="semester-1" className="w-full">
-                    <TabsList className="grid w-full grid-cols-4 md:grid-cols-8">
-                      {semesters.map((sem, index) => (
-                        <TabsTrigger key={sem} value={`semester-${index + 1}`}>
-                          Sem {index + 1}
-                        </TabsTrigger>
-                      ))}
-                    </TabsList>
-                    {semesters.map((sem, index) => (
-                        <TabsContent key={sem} value={`semester-${index + 1}`}>
-                            <Card className="mt-4">
-                                <CardHeader>
-                                    <CardTitle>Resources for {sem}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-3">
-                                        <li className="flex items-center gap-3">
-                                            <FileText className="h-5 w-5 text-primary" />
-                                            <a href="#" className="hover:underline">Subject 1 Notes</a>
-                                        </li>
-                                        <li className="flex items-center gap-3">
-                                            <FileText className="h-5 w-5 text-primary" />
-                                            <a href="#" className="hover:underline">Subject 2 PYQs</a>
-                                        </li>
-                                        <li className="flex items-center gap-3">
-                                            <FileText className="h-5 w-5 text-primary" />
-                                            <a href="#" className="hover:underline">Lab Manual</a>
-                                        </li>
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                      </TabsContent>
-                    ))}
-                  </Tabs>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+            <div className="flex flex-col md:flex-row gap-4 items-end mb-6">
+                <div className="grid gap-2 w-full">
+                    <label>Semester</label>
+                    <Select value={selectedSemester} onValueChange={setSelectedSemester}>
+                        <SelectTrigger>
+                            <SelectValue placeholder="Select Semester" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="3">3rd Semester</SelectItem>
+                            <SelectItem value="5">5th Semester</SelectItem>
+                            <SelectItem value="7">7th Semester</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+                <div className="grid gap-2 w-full">
+                    <label>Branch</label>
+                    <Select value={selectedBranch} onValueChange={setSelectedBranch} disabled={!availableBranches.length}>
+                        <SelectTrigger>
+                            <SelectValue placeholder="Select Branch" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {availableBranches.map(branch => (
+                                <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
+                </div>
+            </div>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Subjects for {selectedBranch} - {selectedSemester}{['st', 'nd', 'rd'][parseInt(selectedSemester)-1] || 'th'} Semester</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    {subjects.length > 0 ? (
+                        <ul className="space-y-3">
+                            {subjects.map(subject => (
+                                <li key={subject.code} className="flex items-center gap-3 p-3 bg-muted rounded-md">
+                                    <FileText className="h-5 w-5 text-primary" />
+                                    <span>{subject.name} ({subject.code})</span>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <div className="text-center py-10 text-muted-foreground">
+                            <p>Select a semester and branch to see the subjects.</p>
+                        </div>
+                    )}
+                </CardContent>
+            </Card>
+
         </CardContent>
       </Card>
     </div>
