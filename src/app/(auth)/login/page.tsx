@@ -50,7 +50,7 @@ export default function LoginPage() {
         title: 'Login Successful',
         description: `Welcome, ${scholarId}!`,
       });
-      router.push('/');
+      router.push('/dashboard');
     }, 1000);
   };
 
@@ -61,7 +61,7 @@ export default function LoginPage() {
           <div className="flex justify-center items-center gap-2 mb-4">
             <BookOpen className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold font-headline">
-                Infini<span className="text-primary">TS</span>
+                infi<span className="text-primary">NITS</span>
             </h1>
           </div>
           <CardTitle className="font-headline">Welcome Back!</CardTitle>

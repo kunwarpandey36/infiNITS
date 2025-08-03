@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'InfiniTS Hub',
+  title: 'infiNITS Hub',
   description: 'Your NIT Silchar student companion.',
 };
 

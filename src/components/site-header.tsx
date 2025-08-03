@@ -29,7 +29,7 @@ export function SiteHeader() {
         <Link href="/dashboard" className="mr-6 flex items-center space-x-2">
           <BookOpen className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block font-headline text-lg">
-            Infini<span className="text-primary">TS</span>
+            infi<span className="text-primary">NITS</span>
           </span>
         </Link>
         <MainNav />
