@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Sun, Moon, BookOpen } from 'lucide-react';
+import { Sun, Moon, Home } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MainNav } from './main-nav';
@@ -27,7 +27,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Link href="/dashboard" className="mr-6 flex items-center space-x-2">
-          <BookOpen className="h-6 w-6 text-primary" />
+          <Home className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block font-headline text-lg">
             infi<span className="text-primary">NITS</span>
           </span>

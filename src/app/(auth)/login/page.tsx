@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { BookOpen, Loader2 } from 'lucide-react';
+import { Home, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
-            <BookOpen className="h-8 w-8 text-primary" />
+            <Home className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold font-headline">
                 infi<span className="text-primary">NITS</span>
             </h1>
