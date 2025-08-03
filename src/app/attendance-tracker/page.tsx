@@ -153,8 +153,8 @@ export default function AttendanceTrackerPage() {
             <TableHeader>
               <TableRow>
                 <TableHead>Subject</TableHead>
-                <TableHead className="w-[150px]">Attended</TableHead>
                 <TableHead className="w-[150px]">Total</TableHead>
+                <TableHead className="w-[150px]">Attended</TableHead>
                 <TableHead className="w-[200px]">Percentage</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
@@ -174,18 +174,6 @@ export default function AttendanceTrackerPage() {
                           </TableCell>
                           <TableCell>
                             <div className="flex items-center gap-2">
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
-                                <Input
-                                    type="number"
-                                    value={subject.attended}
-                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
-                                    className="w-16 text-center"
-                                />
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
                                 <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
                                 <Input
                                     type="number"
@@ -194,6 +182,18 @@ export default function AttendanceTrackerPage() {
                                     className="w-16 text-center"
                                 />
                                 <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
+                                <Input
+                                    type="number"
+                                    value={subject.attended}
+                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
+                                    className="w-16 text-center"
+                                />
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
                             </div>
                           </TableCell>
                           <TableCell>

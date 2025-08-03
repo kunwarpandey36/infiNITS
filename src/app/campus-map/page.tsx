@@ -1,39 +1,63 @@
 'use client';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, MapPin, ExternalLink } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
-
-export default function CampusMapPage() {
+export default function CollegeMapPage() {
   const router = useRouter();
+  const mapEmbedUrl = "https://drive.google.com/file/d/1IDUgXQ0StK9lT9-yBNQWw4EpFF4cDlMt/preview";
+  const mapDirectUrl = "https://drive.google.com/file/d/1IDUgXQ0StK9lT9-yBNQWw4EpFF4cDlMt/view?usp=sharing";
 
   return (
-    <div className="container mx-auto p-4 md:p-8">
-      <div className="flex items-center gap-4 mb-6">
-        <Button variant="outline" size="icon" onClick={() => router.back()}>
-          <ArrowLeft className="h-4 w-4" />
-        </Button>
-        <h1 className="text-3xl font-bold tracking-tight font-headline">
-          Campus Map
+    <div className="container mx-auto p-4 md:p-8 space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold flex items-center font-headline">
+          <MapPin className="mr-3 h-8 w-8 text-primary" />
+          College Map
         </h1>
+        <Button variant="outline" onClick={() => router.back()}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back
+        </Button>
       </div>
-      <Card>
+
+      <Card className="shadow-lg">
         <CardHeader>
-          <CardTitle className="font-headline">NIT Silchar Campus</CardTitle>
-          <CardDescription>A visual guide to navigate the campus.</CardDescription>
+          <CardTitle>NIT Silchar Campus Map</CardTitle>
+          <CardDescription>
+            An interactive map of the campus. The map is embedded from Google Drive.
+            If it doesn't load or interact as expected, you can try opening it directly.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="aspect-[16/9] md:aspect-[21/9] w-full">
+          <iframe
+            src={mapEmbedUrl}
+            width="100%"
+            height="100%"
+            className="rounded-md border"
+            title="NIT Silchar Campus Map"
+          ></iframe>
+        </CardContent>
+      </Card>
+       <Card className="mt-4">
+        <CardHeader>
+          <CardTitle className="text-lg">Viewing Options</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="relative w-full h-[60vh] rounded-lg overflow-hidden border">
-             <Image
-                src="https://placehold.co/1200x800.png"
-                alt="Campus Map"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="college campus map"
-            />
-          </div>
+          <p className="text-sm text-muted-foreground mb-3">
+            If the embedded map is not ideal, or for a full-screen experience, please use the direct link below:
+          </p>
+          <a
+            href={mapDirectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="secondary">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Open Map in New Tab (Google Drive)
+            </Button>
+          </a>
         </CardContent>
       </Card>
     </div>
