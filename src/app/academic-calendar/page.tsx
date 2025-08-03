@@ -7,20 +7,48 @@ import { Badge } from '@/components/ui/badge';
 import { format } from 'date-fns';
 
 const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
-  '2024-08-15': { title: 'Independence Day', type: 'holiday' },
-  '2024-09-05': { title: 'Teachers\' Day', type: 'event' },
-  '2024-09-16': { title: 'Mid Semester Exams Begin', type: 'exam' },
-  '2024-09-21': { title: 'Mid Semester Exams End', type: 'exam' },
-  '2024-10-02': { title: 'Gandhi Jayanti', type: 'holiday' },
-  '2024-11-01': { title: 'Diwali Break', type: 'holiday' },
-  '2024-12-02': { title: 'End Semester Exams Begin', type: 'exam' },
-  '2024-12-14': { title: 'End Semester Exams End', type: 'exam' },
-  '2024-12-25': { title: 'Christmas', type: 'holiday' },
+  '2025-07-21': { title: 'Semester Registration', type: 'event' },
+  '2025-07-22': { title: 'Semester Registration', type: 'event' },
+  '2025-07-23': { title: 'Semester Registration', type: 'event' },
+  '2025-07-24': { title: 'First Day of Instructions', type: 'event' },
+  '2025-07-30': { title: 'Late Registration (with fine) ends', type: 'event' },
+  '2025-08-25': { title: 'First Monthly Attendance Report', type: 'event' },
+  '2025-09-19': { title: 'Mid-Semester Examination Begins', type: 'exam' },
+  '2025-09-28': { title: 'Mid-Semester Examination Ends', type: 'exam' },
+  '2025-10-30': { title: 'Technoesis Begins', type: 'event' },
+  '2025-11-02': { title: 'Technoesis Ends', type: 'event' },
+  '2025-11-15': { title: '23rd Convocation (tentative)', type: 'event' },
+  '2025-11-21': { title: 'End-Semester Lab Exams Begin', type: 'exam' },
+  '2025-11-28': { title: 'Last Date of Instructions & End-Semester Lab Exams End', type: 'event' },
+  '2025-12-01': { title: 'End-Semester Theory Examinations Begin', type: 'exam' },
+  '2025-12-09': { title: 'End-Semester Theory Examinations End', type: 'exam' },
+  '2025-12-15': { title: 'Winter Break Begins', type: 'holiday' },
+  '2025-12-23': { title: 'End-Semester Results Declaration', type: 'event' },
+  '2026-01-04': { title: 'Winter Break Ends', type: 'holiday' },
+  '2026-01-05': { title: 'Even Semester Registration', type: 'event' },
+  '2026-01-06': { title: 'Even Semester Registration', type: 'event' },
+  '2026-01-07': { title: 'Even Semester Registration', type: 'event' },
+  '2026-01-08': { title: 'First Day of Instructions', type: 'event' },
+  '2026-01-16': { title: 'Late Registration (with fine) ends', type: 'event' },
+  '2026-01-31': { title: 'First Monthly Attendance Report', type: 'event' },
+  '2026-02-05': { title: 'Incandescence Begins', type: 'event' },
+  '2026-02-08': { title: 'Incandescence Ends', type: 'event' },
+  '2026-02-23': { title: 'Mid-Semester Examination (Theory) Begins', type: 'exam' },
+  '2026-03-02': { title: 'Mid-Semester Examination (Theory) Ends', type: 'exam' },
+  '2026-03-05': { title: 'Mid-Semester Project Evaluation', type: 'event' },
+  '2026-04-24': { title: 'End-Semester Lab Exams Begin', type: 'exam' },
+  '2026-05-01': { title: 'Last Date of Instructions & End-Semester Lab Exams End', type: 'event' },
+  '2026-05-04': { title: 'End-Semester Theory Examinations Begin', type: 'exam' },
+  '2026-05-12': { title: 'End-Semester Theory Examinations End', type: 'exam' },
+  '2026-05-13': { title: 'Summer Break Begins', type: 'holiday' },
+  '2026-05-18': { title: 'End-Semester Project Completion', type: 'event' },
+  '2026-05-29': { title: 'End-Semester Results Declaration', type: 'event' },
+  '2026-07-12': { title: 'Summer Break Ends', type: 'holiday' },
 };
 
 
 export default function AcademicCalendarPage() {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date('2025-07-21'));
 
   const selectedEvent = date ? events[format(date, 'yyyy-MM-dd')] : null;
 
@@ -71,7 +99,7 @@ export default function AcademicCalendarPage() {
             <CardContent>
                 {selectedEvent ? (
                     <div>
-                        <Badge variant={selectedEvent.type === 'exam' ? 'destructive' : 'default'}>{selectedEvent.type.charAt(0).toUpperCase() + selectedEvent.type.slice(1)}</Badge>
+                        <Badge variant={selectedEvent.type === 'exam' ? 'destructive' : selectedEvent.type === 'holiday' ? 'default' : 'secondary'}>{selectedEvent.type.charAt(0).toUpperCase() + selectedEvent.type.slice(1)}</Badge>
                         <p className="mt-2 text-lg">{selectedEvent.title}</p>
                     </div>
                 ) : (
