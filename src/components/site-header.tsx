@@ -19,7 +19,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   // Do not show header on the login page
-  if (pathname === '/') {
+  if (pathname === '/login' || pathname === '/') {
     return null;
   }
 
