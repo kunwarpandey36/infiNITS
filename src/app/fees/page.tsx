@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -62,7 +63,7 @@ export default function FeesPage() {
         <CardHeader>
             <div className="flex flex-col md:flex-row justify-between md:items-center">
                 <div>
-                    <CardTitle className="font-headline">B.Tech First Semester Fee Structure</CardTitle>
+                    <CardTitle className="font-headline">B.Tech Odd Semester Fee Structure</CardTitle>
                     <CardDescription>
                         Select your category to view the detailed fee breakdown.
                     </CardDescription>
@@ -138,3 +139,5 @@ export default function FeesPage() {
     </div>
   );
 }
+
+    

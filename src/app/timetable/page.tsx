@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -40,8 +41,13 @@ export default function TimetablePage() {
     }
     // A bit of custom sorting to make the order logical
     return Array.from(slots).sort((a, b) => {
-        const aStart = parseInt(a.split(':')[0]);
-        const bStart = parseInt(b.split(':')[0]);
+        let aStart = parseInt(a.split(':')[0]);
+        let bStart = parseInt(b.split(':')[0]);
+        
+        // Convert to 24-hour format for comparison (1-5 PM become 13-17)
+        if (aStart >= 1 && aStart <= 5) aStart += 12;
+        if (bStart >= 1 && bStart <= 5) bStart += 12;
+
         if (aStart !== bStart) return aStart - bStart;
         
         const aEndPart = a.split('-')[1];
@@ -49,8 +55,12 @@ export default function TimetablePage() {
 
         if(!aEndPart || !bEndPart) return 0;
 
-        const aEnd = parseInt(aEndPart.split(':')[0]);
-        const bEnd = parseInt(bEndPart.split(':')[0]);
+        let aEnd = parseInt(aEndPart.split(':')[0]);
+        let bEnd = parseInt(bEndPart.split(':')[0]);
+
+        if (aEnd >= 1 && aEnd <= 5) aEnd += 12;
+        if (bEnd >= 1 && bEnd <= 5) bEnd += 12;
+
         return aEnd - bEnd;
     });
   };
@@ -140,3 +150,5 @@ export default function TimetablePage() {
     </div>
   );
 }
+
+    
