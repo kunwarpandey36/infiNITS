@@ -2,8 +2,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, isPast } from 'date-fns';
 import { Separator } from '@/components/ui/separator';
+import { useEffect, useState } from 'react';
 
 const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
@@ -52,17 +53,34 @@ const evenSemesterEvents = sortedEvents.filter(([date]) => new Date(date).getFul
 
 
 export default function AcademicCalendarPage() {
-  const EventItem = ({ date, event }: { date: string, event: { title: string; type: 'holiday' | 'exam' | 'event' }}) => (
-    <div className="flex items-center justify-between py-3">
-        <div>
-            <p className="font-medium">{event.title}</p>
-            <p className="text-sm text-muted-foreground">{format(parseISO(date), 'MMMM d, yyyy')}</p>
-        </div>
-        <Badge variant={event.type === 'exam' ? 'destructive' : event.type === 'holiday' ? 'default' : 'secondary'}>
-            {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
-        </Badge>
-    </div>
-  );
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const EventItem = ({ date, event }: { date: string, event: { title: string; type: 'holiday' | 'exam' | 'event' }}) => {
+    const eventIsPast = isClient ? isPast(parseISO(date)) : false;
+
+    return (
+      <div className="flex items-center justify-between py-3">
+          <div className="flex items-center gap-4">
+            {isClient && (
+               <Badge variant={eventIsPast ? 'default' : 'destructive'} className={cn(eventIsPast ? "bg-green-500 hover:bg-green-500/80" : "bg-red-500 hover:bg-red-500/80", "w-20 justify-center")}>
+                {eventIsPast ? 'Past' : 'Upcoming'}
+              </Badge>
+            )}
+            <div>
+              <p className="font-medium">{event.title}</p>
+              <p className="text-sm text-muted-foreground">{format(parseISO(date), 'MMMM d, yyyy')}</p>
+            </div>
+          </div>
+          <Badge variant={event.type === 'exam' ? 'destructive' : event.type === 'holiday' ? 'default' : 'secondary'}>
+              {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
+          </Badge>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto p-4 md:p-8">
