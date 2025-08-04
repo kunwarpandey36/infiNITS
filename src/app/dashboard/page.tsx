@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
   Card,
@@ -22,9 +23,16 @@ import {
   TrendingUp,
   Clock,
   Mail,
+  User,
 } from 'lucide-react';
 
 const features = [
+  {
+    title: 'Profile',
+    href: '/profile',
+    icon: <User className="h-8 w-8 text-primary" />,
+    description: 'View your personal profile.',
+  },
   {
     title: 'Academic Calendar',
     href: '/academic-calendar',

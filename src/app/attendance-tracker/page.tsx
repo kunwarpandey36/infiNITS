@@ -1,12 +1,13 @@
+
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Trash2, ArrowLeft, Bot, PlusCircle, Plus, Minus } from 'lucide-react';
+import { Trash2, ArrowLeft, PlusCircle, Plus, Minus } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { timetableData } from '@/lib/timetable-data';
 import { useRouter } from 'next/navigation';
@@ -58,6 +59,35 @@ export default function AttendanceTrackerPage() {
   
   const availableBranches = useMemo(() => Object.keys(timetableData[selectedSemester as keyof typeof timetableData] || {}), [selectedSemester]);
 
+  const storageKey = useMemo(() => `attendance-${selectedSemester}-${selectedBranch}`, [selectedSemester, selectedBranch]);
+
+  // Load from localStorage
+  useEffect(() => {
+    const savedSubjects = localStorage.getItem(storageKey);
+    if (savedSubjects) {
+      setSubjects(JSON.parse(savedSubjects));
+    }
+  }, [storageKey]);
+  
+  // Save to localStorage
+  useEffect(() => {
+    if (subjects.length > 0) {
+        localStorage.setItem(storageKey, JSON.stringify(subjects));
+    }
+  }, [subjects, storageKey]);
+
+
+  const handleLoadSubjects = useCallback(() => {
+    const savedSubjects = localStorage.getItem(storageKey);
+    if (savedSubjects) {
+      setSubjects(JSON.parse(savedSubjects));
+    } else {
+       // For simplicity, we'll assume Section A for all. 
+       const newSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+       setSubjects(newSubjects);
+    }
+  }, [selectedSemester, selectedBranch, storageKey]);
+
   useEffect(() => {
     if (student) {
       setSelectedSemester(student.semester);
@@ -69,20 +99,13 @@ export default function AttendanceTrackerPage() {
     if (selectedBranch && selectedSemester) {
       handleLoadSubjects();
     }
-  }, [selectedBranch, selectedSemester]);
+  }, [selectedBranch, selectedSemester, handleLoadSubjects]);
   
   useEffect(() => {
     if (!availableBranches.includes(selectedBranch)) {
         setSelectedBranch(availableBranches[0] || '');
     }
   }, [selectedSemester, availableBranches, selectedBranch]);
-
-  const handleLoadSubjects = () => {
-    // For simplicity, we'll assume Section A for all. 
-    // This could be enhanced with a section selector.
-    const newSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
-    setSubjects(newSubjects);
-  };
 
   const handleDeleteSubject = (id: string) => {
     setSubjects(subjects.filter((s) => s.id !== id));
@@ -120,7 +143,7 @@ export default function AttendanceTrackerPage() {
           <CardHeader>
             <CardTitle className="font-headline">Your Subjects</CardTitle>
             <CardDescription>
-              Your subjects are loaded automatically based on your profile. You can also change the selection.
+              Your subjects are loaded automatically based on your profile. You can also change the selection. Your attendance data is saved locally in your browser.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row gap-4 items-end">

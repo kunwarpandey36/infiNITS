@@ -30,9 +30,11 @@ import {
   Mail,
   BookOpen,
   Theater,
+  User,
 } from 'lucide-react';
 
 const components: { title: string; href: string; description: string, icon: React.ReactNode }[] = [
+    { href: '/profile', title: 'Profile', icon: <User />, description: 'View your personal profile.' },
     { href: '/academic-calendar', title: 'Academic Calendar', icon: <Calendar />, description: 'View important dates and events.' },
     { href: '/attendance-tracker', title: 'Attendance', icon: <CheckSquare />, description: 'Track your class attendance.' },
     { href: '/branch-resources', title: 'Resources', icon: <Library />, description: 'Access notes and materials.' },
