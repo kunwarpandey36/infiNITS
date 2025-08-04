@@ -48,10 +48,15 @@ export default function LoginPage() {
     const branchCode = parseInt(scholarId.substring(4, 5), 10);
     const currentYear = new Date().getFullYear() % 100;
     
-    let semester = '1';
-    if (currentYear - year === 1) semester = '3';
-    if (currentYear - year === 2) semester = '5';
-    if (currentYear - year === 3) semester = '7';
+    let semester = '1'; // Default for unknown year
+    const yearDiff = currentYear - year;
+    if (yearDiff === 0) semester = '1';
+    else if (yearDiff === 1) semester = '3';
+    else if (yearDiff === 2) semester = '5';
+    else if (yearDiff === 3) semester = '7';
+    // Fallback for older batches
+    else if (yearDiff > 3) semester = '7';
+
 
     const branches: { [key: number]: string } = { 1: 'CE', 2: 'CSE', 3: 'EE', 4: 'ECE', 5: 'EIE', 6: 'ME' };
     const branch = branches[branchCode] || 'Unknown';

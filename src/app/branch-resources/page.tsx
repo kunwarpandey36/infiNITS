@@ -46,8 +46,8 @@ const getSubjectsFromTimetable = (semester: string, branch: string, section: str
 export default function BranchResourcesPage() {
   const router = useRouter();
   const student = useStudentData();
-  const [selectedSemester, setSelectedSemester] = useState('3');
-  const [selectedBranch, setSelectedBranch] = useState('CSE');
+  const [selectedSemester, setSelectedSemester] = useState('');
+  const [selectedBranch, setSelectedBranch] = useState('');
   const [subjects, setSubjects] = useState<Subject[]>([]);
   
   const availableBranches = useMemo(() => {
@@ -64,13 +64,13 @@ export default function BranchResourcesPage() {
 
   // Adjust selected branch if it's not available in the new semester
   useEffect(() => {
-    if (!availableBranches.includes(selectedBranch)) {
-      setSelectedBranch(availableBranches[0] || '');
+    if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
+      setSelectedBranch(availableBranches[0]);
     }
   }, [selectedSemester, availableBranches, selectedBranch]);
 
   useEffect(() => {
-    if(selectedBranch) {
+    if(selectedBranch && selectedSemester) {
         // We'll use section 'A' as a default for fetching resources.
         const loadedSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
         setSubjects(loadedSubjects);
@@ -105,6 +105,7 @@ export default function BranchResourcesPage() {
                             <SelectValue placeholder="Select Semester" />
                         </SelectTrigger>
                         <SelectContent>
+                            <SelectItem value="1">1st Semester</SelectItem>
                             <SelectItem value="3">3rd Semester</SelectItem>
                             <SelectItem value="5">5th Semester</SelectItem>
                             <SelectItem value="7">7th Semester</SelectItem>

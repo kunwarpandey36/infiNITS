@@ -59,35 +59,35 @@ export default function CgpaCalculatorPage() {
     const [subjects, setSubjects] = useState<Subject[]>([]);
     const [sgpa, setSgpa] = useState<number | null>(null);
     const router = useRouter();
-    const [selectedSemester, setSelectedSemester] = useState('3');
-    const [selectedBranch, setSelectedBranch] = useState('CSE');
+    const [selectedSemester, setSelectedSemester] = useState('');
+    const [selectedBranch, setSelectedBranch] = useState('');
 
     const availableBranches = useMemo(() => {
         const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
         return semesterData ? Object.keys(semesterData) : [];
       }, [selectedSemester]);
 
-      useEffect(() => {
-        if (student) {
-          setSelectedSemester(student.semester);
-          setSelectedBranch(student.branch);
-        }
-      }, [student]);
-    
-      useEffect(() => {
-        if (!availableBranches.includes(selectedBranch)) {
-          setSelectedBranch(availableBranches[0] || '');
-        }
-      }, [selectedSemester, availableBranches, selectedBranch]);
+    useEffect(() => {
+      if (student) {
+        setSelectedSemester(student.semester);
+        setSelectedBranch(student.branch);
+      }
+    }, [student]);
+  
+    useEffect(() => {
+      if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
+        setSelectedBranch(availableBranches[0]);
+      }
+    }, [selectedSemester, availableBranches, selectedBranch]);
 
-      useEffect(() => {
-        if (selectedBranch && selectedSemester) {
-          handleLoadSubjects();
-        }
-      }, [selectedBranch, selectedSemester]);
+    useEffect(() => {
+      if (selectedBranch && selectedSemester) {
+        handleLoadSubjects();
+      }
+    }, [selectedBranch, selectedSemester]);
 
     const handleLoadSubjects = () => {
-        if(selectedBranch) {
+        if(selectedBranch && selectedSemester) {
             const loadedSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
             setSubjects(loadedSubjects);
             setSgpa(null);
@@ -169,6 +169,7 @@ export default function CgpaCalculatorPage() {
                         <SelectValue placeholder="Select Semester" />
                     </SelectTrigger>
                     <SelectContent>
+                        <SelectItem value="1">1st Semester</SelectItem>
                         <SelectItem value="3">3rd Semester</SelectItem>
                         <SelectItem value="5">5th Semester</SelectItem>
                         <SelectItem value="7">7th Semester</SelectItem>

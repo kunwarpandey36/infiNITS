@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
+import { useStudentData } from '@/hooks/use-student-data';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const branches = ['CE', 'ME', 'EE', 'ECE', 'CSE', 'EIE'];
@@ -16,13 +17,21 @@ const branches = ['CE', 'ME', 'EE', 'ECE', 'CSE', 'EIE'];
 
 export default function TimetablePage() {
   const router = useRouter();
-  const [activeSemester, setActiveSemester] = useState('3');
-  const [activeBranch, setActiveBranch] = useState('CSE');
+  const student = useStudentData();
+  const [activeSemester, setActiveSemester] = useState('');
+  const [activeBranch, setActiveBranch] = useState('');
   const [activeSection, setActiveSection] = useState('A');
+
+  useEffect(() => {
+    if (student) {
+      setActiveSemester(student.semester);
+      setActiveBranch(student.branch);
+    }
+  }, [student]);
 
   const currentSemesterData = timetableData[activeSemester as keyof typeof timetableData] || {};
   const currentBranchData = currentSemesterData[activeBranch as keyof typeof currentSemesterData] || {};
-  const currentBranchSections = Object.keys(currentBranchData);
+  const currentBranchSections = useMemo(() => Object.keys(currentBranchData), [currentBranchData]);
   const hasSections = currentBranchSections.length > 1 && !(currentBranchSections.length === 1 && currentBranchSections[0] === '');
   
   // A helper function to get all unique time slots for the selected semester
@@ -68,9 +77,11 @@ export default function TimetablePage() {
   const activeTimeSlots = getUniqueTimeSlotsForSemester(activeSemester);
   
   // Update active section if the new branch doesn't have it
-  if (hasSections && !currentBranchSections.includes(activeSection)) {
-      setActiveSection(currentBranchSections[0]);
-  }
+  useEffect(() => {
+    if (hasSections && !currentBranchSections.includes(activeSection)) {
+        setActiveSection(currentBranchSections[0] || 'A');
+    }
+  }, [hasSections, currentBranchSections, activeSection]);
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -85,18 +96,19 @@ export default function TimetablePage() {
       <Card>
         <CardHeader>
             <CardTitle>Timetable (July-Dec 2025)</CardTitle>
-            <CardDescription>Select your semester and branch to view the schedule.</CardDescription>
+            <CardDescription>Select your semester and branch to view the schedule. Your defaults are pre-selected.</CardDescription>
         </CardHeader>
         <CardContent>
             <Tabs value={activeSemester} onValueChange={(sem) => {setActiveSemester(sem); setActiveBranch('CSE'); setActiveSection('A')}} className="w-full mb-4">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-4">
+                    <TabsTrigger value="1">1st Semester</TabsTrigger>
                     <TabsTrigger value="3">3rd Semester</TabsTrigger>
                     <TabsTrigger value="5">5th Semester</TabsTrigger>
                     <TabsTrigger value="7">7th Semester</TabsTrigger>
                 </TabsList>
             </Tabs>
             
-          <Tabs value={activeBranch} onValueChange={(branch) => {setActiveBranch(branch); setActiveSection(Object.keys(timetableData[activeSemester as keyof typeof timetableData][branch as keyof typeof timetableData] || {})[0] || 'A')}} className="w-full">
+          <Tabs value={activeBranch} onValueChange={(branch) => {setActiveBranch(branch); setActiveSection(Object.keys(timetableData[activeSemester as keyof typeof timetableData]?.[branch as keyof typeof timetableData] || {})[0] || 'A')}} className="w-full">
             <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 mb-4">
                 {branches.map(branch => (
                     <TabsTrigger key={branch} value={branch}>{branch}</TabsTrigger>

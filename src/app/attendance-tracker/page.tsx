@@ -53,31 +53,23 @@ const getSubjectsFromTimetable = (semester: string, branch: string, section: str
 export default function AttendanceTrackerPage() {
   const student = useStudentData();
   const [subjects, setSubjects] = useState<Subject[]>([]);
-  const [selectedSemester, setSelectedSemester] = useState('3');
-  const [selectedBranch, setSelectedBranch] = useState('CSE');
+  const [selectedSemester, setSelectedSemester] = useState('');
+  const [selectedBranch, setSelectedBranch] = useState('');
   const router = useRouter();
   
   const availableBranches = useMemo(() => Object.keys(timetableData[selectedSemester as keyof typeof timetableData] || {}), [selectedSemester]);
 
   const storageKey = useMemo(() => `attendance-${selectedSemester}-${selectedBranch}`, [selectedSemester, selectedBranch]);
 
-  // Load from localStorage
   useEffect(() => {
-    const savedSubjects = localStorage.getItem(storageKey);
-    if (savedSubjects) {
-      setSubjects(JSON.parse(savedSubjects));
+    if (student) {
+      setSelectedSemester(student.semester);
+      setSelectedBranch(student.branch);
     }
-  }, [storageKey]);
-  
-  // Save to localStorage
-  useEffect(() => {
-    if (subjects.length > 0) {
-        localStorage.setItem(storageKey, JSON.stringify(subjects));
-    }
-  }, [subjects, storageKey]);
-
+  }, [student]);
 
   const handleLoadSubjects = useCallback(() => {
+    if (!selectedSemester || !selectedBranch) return;
     const savedSubjects = localStorage.getItem(storageKey);
     if (savedSubjects) {
       setSubjects(JSON.parse(savedSubjects));
@@ -88,22 +80,22 @@ export default function AttendanceTrackerPage() {
     }
   }, [selectedSemester, selectedBranch, storageKey]);
 
-  useEffect(() => {
-    if (student) {
-      setSelectedSemester(student.semester);
-      setSelectedBranch(student.branch);
-    }
-  }, [student]);
 
+  // Load subjects when selection changes
   useEffect(() => {
-    if (selectedBranch && selectedSemester) {
-      handleLoadSubjects();
+    handleLoadSubjects();
+  }, [handleLoadSubjects]);
+  
+  // Save to localStorage
+  useEffect(() => {
+    if (subjects.length > 0) {
+        localStorage.setItem(storageKey, JSON.stringify(subjects));
     }
-  }, [selectedBranch, selectedSemester, handleLoadSubjects]);
+  }, [subjects, storageKey]);
   
   useEffect(() => {
-    if (!availableBranches.includes(selectedBranch)) {
-        setSelectedBranch(availableBranches[0] || '');
+    if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
+        setSelectedBranch(availableBranches[0]);
     }
   }, [selectedSemester, availableBranches, selectedBranch]);
 
@@ -154,6 +146,7 @@ export default function AttendanceTrackerPage() {
                         <SelectValue placeholder="Select Semester" />
                     </SelectTrigger>
                     <SelectContent>
+                        <SelectItem value="1">1st Semester</SelectItem>
                         <SelectItem value="3">3rd Semester</SelectItem>
                         <SelectItem value="5">5th Semester</SelectItem>
                         <SelectItem value="7">7th Semester</SelectItem>
