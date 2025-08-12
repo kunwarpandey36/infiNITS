@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -8,46 +9,31 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Trash2, PlusCircle, Calculator, ArrowLeft, Bot } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { timetableData } from '@/lib/timetable-data';
+import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
-  id: string; // Use subject code as ID
+  id: string; 
   code: string;
   credits: number;
   yourMarks: number;
   topperMarks: number;
 }
 
-const getSubjectsFromTimetable = (semester: string, branch: string, section: string): Subject[] => {
-    const semesterData = timetableData[semester as keyof typeof timetableData];
-    if (!semesterData) return [];
-    const branchData = semesterData[branch as keyof typeof semesterData];
-    if (!branchData) return [];
-    // Use section 'A' as a default or the first available section if 'A' doesn't exist
-    const sections = Object.keys(branchData);
-    const selectedSection = sections.includes(section) ? section : sections[0];
-    const sectionData = branchData[selectedSection as keyof typeof branchData] || branchData['' as keyof typeof branchData];
-    if (!sectionData) return [];
-  
-    const subjects = new Set<string>();
-    Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
-      Object.values(daySchedule).forEach((classInfo) => {
-          const match = classInfo.match(/^([A-Z]{2}\s?\d{3,})/);
-          if (match) {
-              subjects.add(match[1].trim());
-          }
-      });
-    });
-  
-    return Array.from(subjects).map(code => ({
-      id: code,
-      code: code,
-      credits: 0,
+const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] => {
+    const branchKey = Object.keys(branchCodeMapping).find(key => branchCodeMapping[key as keyof typeof branchCodeMapping] === branch);
+    if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
+        return [];
+    }
+    const subjects = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
+    return subjects.map((s: { code: any; credits: any; }) => ({
+      id: s.code,
+      code: s.code,
+      credits: s.credits,
       yourMarks: 0,
       topperMarks: 100, // Default to 100
     }));
-  };
+};
 
 interface Grade {
     grade: string;
@@ -62,10 +48,7 @@ export default function CgpaCalculatorPage() {
     const [selectedSemester, setSelectedSemester] = useState('');
     const [selectedBranch, setSelectedBranch] = useState('');
 
-    const availableBranches = useMemo(() => {
-        const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
-        return semesterData ? Object.keys(semesterData) : [];
-      }, [selectedSemester]);
+    const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
 
     useEffect(() => {
       if (student) {
@@ -75,20 +58,15 @@ export default function CgpaCalculatorPage() {
     }, [student]);
   
     useEffect(() => {
-      if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
-        setSelectedBranch(availableBranches[0]);
-      }
-    }, [selectedSemester, availableBranches, selectedBranch]);
-
-    useEffect(() => {
       if (selectedBranch && selectedSemester) {
         handleLoadSubjects();
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedBranch, selectedSemester]);
 
     const handleLoadSubjects = () => {
         if(selectedBranch && selectedSemester) {
-            const loadedSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+            const loadedSubjects = getSubjectsByBranchAndSem(selectedBranch, selectedSemester);
             setSubjects(loadedSubjects);
             setSgpa(null);
         }
@@ -169,16 +147,15 @@ export default function CgpaCalculatorPage() {
                         <SelectValue placeholder="Select Semester" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="1">1st Semester</SelectItem>
-                        <SelectItem value="3">3rd Semester</SelectItem>
-                        <SelectItem value="5">5th Semester</SelectItem>
-                        <SelectItem value="7">7th Semester</SelectItem>
+                        {[...Array(8)].map((_, i) => (
+                           <SelectItem key={i+1} value={(i+1).toString()}>{i+1}{['st', 'nd', 'rd'][i] || 'th'} Semester</SelectItem>
+                        ))}
                     </SelectContent>
                 </Select>
             </div>
              <div className="grid gap-2 w-full">
                 <label>Branch</label>
-                <Select value={selectedBranch} onValueChange={setSelectedBranch} disabled={!availableBranches.length}>
+                <Select value={selectedBranch} onValueChange={setSelectedBranch}>
                     <SelectTrigger>
                         <SelectValue placeholder="Select Branch" />
                     </SelectTrigger>

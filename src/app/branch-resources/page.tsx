@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -6,41 +7,23 @@ import { FileText, ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { timetableData } from '@/lib/timetable-data';
+import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
     code: string;
     name: string;
+    credits: number;
+    resourceUrl?: string;
 }
 
-const getSubjectsFromTimetable = (semester: string, branch: string, section: string): Subject[] => {
-    const semesterData = timetableData[semester as keyof typeof timetableData];
-    if (!semesterData) return [];
-    const branchData = semesterData[branch as keyof typeof semesterData];
-    if (!branchData) return [];
-    // Use section 'A' as a default or the first available section if 'A' doesn't exist
-    const sections = Object.keys(branchData);
-    const selectedSection = sections.includes(section) ? section : sections[0];
-    const sectionData = branchData[selectedSection as keyof typeof branchData] || branchData['' as keyof typeof branchData];
-    if (!sectionData) return [];
-  
-    const subjects = new Set<string>();
-    Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
-      Object.values(daySchedule).forEach((classInfo) => {
-          // Extract subject code, e.g., "MA 201" from "MA 201 (TA1)"
-          const match = classInfo.match(/^([A-Z]{2,3}\s?\d{3,})/);
-          if (match) {
-              subjects.add(match[1].trim());
-          }
-      });
-    });
-  
-    return Array.from(subjects).map(code => ({
-      code: code,
-      name: code, // We can expand this later if we have a mapping of codes to full names
-    }));
-  };
+const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] => {
+    const branchKey = Object.keys(branchCodeMapping).find(key => branchCodeMapping[key as keyof typeof branchCodeMapping] === branch);
+    if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
+        return [];
+    }
+    return courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
+};
   
 
 export default function BranchResourcesPage() {
@@ -50,10 +33,7 @@ export default function BranchResourcesPage() {
   const [selectedBranch, setSelectedBranch] = useState('');
   const [subjects, setSubjects] = useState<Subject[]>([]);
   
-  const availableBranches = useMemo(() => {
-    const semesterData = timetableData[selectedSemester as keyof typeof timetableData];
-    return semesterData ? Object.keys(semesterData) : [];
-  }, [selectedSemester]);
+  const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
 
   useEffect(() => {
     if (student) {
@@ -62,17 +42,9 @@ export default function BranchResourcesPage() {
     }
   }, [student]);
 
-  // Adjust selected branch if it's not available in the new semester
-  useEffect(() => {
-    if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
-      setSelectedBranch(availableBranches[0]);
-    }
-  }, [selectedSemester, availableBranches, selectedBranch]);
-
   useEffect(() => {
     if(selectedBranch && selectedSemester) {
-        // We'll use section 'A' as a default for fetching resources.
-        const loadedSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+        const loadedSubjects = getSubjectsByBranchAndSem(selectedBranch, selectedSemester);
         setSubjects(loadedSubjects);
     } else {
         setSubjects([]);
@@ -105,16 +77,15 @@ export default function BranchResourcesPage() {
                             <SelectValue placeholder="Select Semester" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="1">1st Semester</SelectItem>
-                            <SelectItem value="3">3rd Semester</SelectItem>
-                            <SelectItem value="5">5th Semester</SelectItem>
-                            <SelectItem value="7">7th Semester</SelectItem>
+                             {[...Array(8)].map((_, i) => (
+                               <SelectItem key={i+1} value={(i+1).toString()}>{i+1}{['st', 'nd', 'rd'][i] || 'th'} Semester</SelectItem>
+                            ))}
                         </SelectContent>
                     </Select>
                 </div>
                 <div className="grid gap-2 w-full">
                     <label>Branch</label>
-                    <Select value={selectedBranch} onValueChange={setSelectedBranch} disabled={!availableBranches.length}>
+                    <Select value={selectedBranch} onValueChange={setSelectedBranch}>
                         <SelectTrigger>
                             <SelectValue placeholder="Select Branch" />
                         </SelectTrigger>

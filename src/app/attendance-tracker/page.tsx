@@ -9,46 +9,32 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Trash2, ArrowLeft, PlusCircle, Plus, Minus } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { timetableData } from '@/lib/timetable-data';
+import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useRouter } from 'next/navigation';
 import { useStudentData } from '@/hooks/use-student-data';
 
 interface Subject {
-  id: string; // Use subject code as ID
+  id: string; 
   name: string;
   code: string;
   total: number;
   attended: number;
 }
 
-const getSubjectsFromTimetable = (semester: string, branch: string, section: string): Subject[] => {
-  const semesterData = timetableData[semester as keyof typeof timetableData];
-  if (!semesterData) return [];
-  const branchData = semesterData[branch as keyof typeof semesterData];
-  if (!branchData) return [];
-  const sectionData = branchData[section as keyof typeof branchData] || branchData['' as keyof typeof branchData];
-  if (!sectionData) return [];
-
-  const subjects = new Set<string>();
-  Object.values(sectionData).forEach((daySchedule: Record<string, string>) => {
-    Object.values(daySchedule).forEach((classInfo) => {
-        // Extract subject code, e.g., "MA 201" from "MA 201 (TA1)"
-        const match = classInfo.match(/^([A-Z]{2}\s?\d{3,})/);
-        if (match) {
-            subjects.add(match[1]);
-        }
-    });
-  });
-
-  return Array.from(subjects).map(code => ({
-    id: code,
-    name: code, // We don't have full names, so use code for now
-    code: code,
-    total: 0,
-    attended: 0,
-  }));
+const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] => {
+    const branchKey = Object.keys(branchCodeMapping).find(key => branchCodeMapping[key as keyof typeof branchCodeMapping] === branch);
+    if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
+        return [];
+    }
+    const subjects = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
+    return subjects.map((s: { code: any; name: any; }) => ({
+        id: s.code,
+        name: s.name,
+        code: s.code,
+        total: 0,
+        attended: 0,
+    }));
 };
-
 
 export default function AttendanceTrackerPage() {
   const student = useStudentData();
@@ -57,9 +43,8 @@ export default function AttendanceTrackerPage() {
   const [selectedBranch, setSelectedBranch] = useState('');
   const router = useRouter();
   
-  const availableBranches = useMemo(() => Object.keys(timetableData[selectedSemester as keyof typeof timetableData] || {}), [selectedSemester]);
-
-  const storageKey = useMemo(() => `attendance-${selectedSemester}-${selectedBranch}`, [selectedSemester, selectedBranch]);
+  const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
+  const storageKey = useMemo(() => `attendance-${student?.scholarId}-${selectedSemester}-${selectedBranch}`, [student, selectedSemester, selectedBranch]);
 
   useEffect(() => {
     if (student) {
@@ -69,35 +54,25 @@ export default function AttendanceTrackerPage() {
   }, [student]);
 
   const handleLoadSubjects = useCallback(() => {
-    if (!selectedSemester || !selectedBranch) return;
+    if (!selectedSemester || !selectedBranch || !student) return;
     const savedSubjects = localStorage.getItem(storageKey);
     if (savedSubjects) {
       setSubjects(JSON.parse(savedSubjects));
     } else {
-       // For simplicity, we'll assume Section A for all. 
-       const newSubjects = getSubjectsFromTimetable(selectedSemester, selectedBranch, 'A');
+       const newSubjects = getSubjectsByBranchAndSem(selectedBranch, selectedSemester);
        setSubjects(newSubjects);
     }
-  }, [selectedSemester, selectedBranch, storageKey]);
+  }, [selectedSemester, selectedBranch, storageKey, student]);
 
-
-  // Load subjects when selection changes
   useEffect(() => {
     handleLoadSubjects();
   }, [handleLoadSubjects]);
   
-  // Save to localStorage
   useEffect(() => {
-    if (subjects.length > 0) {
+    if (subjects.length > 0 && student) {
         localStorage.setItem(storageKey, JSON.stringify(subjects));
     }
-  }, [subjects, storageKey]);
-  
-  useEffect(() => {
-    if (!availableBranches.includes(selectedBranch) && availableBranches.length > 0) {
-        setSelectedBranch(availableBranches[0]);
-    }
-  }, [selectedSemester, availableBranches, selectedBranch]);
+  }, [subjects, storageKey, student]);
 
   const handleDeleteSubject = (id: string) => {
     setSubjects(subjects.filter((s) => s.id !== id));
@@ -146,16 +121,15 @@ export default function AttendanceTrackerPage() {
                         <SelectValue placeholder="Select Semester" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="1">1st Semester</SelectItem>
-                        <SelectItem value="3">3rd Semester</SelectItem>
-                        <SelectItem value="5">5th Semester</SelectItem>
-                        <SelectItem value="7">7th Semester</SelectItem>
+                        {[...Array(8)].map((_, i) => (
+                           <SelectItem key={i+1} value={(i+1).toString()}>{i+1}{['st', 'nd', 'rd'][i] || 'th'} Semester</SelectItem>
+                        ))}
                     </SelectContent>
                 </Select>
             </div>
              <div className="grid gap-2 w-full">
                 <label>Branch</label>
-                <Select value={selectedBranch} onValueChange={setSelectedBranch} disabled={!availableBranches.length}>
+                <Select value={selectedBranch} onValueChange={setSelectedBranch}>
                     <SelectTrigger>
                         <SelectValue placeholder="Select Branch" />
                     </SelectTrigger>
@@ -181,8 +155,8 @@ export default function AttendanceTrackerPage() {
             <TableHeader>
               <TableRow>
                 <TableHead>Subject</TableHead>
-                <TableHead className="w-[150px]">Total</TableHead>
                 <TableHead className="w-[150px]">Attended</TableHead>
+                <TableHead className="w-[150px]">Total</TableHead>
                 <TableHead className="w-[200px]">Percentage</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
@@ -202,18 +176,6 @@ export default function AttendanceTrackerPage() {
                           </TableCell>
                           <TableCell>
                             <div className="flex items-center gap-2">
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
-                                <Input
-                                    type="number"
-                                    value={subject.total}
-                                    onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
-                                    className="w-16 text-center"
-                                />
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
                                 <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
                                 <Input
                                     type="number"
@@ -222,6 +184,18 @@ export default function AttendanceTrackerPage() {
                                     className="w-16 text-center"
                                 />
                                 <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
+                                <Input
+                                    type="number"
+                                    value={subject.total}
+                                    onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
+                                    className="w-16 text-center"
+                                />
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
                             </div>
                           </TableCell>
                           <TableCell>

@@ -1,3 +1,4 @@
+
 'use client';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,14 +17,17 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useStudentData } from "@/hooks/use-student-data";
 
-const GUEST_DEFAULT_HOSTEL = "Aryabhata Hostel";
+
+const GUEST_DEFAULT_HOSTEL = "Boys Hostel - 1";
 const dayOrder: (keyof WeeklyMenu['days'])[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 
 export default function HostelsPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const student = useStudentData();
 
   const [todaysMenu, setTodaysMenu] = useState<Meal | null>(null);
   const [isGrandFeastDay, setIsGrandFeastDay] = useState(false);
@@ -47,7 +51,7 @@ export default function HostelsPage() {
   useEffect(() => {
     if (selectedHostelName) {
       const currentHostelMenuData = getMenuForHostel(selectedHostelName);
-      setSelectedHostelWeeklyMenu(currentHostelMenuData); // Set full menu for the modal
+      setSelectedHostelWeeklyMenu(currentHostelMenuData); 
 
       const today = new Date();
       const currentDayKey = getCurrentDayName(today);
@@ -63,7 +67,6 @@ export default function HostelsPage() {
         setTodaysMenu(menuForDisplay);
       }
     } else {
-      // Clear all menu related states if no hostel is selected
       setTodaysMenu(null);
       setIsGrandFeastDay(false);
       setGrandFeastDetails(null);
@@ -74,12 +77,6 @@ export default function HostelsPage() {
 
   const getMenuTitle = () => {
     if (!selectedHostelName) return "Today's Mess Menu";
-    const currentMenuObject = getMenuForHostel(selectedHostelName);
-    const defaultMenuObject = hostelSpecificMenus["Default"]; 
-
-    if (currentMenuObject === defaultMenuObject) {
-      return `Today's Common Mess Menu (for ${selectedHostelName})`;
-    }
     return `Today's Mess Menu for ${selectedHostelName}`;
   };
 
@@ -100,7 +97,7 @@ export default function HostelsPage() {
       <Card className="mb-6 shadow-lg">
         <CardHeader>
           <CardTitle>Select Hostel</CardTitle>
-          <CardDescription>Choose a hostel to view its staff details and mess menu. Specific menus are shown if available, otherwise a common menu is displayed.</CardDescription>
+          <CardDescription>Choose a hostel to view its staff details and mess menu.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -142,7 +139,7 @@ export default function HostelsPage() {
                     <UserCircle className="mr-2 h-4 w-4 text-primary/70 flex-shrink-0" />
                     <span className="text-xs sm:text-sm">{staffMember.name}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground ml-6">{staffMember.department}</p>
+                  {staffMember.department && <p className="text-xs text-muted-foreground ml-6">{staffMember.department}</p>}
                   {staffMember.phone && (
                     <div className="flex items-center text-[0.7rem] sm:text-xs text-muted-foreground ml-1">
                       <Phone className="mr-2 h-3 w-3 text-primary/70 flex-shrink-0" />
@@ -158,7 +155,7 @@ export default function HostelsPage() {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-muted-foreground">Staff information coming soon for this hostel.</p>
+              <p className="text-sm text-muted-foreground">Staff information not available for this hostel.</p>
             )}
 
             <Separator className="my-4" />
@@ -278,10 +275,7 @@ export default function HostelsPage() {
           </CardContent>
           <CardFooter>
              <p className="text-xs text-muted-foreground">
-                {selectedHostelName && hostelSpecificMenus[selectedHostelName] && hostelSpecificMenus[selectedHostelName] !== hostelSpecificMenus["Default"]
-                  ? `Displaying specific menu for ${selectedHostelName}. `
-                  : `Displaying common mess menu for ${selectedHostelName || 'the selected hostel'}. `}
-                  If there are discrepancies or updates, please email help@infinits.space.
+                  The menu is same for all hostels. If there are discrepancies or updates, please email help@infinits.space.
               </p>
           </CardFooter>
         </Card>
@@ -302,7 +296,6 @@ export default function HostelsPage() {
           <p className="text-sm text-muted-foreground">
             This section provides details for the selected hostel.
             The quick view shows today's menu, and the "View Full Week Menu" button provides a detailed weekly schedule.
-            A specific mess menu is displayed if available for the chosen hostel; otherwise, the common mess menu is shown.
           </p>
         </CardContent>
       </Card>

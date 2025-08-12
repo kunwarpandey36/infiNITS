@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -25,7 +26,7 @@ export default function FeedbackPage() {
         </CardHeader>
         <CardContent>
           <CardDescription>
-            For any feedback, suggestions, or issues, please reach out to us. A dedicated form will be available here soon.
+            For any feedback, suggestions, or issues, please reach out to us.
           </CardDescription>
           <a href="mailto:help@infinites.space" className="mt-4 inline-block text-primary font-semibold hover:underline">
             help@infinites.space

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -43,20 +44,18 @@ export default function LoginPage() {
       return;
     }
 
-    // Determine branch and semester from scholar ID
-    const year = parseInt(scholarId.substring(0, 2), 10);
+    const admissionYear = parseInt(scholarId.substring(0, 2), 10);
     const branchCode = parseInt(scholarId.substring(4, 5), 10);
     const currentYear = new Date().getFullYear() % 100;
     
-    let semester = '1'; // Default for unknown year
-    const yearDiff = currentYear - year;
+    let semester = '1'; 
+    const yearDiff = currentYear - admissionYear;
+    
     if (yearDiff === 0) semester = '1';
     else if (yearDiff === 1) semester = '3';
     else if (yearDiff === 2) semester = '5';
     else if (yearDiff === 3) semester = '7';
-    // Fallback for older batches
-    else if (yearDiff > 3) semester = '7';
-
+    else if (yearDiff > 3) semester = '7'; // Fallback for older batches
 
     const branches: { [key: number]: string } = { 1: 'CE', 2: 'CSE', 3: 'EE', 4: 'ECE', 5: 'EIE', 6: 'ME' };
     const branch = branches[branchCode] || 'Unknown';
@@ -68,7 +67,6 @@ export default function LoginPage() {
       semester: semester,
     };
 
-    // Store user profile in local storage to simulate a session
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
     
     setTimeout(() => {

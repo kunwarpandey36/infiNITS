@@ -18,8 +18,8 @@ const branches = ['CE', 'ME', 'EE', 'ECE', 'CSE', 'EIE'];
 export default function TimetablePage() {
   const router = useRouter();
   const student = useStudentData();
-  const [activeSemester, setActiveSemester] = useState('');
-  const [activeBranch, setActiveBranch] = useState('');
+  const [activeSemester, setActiveSemester] = useState('1');
+  const [activeBranch, setActiveBranch] = useState('CE');
   const [activeSection, setActiveSection] = useState('A');
 
   useEffect(() => {
@@ -34,7 +34,6 @@ export default function TimetablePage() {
   const currentBranchSections = useMemo(() => Object.keys(currentBranchData), [currentBranchData]);
   const hasSections = currentBranchSections.length > 1 && !(currentBranchSections.length === 1 && currentBranchSections[0] === '');
   
-  // A helper function to get all unique time slots for the selected semester
   const getUniqueTimeSlotsForSemester = (semester: string) => {
     const slots = new Set<string>();
     const semesterData = timetableData[semester as keyof typeof timetableData] || {};
@@ -48,35 +47,23 @@ export default function TimetablePage() {
         }
       }
     }
-    // A bit of custom sorting to make the order logical
+    
     return Array.from(slots).sort((a, b) => {
-        let aStart = parseInt(a.split(':')[0]);
-        let bStart = parseInt(b.split(':')[0]);
-        
-        // Convert to 24-hour format for comparison (1-5 PM become 13-17)
-        if (aStart >= 1 && aStart <= 5) aStart += 12;
-        if (bStart >= 1 && bStart <= 5) bStart += 12;
+        const parseTime = (timeStr: string) => {
+            let [hour, minute] = timeStr.split(':').map(Number);
+            if (hour < 8) hour += 12; // Convert PM hours to 24-hour format for sorting
+            return hour * 60 + minute;
+        };
 
-        if (aStart !== bStart) return aStart - bStart;
-        
-        const aEndPart = a.split('-')[1];
-        const bEndPart = b.split('-')[1];
+        const aStartTime = parseTime(a.split('-')[0]);
+        const bStartTime = parseTime(b.split('-')[0]);
 
-        if(!aEndPart || !bEndPart) return 0;
-
-        let aEnd = parseInt(aEndPart.split(':')[0]);
-        let bEnd = parseInt(bEndPart.split(':')[0]);
-
-        if (aEnd >= 1 && aEnd <= 5) aEnd += 12;
-        if (bEnd >= 1 && bEnd <= 5) bEnd += 12;
-
-        return aEnd - bEnd;
+        return aStartTime - bStartTime;
     });
   };
 
   const activeTimeSlots = getUniqueTimeSlotsForSemester(activeSemester);
   
-  // Update active section if the new branch doesn't have it
   useEffect(() => {
     if (hasSections && !currentBranchSections.includes(activeSection)) {
         setActiveSection(currentBranchSections[0] || 'A');
@@ -162,5 +149,3 @@ export default function TimetablePage() {
     </div>
   );
 }
-
-    
