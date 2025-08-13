@@ -45,7 +45,14 @@ export default function LoginPage() {
     }
 
     const admissionYear = parseInt(scholarId.substring(0, 2), 10);
-    const branchCode = parseInt(scholarId.substring(4, 5), 10);
+    let branchCode;
+    
+    if (admissionYear >= 24) {
+      branchCode = parseInt(scholarId.substring(3, 4), 10);
+    } else {
+      branchCode = parseInt(scholarId.substring(4, 5), 10);
+    }
+    
     const currentYear = new Date().getFullYear() % 100;
     const currentMonth = new Date().getMonth() + 1; // getMonth() is 0-indexed
     
@@ -132,5 +139,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-    
