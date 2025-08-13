@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, ArrowLeft } from 'lucide-react';
+import { FileText, ArrowLeft, ExternalLink } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -106,15 +106,29 @@ export default function BranchResourcesPage() {
                     {subjects.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {subjects.map(subject => (
-                                <Card key={subject.code} className="hover:shadow-md transition-shadow">
-                                  <CardContent className="p-4 flex items-center gap-4">
-                                      <FileText className="h-8 w-8 text-primary" />
-                                      <div>
-                                          <p className="font-semibold">{subject.name}</p>
-                                          <p className="text-sm text-muted-foreground">{subject.code}</p>
-                                      </div>
-                                  </CardContent>
-                                </Card>
+                                <a 
+                                    key={subject.code}
+                                    href={subject.resourceUrl && subject.resourceUrl !== '#' ? subject.resourceUrl : undefined} 
+                                    target={subject.resourceUrl && subject.resourceUrl !== '#' ? "_blank" : undefined}
+                                    rel={subject.resourceUrl && subject.resourceUrl !== '#' ? "noopener noreferrer" : undefined}
+                                    className={cn(
+                                        "block",
+                                        subject.resourceUrl && subject.resourceUrl !== '#' ? 'cursor-pointer' : 'cursor-default'
+                                    )}
+                                >
+                                    <Card className="hover:shadow-md transition-shadow h-full">
+                                    <CardContent className="p-4 flex items-center justify-between gap-4">
+                                        <div className="flex items-center gap-4">
+                                            <FileText className="h-8 w-8 text-primary flex-shrink-0" />
+                                            <div>
+                                                <p className="font-semibold">{subject.name}</p>
+                                                <p className="text-sm text-muted-foreground">{subject.code}</p>
+                                            </div>
+                                        </div>
+                                        {subject.resourceUrl && subject.resourceUrl !== '#' && <ExternalLink className="h-4 w-4 text-muted-foreground" />}
+                                    </CardContent>
+                                    </Card>
+                                </a>
                             ))}
                         </div>
                     ) : (

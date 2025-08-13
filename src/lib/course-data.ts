@@ -9,9 +9,12 @@ export const subjectResourceLinks: Record<string, string> = {
     'MA102': '#',
     'CS101': '#',
     'EC101': '#',
-    'MA201': '#',
-    'EC202': '#',
-    'EI203': '#',
+    'MA201': 'https://drive.google.com/drive/folders/1hJzYAOCfDoGsvSl-Ezik9rLNZxUY8Wol',
+    'EC202': 'https://drive.google.com/drive/folders/1RN9YAMeqFfy_JigPpFq0ySaucnI6osXU',
+    'EI203': 'https://drive.google.com/drive/folders/1Qr226q5c6JCjuVckmEbqGYWqiNzbONzS',
+    'CS222': 'https://drive.google.com/drive/folders/14kfE9Rjc_jA_bKyzsolXNydL2-38nst9',
+    'EI201': 'https://drive.google.com/drive/folders/1DM_ahTIYS9AX5_hUJijMxyHDLD4lJOcG',
+    'CS213': 'https://drive.google.com/drive/folders/16waHTR9WE8LFn5Zfs2fW2-06aCsLbVh5',
 };
   
 
@@ -439,15 +442,15 @@ export const courseData: Record<string, any> = {
         { code: 'EAA', name: 'Extra-Academic Activities', credits: 0 },
       ],
       '3': [
-        { code: 'EI201', name: 'Electrical & Electronic Measurements', credits: 4 },
+        { code: 'EI201', name: 'Electrical & Electronic Measurements', credits: 4, resourceUrl: subjectResourceLinks['EI201'] },
         { code: 'MA201', name: 'Mathematics III', credits: 4, resourceUrl: subjectResourceLinks['MA201'] },
-        { code: 'EI202', name: 'Analog Electronics', credits: 4 },
+        { code: 'EI202', name: 'Analog Electronics', credits: 4, resourceUrl: subjectResourceLinks['EC202'] },
         { code: 'EI203', name: 'Circuits & Networks', credits: 4, resourceUrl: subjectResourceLinks['EI203'] },
-        { code: 'CS222', name: 'Data Structure & Algorithm', credits: 4 },
+        { code: 'CS222', name: 'Data Structure & Algorithm', credits: 4, resourceUrl: subjectResourceLinks['CS222'] },
         { code: 'EI211', name: 'Measurement Lab', credits: 2 },
         { code: 'EI212', name: 'Analog Electronics Lab', credits: 2 },
         { code: 'EI213', name: 'Circuits & Networks Lab', credits: 2 },
-        { code: 'CS213', name: 'Data Structure and Algorithm Lab', credits: 2 },
+        { code: 'CS213', name: 'Data Structure and Algorithm Lab', credits: 2, resourceUrl: subjectResourceLinks['CS213'] },
       ],
       '4': [
         { code: 'EI204', name: 'Sensors and Transducers', credits: 4 },
