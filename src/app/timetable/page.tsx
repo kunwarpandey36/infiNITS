@@ -10,9 +10,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
 import { useStudentData } from '@/hooks/use-student-data';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-const branches = ['CE', 'ME', 'EE', 'ECE', 'CSE', 'EIE'];
 const timeSlots = [
     "8:00-9:00", "9:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-1:00", 
     "1:00-2:00", "2:00-3:00", "3:00-4:00", "4:00-5:00"
@@ -23,73 +24,98 @@ const getHour = (time: string) => parseInt(time.split(':')[0]);
 export default function TimetablePage() {
   const router = useRouter();
   const student = useStudentData();
+  const [activeProgram, setActiveProgram] = useState('UG');
   const [activeSemester, setActiveSemester] = useState('1');
   const [activeBranch, setActiveBranch] = useState('CE');
   const [activeSection, setActiveSection] = useState('A');
 
-  useEffect(() => {
-    if (student) {
-      setActiveSemester(student.semester);
-      setActiveBranch(student.branch);
-    }
-  }, [student]);
-  
-  const currentBranchData = useMemo(() => {
-    return timetableData[activeSemester as keyof typeof timetableData]?.[activeBranch as keyof typeof timetableData[keyof typeof timetableData]] || {};
+  const semestersForProgram = useMemo(() => {
+    if (activeProgram === 'UG') return ['1', '3', '5', '7'];
+    if (activeProgram === 'PG') return ['PG-1'];
+    return [];
+  }, [activeProgram]);
+
+  const branchesForSemester = useMemo(() => {
+    return Object.keys(timetableData[activeSemester] || {});
+  }, [activeSemester]);
+
+  const sectionsForBranch = useMemo(() => {
+    return Object.keys(timetableData[activeSemester]?.[activeBranch] || {});
   }, [activeSemester, activeBranch]);
 
-  const currentBranchSections = useMemo(() => Object.keys(currentBranchData), [currentBranchData]);
-  const hasSections = useMemo(() => currentBranchSections.length > 0 && !currentBranchSections.some(s => s === ''), [currentBranchSections]);
+  useEffect(() => {
+    if (student && activeProgram === 'UG') {
+      setActiveSemester(student.semester);
+      setActiveBranch(student.branch);
+    } else {
+      setActiveSemester(semestersForProgram[0]);
+    }
+  }, [student, activeProgram, semestersForProgram]);
+  
+  useEffect(() => {
+    if (!semestersForProgram.includes(activeSemester)) {
+      setActiveSemester(semestersForProgram[0] || '');
+    }
+  }, [semestersForProgram, activeSemester]);
 
   useEffect(() => {
-    if (hasSections && !currentBranchSections.includes(activeSection)) {
-        setActiveSection(currentBranchSections[0] || 'A');
+    if (!branchesForSemester.includes(activeBranch)) {
+      setActiveBranch(branchesForSemester[0] || '');
     }
-  }, [hasSections, currentBranchSections, activeSection]);
+  }, [branchesForSemester, activeBranch]);
+
+  useEffect(() => {
+    if (!sectionsForBranch.includes(activeSection)) {
+      setActiveSection(sectionsForBranch[0] || '');
+    }
+  }, [sectionsForBranch, activeSection]);
+
 
   const scheduleForView = useMemo(() => {
-    const sectionKey = hasSections ? activeSection : '';
-    const sectionData = currentBranchData[sectionKey as keyof typeof currentBranchData] || {};
-    let processedSchedule: { [day: string]: { [time: string]: { content: string, span: number } } } = {};
+    const sectionData = timetableData[activeSemester]?.[activeBranch]?.[activeSection] || {};
+    let processedSchedule: { [day: string]: { [time: string]: { content: string, span: number } | null } } = {};
 
     days.forEach(day => {
         processedSchedule[day] = {};
-        const daySchedule = sectionData[day as keyof typeof schedule] || {};
-        let coveredSlots: string[] = [];
-
-        timeSlots.forEach(slot => {
-            if (coveredSlots.includes(slot)) return;
+        const daySchedule = sectionData[day] || {};
+        
+        timeSlots.forEach((slot, index) => {
+            if (processedSchedule[day][slot] === null) return;
 
             let classInfo = daySchedule[slot];
             if (classInfo) {
-                // This is a normal 1-hour slot or the start of a multi-hour slot
-                let span = 1;
-                // Check for multi-hour slots by looking at start and end times in the key
-                const multiHourSlot = Object.keys(daySchedule).find(s => s.startsWith(slot.split('-')[0] + ':') && s !== slot);
-                if (multiHourSlot) {
-                    const start = getHour(multiHourSlot.split('-')[0]);
-                    const end = getHour(multiHourSlot.split('-')[1]);
-                    span = end - start;
-                    classInfo = daySchedule[multiHourSlot];
-                }
+                processedSchedule[day][slot] = { content: classInfo, span: 1 };
+                return;
+            }
+
+            // Check for multi-hour slots
+            const multiHourSlot = Object.keys(daySchedule).find(s => {
+                const [start, end] = s.split('-');
+                return slot.startsWith(start) && getHour(end) > getHour(slot.split('-')[1]);
+            });
+
+            if (multiHourSlot) {
+                const [start, end] = multiHourSlot.split('-');
+                const startHour = getHour(start);
+                const endHour = getHour(end);
+                const span = endHour - startHour;
                 
-                processedSchedule[day][slot] = { content: classInfo, span };
-                
-                if (span > 1) {
-                    for(let i=1; i<span; i++) {
-                       const nextSlotIndex = timeSlots.indexOf(slot) + i;
-                       if(nextSlotIndex < timeSlots.length) {
-                         coveredSlots.push(timeSlots[nextSlotIndex]);
-                       }
+                processedSchedule[day][slot] = { content: daySchedule[multiHourSlot], span: span };
+
+                for (let i = 1; i < span; i++) {
+                    const nextSlotIndex = timeSlots.indexOf(slot) + i;
+                    if (nextSlotIndex < timeSlots.length) {
+                        processedSchedule[day][timeSlots[nextSlotIndex]] = null; // Mark as covered
                     }
                 }
             } else {
-                processedSchedule[day][slot] = { content: '-', span: 1 };
+                 processedSchedule[day][slot] = { content: '-', span: 1 };
             }
         });
     });
     return processedSchedule;
-  }, [currentBranchData, activeSection, hasSections]);
+  }, [activeSemester, activeBranch, activeSection]);
+  
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -104,34 +130,54 @@ export default function TimetablePage() {
       <Card>
         <CardHeader>
             <CardTitle>Timetable (July-Dec 2025)</CardTitle>
-            <CardDescription>Select your semester and branch to view the schedule. Your defaults are pre-selected.</CardDescription>
+            <CardDescription>Select program, semester, branch, and section to view the schedule. Your defaults are pre-selected.</CardDescription>
         </CardHeader>
         <CardContent>
-            <Tabs value={activeSemester} onValueChange={(sem) => {setActiveSemester(sem); setActiveBranch('CSE'); setActiveSection('A')}} className="w-full mb-4">
-                <TabsList className="grid w-full grid-cols-4">
-                    <TabsTrigger value="1">1st Semester</TabsTrigger>
-                    <TabsTrigger value="3">3rd Semester</TabsTrigger>
-                    <TabsTrigger value="5">5th Semester</TabsTrigger>
-                    <TabsTrigger value="7">7th Semester</TabsTrigger>
-                </TabsList>
-            </Tabs>
-            
-          <Tabs value={activeBranch} onValueChange={(branch) => {setActiveBranch(branch); setActiveSection(Object.keys(timetableData[activeSemester as keyof typeof timetableData]?.[branch as keyof typeof timetableData] || {})[0] || 'A')}} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 mb-4">
-                {branches.map(branch => (
-                    <TabsTrigger key={branch} value={branch}>{branch}</TabsTrigger>
-                ))}
-            </TabsList>
-            
-            {hasSections && (
-                 <Tabs value={activeSection} onValueChange={setActiveSection} className="w-full mb-4">
-                    <TabsList className="grid w-full grid-cols-2">
-                        {currentBranchSections.map(section => (
-                             <TabsTrigger key={section} value={section}>Section {section}</TabsTrigger>
-                        ))}
-                    </TabsList>
-                </Tabs>
-            )}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              <div className="grid gap-2">
+                <label>Program</label>
+                <Select value={activeProgram} onValueChange={setActiveProgram}>
+                  <SelectTrigger><SelectValue/></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="UG">Undergraduate (B.Tech)</SelectItem>
+                    <SelectItem value="PG">Postgraduate (M.Tech/M.Sc/MBA)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-2">
+                <label>Semester</label>
+                 <Select value={activeSemester} onValueChange={setActiveSemester} disabled={semestersForProgram.length === 0}>
+                  <SelectTrigger><SelectValue/></SelectTrigger>
+                  <SelectContent>
+                    {semestersForProgram.map(sem => (
+                       <SelectItem key={sem} value={sem}>{sem.startsWith('PG') ? '1st Semester' : `${sem}${['st', 'nd', 'rd'][parseInt(sem)-1] || 'th'} Semester`}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-2">
+                <label>Branch / Department</label>
+                <Select value={activeBranch} onValueChange={setActiveBranch} disabled={branchesForSemester.length === 0}>
+                   <SelectTrigger><SelectValue/></SelectTrigger>
+                  <SelectContent>
+                    {branchesForSemester.map(branch => (
+                       <SelectItem key={branch} value={branch}>{branch}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="grid gap-2">
+                <label>Section / Specialization</label>
+                <Select value={activeSection} onValueChange={setActiveSection} disabled={sectionsForBranch.length === 0}>
+                   <SelectTrigger><SelectValue/></SelectTrigger>
+                  <SelectContent>
+                    {sectionsForBranch.map(section => (
+                       <SelectItem key={section} value={section}>{section || 'N/A'}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
 
             <div className="overflow-x-auto">
                 <Table className="border">
@@ -149,12 +195,11 @@ export default function TimetablePage() {
                                 <TableCell className="font-medium">{slot}</TableCell>
                                 {days.map(day => {
                                     const cellData = scheduleForView[day]?.[slot];
-                                    if(!cellData) return null; // Slot has been spanned over
-                                    if(cellData.content === '-') return <TableCell key={day}>-</TableCell>;
-
+                                    if(cellData === null) return null; // Slot has been spanned over by a previous cell
+                                    
                                     return (
-                                        <TableCell key={day}>
-                                            <div className="min-w-[150px]">{cellData.content}</div>
+                                        <TableCell key={day} rowSpan={cellData?.span || 1} className={cellData?.span && cellData.span > 1 ? 'align-top' : ''}>
+                                            <div className="min-w-[150px]">{cellData?.content || '-'}</div>
                                         </TableCell>
                                     );
                                 })}
@@ -163,10 +208,8 @@ export default function TimetablePage() {
                     </TableBody>
                 </Table>
             </div>
-          </Tabs>
         </CardContent>
       </Card>
     </div>
   );
 }
-
