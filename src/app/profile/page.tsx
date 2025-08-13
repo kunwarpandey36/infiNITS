@@ -6,7 +6,6 @@ import { useStudentData } from '@/hooks/use-student-data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import UpcomingEvents from '@/components/upcoming-events';
-import { User, Book, CheckSquare, TrendingUp, Percent } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -25,10 +24,8 @@ export default function ProfilePage() {
   const [overallAttendance, setOverallAttendance] = useState(0);
 
   useEffect(() => {
-    // Since attendance data is in localStorage from the tracker, we access it here.
-    // This is a temporary solution. A better approach would be a state management library or backend.
     if (student) {
-        const key = `attendance-${student.semester}-${student.branch}`;
+        const key = `attendance-${student?.scholarId}-${student.semester}-${student.branch}`;
         const storedData = localStorage.getItem(key);
         if (storedData) {
             const subjects: Subject[] = JSON.parse(storedData);
@@ -58,10 +55,10 @@ export default function ProfilePage() {
         <CardHeader className="flex flex-col md:flex-row items-center gap-6 space-y-0">
           <Avatar className="h-24 w-24">
             <AvatarImage src="https://placehold.co/100x100.png" alt={student.name} />
-            <AvatarFallback>{student.name.charAt(0)}</AvatarFallback>
+            <AvatarFallback>{student.name ? student.name.charAt(0) : 'U'}</AvatarFallback>
           </Avatar>
           <div className="text-center md:text-left">
-            <CardTitle className="font-headline text-3xl">{student.name}</CardTitle>
+            <CardTitle className="font-headline text-3xl">{student.name || 'Student'}</CardTitle>
             <CardDescription className="text-lg">Scholar ID: {student.scholarId}</CardDescription>
           </div>
         </CardHeader>
@@ -96,7 +93,15 @@ export default function ProfilePage() {
                         <CardTitle className="text-sm font-medium text-muted-foreground">Current SGPA</CardTitle>
                     </CardHeader>
                     <CardContent className="p-2">
-                        <p className="text-2xl font-bold">N/A</p>
+                        <p className="text-2xl font-bold">{student.sgpa || 'N/A'}</p>
+                    </CardContent>
+                </Card>
+                 <Card className="p-4">
+                    <CardHeader className="p-2">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Overall CGPA</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-2">
+                        <p className="text-2xl font-bold">{student.cgpa || 'N/A'}</p>
                     </CardContent>
                 </Card>
             </div>
@@ -108,3 +113,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    

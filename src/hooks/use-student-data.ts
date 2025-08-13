@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,6 +8,8 @@ interface StudentProfile {
   name: string;
   branch: string;
   semester: string;
+  sgpa?: number | string;
+  cgpa?: number | string;
 }
 
 export function useStudentData(): StudentProfile | null {
@@ -16,7 +19,12 @@ export function useStudentData(): StudentProfile | null {
     // This code runs only on the client side
     const storedProfile = localStorage.getItem('userProfile');
     if (storedProfile) {
-      setStudent(JSON.parse(storedProfile));
+      try {
+        setStudent(JSON.parse(storedProfile));
+      } catch (e) {
+        console.error("Failed to parse user profile from localStorage", e);
+        setStudent(null);
+      }
     }
   }, []);
 
