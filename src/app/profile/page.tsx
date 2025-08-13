@@ -54,7 +54,7 @@ export default function ProfilePage() {
       <Card>
         <CardHeader className="flex flex-col md:flex-row items-center gap-6 space-y-0">
           <Avatar className="h-24 w-24">
-            <AvatarImage src="https://placehold.co/100x100.png" alt={student.name} />
+            <AvatarImage src="https://placehold.co/100x100.png" alt={student.name} data-ai-hint="profile picture" />
             <AvatarFallback>{student.name ? student.name.charAt(0) : 'U'}</AvatarFallback>
           </Avatar>
           <div className="text-center md:text-left">
@@ -113,5 +113,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-    
