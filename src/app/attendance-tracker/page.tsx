@@ -101,6 +101,26 @@ export default function AttendanceTrackerPage() {
     return Math.round((attended / total) * 100);
   }
 
+  const calculateBunkableClasses = (attended: number, total: number) => {
+    if (total === 0) return { status: 'info', message: 'N/A'};
+    const currentPercentage = getPercentage(attended, total);
+    if (currentPercentage < 75) {
+      return { status: 'below', message: 'Below 75%' };
+    }
+    const bunkable = Math.floor((attended - 0.75 * total) / 0.75);
+    return { status: 'safe', message: `${bunkable} class(es)` };
+  };
+
+  const calculateClassesToAttend = (attended: number, total: number) => {
+    if (total === 0) return { status: 'info', message: 'N/A' };
+    const currentPercentage = getPercentage(attended, total);
+    if (currentPercentage >= 75) {
+      return { status: 'safe', message: '0 classes' };
+    }
+    const needed = Math.ceil((0.75 * total - attended) / 0.25);
+    return { status: 'below', message: `${needed} class(es)` };
+  };
+
   return (
     <div className="container mx-auto p-4 md:p-8">
        <div className="flex items-center gap-4 mb-6">
@@ -152,7 +172,7 @@ export default function AttendanceTrackerPage() {
         <CardHeader>
           <CardTitle className="font-headline">Track Attendance</CardTitle>
           <CardDescription>
-            Update your total and attended classes to see your attendance percentage.
+            Update your total and attended classes to see your attendance percentage and requirement analysis.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -163,6 +183,7 @@ export default function AttendanceTrackerPage() {
                 <TableHead className="w-[150px]">Total Classes</TableHead>
                 <TableHead className="w-[150px]">Attended Classes</TableHead>
                 <TableHead className="w-[200px]">Percentage</TableHead>
+                <TableHead className="w-[200px]">Attendance Analysis</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
             </TableHeader>
@@ -170,6 +191,9 @@ export default function AttendanceTrackerPage() {
               {subjects.map((subject) => {
                   const percentage = getPercentage(subject.attended, subject.total);
                   const labClass = isLab(subject.code);
+                  const bunkableInfo = calculateBunkableClasses(subject.attended, subject.total);
+                  const neededInfo = calculateClassesToAttend(subject.attended, subject.total);
+
                   return (
                       <TableRow key={subject.id}>
                           <TableCell>
@@ -210,7 +234,16 @@ export default function AttendanceTrackerPage() {
                           <TableCell>
                               <div className="flex items-center gap-2">
                               <Progress value={percentage} className="w-full" />
-                              <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : ''}`}>{percentage}%</span>
+                              <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : 'text-green-500'}`}>{percentage}%</span>
+                              </div>
+                          </TableCell>
+                           <TableCell>
+                              <div className="text-xs">
+                                {percentage >= 75 ? (
+                                    <p>Classes you can miss: <span className="font-bold text-green-500">{bunkableInfo.message}</span></p>
+                                ) : (
+                                    <p>Classes to attend: <span className="font-bold text-destructive">{neededInfo.message}</span></p>
+                                )}
                               </div>
                           </TableCell>
                           <TableCell className="text-right">
@@ -238,4 +271,3 @@ export default function AttendanceTrackerPage() {
     </div>
   );
 }
-
