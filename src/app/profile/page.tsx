@@ -9,6 +9,7 @@ import UpcomingEvents from '@/components/upcoming-events';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import TodaysMenu from '@/components/todays-menu';
 
 interface Subject {
   id: string;
@@ -108,8 +109,12 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
       
-      <UpcomingEvents />
+      <div className="grid gap-6 md:grid-cols-2">
+        <UpcomingEvents />
+        <TodaysMenu />
+      </div>
 
     </div>
   );
 }
+
