@@ -45,7 +45,7 @@ export function SiteHeader() {
         <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
-            {isClient && (
+            {isClient ? (
               <>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -68,7 +68,7 @@ export function SiteHeader() {
                   <span className="sr-only">Toggle theme</span>
                 </Button>
               </>
-            )}
+            ) : null}
           </nav>
         </div>
       </div>
