@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Trash2, ArrowLeft, PlusCircle, Plus, Minus } from 'lucide-react';
+import { Trash2, ArrowLeft, PlusCircle, Plus, Minus, FlaskConical } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useRouter } from 'next/navigation';
@@ -34,6 +34,11 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
         total: 0,
         attended: 0,
     }));
+};
+
+const isLab = (subjectCode: string): boolean => {
+  const codePart = subjectCode.replace(/^[A-Z]*/, '');
+  return codePart.length >= 3 && codePart.charAt(1) === '1';
 };
 
 export default function AttendanceTrackerPage() {
@@ -147,7 +152,7 @@ export default function AttendanceTrackerPage() {
         <CardHeader>
           <CardTitle className="font-headline">Track Attendance</CardTitle>
           <CardDescription>
-            Update your attended and total classes to see your attendance percentage.
+            Update your total and attended classes to see your attendance percentage.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -155,8 +160,8 @@ export default function AttendanceTrackerPage() {
             <TableHeader>
               <TableRow>
                 <TableHead>Subject</TableHead>
-                <TableHead className="w-[150px]">Attended</TableHead>
-                <TableHead className="w-[150px]">Total</TableHead>
+                <TableHead className="w-[150px]">Total Classes</TableHead>
+                <TableHead className="w-[150px]">Attended Classes</TableHead>
                 <TableHead className="w-[200px]">Percentage</TableHead>
                 <TableHead className="text-right">Action</TableHead>
               </TableRow>
@@ -164,27 +169,19 @@ export default function AttendanceTrackerPage() {
             <TableBody>
               {subjects.map((subject) => {
                   const percentage = getPercentage(subject.attended, subject.total);
+                  const labClass = isLab(subject.code);
                   return (
                       <TableRow key={subject.id}>
                           <TableCell>
                               <Input 
-                                defaultValue={subject.name}
-                                onBlur={(e) => setSubjects(subjects.map(s => s.id === subject.id ? {...s, name: e.target.value} : s))}
+                                value={subject.name}
+                                onChange={(e) => setSubjects(subjects.map(s => s.id === subject.id ? {...s, name: e.target.value} : s))}
                                 className="font-medium border-none focus-visible:ring-1"
                               />
-                              <div className="text-sm text-muted-foreground pl-3">{subject.code}</div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
-                                <Input
-                                    type="number"
-                                    value={subject.attended}
-                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
-                                    className="w-16 text-center"
-                                />
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
-                            </div>
+                              <div className="text-sm text-muted-foreground pl-3 flex items-center gap-2">
+                                {subject.code}
+                                {labClass && <FlaskConical className="h-3 w-3 text-primary" />}
+                              </div>
                           </TableCell>
                           <TableCell>
                             <div className="flex items-center gap-2">
@@ -196,6 +193,18 @@ export default function AttendanceTrackerPage() {
                                     className="w-16 text-center"
                                 />
                                 <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
+                            </div>
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
+                                <Input
+                                    type="number"
+                                    value={subject.attended}
+                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
+                                    className="w-16 text-center"
+                                />
+                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
                             </div>
                           </TableCell>
                           <TableCell>
