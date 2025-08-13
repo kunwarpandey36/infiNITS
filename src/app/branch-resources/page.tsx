@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
+import { cn } from '@/lib/utils';
 
 interface Subject {
     code: string;
@@ -22,7 +23,7 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
     if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
         return [];
     }
-    return courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
+    return courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]] || [];
 };
   
 
@@ -100,10 +101,10 @@ export default function BranchResourcesPage() {
 
             <Card className="bg-muted/50">
                 <CardHeader>
-                    <CardTitle className="text-xl font-headline">Subjects for {selectedBranch} - {selectedSemester}{['st', 'nd', 'rd'][parseInt(selectedSemester)-1] || 'th'} Semester</CardTitle>
+                    <CardTitle className="text-xl font-headline">Subjects for {selectedBranch} - {selectedSemester}{selectedSemester && (['st', 'nd', 'rd'][parseInt(selectedSemester)-1] || 'th')} Semester</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    {subjects.length > 0 ? (
+                    {subjects && subjects.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {subjects.map(subject => (
                                 <a 
@@ -133,7 +134,7 @@ export default function BranchResourcesPage() {
                         </div>
                     ) : (
                         <div className="text-center py-10 text-muted-foreground">
-                            <p>Select a semester and branch to see the subjects.</p>
+                            <p>No subjects found for this selection. Data may not be available yet.</p>
                         </div>
                     )}
                 </CardContent>
