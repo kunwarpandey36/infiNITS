@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import TodaysMenu from '@/components/todays-menu';
+import TodaysTimetable from '@/components/todays-timetable';
 
 interface Subject {
   id: string;
@@ -109,12 +110,16 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
       
-      <div className="grid gap-6 md:grid-cols-2">
-        <UpcomingEvents />
-        <TodaysMenu />
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <TodaysTimetable />
+        </div>
+        <div className="space-y-6">
+          <UpcomingEvents />
+          <TodaysMenu />
+        </div>
       </div>
 
     </div>
   );
 }
-
