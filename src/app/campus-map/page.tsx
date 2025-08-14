@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,8 +7,8 @@ import { useRouter } from "next/navigation";
 
 export default function CollegeMapPage() {
   const router = useRouter();
-  const mapEmbedUrl = "https://drive.google.com/file/d/1IDUgXQ0StK9lT9-yBNQWw4EpFF4cDlMt/preview";
-  const mapDirectUrl = "https://drive.google.com/file/d/1IDUgXQ0StK9lT9-yBNQWw4EpFF4cDlMt/view?usp=sharing";
+  const mapEmbedUrl = "https://www.google.com/maps/d/u/0/embed?mid=1EGf7oryG4ap3JTar4Rqcw3dPJ3GJvtc&ehbc=2E312F";
+  const mapDirectUrl = "https://www.google.com/maps/d/u/0/viewer?mid=1EGf7oryG4ap3JTar4Rqcw3dPJ3GJvtc";
 
   return (
     <div className="container mx-auto p-4 md:p-8 space-y-6">
@@ -26,7 +27,7 @@ export default function CollegeMapPage() {
         <CardHeader>
           <CardTitle>NIT Silchar Campus Map</CardTitle>
           <CardDescription>
-            An interactive map of the campus. The map is embedded from Google Drive.
+            An interactive map of the campus. The map is embedded from Google Maps.
             If it doesn't load or interact as expected, you can try opening it directly.
           </CardDescription>
         </CardHeader>
@@ -36,6 +37,9 @@ export default function CollegeMapPage() {
             width="100%"
             height="100%"
             className="rounded-md border"
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             title="NIT Silchar Campus Map"
           ></iframe>
         </CardContent>
@@ -55,7 +59,7 @@ export default function CollegeMapPage() {
           >
             <Button variant="secondary">
               <ExternalLink className="mr-2 h-4 w-4" />
-              Open Map in New Tab (Google Drive)
+              Open Map in New Tab
             </Button>
           </a>
         </CardContent>
