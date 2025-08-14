@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -68,10 +69,10 @@ export default function AcademicCalendarPage() {
     const eventIsPast = isClient ? isPast(parseISO(date)) : false;
 
     return (
-      <div className="flex items-center justify-between py-3">
+      <div className={cn("flex items-center justify-between py-3", eventIsPast ? 'opacity-50' : 'opacity-100')}>
           <div className="flex items-center gap-4">
             {isClient && (
-               <Badge variant={eventIsPast ? 'default' : 'destructive'} className={cn(eventIsPast ? "bg-green-500 hover:bg-green-500/80" : "bg-red-500 hover:bg-red-500/80", "w-20 justify-center")}>
+               <Badge variant={eventIsPast ? 'default' : 'destructive'} className={cn( "w-20 justify-center", eventIsPast ? "bg-muted text-muted-foreground" : "")}>
                 {eventIsPast ? 'Past' : 'Upcoming'}
               </Badge>
             )}
@@ -140,3 +141,4 @@ export default function AcademicCalendarPage() {
     </div>
   );
 }
+
