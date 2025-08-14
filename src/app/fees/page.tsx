@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableFooter } from '@/components/ui/table';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -154,28 +154,22 @@ export default function FeesPage() {
     const availableSemesters = Object.keys(feeData[selectedDegree].semesters);
     const availableCategories = Object.keys(feeData[selectedDegree].semesters[selectedSemester]?.categories || {});
 
-    // Effect to update selections when degree changes
-    useState(() => {
-        const firstSemester = Object.keys(feeData[selectedDegree].semesters)[0];
-        setSelectedSemester(firstSemester as Semester);
-        const firstCategory = Object.keys(feeData[selectedDegree].semesters[firstSemester].categories)[0];
-        setSelectedCategory(firstCategory);
-    });
+    // Effect to update selections when degree or semester changes
+    useEffect(() => {
+        const currentSemesters = Object.keys(feeData[selectedDegree].semesters);
+        if (!currentSemesters.includes(selectedSemester)) {
+            const firstSemester = currentSemesters[0] as Semester;
+            setSelectedSemester(firstSemester);
 
-     // Effect to update category when semester changes
-     useState(() => {
-        if (!availableSemesters.includes(selectedSemester)) {
-            const firstSemester = availableSemesters[0];
-            setSelectedSemester(firstSemester as Semester);
             const firstCategory = Object.keys(feeData[selectedDegree].semesters[firstSemester].categories)[0];
             setSelectedCategory(firstCategory);
         } else {
-            const firstCategory = Object.keys(feeData[selectedDegree].semesters[selectedSemester].categories)[0];
-            if(!availableCategories.includes(selectedCategory)) {
-               setSelectedCategory(firstCategory);
+            const currentCategories = Object.keys(feeData[selectedDegree].semesters[selectedSemester].categories);
+            if (!currentCategories.includes(selectedCategory)) {
+                setSelectedCategory(currentCategories[0]);
             }
         }
-    });
+    }, [selectedDegree, selectedSemester, selectedCategory]);
 
 
     const currentFeeData = feeData[selectedDegree]?.semesters[selectedSemester]?.categories[selectedCategory];
@@ -187,17 +181,13 @@ export default function FeesPage() {
     const handleDegreeChange = (value: string) => {
       const newDegree = value as Degree;
       setSelectedDegree(newDegree);
-      const firstSemester = Object.keys(feeData[newDegree].semesters)[0];
-      setSelectedSemester(firstSemester as Semester);
-      const firstCategory = Object.keys(feeData[newDegree].semesters[firstSemester].categories)[0];
-      setSelectedCategory(firstCategory);
+      const firstSemester = Object.keys(feeData[newDegree].semesters)[0] as Semester;
+      setSelectedSemester(firstSemester);
     };
 
     const handleSemesterChange = (value: string) => {
       const newSemester = value as Semester;
       setSelectedSemester(newSemester);
-      const firstCategory = Object.keys(feeData[selectedDegree].semesters[newSemester].categories)[0];
-      setSelectedCategory(firstCategory);
     };
 
   return (

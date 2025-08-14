@@ -182,13 +182,11 @@ export default function CgpaCalculatorPage() {
                             <TableHead>Credits</TableHead>
                             <TableHead>Your Marks</TableHead>
                             <TableHead>Topper's Marks</TableHead>
-                            <TableHead>Grade</TableHead>
                             <TableHead>Action</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {subjects.map(subject => {
-                            const grade = calculateGrade(subject.yourMarks, subject.topperMarks);
                             return (
                                 <TableRow key={subject.id}>
                                     <TableCell>
@@ -203,7 +201,6 @@ export default function CgpaCalculatorPage() {
                                     <TableCell>
                                         <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
                                     </TableCell>
-                                    <TableCell className="font-semibold">{grade.grade}</TableCell>
                                     <TableCell>
                                         <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
                                             <Trash2 className="h-4 w-4" />
