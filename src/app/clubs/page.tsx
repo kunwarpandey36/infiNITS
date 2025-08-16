@@ -1,35 +1,36 @@
+
 'use client';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, ArrowLeft, CalendarPlus } from "lucide-react";
+import { Users, ArrowLeft, CalendarPlus, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 
 const clubsList = [
-  { name: "Dojonits", description: "Details will be updated soon.", icon: Users },
-  { name: "NITS Cricket Club", description: "Details will be updated soon.", icon: Users },
-  { name: "Ppgnitsilchar", description: "Details will be updated soon.", icon: Users },
-  { name: "Yoga Club NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "Symphonits", description: "Details will be updated soon.", icon: Users },
-  { name: "Mountaineering and Trekking Club NITS", description: "Details will be updated soon.", icon: Users },
-  { name: "Obiettivo", description: "Details will be updated soon.", icon: Users },
-  { name: "Quizclub NITS", description: "Details will be updated soon.", icon: Users },
-  { name: "Aaveg", description: "Details will be updated soon.", icon: Users },
-  { name: "E Cell NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "NITS Eco Club", description: "Details will be updated soon.", icon: Users },
-  { name: "Illuminits", description: "Details will be updated soon.", icon: Users },
-  { name: "NITS Model United Nations", description: "Details will be updated soon.", icon: Users },
-  { name: "N.E.R.D.S.", description: "Details will be updated soon.", icon: Users },
-  { name: "GDG on Campus NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "Machine Learning Club NIT Silchar", description: "Fostering interest and knowledge in Machine Learning. Visit our website: https://www.mlclubnits.com/", icon: Users },
-  { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "NSS NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "Advay", description: "Details will be updated soon.", icon: Users },
-  { name: "NCC NIT Silchar", description: "Details will be updated soon.", icon: Users },
-  { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users },
-  { name: "Gyansagar", description: "Details will be updated soon.", icon: Users },
-  { name: "NITS Football Club", description: "Promoting football culture and organizing matches and tournaments within the campus.", icon: Users },
+  { name: "Dojonits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NITS Cricket Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Ppgnitsilchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Yoga Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Symphonits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Mountaineering and Trekking Club NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Obiettivo", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Quizclub NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Aaveg", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "E Cell NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NITS Eco Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Illuminits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NITS Model United Nations", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "N.E.R.D.S.", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "GDG on Campus NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Machine Learning Club NIT Silchar", description: "Fostering interest and knowledge in Machine Learning. Visit our website: https://www.mlclubnits.com/", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NSS NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Advay", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NCC NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Gyansagar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NITS Football Club", description: "Promoting football culture and organizing matches and tournaments within the campus.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
 ];
 
 const clubActivityAnnouncements = [
@@ -89,23 +90,28 @@ export default function ClubsPage() {
       {clubsList.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clubsList.map((club) => (
-            <Card key={club.name} className="hover:shadow-lg transition-shadow duration-200 flex flex-col">
-              <CardHeader className="flex flex-row items-center space-x-3 pb-3">
-                <club.icon className="h-6 w-6 text-primary" />
-                <CardTitle className="text-xl font-headline">{club.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-2">
-                <p className="text-sm text-muted-foreground">
-                  {club.description}
-                </p>
-                <div className="pt-2 border-t border-border/50">
-                  <p className="text-sm font-medium text-foreground flex items-center">
-                    <CalendarPlus className="mr-2 h-4 w-4 text-primary/80" />
-                    Upcoming Events: <span className="ml-1 font-normal text-muted-foreground">Coming soon</span>
+            <a key={club.name} href={club.link} target="_blank" rel="noopener noreferrer" className="block group">
+              <Card className="hover:shadow-lg transition-shadow duration-200 flex flex-col h-full">
+                <CardHeader className="flex flex-row items-start justify-between space-x-3 pb-3">
+                  <div className="flex items-center gap-3">
+                    <club.icon className="h-6 w-6 text-primary" />
+                    <CardTitle className="text-xl font-headline">{club.name}</CardTitle>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors"/>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    {club.description}
                   </p>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="pt-2 border-t border-border/50">
+                    <p className="text-sm font-medium text-foreground flex items-center">
+                      <CalendarPlus className="mr-2 h-4 w-4 text-primary/80" />
+                      Upcoming Events: <span className="ml-1 font-normal text-muted-foreground">Coming soon</span>
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </div>
       ) : (
