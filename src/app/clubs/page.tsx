@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Users, ArrowLeft, CalendarPlus, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 
 const clubsList = [
@@ -90,28 +99,47 @@ export default function ClubsPage() {
       {clubsList.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clubsList.map((club) => (
-            <a key={club.name} href={club.link} target="_blank" rel="noopener noreferrer" className="block group">
-              <Card className="hover:shadow-lg transition-shadow duration-200 flex flex-col h-full">
-                <CardHeader className="flex flex-row items-start justify-between space-x-3 pb-3">
-                  <div className="flex items-center gap-3">
-                    <club.icon className="h-6 w-6 text-primary" />
-                    <CardTitle className="text-xl font-headline">{club.name}</CardTitle>
-                  </div>
-                  <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors"/>
-                </CardHeader>
-                <CardContent className="flex-grow space-y-2">
-                  <p className="text-sm text-muted-foreground">
-                    {club.description}
-                  </p>
-                  <div className="pt-2 border-t border-border/50">
-                    <p className="text-sm font-medium text-foreground flex items-center">
-                      <CalendarPlus className="mr-2 h-4 w-4 text-primary/80" />
-                      Upcoming Events: <span className="ml-1 font-normal text-muted-foreground">Coming soon</span>
+            <Dialog key={club.name}>
+              <DialogTrigger asChild>
+                <Card className="hover:shadow-lg transition-shadow duration-200 flex flex-col h-full cursor-pointer">
+                  <CardHeader className="flex flex-row items-start justify-between space-x-3 pb-3">
+                    <div className="flex items-center gap-3">
+                      <club.icon className="h-6 w-6 text-primary" />
+                      <CardTitle className="text-xl font-headline">{club.name}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow space-y-2">
+                    <p className="text-sm text-muted-foreground">
+                      {club.description}
                     </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </a>
+                    <div className="pt-2 border-t border-border/50">
+                      <p className="text-sm font-medium text-foreground flex items-center">
+                        <CalendarPlus className="mr-2 h-4 w-4 text-primary/80" />
+                        Upcoming Events: <span className="ml-1 font-normal text-muted-foreground">Coming soon</span>
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle className="font-headline text-2xl">{club.name}</DialogTitle>
+                  <DialogDescription>
+                    {club.description}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="py-4">
+                  <p className="text-sm text-muted-foreground">More details and updates will be available on the official club page.</p>
+                </div>
+                <DialogFooter>
+                  <a href={club.link} target="_blank" rel="noopener noreferrer">
+                    <Button>
+                      Visit Club Page <ExternalLink className="ml-2 h-4 w-4"/>
+                    </Button>
+                  </a>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           ))}
         </div>
       ) : (
@@ -137,3 +165,4 @@ export default function ClubsPage() {
     </div>
   );
 }
+
