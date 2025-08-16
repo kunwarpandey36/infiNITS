@@ -23,6 +23,18 @@ export const subjectResourceLinks: Record<string, string> = {
     'EI201': 'https://drive.google.com/drive/folders/1DM_ahTIYS9AX5_hUJijMxyHDLD4lJOcG',
     'CS213': 'https://drive.google.com/drive/folders/16waHTR9WE8LFn5Zfs2fW2-06aCsLbVh5',
 };
+
+const DEFAULT_RESOURCE_LINK = "https://sites.google.com/view/infinitsilchar/home";
+
+const addDefaultResourceLinks = (subjects: any[]) => {
+    return subjects.map(subject => {
+        if (!subject.resourceUrl || subject.resourceUrl === '#') {
+            const link = subjectResourceLinks[subject.code] || DEFAULT_RESOURCE_LINK;
+            return { ...subject, resourceUrl: link };
+        }
+        return subject;
+    });
+};
   
 
 export const branchCodeMapping = {
@@ -35,7 +47,7 @@ export const branchCodeMapping = {
 };
   
 
-export const courseData: Record<string, any> = {
+const rawCourseData: Record<string, any> = {
     '1': { // Civil Engineering
       '1': [
         { code: 'PH101', name: 'Physics', credits: 4, resourceUrl: subjectResourceLinks['PH101'] },
@@ -626,6 +638,12 @@ export const courseData: Record<string, any> = {
     }
   };
 
+export const courseData: Record<string, any> = {};
 
-
+for (const branch in rawCourseData) {
+    courseData[branch] = {};
+    for (const semester in rawCourseData[branch]) {
+        courseData[branch][semester] = addDefaultResourceLinks(rawCourseData[branch][semester]);
+    }
+}
     
