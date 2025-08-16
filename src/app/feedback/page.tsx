@@ -76,7 +76,7 @@ export default function FeedbackPage() {
         </Card>
       </div>
        <div className="mt-8 text-center text-muted-foreground flex items-center justify-center gap-2">
-            Made with <Heart className="h-5 w-5 text-red-500" /> from the EI branch.
+            Made with <Heart className="h-5 w-5 text-red-500" /> for the NITS.
         </div>
     </div>
   );

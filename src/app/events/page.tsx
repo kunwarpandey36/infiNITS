@@ -1,8 +1,9 @@
+
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Pin, ArrowLeft } from 'lucide-react';
+import { Calendar, Pin, ArrowLeft, Info } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
@@ -80,6 +81,16 @@ export default function EventsPage() {
           </Card>
         ))}
       </div>
+      <Card className="mt-8 bg-secondary/20">
+        <CardHeader>
+          <CardTitle className="text-lg flex items-center font-headline"><Info className="h-4 w-4 mr-2"/>Note for Clubs</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">
+            All club executives are requested to mail their upcoming event details to <a href="mailto:infinitsilchar@gmail.com" className="text-primary hover:underline">infinitsilchar@gmail.com</a> to have them featured on this page.
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

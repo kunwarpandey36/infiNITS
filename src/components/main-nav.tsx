@@ -42,7 +42,7 @@ const components: { title: string; href: string; description: string, icon: Reac
     { href: '/societies', title: 'Societies', icon: <Theater />, description: 'Discover campus societies.'},
     { href: '/events', title: 'Events', icon: <CalendarDays />, description: 'Find upcoming college events.'},
     { href: '/campus-map', title: 'Campus Map', icon: <MapIcon />, description: 'Navigate the campus grounds.'},
-    { href: '/cgpa-calculator', title: 'CGPA Calculator', icon: <Calculator />, description: 'Calculate your CGPA.'},
+    { href: '/sgpa-calculator', title: 'SGPA Calculator', icon: <Calculator />, description: 'Calculate your SGPA.'},
     { href: '/hostels', title: 'Hostels', icon: <Home />, description: 'Info on hostels & mess.'},
     { href: '/fees', title: 'Fees', icon: <Banknote />, description: 'View fee structure details.'},
     { href: '/placements', title: 'Placements', icon: <TrendingUp />, description: 'Check placement statistics.' },
@@ -118,4 +118,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = 'ListItem';
-

@@ -175,42 +175,44 @@ export default function SgpaCalculatorPage() {
         </CardHeader>
         <CardContent>
             {subjects.length > 0 ? (
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Subject Code</TableHead>
-                            <TableHead>Credits</TableHead>
-                            <TableHead>Your Marks</TableHead>
-                            <TableHead>Topper's Marks</TableHead>
-                            <TableHead>Action</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {subjects.map(subject => {
-                            return (
-                                <TableRow key={subject.id}>
-                                    <TableCell>
-                                        <Input value={subject.code} onChange={e => handleSubjectChange(subject.id, 'code', e.target.value)} placeholder="e.g. CS201" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} placeholder="e.g. 4" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
-                                            <Trash2 className="h-4 w-4" />
-                                        </Button>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
+                <div className="overflow-x-auto">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="min-w-[150px]">Subject Code</TableHead>
+                                <TableHead>Credits</TableHead>
+                                <TableHead>Your Marks</TableHead>
+                                <TableHead>Topper's Marks</TableHead>
+                                <TableHead>Action</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {subjects.map(subject => {
+                                return (
+                                    <TableRow key={subject.id}>
+                                        <TableCell>
+                                            <Input value={subject.code} onChange={e => handleSubjectChange(subject.id, 'code', e.target.value)} placeholder="e.g. CS201" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} placeholder="e.g. 4" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
+                                                <Trash2 className="h-4 w-4" />
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </div>
             ) : (
                 <div className="text-center py-10 text-muted-foreground">
                     Please load your subjects to begin.

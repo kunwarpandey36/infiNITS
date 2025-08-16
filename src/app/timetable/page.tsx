@@ -2,12 +2,12 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Info } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -209,6 +209,12 @@ export default function TimetablePage() {
                 </Table>
             </div>
         </CardContent>
+        <CardFooter>
+            <p className="text-xs text-muted-foreground flex items-center gap-2">
+                <Info className="h-4 w-4"/>
+                If there are any discrepancies in the timetable, class representatives are requested to email <a href="mailto:infinitsilchar@gmail.com" className="text-primary hover:underline">infinitsilchar@gmail.com</a>.
+            </p>
+        </CardFooter>
       </Card>
     </div>
   );

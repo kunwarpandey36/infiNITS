@@ -176,86 +176,88 @@ export default function AttendanceTrackerPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Subject</TableHead>
-                <TableHead className="w-[150px]">Total Classes</TableHead>
-                <TableHead className="w-[150px]">Attended Classes</TableHead>
-                <TableHead className="w-[200px]">Percentage</TableHead>
-                <TableHead className="w-[200px]">Attendance Analysis</TableHead>
-                <TableHead className="text-right">Action</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {subjects.map((subject) => {
-                  const percentage = getPercentage(subject.attended, subject.total);
-                  const labClass = isLab(subject.code);
-                  const bunkableInfo = calculateBunkableClasses(subject.attended, subject.total);
-                  const neededInfo = calculateClassesToAttend(subject.attended, subject.total);
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="min-w-[200px]">Subject</TableHead>
+                  <TableHead className="w-[150px]">Total Classes</TableHead>
+                  <TableHead className="w-[150px]">Attended Classes</TableHead>
+                  <TableHead className="w-[200px]">Percentage</TableHead>
+                  <TableHead className="w-[200px]">Attendance Analysis</TableHead>
+                  <TableHead className="text-right">Action</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {subjects.map((subject) => {
+                    const percentage = getPercentage(subject.attended, subject.total);
+                    const labClass = isLab(subject.code);
+                    const bunkableInfo = calculateBunkableClasses(subject.attended, subject.total);
+                    const neededInfo = calculateClassesToAttend(subject.attended, subject.total);
 
-                  return (
-                      <TableRow key={subject.id}>
-                          <TableCell>
-                              <Input 
-                                value={subject.name}
-                                onChange={(e) => setSubjects(subjects.map(s => s.id === subject.id ? {...s, name: e.target.value} : s))}
-                                className="font-medium border-none focus-visible:ring-1"
-                              />
-                              <div className="text-sm text-muted-foreground pl-3 flex items-center gap-2">
-                                {subject.code}
-                                {labClass && <FlaskConical className="h-3 w-3 text-primary" />}
-                              </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
-                                <Input
-                                    type="number"
-                                    value={subject.total}
-                                    onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
-                                    className="w-16 text-center"
+                    return (
+                        <TableRow key={subject.id}>
+                            <TableCell>
+                                <Input 
+                                  value={subject.name}
+                                  onChange={(e) => setSubjects(subjects.map(s => s.id === subject.id ? {...s, name: e.target.value} : s))}
+                                  className="font-medium border-none focus-visible:ring-1"
                                 />
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
-                            </div>
-                          </TableCell>
-                          <TableCell>
-                            <div className="flex items-center gap-2">
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
-                                <Input
-                                    type="number"
-                                    value={subject.attended}
-                                    onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
-                                    className="w-16 text-center"
-                                />
-                                <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
-                            </div>
-                          </TableCell>
-                          <TableCell>
+                                <div className="text-sm text-muted-foreground pl-3 flex items-center gap-2">
+                                  {subject.code}
+                                  {labClass && <FlaskConical className="h-3 w-3 text-primary" />}
+                                </div>
+                            </TableCell>
+                            <TableCell>
                               <div className="flex items-center gap-2">
-                              <Progress value={percentage} className="w-full" />
-                              <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : 'text-green-500'}`}>{percentage}%</span>
+                                  <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total - 1)}><Minus className="h-4 w-4" /></Button>
+                                  <Input
+                                      type="number"
+                                      value={subject.total}
+                                      onChange={(e) => handleAttendanceChange(subject.id, 'total', parseInt(e.target.value) || 0)}
+                                      className="w-16 text-center"
+                                  />
+                                  <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'total', subject.total + 1)}><Plus className="h-4 w-4" /></Button>
                               </div>
-                          </TableCell>
-                           <TableCell>
-                              <div className="text-xs">
-                                {percentage >= 75 ? (
-                                    <p>Classes you can miss: <span className="font-bold text-green-500">{bunkableInfo.message}</span></p>
-                                ) : (
-                                    <p>Classes to attend: <span className="font-bold text-destructive">{neededInfo.message}</span></p>
-                                )}
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center gap-2">
+                                  <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended - 1)}><Minus className="h-4 w-4" /></Button>
+                                  <Input
+                                      type="number"
+                                      value={subject.attended}
+                                      onChange={(e) => handleAttendanceChange(subject.id, 'attended', parseInt(e.target.value) || 0)}
+                                      className="w-16 text-center"
+                                  />
+                                  <Button size="icon" variant="outline" onClick={() => handleAttendanceChange(subject.id, 'attended', subject.attended + 1)}><Plus className="h-4 w-4" /></Button>
                               </div>
-                          </TableCell>
-                          <TableCell className="text-right">
-                              <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
-                                  <Trash2 className="h-4 w-4" />
-                              </Button>
-                          </TableCell>
-                      </TableRow>
-                  );
-              })}
-            </TableBody>
-          </Table>
+                            </TableCell>
+                            <TableCell>
+                                <div className="flex items-center gap-2">
+                                <Progress value={percentage} className="w-full" />
+                                <span className={`font-semibold ${percentage < 75 ? 'text-destructive' : 'text-green-500'}`}>{percentage}%</span>
+                                </div>
+                            </TableCell>
+                            <TableCell>
+                                <div className="text-xs">
+                                  {percentage >= 75 ? (
+                                      <p>Classes you can miss: <span className="font-bold text-green-500">{bunkableInfo.message}</span></p>
+                                  ) : (
+                                      <p>Classes to attend: <span className="font-bold text-destructive">{neededInfo.message}</span></p>
+                                  )}
+                                </div>
+                            </TableCell>
+                            <TableCell className="text-right">
+                                <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                            </TableCell>
+                        </TableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </div>
            {subjects.length === 0 && (
                 <div className="text-center py-10 text-muted-foreground">
                     Please load your subjects to begin tracking.

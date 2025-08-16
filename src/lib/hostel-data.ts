@@ -5,10 +5,12 @@ export interface HostelWardenInfo {
     department?: string;
     phone?: string;
     email?: string;
+    scholarId?: string;
   }
   
   export interface HostelWardenInfoData {
     hostelDisplayName: string;
+    studentListUrl?: string;
     staff: HostelWardenInfo[];
   }
   
@@ -32,10 +34,20 @@ export interface HostelWardenInfo {
         ] 
       },
       { 
-        hostelDisplayName: "Boys Hostel - 4", 
+        hostelDisplayName: "Boys Hostel - 4",
+        studentListUrl: "https://docs.google.com/spreadsheets/d/1dEGlVCL8ul9JIs_rZxYm_hCbymIde8pxx_3cdPhA4K8/edit?usp=sharing",
         staff: [
           { role: "Warden", name: "Dr. Simanchar Kar", department: "Department of Mechanical Engineering", phone: "+91-8249994335", email: "simanchal@mech.nits.ac.in" },
-          { role: "Assistant Warden", name: "Dr. Santosh Kumar", department: "Department of Mechanical Engineering", phone: "+91-9342264276", email: "santosh@mech.nits.ac.in" }
+          { role: "Assistant Warden", name: "Dr. Santosh Kumar", department: "Department of Mechanical Engineering", phone: "+91-9342264276", email: "santosh@mech.nits.ac.in" },
+          { role: "Prefect", name: "Biplab Das", scholarId: "2413073" },
+          { role: "Assistant Prefect", name: "Kaustabh Hazarika", scholarId: "2415057" },
+          { role: "Mess Secretary", name: "Mridu Paban Bora", scholarId: "2414025" },
+          { role: "MMC Representative", name: "Angothu Jagadeesh", scholarId: "2413112" },
+          { role: "MMC Representative", name: "Vinay Kumar", scholarId: "2413144" },
+          { role: "MMC Representative", name: "Bishal Thakuria", scholarId: "2415043" },
+          { role: "MMC Representative", name: "Ankrit Baidya", scholarId: "2415044" },
+          { role: "Outdoor Sports Secretary", name: "Manash Doley", scholarId: "2416078" },
+          { role: "Indoor Sports Secretary", name: "Ishan Baruah", scholarId: "2414013" }
         ] 
       },
       { hostelDisplayName: "Boys Hostel - 5", staff: [{ role: "Warden", name: "N/A"}] },

@@ -76,10 +76,10 @@ const features = [
     description: 'Navigate the campus grounds.',
   },
   {
-    title: 'CGPA Calculator',
-    href: '/cgpa-calculator',
+    title: 'SGPA Calculator',
+    href: '/sgpa-calculator',
     icon: <Calculator className="h-8 w-8 text-primary" />,
-    description: 'Calculate your CGPA.',
+    description: 'Calculate your SGPA.',
   },
   {
     title: 'Hostels',

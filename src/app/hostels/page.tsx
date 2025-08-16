@@ -2,7 +2,7 @@
 'use client';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BedDouble, ArrowLeft, UserCircle, Phone, Mail, Utensils, Home, CheckCircle, Info, BookOpen } from "lucide-react";
+import { BedDouble, ArrowLeft, UserCircle, Phone, Mail, Utensils, Home, CheckCircle, Info, BookOpen, ExternalLink, Wifi } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { wardenStaffData } from "@/lib/hostel-data";
 import { Separator } from "@/components/ui/separator";
@@ -94,6 +94,28 @@ export default function HostelsPage() {
         </Button>
       </div>
 
+       <Card className="mb-6 shadow-lg">
+        <CardHeader>
+            <CardTitle className="font-headline">LAN Issues & Complaints</CardTitle>
+            <CardDescription>
+                Having trouble with your LAN connection? Use the official Google Form to register your complaint. This is common for all hostels.
+            </CardDescription>
+        </CardHeader>
+        <CardContent>
+            <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdUfRSZ4KJiLLsi06gBWCxCSXC4tu6q4M_Ss24bhzWI82dVXA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Button variant="secondary">
+                    <Wifi className="mr-2 h-4 w-4"/>
+                    Lodge LAN Complaint
+                    <ExternalLink className="ml-2 h-4 w-4"/>
+                </Button>
+            </a>
+        </CardContent>
+      </Card>
+
       <Card className="mb-6 shadow-lg">
         <CardHeader>
           <CardTitle>Select Hostel</CardTitle>
@@ -128,6 +150,11 @@ export default function HostelsPage() {
               <BedDouble className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
               <CardTitle className="text-lg sm:text-xl font-headline">{selectedHostelData.hostelDisplayName}</CardTitle>
             </div>
+             {selectedHostelData.studentListUrl && (
+                <a href={selectedHostelData.studentListUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline mt-2 flex items-center">
+                    View Student List <ExternalLink className="ml-1 h-4 w-4"/>
+                </a>
+             )}
           </CardHeader>
           <CardContent className="flex-grow space-y-3">
             {selectedHostelData.staff && selectedHostelData.staff.length > 0 ? (
@@ -140,6 +167,7 @@ export default function HostelsPage() {
                     <span className="text-xs sm:text-sm">{staffMember.name}</span>
                   </div>
                   {staffMember.department && <p className="text-xs text-muted-foreground ml-6">{staffMember.department}</p>}
+                  {staffMember.scholarId && <p className="text-xs text-muted-foreground ml-6">Scholar ID: {staffMember.scholarId}</p>}
                   {staffMember.phone && (
                     <div className="flex items-center text-[0.7rem] sm:text-xs text-muted-foreground ml-1">
                       <Phone className="mr-2 h-3 w-3 text-primary/70 flex-shrink-0" />
