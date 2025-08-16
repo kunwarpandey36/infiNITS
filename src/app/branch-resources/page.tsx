@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { FileText, ArrowLeft, ExternalLink } from 'lucide-react';
+import { FileText, ArrowLeft, ExternalLink, Star } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -25,6 +25,31 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
     }
     return courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]] || [];
 };
+
+const pyqLink = "https://drive.google.com/drive/folders/10rBZwT_n9uqac1FGht29HzdYm9Rn2Y6X";
+const yogaLink = "https://drive.google.com/drive/folders/13hu5pamJTAnjja1u_pvD6pa5qfewzpKi";
+
+const SpecialCard = ({ title, link }: { title: string; link: string }) => (
+    <a 
+        href={link} 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer"
+    >
+        <Card className="hover:shadow-md transition-shadow h-full bg-primary/10">
+            <CardContent className="p-4 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                    <Star className="h-8 w-8 text-primary flex-shrink-0" />
+                    <div>
+                        <p className="font-semibold text-primary">{title}</p>
+                        <p className="text-sm text-muted-foreground">Special Resource</p>
+                    </div>
+                </div>
+                <ExternalLink className="h-4 w-4 text-muted-foreground" />
+            </CardContent>
+        </Card>
+    </a>
+);
   
 
 export default function BranchResourcesPage() {
@@ -51,6 +76,8 @@ export default function BranchResourcesPage() {
         setSubjects([]);
     }
   }, [selectedSemester, selectedBranch]);
+
+  const showSpecialCards = selectedBranch === 'EE' && selectedSemester === '1';
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -106,6 +133,8 @@ export default function BranchResourcesPage() {
                 <CardContent>
                     {subjects && subjects.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                           {showSpecialCards && <SpecialCard title="PYQ (Most Important)" link={pyqLink} />}
+                           {showSpecialCards && <SpecialCard title="Yoga Resources" link={yogaLink} />}
                             {subjects.map(subject => (
                                 <a 
                                     key={subject.code}
@@ -145,3 +174,4 @@ export default function BranchResourcesPage() {
     </div>
   );
 }
+
