@@ -70,7 +70,22 @@ export interface HostelWardenInfo {
         staff: [
           { role: "Warden", name: "Dr. Arun Kumar", department: "Department of Electronics & Communication Engineering", phone: "+91-9431404941", email: "arunkumar@ece.nits.ac.in" },
           { role: "Assistant Warden", name: "Dr. Himanshu Karan", department: "Department of Electronics & Communication Engineering", phone: "+91-9732003148", email: "himanshu@ece.nits.ac.in" },
-          { role: "Assistant Warden", name: "Dr. Somnath Santra", department: "Department of Mechanical Engineering", email: "somnath@mech.nits.ac.in" }
+          { role: "Assistant Warden", name: "Dr. Somnath Santra", department: "Department of Mechanical Engineering", email: "somnath@mech.nits.ac.in" },
+          { role: "Prefect", name: "Utpal Kumar Dutta", scholarId: "21305041" },
+          { role: "Assistant Prefect", name: "Aryan Tripathi", scholarId: "2414102" },
+          { role: "MMC Member", name: "Kumar Karthikey Raj", scholarId: "2414152" },
+          { role: "MMC Member", name: "Amit Kumar", scholarId: "21306032" },
+          { role: "MMC Member", name: "Md Naumanul Yaqueen", scholarId: "21301040" },
+          { role: "MMC Member", name: "Roopjyoti Das", scholarId: "24302020" },
+          { role: "MMC Member", name: "Rahul Sarma", scholarId: "24305006" },
+          { role: "MMC Member", name: "ARPEET DHAR", scholarId: "2416007" },
+          { role: "Mess Hygiene Committee Member", name: "Sonu Yadav", scholarId: "2413088" },
+          { role: "Mess Hygiene Committee Member", name: "Durga Prasad", scholarId: "2414117" },
+          { role: "Mess Hygiene Committee Member", name: "UJJWAL PANDEY", scholarId: "2412022" },
+          { role: "Mess Hygiene Committee Member", name: "CHIRAG KHANDELWAL", scholarId: "2411128" },
+          { role: "Mess Hygiene Committee Member", name: "Syed Asha Abbas", scholarId: "2414092" },
+          { role: "Mess Hygiene Committee Member", name: "Debasis Das", scholarId: "24305003" },
+          { role: "Mess Hygiene Committee Member", name: "Avinash Verma", scholarId: "2414143" }
         ] 
       },
       {
