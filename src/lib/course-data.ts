@@ -28,7 +28,8 @@ const DEFAULT_RESOURCE_LINK = "https://sites.google.com/view/infinitsilchar/home
 
 const addDefaultResourceLinks = (subjects: any[]) => {
     return subjects.map(subject => {
-        if (!subject.resourceUrl || subject.resourceUrl === '#') {
+        // If resourceUrl is not present, or is present but is '#' or empty
+        if (!subject.resourceUrl || subject.resourceUrl === '#' || subject.resourceUrl.trim() === '') {
             const link = subjectResourceLinks[subject.code] || DEFAULT_RESOURCE_LINK;
             return { ...subject, resourceUrl: link };
         }
