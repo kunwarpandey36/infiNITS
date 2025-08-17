@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
+import { Label } from '@/components/ui/label';
 
 interface Subject {
   id: string; 
@@ -31,7 +32,7 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
       code: s.code,
       credits: s.credits,
       yourMarks: 0,
-      topperMarks: 100, // Default to 100
+      topperMarks: 94, // Default to 94
     }));
 };
 
@@ -47,6 +48,7 @@ export default function SgpaCalculatorPage() {
     const router = useRouter();
     const [selectedSemester, setSelectedSemester] = useState('');
     const [selectedBranch, setSelectedBranch] = useState('');
+    const [applyAllMarks, setApplyAllMarks] = useState('');
 
     const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
 
@@ -75,7 +77,7 @@ export default function SgpaCalculatorPage() {
     const handleAddSubject = () => {
         setSubjects([
             ...subjects,
-            { id: `custom-${Date.now()}`, code: '', credits: 0, yourMarks: 0, topperMarks: 100 },
+            { id: `custom-${Date.now()}`, code: '', credits: 0, yourMarks: 0, topperMarks: 94 },
         ]);
     };
 
@@ -89,6 +91,13 @@ export default function SgpaCalculatorPage() {
                 s.id === id ? { ...s, [field]: typeof value === 'number' ? Math.max(0, value) : value.toUpperCase() } : s
             )
         );
+    };
+    
+    const handleApplyAllMarks = () => {
+        const marks = parseInt(applyAllMarks);
+        if(!isNaN(marks)) {
+            setSubjects(subjects.map(s => ({ ...s, yourMarks: marks })));
+        }
     };
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
@@ -174,43 +183,60 @@ export default function SgpaCalculatorPage() {
             <CardDescription>Enter your subjects, credits, and marks to calculate your Semester Grade Point Average based on relative grading.</CardDescription>
         </CardHeader>
         <CardContent>
+             <div className="flex flex-col md:flex-row gap-4 mb-6 p-4 border rounded-lg">
+                <div className="grid gap-2 w-full md:w-1/2">
+                    <Label htmlFor="apply-all-marks">Apply Same Marks to All Subjects</Label>
+                    <div className="flex gap-2">
+                        <Input 
+                            id="apply-all-marks"
+                            type="number"
+                            placeholder="e.g. 86"
+                            value={applyAllMarks}
+                            onChange={(e) => setApplyAllMarks(e.target.value)}
+                        />
+                        <Button onClick={handleApplyAllMarks}>Apply</Button>
+                    </div>
+                </div>
+            </div>
             {subjects.length > 0 ? (
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Subject Code</TableHead>
-                            <TableHead>Credits</TableHead>
-                            <TableHead>Your Marks</TableHead>
-                            <TableHead>Topper's Marks</TableHead>
-                            <TableHead>Action</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {subjects.map(subject => {
-                            return (
-                                <TableRow key={subject.id}>
-                                    <TableCell>
-                                        <Input value={subject.code} onChange={e => handleSubjectChange(subject.id, 'code', e.target.value)} placeholder="e.g. CS201" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} placeholder="e.g. 4" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
-                                    </TableCell>
-                                    <TableCell>
-                                        <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
-                                            <Trash2 className="h-4 w-4" />
-                                        </Button>
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
+                <div className="overflow-x-auto">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="min-w-[150px]">Subject Code</TableHead>
+                                <TableHead>Credits</TableHead>
+                                <TableHead>Your Marks</TableHead>
+                                <TableHead>Topper's Marks</TableHead>
+                                <TableHead>Action</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {subjects.map(subject => {
+                                return (
+                                    <TableRow key={subject.id}>
+                                        <TableCell>
+                                            <Input value={subject.code} onChange={e => handleSubjectChange(subject.id, 'code', e.target.value)} placeholder="e.g. CS201" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} placeholder="e.g. 4" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
+                                        </TableCell>
+                                        <TableCell>
+                                            <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
+                                                <Trash2 className="h-4 w-4" />
+                                            </Button>
+                                        </TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </div>
             ) : (
                 <div className="text-center py-10 text-muted-foreground">
                     Please load your subjects to begin.

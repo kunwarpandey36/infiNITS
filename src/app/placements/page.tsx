@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -42,7 +43,7 @@ const placementData22_23 = [
     { branch: 'CSE', total: 167, placed: 157, avg: 23.81, median: 18, highest: 80 },
     { branch: 'EE', total: 138, placed: 117, avg: 13.18, median: 11.53, highest: 52.89 },
     { branch: 'ECE', total: 169, placed: 148, avg: 16.19, median: 14.5, highest: 52.89 },
-    { branch: 'EIE', total: 70, placed: 19, avg: 13.49, median: 14, highest: 32 },
+    { branch: 'EIE', total: 70, placed: 58, avg: 14.9, median: 13.0, highest: 52.89 },
     { branch: 'ME', total: 147, placed: 126, avg: 10.77, median: 9, highest: 28.8 },
 ];
   
