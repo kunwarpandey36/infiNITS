@@ -7,9 +7,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Home, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { mergedStudentData } from '@/lib/student-data';
+import { IcebergLogo } from '@/components/icons/iceberg-logo';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -97,7 +98,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
-            <Home className="h-8 w-8 text-primary" />
+            <IcebergLogo className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold font-headline">
                 infi<span className="text-primary">NITS</span>
             </h1>
