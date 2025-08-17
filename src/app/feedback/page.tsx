@@ -1,16 +1,12 @@
 
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Mail, ArrowLeft, Heart, UserCircle, Send } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Mail, ArrowLeft, Heart, UserCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
 
 const developers = [
     { name: 'Kunwar', email: "ku36pd@gmail.com" },
@@ -23,16 +19,7 @@ const developers = [
 
 export default function FeedbackPage() {
   const router = useRouter();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [problem, setProblem] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = `Feedback from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nProblem:\n${problem}`;
-    window.location.href = `mailto:infinitsilchar@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
+  const formEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSes6hAXebiEzjEhvDmqW7wuDzwbuOZRjXk3B-IXcv3dzsCyhg/viewform?embedded=true";
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -45,36 +32,27 @@ export default function FeedbackPage() {
         </h1>
       </div>
       <div className="grid gap-8 md:grid-cols-2">
-        <Card>
+        <Card className="flex flex-col">
             <CardHeader>
                 <CardTitle className="font-headline">Send us your Feedback</CardTitle>
                 <CardDescription>
                     For any feedback, suggestions, or issues, please fill out the form below.
                 </CardDescription>
             </CardHeader>
-            <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required />
-                    </div>
-                     <div className="space-y-2">
-                        <Label htmlFor="email">Your Email</Label>
-                        <Input id="email" type="email" placeholder="Your Email for mailback" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    </div>
-                     <div className="space-y-2">
-                        <Label htmlFor="problem">Problem/Suggestion</Label>
-                        <Textarea id="problem" placeholder="Describe the issue or your suggestion" value={problem} onChange={(e) => setProblem(e.target.value)} required />
-                    </div>
-                    <Button type="submit" className="w-full">
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Feedback
-                    </Button>
-                </form>
+            <CardContent className="flex-grow">
+                <iframe
+                    src={formEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    marginHeight={0}
+                    marginWidth={0}
+                    className="min-h-[500px] rounded-md"
+                    title="Feedback Form"
+                >
+                    Loading…
+                </iframe>
             </CardContent>
-            <CardFooter>
-                 <p className="text-xs text-muted-foreground">Alternatively, you can email us directly at <a href="mailto:infinitsilchar@gmail.com" className="text-primary">infinitsilchar@gmail.com</a>.</p>
-            </CardFooter>
         </Card>
         <Card>
             <CardHeader>
