@@ -1,10 +1,10 @@
 
 'use client';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowLeft, CalendarPlus, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription as DialogDescriptionComponent, DialogFooter } from "@/components/ui/dialog";
 
 const societiesList = [
   {
@@ -120,7 +120,7 @@ export default function SocietiesPage() {
                 <DialogContent className="max-h-[90vh] overflow-y-auto">
                     <DialogHeader>
                         <DialogTitle className="text-2xl font-headline">{society.name}</DialogTitle>
-                        <DialogDescription className="whitespace-pre-line">{society.description}</DialogDescription>
+                        <DialogDescriptionComponent className="whitespace-pre-line">{society.description}</DialogDescriptionComponent>
                     </DialogHeader>
                     {society.events.length > 0 && (
                         <div className="py-4">
@@ -175,3 +175,4 @@ export default function SocietiesPage() {
     </div>
   );
 }
+
