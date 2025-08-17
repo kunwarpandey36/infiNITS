@@ -91,8 +91,7 @@ export interface HostelWardenInfo {
       {
         hostelDisplayName: "Boys Hostel - 9A (J.C. Bose Hall)",
         staff: [
-          { role: "Warden", name: "Dr. Sudipta Chakraborty", department: "Department of Electronics & Instrumentation Engineering", phone: "+91-9040429561", email: "sudipta@ei.nits.ac.in" },
-          { role: "Assistant Warden", name: "Dr. Ambrish Devanshu", department: "Department of Electrical Engineering", phone: "+91-9101420179", email: "ambrish@ee.nits.ac.in" }
+          { role: "Warden", name: "Dr. Sudipta Chakraborty", department: "Department of Electronics & Instrumentation Engineering", phone: "+91-9040429561", email: "sudipta@ei.nits.ac.in" }
         ]
       },
       {

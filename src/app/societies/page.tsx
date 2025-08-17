@@ -11,37 +11,50 @@ const societiesList = [
     name: "Computer Science Society (CSS)",
     description: "The students and the faculty of the Computer Science and Engineering Department are the members of the Society. The Society aims at organising various activities for the professional and intellectual development of the students. It involves a wide variety of events including seminars, paper presentations, debate, quiz and software contests.The society also organises socialisation programmes for the freshmen in the society.",
     icon: Shield,
-    events: [],
+    events: [
+      { name: "Abacus", date: "April 5th, every year", description: "The annual technical fest of the CSE department.", gallery: "https://www.instagram.com/p/DIIZXKMPt1-/" }
+    ],
+    instagram: "https://www.instagram.com/cssnits/"
   },
   {
     name: "Electronics & Communication Society (ECS)",
     description: "The Electronics and Telecommunication Department has an active Society called “Electronics Society” which has been formed with a view to promote various technical activities among the students. Both the faculty and the students are the members of the Society.",
     icon: Shield,
     events: [],
+    website: "https://ecsnits.in/",
+    instagram: "https://www.instagram.com/ecs.nits/"
   },
   {
     name: "Electra (Electrical Engineering Society)",
     description: "The Electrical Engineering Society aims at guiding the students to undertake various activities like technical seminars and debates on various fields of electrical engineering which enables the students to keep pace with the rapidly changing technology.",
     icon: Shield,
-    events: [],
+    events: [
+        { name: "Electra Cup", date: "February 7th, every year", description: "The annual sports fest of the EE department.", gallery: "https://www.instagram.com/p/DFnPF4zPwI9/" }
+    ],
+    website: "https://www.electrasocietynits.com/",
+    instagram: "https://www.instagram.com/electrasociety/"
   },
   {
     name: "Civil Engineering Society (CES)",
     description: "The students and the staff of the Civil Engineering Department are the members of the Society. The Society aims at organising various activities for the professional development of the students. The most important function organised annually by the Society is “aaghaz”. It involves a wide variety of events including seminars, paper presentations, debate, quiz and software contests.",
     icon: Shield,
     events: [],
+    instagram: "https://www.instagram.com/civilengineeringsocietynits/"
   },
   {
     name: "Mechanical Engineering Society (MES)",
     description: "The Mechanical Engineering Society, called “MES” is an integral part of the Department which aims at bringing the best out of the students and helping them hone their skills through various activities conducted by the Society. The Society is also involved in active consultancy works for the development and utilization of resources of the North-Eastern part of India.",
     icon: Shield,
     events: [],
+    instagram: "https://www.instagram.com/mes_nits/"
   },
   {
     name: "IEEE Students' Branch",
     description: "IEEE NITS (National Institute of Technology, Silchar) is one of the many student organizations working under IEEE, Institute of Electrical and Electronics Engineers, headquartered in USA. We are a part of the IEEE Kolkata Section, under Asia Pacific Region (IEEE Region 10). Being one of the few IEEE branches in the north-east, we hope to fulfill our role to bring the latest innovations in technology to this vibrant corner of India.",
     icon: Shield,
     events: [],
+    website: "https://sites.google.com/view/ieee-ras--silchar-subsection/home?authuser=0",
+    instagram: "https://www.instagram.com/ieee_ras.nits/"
   },
   {
     name: "Indian Society for Technical Education (ISTE)",
@@ -54,7 +67,7 @@ const societiesList = [
     description: "The Department of Electronics & Instrumentation Engineering (EIE) has a society, the INSEES (Instrumentation and Electronics Engineering Society), comprising of the faculty and student members of the department. The society has been formed with a view to promote various technical activities among the students. It aims to play an active role in the development of students as potential engineers by various out-of-curriculum and extra-curricular activities including organizing of seminars, paper presentations, debate, quiz and software contests. The society also organises socialisation programmes for the freshmen in the society.\n\nINSEES aims to inculcate among its members an awareness and appreciation of the various disciplines of not just Electronics & Instrumentation Engineering but also other relevant fields. By way of its activities, INSEES aims to be a platform for all the students of NIT Silchar in general and particularly of the students of EIE department. The INSEES plays a vital role as an active organization of the EIE department at NITS which promotes career interests of the members.",
     icon: Shield,
     events: [
-        { name: "Alpha Crescendo", date: "January 12th, every year", description: "The annual technical fest of the EIE department.", gallery: "https://photos.app.goo.gl/uYFQXrXbYxP9Z2fA9" }
+        { name: "Alpha Crescendo", date: "January 12th, every year", description: "The annual technical fest of the EIE department.", gallery: "https://www.instagram.com/p/DMM2anwy7_s/?img_index=1" }
     ],
   },
   {
@@ -131,7 +144,10 @@ export default function SocietiesPage() {
                         </div>
                     )}
                      <DialogFooter>
-                        <Button type="button" variant="secondary" onClick={() => {}}>Close</Button>
+                        <div className="flex gap-2">
+                          {society.website && <a href={society.website} target="_blank" rel="noopener noreferrer"><Button>Website <ExternalLink className="ml-2 h-4 w-4"/></Button></a>}
+                          {society.instagram && <a href={society.instagram} target="_blank" rel="noopener noreferrer"><Button>Instagram <ExternalLink className="ml-2 h-4 w-4"/></Button></a>}
+                        </div>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>

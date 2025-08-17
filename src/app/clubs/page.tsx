@@ -18,30 +18,34 @@ import {
 
 const clubsList = [
   { name: "Dojonits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "NITS Cricket Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Ppgnitsilchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Yoga Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "NITS Cricket Club", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/nits_cricket/" },
+  { name: "PPG NITS", description: "Public Policy and Governance Society, NIT Silchar.", icon: Users, link: "https://www.instagram.com/ppgsnitsilchar/" },
+  { name: "Yoga Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/yoga_club_nits/" },
   { name: "Symphonits", description: "ᴍᴜsɪᴄ ᴄʟᴜʙ ᴏғ ɴɪᴛ sɪʟᴄʜᴀʀ 𝙻𝚎𝚝 𝚝𝚑𝚎 𝚖𝚞𝚜𝚒𝚌 𝚜𝚙𝚎𝚊𝚔 𝚏𝚘𝚛 𝚒𝚝𝚜𝚎𝚕𝚏✨", icon: Users, link: "https://www.instagram.com/sympho.nits__/"},
-  { name: "Mountaineering and Trekking Club NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Mountaineering and Trekking Club NITS", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/adventure_club.nits/" },
   { name: "Obiettivo", description: "𝐏𝐡𝐨𝐭𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐂𝐥𝐮𝐛 𝐍𝐈𝐓 𝐒𝐢𝐥𝐜𝐡𝐚𝐫.", icon: Users, link: "https://www.instagram.com/obiettivo_official/" },
-  { name: "Quizclub NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Aaveg", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "E Cell NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Quiz Club NITS", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/quizclub_nits/" },
+  { name: "Aaveg", description: "Aaveg - Dance Club NIT Silchar", icon: Users, link: "https://www.instagram.com/danceclubnits/" },
+  { name: "E-Cell NIT Silchar", description: "Entrepreneurship Cell NIT Silchar", icon: Users, link: "https://ecellnits.org/", instagram: "https://www.instagram.com/ecell.nitsilchar/" },
   { name: "NITS Eco Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Illuminits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "NITS Model United Nations", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Illuminits", description: "Literary, Publication, and Fine Arts Society of NIT Silchar.", icon: Users, link: "https://www.instagram.com/illuminits/" },
+  { name: "NITS Model United Nations", description: "The official instagram handle of NIT Silchar Model United Nations.", icon: Users, link: "https://www.nitsmun.co.in/", instagram: "https://www.instagram.com/nitsmun/" },
   { name: "N.E.R.D.S.", description: "NITS Embedded And Robotics Development Society-Robotics Club of NIT Silchar", icon: Users, link: "https://www.nerdsnitsilchar.in/" },
   { name: "GDG on Campus NIT Silchar", description: "GDG on campus NIT Silchar-Our main focus is to cultivate tech talent in India and expand our reach worldwide", icon: Users, link: "https://gdscnits.in/" },
   { name: "Machine Learning Club NIT Silchar", description: "Machine Learning Club NIT Silchar", icon: Users, link: "https://www.mlclubnits.com/" },
-  { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "NSS NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Advay", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "NCC NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Gyansagar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://financeclubnits.in/", instagram: "https://www.instagram.com/financeclubnits/" },
+  { name: "NSS NIT Silchar", description: "National Service Scheme, NIT Silchar. NOT ME BUT YOU. A Government Organisation. Official Account Of NSS Cell, NIT SILCHAR", icon: Users, link: "https://www.instagram.com/nss_nits/" },
+  { name: "Advay", description: "Advay - Dramatics Club, NIT Silchar. Unleash the Drama within... Join the Stage, Where Drama Meets Family: Uniting Hearts on Stage..!!", icon: Users, link: "https://www.instagram.com/advaynits/" },
+  { name: "NCC NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/ncc_nits/" },
+  { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/nits_basketball/" },
+  { name: "Gyansagar", description: "Details will be updated soon.", icon: Users, link: "https://bit.ly/gyansagar", instagram: "https://www.instagram.com/gyansagar.npo.nits/" },
   { name: "NITS Football Club", description: "Promoting football culture and organizing matches and tournaments within the campus.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "RCA NITS (Rajasthan Cultural Association)", description: "The objective of RCA, NIT Silchar is to keep the cultural spirit of rajasthan alive,keep intact the rich culture and heritage.", icon: Users, link: "https://www.instagram.com/rca.nits/" },
-
+  { name: "IEI NIT Silchar", description: "The Institution of Engineers (India) Student's Chapter, NIT Silchar", icon: Users, link: "https://www.instagram.com/iei.nitsilchar/" },
+  { name: "ASME NITS", description: "ASME NIT Silchar Student Section", icon: Users, link: "http://asmenits.org/", instagram: "https://www.instagram.com/asme_nits/" },
+  { name: "MATLAB SA NITS", description: "MATLAB Student Ambassador, NIT Silchar", icon: Users, link: "https://linktr.ee/mathworksnits", instagram: "https://www.instagram.com/mtlb_sa_nitsilchar/" },
+  { name: "Hindi Sahitya Samiti", description: "Hindi Sahitya Samiti, a wing of Illuminits, the Literary, Publication and Fine Arts Society of NIT Silchar.", icon: Users, link: "https://www.instagram.com/hindisahityasamitinits/" },
+  { name: "Kho Kho Club NITS", description: "Official page of Kho-Kho club of NIT Silchar.", icon: Users, link: "https://www.instagram.com/nitsilchar_khokho/" }
 ];
 
 const clubActivityAnnouncements = [
@@ -134,11 +138,14 @@ export default function ClubsPage() {
                   <p className="text-sm text-muted-foreground">More details and updates will be available on the official club page.</p>
                 </div>
                 <DialogFooter>
+                  <div className="flex gap-2">
                   <a href={club.link} target="_blank" rel="noopener noreferrer">
                     <Button>
                       Visit Club Page <ExternalLink className="ml-2 h-4 w-4"/>
                     </Button>
                   </a>
+                  {club.instagram && <a href={club.instagram} target="_blank" rel="noopener noreferrer"><Button>Instagram <ExternalLink className="ml-2 h-4 w-4"/></Button></a>}
+                  </div>
                 </DialogFooter>
               </DialogContent>
             </Dialog>

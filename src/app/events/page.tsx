@@ -22,7 +22,11 @@ const events = [
     location: 'New Gallery',
     description: 'The annual techno-management festival, featuring workshops, competitions, and guest lectures.',
     organizer: 'Technical Board',
-    type: 'Festival'
+    type: 'Festival',
+    links: {
+      website: 'https://www.tecnoesis.co.in/',
+      instagram: 'https://www.instagram.com/tecnoesis.nits/'
+    }
   },
    {
     title: 'Chhath Puja',
@@ -53,7 +57,7 @@ const events = [
     organizer: 'INSEES',
     type: 'Tech Fest',
     links: {
-      gallery: 'https://photos.app.goo.gl/uYFQXrXbYxP9Z2fA9',
+      gallery: 'https://www.instagram.com/p/DMM2anwy7_s/?img_index=1',
     }
   },
   {
@@ -64,6 +68,73 @@ const events = [
     organizer: 'Robotics Club',
     type: 'Workshop'
   },
+  {
+    title: 'Posua',
+    date: 'February 17, 2025',
+    location: 'Campus',
+    description: 'Details will be updated soon.',
+    organizer: 'Posua Team',
+    type: 'Cultural',
+    links: {
+      instagram: 'https://www.instagram.com/posua_nits/'
+    }
+  },
+  {
+    title: 'Abacus',
+    date: 'April 5, 2025',
+    location: 'CSE Department',
+    description: 'The annual technical fest of the CSE department.',
+    organizer: 'CSS',
+    type: 'Tech Fest',
+    links: {
+      glimpse: 'https://www.instagram.com/p/DIIZXKMPt1-/'
+    }
+  },
+  {
+    title: 'Oikyotaan',
+    date: 'May 5, 2025',
+    location: 'Campus',
+    description: 'A cultural event celebrating unity and diversity.',
+    organizer: 'Oikyotaan Team',
+    type: 'Cultural',
+    links: {
+      website: 'https://oikyotaan.in/',
+      instagram: 'https://www.instagram.com/_oikyotaan_/'
+    }
+  },
+  {
+    title: 'Electra Cup',
+    date: 'February 7, 2025',
+    location: 'Campus',
+    description: 'The annual sports fest of the EE department.',
+    organizer: 'Electra Society',
+    type: 'Sports',
+    links: {
+      glimpse: 'https://www.instagram.com/p/DFnPF4zPwI9/'
+    }
+  },
+  {
+    title: 'Literary Premier League',
+    date: 'April 5, 2025',
+    location: 'Campus',
+    description: 'A literary competition organized by Illuminits.',
+    organizer: 'Illuminits',
+    type: 'Competition',
+    links: {
+      website: 'https://heyzine.com/flip-book/dcbf4d0d2c.html#page/1'
+    }
+  },
+  {
+    title: 'School Genius',
+    date: 'November 2, 2024',
+    location: 'During Tecnoesis',
+    description: 'A quiz competition for school students.',
+    organizer: 'Tecnoesis',
+    type: 'Competition',
+    links: {
+        instagram: 'https://www.instagram.com/school_genius_nits/'
+    }
+  }
 ];
 
 export default function EventsPage() {
@@ -93,6 +164,7 @@ export default function EventsPage() {
               <p>{event.description}</p>
                  {event.links && (
                   <div className="flex flex-wrap gap-2 mt-4">
+                    {event.links.website && <a href={event.links.website} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Website</Button></a>}
                     {event.links.instagram && <a href={event.links.instagram} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Instagram</Button></a>}
                     {event.links.facebook && <a href={event.links.facebook} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Facebook</Button></a>}
                     {event.links.glimpse && <a href={event.links.glimpse} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Last Year's Glimpse</Button></a>}

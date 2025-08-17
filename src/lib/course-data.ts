@@ -1,6 +1,6 @@
 
 export const subjectResourceLinks: Record<string, string> = {
-    'PH101': 'hL',
+    'PH101': 'https://drive.google.com/drive/folders/147YmLk5qp1NVxEx8eNDXF9sF_VZxk6GL',
     'MA101': 'https://drive.google.com/drive/folders/1HnAqiAJY6fAuERZkl32TQxqweG8_GkGa',
     'ME101': 'https://drive.google.com/drive/folders/1cyXrwYZiomyyNp2EXWtLp-JXxnn1o2TR',
     'EE101': 'https://drive.google.com/drive/folders/1AqbzsAIEyizz4DBLEDdVfoZ0jMAdQ-OU',
