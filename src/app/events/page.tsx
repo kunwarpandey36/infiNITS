@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Pin, ArrowLeft, Info } from 'lucide-react';
+import { Calendar, Pin, ArrowLeft, Info, ExternalLink } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
@@ -24,6 +24,19 @@ const events = [
     organizer: 'Technical Board',
     type: 'Festival'
   },
+   {
+    title: 'Chhath Puja',
+    date: 'October 25, 2024',
+    location: 'Campus Ghat',
+    description: 'A celebration of Chhath Puja organized by अभ्युदय. For more details, follow their pages.',
+    organizer: 'अभ्युदय',
+    type: 'Cultural',
+    links: {
+        instagram: 'https://www.instagram.com/abhyuday_nits/',
+        facebook: 'https://www.facebook.com/AbhyudayNITS',
+        glimpse: 'https://www.instagram.com/p/DCNrAqOSkps/',
+    }
+  },
   {
     title: 'UpStart Pitching Event',
     date: 'September 20, 2024',
@@ -31,6 +44,17 @@ const events = [
     description: 'An opportunity for budding entrepreneurs to pitch their ideas to investors and mentors.',
     organizer: 'E-Cell',
     type: 'Competition'
+  },
+  {
+    title: 'Alpha Crescendo',
+    date: 'January 12, 2025',
+    location: 'Campus Auditorium',
+    description: 'The annual technical fest of the EIE department, with various technical events and workshops.',
+    organizer: 'INSEES',
+    type: 'Tech Fest',
+    links: {
+      gallery: 'https://photos.app.goo.gl/uYFQXrXbYxP9Z2fA9',
+    }
   },
   {
     title: 'Robotics Workshop',
@@ -67,6 +91,14 @@ export default function EventsPage() {
             </CardHeader>
             <CardContent className="flex-grow">
               <p>{event.description}</p>
+                 {event.links && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {event.links.instagram && <a href={event.links.instagram} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Instagram</Button></a>}
+                    {event.links.facebook && <a href={event.links.facebook} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Facebook</Button></a>}
+                    {event.links.glimpse && <a href={event.links.glimpse} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Last Year's Glimpse</Button></a>}
+                    {event.links.gallery && <a href={event.links.gallery} target="_blank" rel="noopener noreferrer"><Button size="sm" variant="outline">Photo Gallery</Button></a>}
+                  </div>
+                )}
             </CardContent>
             <CardFooter className="flex justify-between text-sm text-muted-foreground">
               <div className="flex items-center gap-2">

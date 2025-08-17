@@ -21,18 +21,18 @@ const clubsList = [
   { name: "NITS Cricket Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Ppgnitsilchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Yoga Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Symphonits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Symphonits", description: "ᴍᴜsɪᴄ ᴄʟᴜʙ ᴏғ ɴɪᴛ sɪʟᴄʜᴀʀ 𝙻𝚎𝚝 𝚝𝚑𝚎 𝚖𝚞𝚜𝚒𝚌 𝚜𝚙𝚎𝚊𝚔 𝚏𝚘𝚛 𝚒𝚝𝚜𝚎𝚕𝚏✨", icon: Users, link: "https://www.instagram.com/sympho.nits__/"},
   { name: "Mountaineering and Trekking Club NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Obiettivo", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "Obiettivo", description: "𝐏𝐡𝐨𝐭𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐂𝐥𝐮𝐛 𝐍𝐈𝐓 𝐒𝐢𝐥𝐜𝐡𝐚𝐫.", icon: Users, link: "https://www.instagram.com/obiettivo_official/" },
   { name: "Quizclub NITS", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Aaveg", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "E Cell NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "NITS Eco Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Illuminits", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "NITS Model United Nations", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "N.E.R.D.S.", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "GDG on Campus NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
-  { name: "Machine Learning Club NIT Silchar", description: "Fostering interest and knowledge in Machine Learning. Visit our website: https://www.mlclubnits.com/", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "N.E.R.D.S.", description: "NITS Embedded And Robotics Development Society-Robotics Club of NIT Silchar", icon: Users, link: "https://www.nerdsnitsilchar.in/" },
+  { name: "GDG on Campus NIT Silchar", description: "GDG on campus NIT Silchar-Our main focus is to cultivate tech talent in India and expand our reach worldwide", icon: Users, link: "https://gdscnits.in/" },
+  { name: "Machine Learning Club NIT Silchar", description: "Machine Learning Club NIT Silchar", icon: Users, link: "https://www.mlclubnits.com/" },
   { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "NSS NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Advay", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
@@ -40,6 +40,8 @@ const clubsList = [
   { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "Gyansagar", description: "Details will be updated soon.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
   { name: "NITS Football Club", description: "Promoting football culture and organizing matches and tournaments within the campus.", icon: Users, link: "https://sites.google.com/view/infinitsilchar/clubs-at-nit-silchar" },
+  { name: "RCA NITS (Rajasthan Cultural Association)", description: "The objective of RCA, NIT Silchar is to keep the cultural spirit of rajasthan alive,keep intact the rich culture and heritage.", icon: Users, link: "https://www.instagram.com/rca.nits/" },
+
 ];
 
 const clubActivityAnnouncements = [

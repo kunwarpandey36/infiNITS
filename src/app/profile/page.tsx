@@ -8,9 +8,10 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import UpcomingEvents from '@/components/upcoming-events';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Instagram } from 'lucide-react';
 import TodaysMenu from '@/components/todays-menu';
 import TodaysTimetable from '@/components/todays-timetable';
+import Link from 'next/link';
 
 interface Subject {
   id: string;
@@ -119,6 +120,19 @@ export default function ProfilePage() {
           <TodaysMenu />
         </div>
       </div>
+      
+       <Card>
+            <CardHeader>
+                <CardTitle className="font-headline flex items-center gap-2"><Instagram className="text-pink-500"/>Follow NITS Official</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <Link href="https://www.instagram.com/nitsilchar_/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline">
+                        Follow the official page of NIT Silchar
+                    </Button>
+                </Link>
+            </CardContent>
+        </Card>
 
     </div>
   );
