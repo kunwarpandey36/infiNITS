@@ -60,7 +60,7 @@ export default function LoginPage() {
     let branchCode;
     // For scholarId format YYBBRRR (e.g., 2212345)
     if (scholarId.length === 7) {
-        branchCode = parseInt(scholarId.substring(2, 3), 10);
+        branchCode = parseInt(scholarId.substring(3, 4), 10);
     } else {
         // Fallback or other formats
         branchCode = parseInt(scholarId.substring(3, 4), 10); // Example: 22-1-2345
