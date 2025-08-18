@@ -290,7 +290,7 @@ const rawCourseData: Record<string, any> = {
         { code: 'EAA', name: 'Extra-Academic Activities', credits: 0, resourceUrl: DEFAULT_RESOURCE_LINK },
       ],
       '3': [
-        { code: 'EE201', name: 'Signals and Systems', credits: 4, resourceUrl: DEFAULT_RESOURCE_LINK },
+        { code: 'EE201', name: 'Signals and Systems', credits: 4, resourceUrl: "https://docs.google.com/spreadsheets/d/1dEGlVCL8ul9JIs_rZxYm_hCbymIde8pxx_3cdPhA4K8/edit?gid=0#gid=0" },
         { code: 'MA201', name: 'Mathematics III', credits: 4, resourceUrl: subjectResourceLinks['MA201'] },
         { code: 'EE202', name: 'Analog Electronics', credits: 4, resourceUrl: DEFAULT_RESOURCE_LINK },
         { code: 'EE203', name: 'Energy Science and Technology', credits: 3, resourceUrl: DEFAULT_RESOURCE_LINK },
