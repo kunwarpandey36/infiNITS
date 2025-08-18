@@ -29,9 +29,21 @@ export default function TimetablePage() {
   const [activeBranch, setActiveBranch] = useState('CE');
   const [activeSection, setActiveSection] = useState('A');
 
+  useEffect(() => {
+    if (student) {
+      setActiveProgram('UG');
+      setActiveSemester(student.semester);
+      setActiveBranch(student.branch);
+      const studentSections = Object.keys(timetableData[student.semester]?.[student.branch] || {});
+      if (studentSections.length > 0) {
+        setActiveSection(studentSections[0]);
+      }
+    }
+  }, [student]);
+
   const semestersForProgram = useMemo(() => {
-    if (activeProgram === 'UG') return Object.keys(timetableData).filter(k => k !== 'PG-1');
-    if (activeProgram === 'PG') return ['PG-1'];
+    if (activeProgram === 'UG') return Object.keys(timetableData).filter(k => !k.startsWith('PG'));
+    if (activeProgram === 'PG') return Object.keys(timetableData).filter(k => k.startsWith('PG'));
     return [];
   }, [activeProgram]);
 
@@ -42,44 +54,29 @@ export default function TimetablePage() {
   const sectionsForBranch = useMemo(() => {
     return Object.keys(timetableData[activeSemester]?.[activeBranch] || {});
   }, [activeSemester, activeBranch]);
-
-  useEffect(() => {
-    if (student && activeProgram === 'UG') {
-      setActiveSemester(student.semester);
-      setActiveBranch(student.branch);
-      const studentSections = Object.keys(timetableData[student.semester]?.[student.branch] || {});
-       if (studentSections.length > 0) {
-        setActiveSection(studentSections[0]);
-      }
-    } else {
-      setActiveSemester(semestersForProgram[0] || '1');
-      const firstBranch = branchesForSemester[0] || 'CE';
-      setActiveBranch(firstBranch);
-      const firstSection = Object.keys(timetableData[semestersForProgram[0]]?.[firstBranch] || {})[0] || 'A';
-      setActiveSection(firstSection);
-    }
-  }, [student, activeProgram, semestersForProgram, branchesForSemester]);
   
   useEffect(() => {
-    if (!semestersForProgram.includes(activeSemester)) {
-      setActiveSemester(semestersForProgram[0] || '');
+    if (semestersForProgram.length > 0 && !semestersForProgram.includes(activeSemester)) {
+      setActiveSemester(semestersForProgram[0]);
     }
-  }, [semestersForProgram, activeSemester]);
-
+  }, [activeSemester, semestersForProgram]);
+  
   useEffect(() => {
-    if (!branchesForSemester.includes(activeBranch)) {
-      setActiveBranch(branchesForSemester[0] || '');
+    if (branchesForSemester.length > 0 && !branchesForSemester.includes(activeBranch)) {
+      setActiveBranch(branchesForSemester[0]);
     }
-  }, [branchesForSemester, activeBranch]);
-
+  }, [activeBranch, branchesForSemester]);
+  
   useEffect(() => {
-    if (!sectionsForBranch.includes(activeSection)) {
-      setActiveSection(sectionsForBranch[0] || '');
+    if (sectionsForBranch.length > 0 && !sectionsForBranch.includes(activeSection)) {
+      setActiveSection(sectionsForBranch[0]);
     }
-  }, [sectionsForBranch, activeSection]);
+  }, [activeSection, sectionsForBranch]);
 
 
   const scheduleForView = useMemo(() => {
+    if (!activeSemester || !activeBranch || !activeSection) return {};
+
     const sectionData = timetableData[activeSemester]?.[activeBranch]?.[activeSection] || {};
     let processedSchedule: { [day: string]: { [time: string]: { content: string, span: number } | null } } = {};
 
@@ -99,7 +96,11 @@ export default function TimetablePage() {
             // Check for multi-hour slots
             const multiHourSlot = Object.keys(daySchedule).find(s => {
                 const [start, end] = s.split('-');
-                return slot.startsWith(start) && getHour(end) > getHour(slot.split('-')[1]);
+                if (!start || !end) return false;
+                const startHour = getHour(start);
+                const currentHour = getHour(slot.split('-')[0]);
+                const endHour = getHour(end);
+                return currentHour >= startHour && currentHour < endHour;
             });
 
             if (multiHourSlot) {
@@ -108,14 +109,18 @@ export default function TimetablePage() {
                 const endHour = getHour(end);
                 const span = endHour - startHour;
                 
-                processedSchedule[day][slot] = { content: daySchedule[multiHourSlot], span: span };
-
-                for (let i = 1; i < span; i++) {
-                    const nextSlotIndex = timeSlots.indexOf(slot) + i;
-                    if (nextSlotIndex < timeSlots.length) {
-                        processedSchedule[day][timeSlots[nextSlotIndex]] = null; // Mark as covered
+                if (slot.startsWith(start)) {
+                    processedSchedule[day][slot] = { content: daySchedule[multiHourSlot], span: span };
+                    for (let i = 1; i < span; i++) {
+                        const nextSlotIndex = timeSlots.indexOf(slot) + i;
+                        if (nextSlotIndex < timeSlots.length) {
+                            processedSchedule[day][timeSlots[nextSlotIndex]] = null; // Mark as covered
+                        }
                     }
+                } else {
+                     processedSchedule[day][slot] = { content: '-', span: 1 };
                 }
+
             } else {
                  processedSchedule[day][slot] = { content: '-', span: 1 };
             }
