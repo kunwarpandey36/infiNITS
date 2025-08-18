@@ -15,7 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MainNav } from './main-nav';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { IcebergLogo } from './icons/iceberg-logo';
+import Image from 'next/image';
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme();
@@ -38,7 +38,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <Link href="/dashboard" className="mr-6 flex items-center space-x-2">
-          <IcebergLogo className="h-6 w-6 text-primary" />
+          <Image src="/icon.jpg" alt="infiNITS Logo" width={24} height={24} className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block font-headline text-lg">
             infi<span className="text-primary">NITS</span>
           </span>
