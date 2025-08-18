@@ -11,7 +11,7 @@ import { ArrowLeft, Info } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-
+import { branchCodeMapping } from '@/lib/course-data';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const timeSlots = [
@@ -30,7 +30,7 @@ export default function TimetablePage() {
   const [activeSection, setActiveSection] = useState('A');
 
   const semestersForProgram = useMemo(() => {
-    if (activeProgram === 'UG') return ['1', '3', '5', '7'];
+    if (activeProgram === 'UG') return Object.keys(timetableData).filter(k => k !== 'PG-1');
     if (activeProgram === 'PG') return ['PG-1'];
     return [];
   }, [activeProgram]);
@@ -47,10 +47,18 @@ export default function TimetablePage() {
     if (student && activeProgram === 'UG') {
       setActiveSemester(student.semester);
       setActiveBranch(student.branch);
+      const studentSections = Object.keys(timetableData[student.semester]?.[student.branch] || {});
+       if (studentSections.length > 0) {
+        setActiveSection(studentSections[0]);
+      }
     } else {
-      setActiveSemester(semestersForProgram[0]);
+      setActiveSemester(semestersForProgram[0] || '1');
+      const firstBranch = branchesForSemester[0] || 'CE';
+      setActiveBranch(firstBranch);
+      const firstSection = Object.keys(timetableData[semestersForProgram[0]]?.[firstBranch] || {})[0] || 'A';
+      setActiveSection(firstSection);
     }
-  }, [student, activeProgram, semestersForProgram]);
+  }, [student, activeProgram, semestersForProgram, branchesForSemester]);
   
   useEffect(() => {
     if (!semestersForProgram.includes(activeSemester)) {

@@ -11,6 +11,7 @@ import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { mergedStudentData } from '@/lib/student-data';
 import { IcebergLogo } from '@/components/icons/iceberg-logo';
+import { branchCodeMapping } from '@/lib/course-data';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -33,13 +34,23 @@ export default function LoginPage() {
       return;
     }
     
+    if (scholarId !== password) {
+       toast({
+        variant: 'destructive',
+        title: 'Login Failed',
+        description: 'Invalid credentials. Password must be the same as the Scholar ID.',
+      });
+      setLoading(false);
+      return;
+    }
+
     const student = mergedStudentData.find(s => s.scholarId === scholarId);
 
-    if (!student || scholarId !== password) {
+    if (!student) {
       toast({
         variant: 'destructive',
         title: 'Login Failed',
-        description: 'Invalid credentials. Please check your Scholar ID and Password.',
+        description: 'Invalid Scholar ID. Please check your credentials.',
       });
       setLoading(false);
       return;
@@ -47,15 +58,16 @@ export default function LoginPage() {
 
     const admissionYear = parseInt(scholarId.substring(0, 2), 10);
     let branchCode;
-    
-    if (admissionYear >= 24) {
-      branchCode = parseInt(scholarId.substring(3, 4), 10);
+    // For scholarId format YYBBRRR (e.g., 2212345)
+    if (scholarId.length === 7) {
+        branchCode = parseInt(scholarId.substring(2, 3), 10);
     } else {
-      branchCode = parseInt(scholarId.substring(4, 5), 10);
+        // Fallback or other formats
+        branchCode = parseInt(scholarId.substring(3, 4), 10); // Example: 22-1-2345
     }
     
     const currentYear = new Date().getFullYear() % 100;
-    const currentMonth = new Date().getMonth() + 1; // getMonth() is 0-indexed
+    const currentMonth = new Date().getMonth() + 1;
     
     let yearDiff = currentYear - admissionYear;
     let semester;
@@ -67,11 +79,10 @@ export default function LoginPage() {
       semester = yearDiff * 2;
     }
     
-    // Cap semester at 8
     if (semester > 8) semester = 8;
+    if (semester <= 0) semester = 1;
     
-    const branches: { [key: number]: string } = { 1: 'CE', 2: 'CSE', 3: 'EE', 4: 'ECE', 5: 'EIE', 6: 'ME' };
-    const branch = branches[branchCode] || 'Unknown';
+    const branch = branchCodeMapping[branchCode as keyof typeof branchCodeMapping] || 'Unknown';
 
     const userProfile = {
       scholarId: student.scholarId,
@@ -126,6 +137,7 @@ export default function LoginPage() {
                     required 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Should be same as Scholar ID"
                 />
             </div>
             </CardContent>

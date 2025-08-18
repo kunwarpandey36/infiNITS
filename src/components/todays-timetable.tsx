@@ -40,10 +40,10 @@ export default function TodaysTimetable() {
     }, [student, storageKey]);
 
     useEffect(() => {
-        if (selectedSection) {
+        if (selectedSection && student) {
             localStorage.setItem(storageKey, selectedSection);
         }
-    }, [selectedSection, storageKey]);
+    }, [selectedSection, storageKey, student]);
 
     const todaysSchedule = useMemo(() => {
         if (!student || !selectedSection || !currentDay || currentDay === 'Sunday' || currentDay === 'Saturday') {
@@ -70,7 +70,7 @@ export default function TodaysTimetable() {
                     <Clock className="text-primary" /> Today's Timetable ({currentDay})
                 </CardTitle>
                 <CardDescription>
-                    Your schedule for today based on your profile.
+                    Your schedule for today based on your profile. Select a section if applicable.
                 </CardDescription>
             </CardHeader>
             <CardContent>

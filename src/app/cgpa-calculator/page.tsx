@@ -101,7 +101,7 @@ export default function SgpaCalculatorPage() {
     };
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
-        if (topperMarks === 0 || yourMarks > topperMarks) return { grade: 'N/A', points: 0 };
+        if (topperMarks === 0 || yourMarks > 100) return { grade: 'N/A', points: 0 };
         const percentage = (yourMarks / topperMarks) * 100;
         if (percentage >= 90) return { grade: 'A+', points: 10 };
         if (percentage >= 80) return { grade: 'A', points: 9 };
@@ -221,10 +221,10 @@ export default function SgpaCalculatorPage() {
                                             <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} placeholder="e.g. 4" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" min="0" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
+                                            <Input type="number" min="0" max="100" value={subject.yourMarks} onChange={e => handleSubjectChange(subject.id, 'yourMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 85" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" min="0" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 98" />
+                                            <Input type="number" min="0" max="100" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} placeholder="e.g. 94" />
                                         </TableCell>
                                         <TableCell>
                                             <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
@@ -265,4 +265,3 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
-
