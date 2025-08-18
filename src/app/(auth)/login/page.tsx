@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { mergedStudentData } from '@/lib/student-data';
-import { IcebergLogo } from '@/components/icons/iceberg-logo';
+import Image from 'next/image';
 import { branchCodeMapping } from '@/lib/course-data';
 
 export default function LoginPage() {
@@ -60,10 +60,10 @@ export default function LoginPage() {
     let branchCode;
     // For scholarId format YYBBRRR (e.g., 2212345)
     if (scholarId.length === 7) {
-        branchCode = parseInt(scholarId.substring(3, 4), 10);
+        branchCode = parseInt(scholarId.substring(2, 4), 10);
     } else {
         // Fallback or other formats
-        branchCode = parseInt(scholarId.substring(3, 4), 10); // Example: 22-1-2345
+        branchCode = parseInt(scholarId.substring(2, 4), 10); // Example: 22-1-2345
     }
     
     const currentYear = new Date().getFullYear() % 100;
@@ -82,7 +82,10 @@ export default function LoginPage() {
     if (semester > 8) semester = 8;
     if (semester <= 0) semester = 1;
     
-    const branch = branchCodeMapping[branchCode as keyof typeof branchCodeMapping] || 'Unknown';
+    const branchKey = Object.keys(branchCodeMapping).find(
+      (key) => parseInt(key) === branchCode
+    );
+    const branch = branchKey ? branchCodeMapping[branchKey as keyof typeof branchCodeMapping] : 'Unknown';
 
     const userProfile = {
       scholarId: student.scholarId,
@@ -109,7 +112,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
-            <IcebergLogo className="h-8 w-8 text-primary" />
+            <Image src="/icon.jpg" alt="infiNITS Logo" width={32} height={32} className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold font-headline">
                 infi<span className="text-primary">NITS</span>
             </h1>
