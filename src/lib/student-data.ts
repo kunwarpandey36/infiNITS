@@ -11,7 +11,9 @@ export interface Student {
 const scholarIdMap = new Map<string, Student>();
 
 (studentData as Student[]).forEach(student => {
-  scholarIdMap.set(student.scholarId, student);
+  if (student.scholarId) {
+    scholarIdMap.set(student.scholarId, student);
+  }
 });
 
 export const mergedStudentData: Student[] = Array.from(scholarIdMap.values());
