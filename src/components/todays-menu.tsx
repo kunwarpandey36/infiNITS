@@ -9,8 +9,7 @@ import type { Meal, MealDinner, WeeklyMenu } from "@/lib/mess-menu-data";
 import { messMenuTimings, getMenuForHostel } from "@/lib/mess-menu-data"; 
 import { getCurrentDayName, isLastSundayOfMonth } from "@/lib/date-utils";
 
-// Assuming a default hostel for the profile page view, can be made dynamic later
-const DEFAULT_HOSTEL = "Boys Hostel - 1";
+const HOSTEL_FOR_MENU = "Boys Hostel - 1"; // Menu is the same for all, so we can use any valid hostel name.
 
 export default function TodaysMenu() {
   const [todaysMenu, setTodaysMenu] = useState<Meal | null>(null);
@@ -18,7 +17,7 @@ export default function TodaysMenu() {
   const [grandFeastDetails, setGrandFeastDetails] = useState<MealDinner | null>(null);
 
   useEffect(() => {
-    const currentHostelMenuData = getMenuForHostel(DEFAULT_HOSTEL);
+    const currentHostelMenuData = getMenuForHostel(HOSTEL_FOR_MENU);
     const today = new Date();
     const currentDayKey = getCurrentDayName(today);
 
@@ -29,7 +28,7 @@ export default function TodaysMenu() {
     } else {
       setIsGrandFeastDay(false);
       setGrandFeastDetails(null);
-      const menuForDisplay = currentHostelMenuData.days[currentDayKey] ? { ...currentHostelMenuData.days[currentDayKey] } : null;
+      const menuForDisplay = currentHostelMenuData.days[currentDayKey] ?? null;
       setTodaysMenu(menuForDisplay);
     }
   }, []);
@@ -41,7 +40,7 @@ export default function TodaysMenu() {
           <Utensils className="text-primary" /> Today's Mess Menu
         </CardTitle>
         <CardDescription>
-          Menu for {DEFAULT_HOSTEL}. Timings are indicative.
+          The daily menu is the same for all hostels.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -90,4 +89,3 @@ export default function TodaysMenu() {
     </Card>
   );
 }
-
