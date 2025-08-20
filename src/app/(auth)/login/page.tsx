@@ -106,7 +106,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
-            <Image src="/icon.jpg" alt="infiNITS Logo" width={32} height={32} className="h-8 w-8 text-primary" />
+            <Image src="/icon.jpg" alt="infiNITS Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-md" />
             <h1 className="text-2xl font-bold font-headline">
                 infi<span className="text-primary">NITS</span>
             </h1>
