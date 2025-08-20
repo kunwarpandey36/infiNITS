@@ -100,8 +100,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-primary/10 via-background to-background">
-      <Card className="w-full max-w-sm z-10">
+    <div className="relative flex items-center justify-center min-h-screen">
+       <Image
+          src="/photo_2025-08-20_23-53-37.jpg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="blur-sm"
+        />
+       <div className="absolute inset-0 bg-black/50" />
+      <Card className="w-full max-w-sm z-10 bg-background/80 backdrop-blur-sm">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
             <Image src="/icon.jpg" alt="infiNITS Logo" width={32} height={32} className="h-8 w-8 text-primary rounded-md" />
