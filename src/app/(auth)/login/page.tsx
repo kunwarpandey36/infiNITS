@@ -57,14 +57,8 @@ export default function LoginPage() {
     }
 
     const admissionYear = parseInt(scholarId.substring(0, 2), 10);
-    let branchCode;
-    // For scholarId format YYBBRRR (e.g., 2212345)
-    if (scholarId.length === 7) {
-        branchCode = parseInt(scholarId.substring(2, 4), 10);
-    } else {
-        // Fallback or other formats
-        branchCode = parseInt(scholarId.substring(2, 4), 10); // Example: 22-1-2345
-    }
+    // The 4th character (index 3) of the scholar ID represents the branch code
+    const branchCode = parseInt(scholarId.substring(3, 4), 10);
     
     const currentYear = new Date().getFullYear() % 100;
     const currentMonth = new Date().getMonth() + 1;
@@ -126,7 +120,7 @@ export default function LoginPage() {
                 <Label htmlFor="scholarId">Scholar ID</Label>
                 <Input 
                     id="scholarId" 
-                    placeholder="e.g. 2211001" 
+                    placeholder="e.g. 2315025" 
                     required 
                     value={scholarId}
                     onChange={(e) => setScholarId(e.target.value)}
