@@ -1,4 +1,5 @@
 
+
 export interface HostelWardenInfo {
     role: string;
     name: string;
@@ -8,10 +9,16 @@ export interface HostelWardenInfo {
     scholarId?: string;
   }
   
+  export interface CanteenInfo {
+    ownerName: string;
+    phone: string;
+  }
+
   export interface HostelWardenInfoData {
     hostelDisplayName: string;
     studentListUrl?: string;
     staff: HostelWardenInfo[];
+    canteen?: CanteenInfo;
   }
   
   export const wardenStaffData: HostelWardenInfoData[] = [
@@ -86,7 +93,11 @@ export interface HostelWardenInfo {
           { role: "Mess Hygiene Committee Member", name: "Syed Asha Abbas", scholarId: "2414092" },
           { role: "Mess Hygiene Committee Member", name: "Debasis Das", scholarId: "24305003" },
           { role: "Mess Hygiene Committee Member", name: "Avinash Verma", scholarId: "2414143" }
-        ] 
+        ],
+        canteen: {
+            ownerName: "Canteen Owner",
+            phone: "+91 95084 53788"
+        }
       },
       {
         hostelDisplayName: "Boys Hostel - 9A (J.C. Bose Hall)",
@@ -165,3 +176,4 @@ export interface HostelWardenInfo {
         ] 
       },
   ];
+

@@ -9,22 +9,36 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Search } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { MainNav } from './main-nav';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
+import { features } from '@/lib/features-data';
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
 
   if (pathname === '/login' || pathname === '/') {
     return null;
@@ -48,6 +62,10 @@ export function SiteHeader() {
           <nav className="flex items-center space-x-2">
             {isClient ? (
               <>
+                <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
+                  <Search className="h-[1.2rem] w-[1.2rem]" />
+                  <span className="sr-only">Search</span>
+                </Button>
                 <Button variant="ghost" size="icon" onClick={toggleTheme}>
                   <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                   <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -72,6 +90,24 @@ export function SiteHeader() {
           </nav>
         </div>
       </div>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            {features.map(feature => (
+                 <CommandItem key={feature.href} onSelect={() => {
+                    window.location.href = feature.href;
+                    setOpen(false);
+                 }}>
+                    {feature.icon}
+                    <span>{feature.title}</span>
+                </CommandItem>
+            ))}
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
     </header>
   );
 }
+

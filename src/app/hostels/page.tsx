@@ -1,8 +1,9 @@
 
+
 'use client';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BedDouble, ArrowLeft, UserCircle, Phone, Mail, Utensils, Home, CheckCircle, Info, BookOpen, ExternalLink, Wifi } from "lucide-react";
+import { BedDouble, ArrowLeft, UserCircle, Phone, Mail, Utensils, Home, CheckCircle, Info, BookOpen, ExternalLink, Wifi, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { wardenStaffData } from "@/lib/hostel-data";
 import { Separator } from "@/components/ui/separator";
@@ -157,6 +158,26 @@ export default function HostelsPage() {
              )}
           </CardHeader>
           <CardContent className="flex-grow space-y-3">
+            {selectedHostelData.canteen && (
+                <>
+                <Card className="bg-primary/10">
+                    <CardHeader className="pb-2">
+                        <CardTitle className="text-md font-semibold flex items-center text-primary font-headline">
+                            <ShoppingCart className="mr-2 h-5 w-5" />
+                            Hostel Canteen
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-sm">Owner: {selectedHostelData.canteen.ownerName}</p>
+                        <a href={`tel:${selectedHostelData.canteen.phone}`} className="text-sm text-primary hover:underline flex items-center gap-2">
+                            <Phone className="h-4 w-4" /> {selectedHostelData.canteen.phone}
+                        </a>
+                    </CardContent>
+                </Card>
+                <Separator className="my-4" />
+                </>
+            )}
+
             {selectedHostelData.staff && selectedHostelData.staff.length > 0 ? (
               selectedHostelData.staff.map((staffMember, index) => (
                 <div key={index} className="space-y-1">
@@ -330,3 +351,4 @@ export default function HostelsPage() {
     </div>
   );
 }
+
