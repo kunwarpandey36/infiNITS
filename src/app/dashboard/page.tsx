@@ -8,6 +8,7 @@ import {
   CardContent,
 } from '@/components/ui/card';
 import UpcomingEvents from '@/components/upcoming-events';
+import CampusClicks from '@/components/campus-clicks';
 import {
   LayoutDashboard,
   Calendar,
@@ -120,6 +121,7 @@ export default function DashboardPage() {
       </div>
       <div className="space-y-6">
         <UpcomingEvents />
+        <CampusClicks />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>
