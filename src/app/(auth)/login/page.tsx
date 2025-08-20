@@ -57,7 +57,6 @@ export default function LoginPage() {
     }
 
     const admissionYear = parseInt(scholarId.substring(0, 2), 10);
-    // The 4th character (index 3) of the scholar ID represents the branch code
     const branchCode = parseInt(scholarId.substring(3, 4), 10);
     
     const currentYear = new Date().getFullYear() % 100;
@@ -66,10 +65,9 @@ export default function LoginPage() {
     let yearDiff = currentYear - admissionYear;
     let semester;
 
-    // Odd semester months: July-December (7-12)
     if (currentMonth >= 7 && currentMonth <= 12) {
       semester = yearDiff * 2 + 1;
-    } else { // Even semester months: January-June (1-6)
+    } else {
       semester = yearDiff * 2;
     }
     
@@ -102,8 +100,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background dark:bg-black dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
-       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-primary/10 via-background to-background">
       <Card className="w-full max-w-sm z-10">
         <CardHeader className="text-center">
           <div className="flex justify-center items-center gap-2 mb-4">
