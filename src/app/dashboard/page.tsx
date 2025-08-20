@@ -8,7 +8,6 @@ import {
   CardContent,
 } from '@/components/ui/card';
 import UpcomingEvents from '@/components/upcoming-events';
-import CampusClicks from '@/components/campus-clicks';
 import {
   LayoutDashboard,
   Calendar,
@@ -25,6 +24,7 @@ import {
   Clock,
   Mail,
   User,
+  Camera,
 } from 'lucide-react';
 
 const features = [
@@ -83,6 +83,12 @@ const features = [
     description: 'Calculate your SGPA.',
   },
   {
+    title: 'Campus Clicks',
+    href: '/campus-clicks',
+    icon: <Camera className="h-8 w-8 text-primary" />,
+    description: 'A glimpse into campus life.',
+  },
+  {
     title: 'Hostels',
     href: '/hostels',
     icon: <HomeIcon className="h-8 w-8 text-primary" />,
@@ -121,7 +127,6 @@ export default function DashboardPage() {
       </div>
       <div className="space-y-6">
         <UpcomingEvents />
-        <CampusClicks />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>
