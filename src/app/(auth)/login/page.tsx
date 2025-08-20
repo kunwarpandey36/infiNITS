@@ -126,7 +126,7 @@ export default function LoginPage() {
                 <Label htmlFor="scholarId">Scholar ID</Label>
                 <Input 
                     id="scholarId" 
-                    placeholder="e.g. 2315025" 
+                    placeholder="e.g. 2211001" 
                     required 
                     value={scholarId}
                     onChange={(e) => setScholarId(e.target.value)}
