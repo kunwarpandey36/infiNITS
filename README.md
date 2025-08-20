@@ -9,10 +9,10 @@ Kunwar
 ku36pd@gmail.com
 
 Kavish
-kavish_ug_24@ei.nits.ac.in 
+kavishsharma5656@gmail.com
   
 Lalith
-lalith_ug_24@ei.nits.ac.in
+lalithgunnu2202@gmail.com
 
 Rahul
 iclapcheekz69@gmail.com
@@ -21,4 +21,4 @@ Akshay
 akshwebteam@gmail.com
 
 Chaitainya
-chaitainya_ug_24@ei.nits.ac.in
+chaitanyamahajan06@gmail.com
