@@ -1,4 +1,4 @@
-# **App Name**: Infinites Hub
+# **App Name**: infiNITS
 
 ## Core Features:
 
