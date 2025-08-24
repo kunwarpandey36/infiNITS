@@ -73,7 +73,7 @@ export function SiteHeader() {
                 </Button>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="secondary" className="relative h-8 w-8 rounded-full">
+                    <Button variant="secondary" className="relative h-8 w-8 rounded-full border-2 border-primary">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src="/photo_2025-08-24_16-00-10.jpg" alt="User" />
                         <AvatarFallback>U</AvatarFallback>
