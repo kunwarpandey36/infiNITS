@@ -9,12 +9,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 
 const developers = [
-    { name: 'Kunwar', email: "ku36pd@gmail.com" },
-    { name: 'Kavish', email: 'kavishsharma5656@gmail.com' },
-    { name: 'Lalith', email: 'lalithgunnu2202@gmail.com' },
-    { name: 'Rahul', email: 'iclapcheekz69@gmail.com' },
     { name: 'Akshay', email: 'akshwebteam@gmail.com' },
     { name: 'Chaitainya', email: 'chaitanyamahajan06@gmail.com' },
+    { name: 'Kavish', email: 'kavishsharma5656@gmail.com' },
+    { name: 'Kunwar', email: "ku36pd@gmail.com" },  
+    { name: 'Lalith', email: 'lalithgunnu2202@gmail.com' },
+    { name: 'Rahul', email: 'iclapcheekz69@gmail.com' }
 ];
 
 export default function FeedbackPage() {
