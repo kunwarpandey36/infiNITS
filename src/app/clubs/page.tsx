@@ -50,21 +50,20 @@ const clubsList = [
 
 const clubActivityAnnouncements = [
     { 
-      text: "We are proud to announce the initiation of the Public Policy and " + 
-            "Governance Society (PPGS) Chapter at NIT Silchar.", 
-      link: "https://www.instagram.com/ppgsnitsilchar/?g=5" 
+      text: "New Machine Learning Club, NIT Silchar team for 2025-26.", 
+      link: "https://www.instagram.com/p/DNvPoDY5KDr/?img_index=1" 
     },
     { 
-      text: "Collaboration of Assam University with TEDx.", 
-      link: "https://www.instagram.com/p/DKNIVrsyqVC/?img_index=1" 
+      text: "Meet the new NITS ECO Family.", 
+      link: "https://www.instagram.com/p/DNvFiTyZu7N/?img_index=1" 
     },
     { 
-      text: "A warm welcome to Batch 2029 from Think India, NIT Silchar!", 
-      link: "https://www.instagram.com/p/DKFAISJSnIC/?img_index=1" 
+      text: "Leads of Mountaineering, Trekking, karate and Skating Club for the upcoming term.", 
+      link: "https://www.instagram.com/p/DNmlyfaTOzc/?img_index=4" 
     },
     { 
-      text: "Eco Club of NIT Silchar invites you to COSMOSPEECH.", 
-      link: "https://www.instagram.com/p/DKEYEpwzajd/?img_index=1" 
+      text: "Core Team of Illuminits for the year 2025—26.", 
+      link: "https://www.instagram.com/p/DNe-lhYSetI/?img_index=1" 
     },
 ];
 
@@ -174,4 +173,3 @@ export default function ClubsPage() {
     </div>
   );
 }
-
