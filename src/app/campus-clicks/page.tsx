@@ -3,9 +3,11 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Camera, ArrowLeft } from 'lucide-react';
+import { Camera, ArrowLeft, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { useState } from 'react';
 
 const images = [
   { src: '/photo_2025-08-21_00-07-37.jpg', alt: 'Campus lake view', orientation: 'landscape' },
@@ -25,6 +27,7 @@ const images = [
 
 export default function CampusClicksPage() {
   const router = useRouter();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="container mx-auto p-4 md:p-8">
@@ -39,21 +42,36 @@ export default function CampusClicksPage() {
         <Card>
             <CardHeader>
                 <CardTitle>A Glimpse Into NITS Life</CardTitle>
-                <CardDescription>A collection of photos from around the campus.</CardDescription>
+                <CardDescription>A collection of photos from around the campus. Click any image to view it larger.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                 {images.map((image, index) => (
-                    <div key={index} className="break-inside-avoid">
-                    <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={500}
-                        height={image.orientation === 'portrait' ? 750 : 500}
-                        className="rounded-lg object-cover w-full h-auto shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl"
-                        data-ai-hint="campus photo"
-                    />
-                    </div>
+                    <Dialog key={index} onOpenChange={(isOpen) => !isOpen && setSelectedImage(null)}>
+                      <DialogTrigger asChild>
+                        <div key={index} className="break-inside-avoid cursor-pointer" onClick={() => setSelectedImage(image.src)}>
+                          <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={500}
+                              height={image.orientation === 'portrait' ? 750 : 500}
+                              className="rounded-lg object-cover w-full h-auto shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+                              data-ai-hint="campus photo"
+                          />
+                        </div>
+                      </DialogTrigger>
+                       {selectedImage === image.src && (
+                        <DialogContent className="max-w-4xl p-0 border-0">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={1200}
+                            height={800}
+                            className="rounded-lg object-contain max-h-[90vh] w-full h-auto"
+                          />
+                        </DialogContent>
+                       )}
+                    </Dialog>
                 ))}
                 </div>
             </CardContent>
