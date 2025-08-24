@@ -1,11 +1,13 @@
+
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { format, parseISO, isPast } from 'date-fns';
 import { Bell } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
+const allEvents: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
   '2025-07-22': { title: 'Semester Registration', type: 'event' },
   '2025-07-23': { title: 'Semester Registration', type: 'event' },
@@ -45,13 +47,20 @@ const events: Record<string, { title: string; type: 'holiday' | 'exam' | 'event'
   '2026-07-12': { title: 'Summer Break for Students Ends', type: 'holiday' },
 };
 
-const upcomingEvents = Object.entries(events)
-    .map(([date, event]) => ({ date, ...event }))
-    .filter(event => !isPast(parseISO(event.date)))
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    .slice(0, 5);
 
 export default function UpcomingEvents() {
+    const [upcomingEvents, setUpcomingEvents] = useState<{date: string, title: string, type: 'holiday' | 'exam' | 'event'}[]>([]);
+
+    useEffect(() => {
+        const filtered = Object.entries(allEvents)
+            .map(([date, event]) => ({ date, ...event }))
+            .filter(event => !isPast(parseISO(event.date)))
+            .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+            .slice(0, 5);
+        setUpcomingEvents(filtered);
+    }, []);
+
+
     return (
         <Card>
             <CardHeader>
