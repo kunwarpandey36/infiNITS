@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
-import { Label } from '@/components/ui/label';
+import { useToast } from '@/hooks/use-toast';
 
 interface Subject {
   id: string; 
@@ -33,14 +33,14 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
     if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
         return [];
     }
-    const subjects = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
+    const subjectsFromData = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
     
     const isLab = (subjectCode: string): boolean => {
         const codePart = subjectCode.replace(/^[A-Z]*/, '');
         return codePart.length >= 3 && codePart.charAt(1) === '1';
     };
 
-    return subjects.map((s: { code: any; credits: any; name: any; }) => ({
+    return subjectsFromData.map((s: { code: any; credits: any; name: any; }) => ({
       id: s.code,
       code: s.code,
       name: s.name,
@@ -63,6 +63,7 @@ interface Grade {
 
 export default function SgpaCalculatorPage() {
     const student = useStudentData();
+    const { toast } = useToast();
     const [subjects, setSubjects] = useState<Subject[]>([]);
     const [sgpa, setSgpa] = useState<number | null>(null);
     const router = useRouter();
@@ -70,6 +71,8 @@ export default function SgpaCalculatorPage() {
     const [selectedBranch, setSelectedBranch] = useState('');
 
     const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
+    const storageKey = useMemo(() => `sgpa-calc-${student?.scholarId}-${selectedSemester}-${selectedBranch}`, [student, selectedSemester, selectedBranch]);
+
 
     useEffect(() => {
       if (student) {
@@ -85,13 +88,23 @@ export default function SgpaCalculatorPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedBranch, selectedSemester]);
 
-    const handleLoadSubjects = () => {
-        if(selectedBranch && selectedSemester) {
-            const loadedSubjects = getSubjectsByBranchAndSem(selectedBranch, selectedSemester);
-            setSubjects(loadedSubjects);
-            setSgpa(null);
+     const handleLoadSubjects = () => {
+        if (!selectedSemester || !selectedBranch || !student) return;
+        const savedSubjects = localStorage.getItem(storageKey);
+        if (savedSubjects) {
+            setSubjects(JSON.parse(savedSubjects));
+        } else {
+            const newSubjects = getSubjectsByBranchAndSem(selectedBranch, selectedSemester);
+            setSubjects(newSubjects);
         }
+        setSgpa(null);
     };
+
+    useEffect(() => {
+        if(subjects.length > 0 && student) {
+            localStorage.setItem(storageKey, JSON.stringify(subjects));
+        }
+    }, [subjects, storageKey, student]);
 
     const handleAddSubject = () => {
         setSubjects([
@@ -112,7 +125,10 @@ export default function SgpaCalculatorPage() {
         setSubjects(subjects.filter((s) => s.id !== id));
     };
 
-    const handleMarkChange = (id: string, type: keyof Subject['marks'], value: number, max: number) => {
+    const handleMarkChange = (id: string, type: keyof Subject['marks'], value: number) => {
+        const maxMarksMap = { midSem: 30, endSem: 50, teacherAssessment: 20, lab: 100 };
+        const max = maxMarksMap[type];
+
         setSubjects(subjects.map(s => 
             s.id === id 
                 ? { ...s, marks: { ...s.marks, [type]: Math.min(Math.max(0, value), max) } } 
@@ -120,10 +136,10 @@ export default function SgpaCalculatorPage() {
         ));
     };
     
-    const handleSubjectChange = (id: string, field: 'code' | 'credits' | 'topperMarks' | 'name', value: string | number) => {
+    const handleSubjectChange = (id: string, field: 'code' | 'credits' | 'topperMarks' | 'name' | 'isLab', value: string | number | boolean) => {
          setSubjects(
             subjects.map((s) =>
-                s.id === id ? { ...s, [field]: typeof value === 'number' ? Math.max(0, value) : value } : s
+                s.id === id ? { ...s, [field]: value } : s
             )
         );
     }
@@ -134,7 +150,8 @@ export default function SgpaCalculatorPage() {
     }
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
-        if (topperMarks === 0 || yourMarks > topperMarks) return { grade: 'N/A', points: 0 };
+        if (topperMarks === 0) return { grade: 'N/A', points: 0 };
+        if (yourMarks > topperMarks) return { grade: 'Error', points: 0 }; // Handle error case
         const percentage = (yourMarks / topperMarks) * 100;
         if (percentage >= 90) return { grade: 'A+', points: 10 };
         if (percentage >= 80) return { grade: 'A', points: 9 };
@@ -149,14 +166,30 @@ export default function SgpaCalculatorPage() {
     const handleCalculateSgpa = () => {
         let totalCredits = 0;
         let totalPoints = 0;
+        let hasError = false;
+
         subjects.forEach(subject => {
-            if(subject.credits > 0 && subject.topperMarks > 0) {
-                const finalMarks = calculateFinalMarks(subject);
+            const finalMarks = calculateFinalMarks(subject);
+            if (finalMarks > subject.topperMarks) {
+                toast({
+                    variant: "destructive",
+                    title: "Error in " + subject.name,
+                    description: "Your marks cannot be greater than the topper's marks.",
+                })
+                hasError = true;
+            }
+            if(subject.credits > 0 && subject.topperMarks > 0 && !hasError) {
                 const grade = calculateGrade(finalMarks, subject.topperMarks);
                 totalPoints += grade.points * subject.credits;
                 totalCredits += subject.credits;
             }
         });
+
+        if(hasError) {
+            setSgpa(null);
+            return;
+        }
+
         if (totalCredits === 0) {
             setSgpa(0);
         } else {
@@ -179,7 +212,7 @@ export default function SgpaCalculatorPage() {
           <CardHeader>
             <CardTitle className="font-headline">Your Subjects</CardTitle>
             <CardDescription>
-              Your subjects are loaded automatically based on your profile. You can also change the selection.
+              Subjects are loaded automatically based on your profile. You can also change the selection.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col md:flex-row gap-4 items-end">
@@ -229,39 +262,53 @@ export default function SgpaCalculatorPage() {
                                 <TableHead>End Sem (50)</TableHead>
                                 <TableHead>Lab (100)</TableHead>
                                 <TableHead>Topper's Total</TableHead>
-                                <TableHead>Action</TableHead>
+                                <TableHead>Final Marks</TableHead>
+                                <TableHead>Grade</TableHead>
+                                <TableHead className="text-right">Action</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {subjects.map(subject => {
+                                const finalMarks = calculateFinalMarks(subject);
+                                const gradeInfo = calculateGrade(finalMarks, subject.topperMarks);
                                 return (
                                     <TableRow key={subject.id}>
                                         <TableCell>
-                                           <div className="font-semibold">{subject.name}</div>
-                                           <div className="text-sm text-muted-foreground flex items-center gap-2">
+                                           <Input 
+                                            value={subject.name} 
+                                            onChange={(e) => handleSubjectChange(subject.id, 'name', e.target.value)} 
+                                            className="font-semibold w-48 border-none focus-visible:ring-1"
+                                           />
+                                           <div className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
                                             {subject.code}
-                                            {subject.isLab && <FlaskConical className="h-3 w-3 text-primary" />}
+                                            <button onClick={() => handleSubjectChange(subject.id, 'isLab', !subject.isLab)} title="Toggle Lab/Theory">
+                                                <FlaskConical className={`h-4 w-4 cursor-pointer ${subject.isLab ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`} />
+                                            </button>
                                            </div>
                                         </TableCell>
                                         <TableCell>
                                             <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} className="w-20" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.midSem} onChange={e => handleMarkChange(subject.id, 'midSem', parseInt(e.target.value) || 0, 30)} disabled={subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.midSem} onChange={e => handleMarkChange(subject.id, 'midSem', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.teacherAssessment} onChange={e => handleMarkChange(subject.id, 'teacherAssessment', parseInt(e.target.value) || 0, 20)} disabled={subject.isLab} className="w-24"/>
+                                            <Input type="number" value={subject.marks.teacherAssessment} onChange={e => handleMarkChange(subject.id, 'teacherAssessment', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24"/>
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.endSem} onChange={e => handleMarkChange(subject.id, 'endSem', parseInt(e.target.value) || 0, 50)} disabled={subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.endSem} onChange={e => handleMarkChange(subject.id, 'endSem', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.lab} onChange={e => handleMarkChange(subject.id, 'lab', parseInt(e.target.value) || 0, 100)} disabled={!subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.lab} onChange={e => handleMarkChange(subject.id, 'lab', parseInt(e.target.value) || 0)} disabled={!subject.isLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
                                             <Input type="number" min="0" max="100" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} className="w-24" />
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className={`font-bold ${finalMarks > subject.topperMarks ? 'text-destructive' : ''}`}>
+                                            {finalMarks}
+                                        </TableCell>
+                                        <TableCell className="font-bold">{gradeInfo.grade}</TableCell>
+                                        <TableCell className="text-right">
                                             <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
                                                 <Trash2 className="h-4 w-4" />
                                             </Button>
@@ -304,21 +351,23 @@ export default function SgpaCalculatorPage() {
         <CardContent className="text-sm space-y-2">
             <p><strong>1. Marking Scheme:</strong></p>
             <ul className="list-disc pl-5 text-muted-foreground">
-                <li><strong>Theory Subjects:</strong> The total marks (100) are composed of Mid-Semester (30), Teacher's Assessment (20), and End-Semester (50).</li>
-                <li><strong>Lab Subjects:</strong> The total marks are out of 100.</li>
+                <li><strong>Theory Subjects:</strong> Total marks (100) = Mid-Semester (30) + Teacher's Assessment (20) + End-Semester (50).</li>
+                <li><strong>Lab Subjects:</strong> Total marks are out of 100.</li>
+                <li>Use the <FlaskConical className="inline h-4 w-4" /> icon to toggle a subject between Theory and Lab.</li>
             </ul>
             <p><strong>2. Relative Grading:</strong></p>
             <p className="text-muted-foreground">
-                Your grade is calculated relative to the topper's total marks in that subject. For example, if you score 85 and the topper scores 95, your marks for grading are considered to be (85/95) * 100 = 89.47. This value is then used to determine your grade point (e.g., a score of 89.47 falls in the 'A' grade category, which is 9 points).
+                Your grade is calculated relative to the topper's total marks in that subject. The formula used is: `(Your Total Marks / Topper's Total Marks) * 100`. This percentage then maps to a grade point (e.g., >= 90% is A+ with 10 points). Your marks cannot exceed the topper's marks. The default topper's marks are set to 94 but can be adjusted.
             </p>
             <p><strong>3. SGPA Calculation:</strong></p>
             <p className="text-muted-foreground">
-                The SGPA is the weighted average of your grade points. It's calculated by summing the products of (Credit × Grade Point) for all subjects and then dividing by the total credits.
+                The SGPA is the weighted average of your grade points. It's calculated by summing the products of (Credit × Grade Point) for all subjects and then dividing by the total credits. Formula: `Σ(Creditᵢ × GradePointᵢ) / Σ(Creditᵢ)`.
             </p>
-             <p className="font-semibold mt-4">Note: Your marks in any component cannot exceed the maximum marks for that component.</p>
+             <p className="font-semibold mt-4">Note: Your marks in any component cannot exceed the maximum marks for that component (e.g. 30 for Mid-Sem). The calculator enforces this automatically.</p>
         </CardContent>
       </Card>
     </div>
   );
 }
 
+    
