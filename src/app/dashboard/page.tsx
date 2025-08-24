@@ -1,4 +1,5 @@
 
+'use client';
 
 import Link from 'next/link';
 import {
@@ -10,12 +11,17 @@ import {
 } from '@/components/ui/card';
 import UpcomingEvents from '@/components/upcoming-events';
 import { features } from '@/lib/features-data';
-
+import { useStudentData } from '@/hooks/use-student-data';
 
 export default function DashboardPage() {
+  const student = useStudentData();
+
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-      <div className="flex items-center justify-between space-y-2">
+      <div className="flex items-center justify-between space-y-2 mb-4">
+        <h2 className="text-3xl font-bold tracking-tight font-headline">
+          Welcome, <span className="text-primary">{student?.name || 'Student'}</span>!
+        </h2>
       </div>
       <div className="space-y-6">
         <UpcomingEvents />
@@ -52,4 +58,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
