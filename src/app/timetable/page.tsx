@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useRouter } from 'next/navigation';
@@ -64,15 +64,9 @@ export default function TimetablePage() {
 
   useEffect(() => {
     if (student) {
-      setActiveProgram('UG');
+      setActiveProgram('UG'); // Assuming B.Tech is UG
       setActiveSemester(student.semester);
-      const studentBranch = Object.keys(timetableData[student.semester] || {}).find(b => b === student.branch);
-      setActiveBranch(studentBranch || Object.keys(timetableData[student.semester] || {})[0]);
-      
-      const studentSections = Object.keys(timetableData[student.semester]?.[studentBranch || ''] || {});
-      if (studentSections.length > 0) {
-        setActiveSection(studentSections[0]);
-      }
+      setActiveBranch(student.branch);
     }
   }, [student]);
 
@@ -281,4 +275,3 @@ export default function TimetablePage() {
     </div>
   );
 }
-
