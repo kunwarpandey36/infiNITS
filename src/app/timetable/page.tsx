@@ -3,7 +3,6 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,7 @@ import { ArrowLeft, Info } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { branchCodeMapping } from '@/lib/course-data';
+import { cn } from '@/lib/utils';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const timeSlots = [
@@ -20,6 +19,40 @@ const timeSlots = [
 ];
 
 const getHour = (time: string) => parseInt(time.split(':')[0]);
+
+const colorPalette = [
+    'bg-red-500/10 border-red-500/30 text-red-800 dark:text-red-200',
+    'bg-orange-500/10 border-orange-500/30 text-orange-800 dark:text-orange-200',
+    'bg-amber-500/10 border-amber-500/30 text-amber-800 dark:text-amber-200',
+    'bg-yellow-500/10 border-yellow-500/30 text-yellow-800 dark:text-yellow-200',
+    'bg-lime-500/10 border-lime-500/30 text-lime-800 dark:text-lime-200',
+    'bg-green-500/10 border-green-500/30 text-green-800 dark:text-green-200',
+    'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-200',
+    'bg-teal-500/10 border-teal-500/30 text-teal-800 dark:text-teal-200',
+    'bg-cyan-500/10 border-cyan-500/30 text-cyan-800 dark:text-cyan-200',
+    'bg-sky-500/10 border-sky-500/30 text-sky-800 dark:text-sky-200',
+    'bg-blue-500/10 border-blue-500/30 text-blue-800 dark:text-blue-200',
+    'bg-indigo-500/10 border-indigo-500/30 text-indigo-800 dark:text-indigo-200',
+    'bg-violet-500/10 border-violet-500/30 text-violet-800 dark:text-violet-200',
+    'bg-purple-500/10 border-purple-500/30 text-purple-800 dark:text-purple-200',
+    'bg-fuchsia-500/10 border-fuchsia-500/30 text-fuchsia-800 dark:text-fuchsia-200',
+    'bg-pink-500/10 border-pink-500/30 text-pink-800 dark:text-pink-200',
+    'bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-200',
+];
+
+const courseColorCache = new Map<string, string>();
+let lastColorIndex = -1;
+
+const getColorForCourse = (course: string) => {
+    if (!course || course === '-') return 'bg-transparent';
+    if (courseColorCache.has(course)) {
+        return courseColorCache.get(course);
+    }
+    lastColorIndex = (lastColorIndex + 1) % colorPalette.length;
+    const color = colorPalette[lastColorIndex];
+    courseColorCache.set(course, color);
+    return color;
+};
 
 export default function TimetablePage() {
   const router = useRouter();
@@ -33,8 +66,10 @@ export default function TimetablePage() {
     if (student) {
       setActiveProgram('UG');
       setActiveSemester(student.semester);
-      setActiveBranch(student.branch);
-      const studentSections = Object.keys(timetableData[student.semester]?.[student.branch] || {});
+      const studentBranch = Object.keys(timetableData[student.semester] || {}).find(b => b === student.branch);
+      setActiveBranch(studentBranch || Object.keys(timetableData[student.semester] || {})[0]);
+      
+      const studentSections = Object.keys(timetableData[student.semester]?.[studentBranch || ''] || {});
       if (studentSections.length > 0) {
         setActiveSection(studentSections[0]);
       }
@@ -54,6 +89,11 @@ export default function TimetablePage() {
   const sectionsForBranch = useMemo(() => {
     return Object.keys(timetableData[activeSemester]?.[activeBranch] || {});
   }, [activeSemester, activeBranch]);
+  
+  useEffect(() => {
+    courseColorCache.clear();
+    lastColorIndex = -1;
+  }, [activeSemester, activeBranch, activeSection]);
   
   useEffect(() => {
     if (semestersForProgram.length > 0 && !semestersForProgram.includes(activeSemester)) {
@@ -84,17 +124,11 @@ export default function TimetablePage() {
         processedSchedule[day] = {};
         const daySchedule = sectionData[day] || {};
         
-        timeSlots.forEach((slot, index) => {
+        timeSlots.forEach((slot) => {
             if (processedSchedule[day][slot] === null) return;
 
-            let classInfo = daySchedule[slot];
-            if (classInfo) {
-                processedSchedule[day][slot] = { content: classInfo, span: 1 };
-                return;
-            }
-
-            // Check for multi-hour slots
-            const multiHourSlot = Object.keys(daySchedule).find(s => {
+            const classKey = Object.keys(daySchedule).find(s => {
+                if (!s.includes('-')) return s === slot;
                 const [start, end] = s.split('-');
                 if (!start || !end) return false;
                 const startHour = getHour(start);
@@ -102,25 +136,26 @@ export default function TimetablePage() {
                 const endHour = getHour(end);
                 return currentHour >= startHour && currentHour < endHour;
             });
+            
+            if (classKey) {
+                if (classKey.includes('-')) {
+                    const [start, end] = classKey.split('-');
+                    const startHour = getHour(start);
+                    const endHour = getHour(end);
+                    const span = endHour - startHour;
 
-            if (multiHourSlot) {
-                const [start, end] = multiHourSlot.split('-');
-                const startHour = getHour(start);
-                const endHour = getHour(end);
-                const span = endHour - startHour;
-                
-                if (slot.startsWith(start)) {
-                    processedSchedule[day][slot] = { content: daySchedule[multiHourSlot], span: span };
-                    for (let i = 1; i < span; i++) {
-                        const nextSlotIndex = timeSlots.indexOf(slot) + i;
-                        if (nextSlotIndex < timeSlots.length) {
-                            processedSchedule[day][timeSlots[nextSlotIndex]] = null; // Mark as covered
+                    if (slot.startsWith(start)) {
+                        processedSchedule[day][slot] = { content: daySchedule[classKey], span: span };
+                        for (let i = 1; i < span; i++) {
+                            const nextSlotIndex = timeSlots.indexOf(slot) + i;
+                            if (nextSlotIndex < timeSlots.length) {
+                                processedSchedule[day][timeSlots[nextSlotIndex]] = null;
+                            }
                         }
                     }
                 } else {
-                     processedSchedule[day][slot] = { content: '-', span: 1 };
+                    processedSchedule[day][slot] = { content: daySchedule[slot], span: 1 };
                 }
-
             } else {
                  processedSchedule[day][slot] = { content: '-', span: 1 };
             }
@@ -192,27 +227,41 @@ export default function TimetablePage() {
               </div>
             </div>
 
-            <div className="overflow-x-auto">
-                <Table className="border">
-                    <TableHeader>
+            <div className="overflow-x-auto rounded-lg border border-border">
+                <Table className="min-w-full">
+                    <TableHeader className="bg-muted/50">
                         <TableRow>
-                            <TableHead className="w-[120px]">Time</TableHead>
+                            <TableHead className="w-[120px] text-primary font-bold p-3">Time</TableHead>
                             {days.map(day => (
-                                <TableHead key={day}>{day}</TableHead>
+                                <TableHead key={day} className="text-primary font-bold p-3">{day}</TableHead>
                             ))}
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {timeSlots.map(slot => (
-                            <TableRow key={slot}>
-                                <TableCell className="font-medium">{slot}</TableCell>
+                            <TableRow key={slot} className="border-t">
+                                <TableCell className="font-semibold text-muted-foreground p-3 align-middle">{slot}</TableCell>
                                 {days.map(day => {
                                     const cellData = scheduleForView[day]?.[slot];
-                                    if(cellData === null) return null; // Slot has been spanned over by a previous cell
+                                    if(cellData === null) return null;
                                     
+                                    const hasClass = cellData?.content && cellData.content !== '-';
+
                                     return (
-                                        <TableCell key={day} rowSpan={cellData?.span || 1} className={cellData?.span && cellData.span > 1 ? 'align-top' : ''}>
-                                            <div className="min-w-[150px]">{cellData?.content || '-'}</div>
+                                        <TableCell 
+                                            key={day} 
+                                            rowSpan={cellData?.span || 1}
+                                            className={cn(
+                                                "align-top p-0 transition-all",
+                                                cellData?.span && cellData.span > 1 ? 'align-middle' : ''
+                                            )}
+                                        >
+                                            <div className={cn(
+                                                "h-full w-full min-w-[150px] p-2 rounded-md",
+                                                hasClass ? `${getColorForCourse(cellData.content)} font-semibold` : 'text-muted-foreground'
+                                            )}>
+                                                {cellData?.content || '-'}
+                                            </div>
                                         </TableCell>
                                     );
                                 })}
@@ -232,3 +281,4 @@ export default function TimetablePage() {
     </div>
   );
 }
+
