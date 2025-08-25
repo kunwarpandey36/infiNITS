@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator';
 const developers = [
     { name: 'Akshay', email: 'akshwebteam@gmail.com', linkedin: 'https://www.linkedin.com/in/akshay-singh-1a65b1322/' },
     { name: 'Chaitainya', email: 'chaitanyamahajan06@gmail.com', linkedin: 'https://www.linkedin.com/in/chaitanya-mahajan-3055101bb/' },
-    { name: 'Kavish', email: 'kavishsharma5656@gmail.com', linkedin: '#' },
+    { name: 'Kavish', email: 'kavishsharma5656@gmail.com', linkedin: 'https://www.linkedin.com/in/kavish-sharma-724168314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
     { name: 'Kunwar', email: "ku36pd@gmail.com", linkedin: 'https://www.linkedin.com/in/kunwarpandey36/' },  
     { name: 'Lalith', email: 'lalithgunnu2202@gmail.com', linkedin: 'https://www.linkedin.com/in/lalithgunnu/' },
     { name: 'Rahul', email: 'iclapcheekz69@gmail.com', linkedin: 'https://www.linkedin.com/in/rahul-agrahari-749392321/' }
