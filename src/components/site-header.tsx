@@ -96,9 +96,12 @@ export function SiteHeader() {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             {features.map(feature => (
-                 <CommandItem key={feature.href} onSelect={() => {
-                    window.location.href = feature.href;
-                    setOpen(false);
+                 <CommandItem 
+                    key={feature.href} 
+                    value={feature.title + " " + feature.keywords}
+                    onSelect={() => {
+                        window.location.href = feature.href;
+                        setOpen(false);
                  }}>
                     {feature.icon}
                     <span>{feature.title}</span>
