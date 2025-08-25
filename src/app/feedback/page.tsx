@@ -2,19 +2,19 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Mail, ArrowLeft, Heart, UserCircle } from 'lucide-react';
+import { Mail, ArrowLeft, Heart, UserCircle, Linkedin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 
 const developers = [
-    { name: 'Akshay', email: 'akshwebteam@gmail.com' },
-    { name: 'Chaitainya', email: 'chaitanyamahajan06@gmail.com' },
-    { name: 'Kavish', email: 'kavishsharma5656@gmail.com' },
-    { name: 'Kunwar', email: "ku36pd@gmail.com" },  
-    { name: 'Lalith', email: 'lalithgunnu2202@gmail.com' },
-    { name: 'Rahul', email: 'iclapcheekz69@gmail.com' }
+    { name: 'Akshay', email: 'akshwebteam@gmail.com', linkedin: 'https://www.linkedin.com/in/akshay-singh-1a65b1322/' },
+    { name: 'Chaitainya', email: 'chaitanyamahajan06@gmail.com', linkedin: 'https://www.linkedin.com/in/chaitanya-mahajan-3055101bb/' },
+    { name: 'Kavish', email: 'kavishsharma5656@gmail.com', linkedin: '#' },
+    { name: 'Kunwar', email: "ku36pd@gmail.com", linkedin: 'https://www.linkedin.com/in/kunwarpandey36/' },  
+    { name: 'Lalith', email: 'lalithgunnu2202@gmail.com', linkedin: 'https://www.linkedin.com/in/lalithgunnu/' },
+    { name: 'Rahul', email: 'iclapcheekz69@gmail.com', linkedin: 'https://www.linkedin.com/in/rahul-agrahari-749392321/' }
 ];
 
 export default function FeedbackPage() {
@@ -62,21 +62,30 @@ export default function FeedbackPage() {
             <CardContent className="space-y-4">
                 {developers.map((dev, index) => (
                     <div key={dev.name}>
-                        <div className="flex items-center gap-4">
-                            <Avatar className="h-10 w-10">
-                                <AvatarImage src={`https://placehold.co/100x100.png?text=${dev.name.charAt(0)}`} alt={dev.name} data-ai-hint="developer avatar" />
-                                <AvatarFallback>{dev.name.charAt(0)}</AvatarFallback>
-                            </Avatar>
-                            <div>
-                                <p className="font-semibold">{dev.name}</p>
-                                {dev.email ? (
-                                     <a href={`mailto:${dev.email}`} className="text-sm text-primary hover:underline">
-                                        {dev.email}
-                                    </a>
-                                ) : (
-                                    <p className="text-sm text-muted-foreground">Contact info not available</p>
-                                )}
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <Avatar className="h-10 w-10">
+                                    <AvatarImage src={`https://placehold.co/100x100.png?text=${dev.name.charAt(0)}`} alt={dev.name} data-ai-hint="developer avatar" />
+                                    <AvatarFallback>{dev.name.charAt(0)}</AvatarFallback>
+                                </Avatar>
+                                <div>
+                                    <p className="font-semibold">{dev.name}</p>
+                                    {dev.email ? (
+                                        <a href={`mailto:${dev.email}`} className="text-sm text-primary hover:underline">
+                                            {dev.email}
+                                        </a>
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground">Contact info not available</p>
+                                    )}
+                                </div>
                             </div>
+                            {dev.linkedin && dev.linkedin !== '#' && (
+                                <a href={dev.linkedin} target="_blank" rel="noopener noreferrer">
+                                    <Button variant="ghost" size="icon">
+                                        <Linkedin className="h-5 w-5 text-primary"/>
+                                    </Button>
+                                </a>
+                            )}
                         </div>
                         {index < developers.length - 1 && <Separator className="my-4" />}
                     </div>
