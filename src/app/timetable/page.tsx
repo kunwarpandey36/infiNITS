@@ -21,23 +21,23 @@ const timeSlots = [
 const getHour = (time: string) => parseInt(time.split(':')[0]);
 
 const colorPalette = [
-    'bg-red-500/10 border-red-500/30 text-red-800 dark:text-red-200',
-    'bg-orange-500/10 border-orange-500/30 text-orange-800 dark:text-orange-200',
-    'bg-amber-500/10 border-amber-500/30 text-amber-800 dark:text-amber-200',
-    'bg-yellow-500/10 border-yellow-500/30 text-yellow-800 dark:text-yellow-200',
-    'bg-lime-500/10 border-lime-500/30 text-lime-800 dark:text-lime-200',
-    'bg-green-500/10 border-green-500/30 text-green-800 dark:text-green-200',
-    'bg-emerald-500/10 border-emerald-500/30 text-emerald-800 dark:text-emerald-200',
-    'bg-teal-500/10 border-teal-500/30 text-teal-800 dark:text-teal-200',
-    'bg-cyan-500/10 border-cyan-500/30 text-cyan-800 dark:text-cyan-200',
-    'bg-sky-500/10 border-sky-500/30 text-sky-800 dark:text-sky-200',
-    'bg-blue-500/10 border-blue-500/30 text-blue-800 dark:text-blue-200',
-    'bg-indigo-500/10 border-indigo-500/30 text-indigo-800 dark:text-indigo-200',
-    'bg-violet-500/10 border-violet-500/30 text-violet-800 dark:text-violet-200',
-    'bg-purple-500/10 border-purple-500/30 text-purple-800 dark:text-purple-200',
-    'bg-fuchsia-500/10 border-fuchsia-500/30 text-fuchsia-800 dark:text-fuchsia-200',
-    'bg-pink-500/10 border-pink-500/30 text-pink-800 dark:text-pink-200',
-    'bg-rose-500/10 border-rose-500/30 text-rose-800 dark:text-rose-200',
+    'bg-red-200/50 border-red-500/30 text-red-900 dark:bg-red-900/50 dark:text-red-100',
+    'bg-orange-200/50 border-orange-500/30 text-orange-900 dark:bg-orange-900/50 dark:text-orange-100',
+    'bg-amber-200/50 border-amber-500/30 text-amber-900 dark:bg-amber-900/50 dark:text-amber-100',
+    'bg-yellow-200/50 border-yellow-500/30 text-yellow-900 dark:bg-yellow-900/50 dark:text-yellow-100',
+    'bg-lime-200/50 border-lime-500/30 text-lime-900 dark:bg-lime-900/50 dark:text-lime-100',
+    'bg-green-200/50 border-green-500/30 text-green-900 dark:bg-green-900/50 dark:text-green-100',
+    'bg-emerald-200/50 border-emerald-500/30 text-emerald-900 dark:bg-emerald-900/50 dark:text-emerald-100',
+    'bg-teal-200/50 border-teal-500/30 text-teal-900 dark:bg-teal-900/50 dark:text-teal-100',
+    'bg-cyan-200/50 border-cyan-500/30 text-cyan-900 dark:bg-cyan-900/50 dark:text-cyan-100',
+    'bg-sky-200/50 border-sky-500/30 text-sky-900 dark:bg-sky-900/50 dark:text-sky-100',
+    'bg-blue-200/50 border-blue-500/30 text-blue-900 dark:bg-blue-900/50 dark:text-blue-100',
+    'bg-indigo-200/50 border-indigo-500/30 text-indigo-900 dark:bg-indigo-900/50 dark:text-indigo-100',
+    'bg-violet-200/50 border-violet-500/30 text-violet-900 dark:bg-violet-900/50 dark:text-violet-100',
+    'bg-purple-200/50 border-purple-500/30 text-purple-900 dark:bg-purple-900/50 dark:text-purple-100',
+    'bg-fuchsia-200/50 border-fuchsia-500/30 text-fuchsia-900 dark:bg-fuchsia-900/50 dark:text-fuchsia-100',
+    'bg-pink-200/50 border-pink-500/30 text-pink-900 dark:bg-pink-900/50 dark:text-pink-100',
+    'bg-rose-200/50 border-rose-500/30 text-rose-900 dark:bg-rose-900/50 dark:text-rose-100',
 ];
 
 const courseColorCache = new Map<string, string>();
@@ -89,21 +89,27 @@ export default function TimetablePage() {
     lastColorIndex = -1;
   }, [activeSemester, activeBranch, activeSection]);
   
-  useEffect(() => {
-    if (semestersForProgram.length > 0 && !semestersForProgram.includes(activeSemester)) {
-      setActiveSemester(semestersForProgram[0]);
+   useEffect(() => {
+    if (semestersForProgram.length > 0) {
+      if (!semestersForProgram.includes(activeSemester)) {
+        setActiveSemester(semestersForProgram[0]);
+      }
     }
   }, [activeSemester, semestersForProgram]);
   
   useEffect(() => {
-    if (branchesForSemester.length > 0 && !branchesForSemester.includes(activeBranch)) {
-      setActiveBranch(branchesForSemester[0]);
+    if (branchesForSemester.length > 0) {
+      if (!branchesForSemester.includes(activeBranch)) {
+        setActiveBranch(branchesForSemester[0]);
+      }
     }
   }, [activeBranch, branchesForSemester]);
   
   useEffect(() => {
-    if (sectionsForBranch.length > 0 && !sectionsForBranch.includes(activeSection)) {
-      setActiveSection(sectionsForBranch[0]);
+    if (sectionsForBranch.length > 0) {
+      if (!sectionsForBranch.includes(activeSection)) {
+        setActiveSection(sectionsForBranch[0]);
+      }
     }
   }, [activeSection, sectionsForBranch]);
 
@@ -221,9 +227,9 @@ export default function TimetablePage() {
               </div>
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-border">
+            <div className="overflow-x-auto rounded-lg border border-primary/20">
                 <Table className="min-w-full">
-                    <TableHeader className="bg-muted/50">
+                    <TableHeader className="bg-primary/10">
                         <TableRow>
                             <TableHead className="w-[120px] text-primary font-bold p-3">Time</TableHead>
                             {days.map(day => (
@@ -233,7 +239,7 @@ export default function TimetablePage() {
                     </TableHeader>
                     <TableBody>
                         {timeSlots.map(slot => (
-                            <TableRow key={slot} className="border-t">
+                            <TableRow key={slot} className="border-t border-primary/20">
                                 <TableCell className="font-semibold text-muted-foreground p-3 align-middle">{slot}</TableCell>
                                 {days.map(day => {
                                     const cellData = scheduleForView[day]?.[slot];
@@ -246,7 +252,7 @@ export default function TimetablePage() {
                                             key={day} 
                                             rowSpan={cellData?.span || 1}
                                             className={cn(
-                                                "align-top p-0 transition-all",
+                                                "align-top p-0.5 transition-all",
                                                 cellData?.span && cellData.span > 1 ? 'align-middle' : ''
                                             )}
                                         >
@@ -275,3 +281,5 @@ export default function TimetablePage() {
     </div>
   );
 }
+
+    
