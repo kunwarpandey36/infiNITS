@@ -43,6 +43,14 @@ const addDefaultResourceLinks = (subjects: any[]) => {
     });
 };
   
+export const newBranchCodeMapping: Record<string, string> = {
+    'CE': 'CE',
+    'CS': 'CSE',
+    'EE': 'EE',
+    'EC': 'ECE',
+    'EI': 'EIE',
+    'ME': 'ME',
+};
 
 export const branchCodeMapping = {
     '1': 'CE',
@@ -51,6 +59,7 @@ export const branchCodeMapping = {
     '4': 'ECE',
     '5': 'EIE',
     '6': 'ME',
+    ...newBranchCodeMapping
 };
   
 
@@ -644,6 +653,15 @@ const rawCourseData: Record<string, any> = {
       ],
     }
   };
+
+  Object.assign(rawCourseData, {
+  'CE': rawCourseData['1'],
+  'CSE': rawCourseData['2'],
+  'EE': rawCourseData['3'],
+  'ECE': rawCourseData['4'],
+  'EIE': rawCourseData['5'],
+  'ME': rawCourseData['6'],
+});
 
 export const courseData: Record<string, any> = {};
 

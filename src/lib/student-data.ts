@@ -10,9 +10,13 @@ export interface Student {
 
 const scholarIdMap = new Map<string, Student>();
 
+// Filter out any entries without a scholarId and ensure NA names are handled
 (studentData as Student[]).forEach(student => {
   if (student.scholarId) {
-    scholarIdMap.set(student.scholarId, student);
+    const existingStudent = scholarIdMap.get(student.scholarId);
+    if (!existingStudent || (student.name && student.name.toUpperCase() !== 'NA')) {
+       scholarIdMap.set(student.scholarId, student);
+    }
   }
 });
 

@@ -11,7 +11,7 @@ import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { mergedStudentData } from '@/lib/student-data';
 import Image from 'next/image';
-import { branchCodeMapping } from '@/lib/course-data';
+import { branchCodeMapping, newBranchCodeMapping } from '@/lib/course-data';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -57,28 +57,33 @@ export default function LoginPage() {
     }
 
     const admissionYear = parseInt(scholarId.substring(0, 2), 10);
-    const branchCode = parseInt(scholarId.substring(3, 4), 10);
-    
+    let branch = 'Unknown';
+    let semester = 1;
+
     const currentYear = new Date().getFullYear() % 100;
     const currentMonth = new Date().getMonth() + 1;
-    
     let yearDiff = currentYear - admissionYear;
-    let semester;
+
+    if (scholarId.startsWith('25')) {
+      const branchKey = scholarId.substring(2, 4);
+      branch = newBranchCodeMapping[branchKey as keyof typeof newBranchCodeMapping] || 'Unknown';
+    } else {
+      const branchCode = parseInt(scholarId.substring(3, 4), 10);
+      const branchKey = Object.keys(branchCodeMapping).find(
+        (key) => parseInt(key) === branchCode
+      );
+      branch = branchKey ? branchCodeMapping[branchKey as keyof typeof branchCodeMapping] : 'Unknown';
+    }
 
     if (currentMonth >= 7 && currentMonth <= 12) {
-      semester = yearDiff * 2 + 1;
-    } else {
-      semester = yearDiff * 2;
+        semester = yearDiff * 2 + 1;
+      } else {
+        semester = yearDiff * 2;
     }
-    
+
     if (semester > 8) semester = 8;
     if (semester <= 0) semester = 1;
     
-    const branchKey = Object.keys(branchCodeMapping).find(
-      (key) => parseInt(key) === branchCode
-    );
-    const branch = branchKey ? branchCodeMapping[branchKey as keyof typeof branchCodeMapping] : 'Unknown';
-
     const userProfile = {
       scholarId: student.scholarId,
       name: student.name,
@@ -126,7 +131,7 @@ export default function LoginPage() {
                 <Label htmlFor="scholarId">Scholar ID</Label>
                 <Input 
                     id="scholarId" 
-                    placeholder="e.g. 2211001" 
+                    placeholder="e.g. 2211001 or 25CS10001" 
                     required 
                     value={scholarId}
                     onChange={(e) => setScholarId(e.target.value)}
