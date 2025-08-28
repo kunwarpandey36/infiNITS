@@ -2,7 +2,8 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Mail, ArrowLeft, Heart, UserCircle, Linkedin, Phone } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Mail, ArrowLeft, Heart, Phone, Info } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -22,6 +23,15 @@ export default function FeedbackPage() {
           Feedback
         </h1>
       </div>
+
+      <Alert className="mb-8">
+        <Info className="h-4 w-4" />
+        <AlertTitle className="font-headline">Under Development</AlertTitle>
+        <AlertDescription>
+          This website is still in the development phase. Any error in the data or misinformation is highly regretted. Please inform us regarding any issues using the anonymous feedback form below.
+        </AlertDescription>
+      </Alert>
+      
       <div className="grid gap-8">
         <Card className="flex flex-col">
             <CardHeader>
