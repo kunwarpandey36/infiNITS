@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowLeft, Mail, Phone, BedDouble, FileText, IndianRupee } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, BedDouble, FileText, IndianRupee, Wifi, Utensils } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const rules = [
@@ -63,19 +63,37 @@ export default function GuestHousePage() {
 
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline">Booking Information</CardTitle>
+                    <CardTitle className="font-headline">Important Information</CardTitle>
                 </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground mb-4">To book a room in the Guest House, please send an email to the official address with your requirements.</p>
-                    <a href="mailto:guesthouse@nits.ac.in">
-                        <Button>
-                            <Mail className="mr-2" /> Email to Book: guesthouse@nits.ac.in
-                        </Button>
-                    </a>
+                <CardContent className="grid md:grid-cols-3 gap-6">
+                    <div className="space-y-1">
+                        <h3 className="font-semibold flex items-center gap-2"><Wifi className="h-5 w-5 text-primary"/> WiFi Details</h3>
+                        <p className="text-muted-foreground ml-7">Network Name: <span className="font-mono bg-muted px-2 py-1 rounded-md">NITS</span></p>
+                        <p className="text-muted-foreground ml-7">Password: <span className="font-mono bg-muted px-2 py-1 rounded-md">abcde</span></p>
+                    </div>
+                     <div className="space-y-1">
+                        <h3 className="font-semibold flex items-center gap-2"><Phone className="h-5 w-5 text-primary"/> Reception</h3>
+                        <a href="tel:+919707524004" className="text-muted-foreground ml-7 hover:underline">+91 9707524004</a>
+                    </div>
+                     <div className="space-y-1">
+                        <h3 className="font-semibold flex items-center gap-2"><Utensils className="h-5 w-5 text-primary"/> Canteen</h3>
+                        <a href="tel:+916901595620" className="text-muted-foreground ml-7 hover:underline">+91 6901595620</a>
+                    </div>
                 </CardContent>
             </Card>
 
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full" defaultValue="booking">
+                 <AccordionItem value="booking">
+                    <AccordionTrigger className="text-xl font-headline"><Mail className="mr-2 h-5 w-5 text-primary"/>Booking Information</AccordionTrigger>
+                    <AccordionContent>
+                        <p className="text-muted-foreground mb-4">To book a room in the Guest House, please send an email to the official address with your requirements.</p>
+                        <a href="mailto:guesthouse@nits.ac.in">
+                            <Button>
+                                Email to Book: guesthouse@nits.ac.in
+                            </Button>
+                        </a>
+                    </AccordionContent>
+                </AccordionItem>
                 <AccordionItem value="rules">
                     <AccordionTrigger className="text-xl font-headline"><FileText className="mr-2 h-5 w-5 text-primary"/>Rules and Regulations</AccordionTrigger>
                     <AccordionContent className="pl-2">
@@ -131,7 +149,7 @@ export default function GuestHousePage() {
                     <CardTitle className="font-headline">Contact Details</CardTitle>
                 </CardHeader>
                 <CardContent className="grid md:grid-cols-2 gap-6">
-                    <Card className="p-4">
+                    <Card className="p-4 bg-muted/50">
                         <p className="font-semibold">Dr. Ujjal Chakraborty</p>
                         <p className="text-sm text-muted-foreground">Assistant Prof. (Dept. of ECE) & Faculty-in-Charge, Guest House</p>
                         <div className="flex items-center gap-2 mt-2">
@@ -143,7 +161,7 @@ export default function GuestHousePage() {
                              <a href="mailto:guesthouse@nits.ac.in" className="text-sm hover:underline">guesthouse@nits.ac.in</a>
                         </div>
                     </Card>
-                    <Card className="p-4">
+                    <Card className="p-4 bg-muted/50">
                         <p className="font-semibold">Mr. Indrajit Goswami</p>
                         <p className="text-sm text-muted-foreground">Caretaker</p>
                         <div className="flex items-center gap-2 mt-2">
