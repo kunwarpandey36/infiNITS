@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Camera, ArrowLeft, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogHeader, DialogTitle as DialogTitleComponent } from "@/components/ui/dialog";
 import { useState } from 'react';
 
 const images = [
@@ -62,6 +62,9 @@ export default function CampusClicksPage() {
                       </DialogTrigger>
                        {selectedImage === image.src && (
                         <DialogContent className="max-w-4xl p-0 border-0">
+                          <DialogHeader className="sr-only">
+                            <DialogTitleComponent>{image.alt}</DialogTitleComponent>
+                          </DialogHeader>
                           <Image
                             src={image.src}
                             alt={image.alt}
