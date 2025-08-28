@@ -5,8 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { ArrowLeft, Mail, Phone, BedDouble, FileText, IndianRupee, Wifi, Utensils } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, BedDouble, FileText, IndianRupee, Wifi, Utensils, UserCircle, Users } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { Separator } from '@/components/ui/separator';
+
 
 const rules = [
     "Please switch off the Lights/TV/AC/Geyser before leaving the room.",
@@ -49,6 +51,14 @@ const notes = [
     "If the indenter cancels any booked rooms within 24 hours, he/she has to pay full room rent."
 ];
 
+const otherStaff = [
+    { name: "BAPPON BARDHAN", phone: "8134994119" },
+    { name: "SUMIT RABIDAS", phone: "6000155435" },
+    { name: "AJOY DHAR", phone: "7053856166" },
+    { name: "POMPI DEV", phone: "8474803355" },
+    { name: "SUBHO BHATTACHRJEE", phone: "6000107689" },
+];
+
 export default function GuestHousePage() {
     const router = useRouter();
 
@@ -81,7 +91,7 @@ export default function GuestHousePage() {
                     </div>
                 </CardContent>
             </Card>
-
+            
             <Accordion type="single" collapsible className="w-full" defaultValue="booking">
                  <AccordionItem value="booking">
                     <AccordionTrigger className="text-xl font-headline"><Mail className="mr-2 h-5 w-5 text-primary"/>Booking Information</AccordionTrigger>
@@ -150,8 +160,9 @@ export default function GuestHousePage() {
                 </CardHeader>
                 <CardContent className="grid md:grid-cols-2 gap-6">
                     <Card className="p-4 bg-muted/50">
-                        <p className="font-semibold">Dr. Ujjal Chakraborty</p>
+                        <p className="font-semibold text-primary">Dr. Ujjal Chakraborty</p>
                         <p className="text-sm text-muted-foreground">Assistant Prof. (Dept. of ECE) & Faculty-in-Charge, Guest House</p>
+                        <Separator className="my-2"/>
                         <div className="flex items-center gap-2 mt-2">
                             <Phone className="h-4 w-4 text-primary"/>
                             <a href="tel:03842-240251" className="text-sm hover:underline">03842-240251</a>
@@ -162,8 +173,9 @@ export default function GuestHousePage() {
                         </div>
                     </Card>
                     <Card className="p-4 bg-muted/50">
-                        <p className="font-semibold">Mr. Indrajit Goswami</p>
+                        <p className="font-semibold text-primary">Mr. Indrajit Goswami</p>
                         <p className="text-sm text-muted-foreground">Caretaker</p>
+                         <Separator className="my-2"/>
                         <div className="flex items-center gap-2 mt-2">
                             <Phone className="h-4 w-4 text-primary"/>
                             <a href="tel:+919707910108" className="text-sm hover:underline">+91 9707910108</a>, <a href="tel:+918473088573" className="text-sm hover:underline">+91 8473088573</a>
@@ -173,6 +185,30 @@ export default function GuestHousePage() {
                             <a href="mailto:igoswami34@gmail.com" className="text-sm hover:underline">igoswami34@gmail.com</a>, <a href="mailto:nits.guesthouse@gmail.com" className="text-sm hover:underline">nits.guesthouse@gmail.com</a>
                         </div>
                     </Card>
+                </CardContent>
+            </Card>
+            
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline flex items-center gap-2">
+                        <Users className="h-5 w-5 text-primary" /> Staff and Support
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {otherStaff.map((staff, index) => (
+                        <Card key={index} className="p-4">
+                            <div className="flex items-center gap-3">
+                                <UserCircle className="h-8 w-8 text-muted-foreground" />
+                                <div>
+                                    <p className="font-semibold">{staff.name}</p>
+                                    <a href={`tel:+91${staff.phone}`} className="text-sm text-primary hover:underline flex items-center gap-1">
+                                        <Phone className="h-3 w-3" />
+                                        {staff.phone}
+                                    </a>
+                                </div>
+                            </div>
+                        </Card>
+                    ))}
                 </CardContent>
             </Card>
 
