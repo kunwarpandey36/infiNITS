@@ -69,7 +69,7 @@ export default function GuestHousePage() {
                     <p className="text-muted-foreground mb-4">To book a room in the Guest House, please send an email to the official address with your requirements.</p>
                     <a href="mailto:guesthouse@nits.ac.in">
                         <Button>
-                            <Mail className="mr-2" /> Email to Book
+                            <Mail className="mr-2" /> Email to Book: guesthouse@nits.ac.in
                         </Button>
                     </a>
                 </CardContent>
