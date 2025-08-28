@@ -16,6 +16,7 @@ import {
     Mail,
     User,
     Camera,
+    BedDouble,
   } from 'lucide-react';
   
   export const features = [
@@ -97,6 +98,13 @@ import {
       keywords: 'hostel mess menu warden staff'
     },
     {
+      title: 'Guest House',
+      href: '/guest-house',
+      icon: <BedDouble className="h-8 w-8 text-primary" />,
+      description: 'Book and view details about the institute guest house.',
+      keywords: 'guest house booking accommodation tariff rules'
+    },
+    {
       title: 'Institute Fees',
       href: '/fees',
       icon: <Banknote className="h-8 w-8 text-primary" />,
@@ -125,4 +133,3 @@ import {
       keywords: 'feedback contact developers team'
     },
   ];
-  
