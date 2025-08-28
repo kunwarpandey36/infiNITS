@@ -59,7 +59,7 @@ export default function BranchResourcesPage() {
   const [selectedBranch, setSelectedBranch] = useState('');
   const [subjects, setSubjects] = useState<Subject[]>([]);
   
-  const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
+  const availableBranches = useMemo(() => [...new Set(Object.values(branchCodeMapping))], []);
 
   useEffect(() => {
     if (student) {

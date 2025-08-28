@@ -48,7 +48,7 @@ export default function AttendanceTrackerPage() {
   const [selectedBranch, setSelectedBranch] = useState('');
   const router = useRouter();
   
-  const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
+  const availableBranches = useMemo(() => [...new Set(Object.values(branchCodeMapping))], []);
   const storageKey = useMemo(() => `attendance-${student?.scholarId}-${selectedSemester}-${selectedBranch}`, [student, selectedSemester, selectedBranch]);
 
   useEffect(() => {
@@ -92,7 +92,20 @@ export default function AttendanceTrackerPage() {
 
   const handleAttendanceChange = (id: string, type: 'attended' | 'total', value: number) => {
     setSubjects(
-      subjects.map((s) => (s.id === id ? { ...s, [type]: Math.max(0, value) } : s))
+      subjects.map((s) => {
+        if (s.id === id) {
+          const newAttended = type === 'attended' ? Math.max(0, value) : s.attended;
+          let newTotal = type === 'total' ? Math.max(0, value) : s.total;
+
+          // If incrementing attended classes, also increment total classes
+          if (type === 'attended' && value > s.attended) {
+            newTotal = s.total + 1;
+          }
+          
+          return { ...s, attended: newAttended, total: newTotal };
+        }
+        return s;
+      })
     );
   };
   

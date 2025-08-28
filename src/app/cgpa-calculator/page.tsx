@@ -70,7 +70,7 @@ export default function SgpaCalculatorPage() {
     const [selectedSemester, setSelectedSemester] = useState('');
     const [selectedBranch, setSelectedBranch] = useState('');
 
-    const availableBranches = useMemo(() => Object.values(branchCodeMapping), []);
+    const availableBranches = useMemo(() => [...new Set(Object.values(branchCodeMapping))], []);
     const storageKey = useMemo(() => `sgpa-calc-${student?.scholarId}-${selectedSemester}-${selectedBranch}`, [student, selectedSemester, selectedBranch]);
 
 
