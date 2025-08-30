@@ -127,7 +127,7 @@ export default function SgpaCalculatorPage() {
     };
 
     const handleMarkChange = (id: string, type: keyof Subject['marks'], value: number) => {
-        const maxMarksMap = { midSem: 30, endSem: 50, teacherAssessment: 20, lab: 100 };
+        const maxMarksMap = { midSem: 50, endSem: 100, teacherAssessment: 20, lab: 100 };
         const max = maxMarksMap[type];
 
         setSubjects(subjects.map(s => 
@@ -147,7 +147,8 @@ export default function SgpaCalculatorPage() {
     
     const calculateFinalMarks = (subject: Subject) => {
         if(subject.isLab) return subject.marks.lab;
-        return subject.marks.midSem + subject.marks.endSem + subject.marks.teacherAssessment;
+        // 60% of Mid-Sem (out of 50) + 50% of End-Sem (out of 100) + TA (out of 20)
+        return (subject.marks.midSem * 0.6) + (subject.marks.endSem * 0.5) + subject.marks.teacherAssessment;
     }
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
@@ -258,9 +259,9 @@ export default function SgpaCalculatorPage() {
                             <TableRow>
                                 <TableHead className="min-w-[200px]">Subject</TableHead>
                                 <TableHead>Credits</TableHead>
-                                <TableHead>Mid Sem (30)</TableHead>
+                                <TableHead>Mid Sem (50)</TableHead>
                                 <TableHead>TA (20)</TableHead>
-                                <TableHead>End Sem (50)</TableHead>
+                                <TableHead>End Sem (100)</TableHead>
                                 <TableHead>Lab (100)</TableHead>
                                 <TableHead>Topper's Total</TableHead>
                                 <TableHead>Final Marks</TableHead>
@@ -306,7 +307,7 @@ export default function SgpaCalculatorPage() {
                                             <Input type="number" min="0" max="100" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} className="w-24" />
                                         </TableCell>
                                         <TableCell className={`font-bold ${finalMarks > subject.topperMarks ? 'text-destructive' : ''}`}>
-                                            {finalMarks}
+                                            {finalMarks.toFixed(2)}
                                         </TableCell>
                                         <TableCell className="font-bold">{gradeInfo.grade}</TableCell>
                                         <TableCell className="text-right">
@@ -359,7 +360,7 @@ export default function SgpaCalculatorPage() {
         <CardContent className="text-sm space-y-2">
             <p><strong>1. Marking Scheme:</strong></p>
             <ul className="list-disc pl-5 text-muted-foreground">
-                <li><strong>Theory Subjects:</strong> Total marks (100) = Mid-Semester (30) + Teacher's Assessment (20) + End-Semester (50).</li>
+                <li><strong>Theory Subjects:</strong> Total marks (100) = 60% of Mid-Sem (out of 50) + 50% of End-Sem (out of 100) + Teacher's Assessment (out of 20).</li>
                 <li><strong>Lab Subjects:</strong> Total marks are out of 100.</li>
                 <li>Use the <FlaskConical className="inline h-4 w-4" /> icon to toggle a subject between Theory and Lab.</li>
             </ul>
@@ -371,7 +372,7 @@ export default function SgpaCalculatorPage() {
             <p className="text-muted-foreground">
                 The SGPA is the weighted average of your grade points. It's calculated by summing the products of (Credit × Grade Point) for all subjects and then dividing by the total credits. Formula: `Σ(Creditᵢ × GradePointᵢ) / Σ(Creditᵢ)`.
             </p>
-             <p className="font-semibold mt-4">Note: Your marks in any component cannot exceed the maximum marks for that component (e.g. 30 for Mid-Sem). The calculator enforces this automatically.</p>
+             <p className="font-semibold mt-4">Note: Your marks in any component cannot exceed the maximum marks for that component (e.g. 50 for Mid-Sem). The calculator enforces this automatically.</p>
         </CardContent>
       </Card>
     </div>
