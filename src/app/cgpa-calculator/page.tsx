@@ -127,29 +127,45 @@ export default function SgpaCalculatorPage() {
         setSubjects(subjects.filter((s) => s.id !== id));
     };
 
+    const calculateFinalMarks = (subject: Subject) => {
+        if (subject.isLab) return subject.marks.lab;
+        return (subject.marks.midSem * 0.6) + (subject.marks.endSem * 0.5) + subject.marks.teacherAssessment;
+    };
+    
     const handleMarkChange = (id: string, type: keyof Subject['marks'], value: number) => {
         const maxMarksMap = { midSem: 50, endSem: 100, teacherAssessment: 20, lab: 100 };
         const max = maxMarksMap[type];
+        const clampedValue = Math.min(Math.max(0, value), max);
 
-        setSubjects(subjects.map(s => 
-            s.id === id 
-                ? { ...s, marks: { ...s.marks, [type]: Math.min(Math.max(0, value), max) } } 
-                : s
-        ));
+        setSubjects(subjects.map(s => {
+            if (s.id === id) {
+                const updatedSubject = { ...s, marks: { ...s.marks, [type]: clampedValue } };
+                const finalMarks = calculateFinalMarks(updatedSubject);
+                if (finalMarks > updatedSubject.topperMarks) {
+                    updatedSubject.topperMarks = Math.floor(finalMarks);
+                }
+                return updatedSubject;
+            }
+            return s;
+        }));
     };
     
     const handleSubjectChange = (id: string, field: 'code' | 'credits' | 'topperMarks' | 'name' | 'isLab', value: string | number | boolean) => {
          setSubjects(
-            subjects.map((s) =>
-                s.id === id ? { ...s, [field]: value } : s
-            )
+            subjects.map((s) => {
+                if (s.id === id) {
+                    const updatedSubject = { ...s, [field]: value };
+                    if (field === 'isLab') {
+                       const finalMarks = calculateFinalMarks(updatedSubject);
+                       if(finalMarks > updatedSubject.topperMarks) {
+                          updatedSubject.topperMarks = Math.floor(finalMarks);
+                       }
+                    }
+                    return updatedSubject;
+                }
+                return s;
+            })
         );
-    }
-    
-    const calculateFinalMarks = (subject: Subject) => {
-        if(subject.isLab) return subject.marks.lab;
-        // 60% of Mid-Sem (out of 50) + 50% of End-Sem (out of 100) + TA (out of 20)
-        return (subject.marks.midSem * 0.6) + (subject.marks.endSem * 0.5) + subject.marks.teacherAssessment;
     }
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
