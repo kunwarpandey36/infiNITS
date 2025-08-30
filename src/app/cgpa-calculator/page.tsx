@@ -60,6 +60,7 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
 interface Grade {
     grade: string;
     points: number;
+    isTopper?: boolean;
 }
 
 export default function SgpaCalculatorPage() {
@@ -152,8 +153,8 @@ export default function SgpaCalculatorPage() {
     }
 
     const calculateGrade = (yourMarks: number, topperMarks: number): Grade => {
+        if (yourMarks > topperMarks) return { grade: 'You are the Topper!', points: 10, isTopper: true };
         if (topperMarks === 0) return { grade: 'N/A', points: 0 };
-        if (yourMarks > topperMarks) return { grade: 'Error', points: 0 }; // Handle error case
         const percentage = (yourMarks / topperMarks) * 100;
         if (percentage >= 90) return { grade: 'A+', points: 10 };
         if (percentage >= 80) return { grade: 'A', points: 9 };
@@ -168,29 +169,15 @@ export default function SgpaCalculatorPage() {
     const handleCalculateSgpa = () => {
         let totalCredits = 0;
         let totalPoints = 0;
-        let hasError = false;
 
         subjects.forEach(subject => {
             const finalMarks = calculateFinalMarks(subject);
-            if (finalMarks > subject.topperMarks) {
-                toast({
-                    variant: "destructive",
-                    title: "Error in " + subject.name,
-                    description: "Your marks cannot be greater than the topper's marks.",
-                })
-                hasError = true;
-            }
-            if(subject.credits > 0 && subject.topperMarks > 0 && !hasError) {
+            if(subject.credits > 0 && subject.topperMarks > 0) {
                 const grade = calculateGrade(finalMarks, subject.topperMarks);
                 totalPoints += grade.points * subject.credits;
                 totalCredits += subject.credits;
             }
         });
-
-        if(hasError) {
-            setSgpa(null);
-            return;
-        }
 
         if (totalCredits === 0) {
             setSgpa(0);
@@ -306,10 +293,12 @@ export default function SgpaCalculatorPage() {
                                         <TableCell>
                                             <Input type="number" min="0" max="100" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} className="w-24" />
                                         </TableCell>
-                                        <TableCell className={`font-bold ${finalMarks > subject.topperMarks ? 'text-destructive' : ''}`}>
+                                        <TableCell className="font-bold">
                                             {finalMarks.toFixed(2)}
                                         </TableCell>
-                                        <TableCell className="font-bold">{gradeInfo.grade}</TableCell>
+                                        <TableCell className={`font-bold ${gradeInfo.isTopper ? 'text-green-500' : ''}`}>
+                                            {gradeInfo.grade}
+                                        </TableCell>
                                         <TableCell className="text-right">
                                             <Button variant="ghost" size="icon" onClick={() => handleDeleteSubject(subject.id)}>
                                                 <Trash2 className="h-4 w-4" />
@@ -366,7 +355,7 @@ export default function SgpaCalculatorPage() {
             </ul>
             <p><strong>2. Relative Grading:</strong></p>
             <p className="text-muted-foreground">
-                Your grade is calculated relative to the topper's total marks in that subject. The formula used is: `(Your Total Marks / Topper's Total Marks) * 100`. This percentage then maps to a grade point (e.g., >= 90% is A+ with 10 points). Your marks cannot exceed the topper's marks. The default topper's marks are set to 94 but can be adjusted.
+                Your grade is calculated relative to the topper's total marks in that subject. The formula used is: `(Your Total Marks / Topper's Total Marks) * 100`. This percentage then maps to a grade point (e.g., >= 90% is A+ with 10 points). If your marks exceed the topper's, you're the new topper! The default topper's marks are set to 94 but can be adjusted.
             </p>
             <p><strong>3. SGPA Calculation:</strong></p>
             <p className="text-muted-foreground">
@@ -378,3 +367,4 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
+
