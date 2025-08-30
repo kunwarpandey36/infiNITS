@@ -6,12 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Trash2, PlusCircle, Calculator, ArrowLeft, Info, FlaskConical } from 'lucide-react';
+import { Trash2, PlusCircle, Calculator, ArrowLeft, Info, FlaskConical, AlertTriangle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { courseData, branchCodeMapping } from '@/lib/course-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import { useToast } from '@/hooks/use-toast';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 interface Subject {
   id: string; 
@@ -344,6 +345,13 @@ export default function SgpaCalculatorPage() {
             )}
         </CardContent>
       </Card>
+      <Alert variant="destructive" className="mt-8">
+        <AlertTriangle className="h-4 w-4" />
+        <AlertTitle>Disclaimer</AlertTitle>
+        <AlertDescription>
+          The calculated SGPA is an estimate based on relative grading. It may not match your official result exactly.
+        </AlertDescription>
+      </Alert>
       <Card className="mt-8 bg-secondary/30">
         <CardHeader>
           <CardTitle className="font-headline flex items-center gap-2"><Info className="h-5 w-5"/>How It Works</CardTitle>

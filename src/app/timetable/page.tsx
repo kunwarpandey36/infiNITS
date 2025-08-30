@@ -6,11 +6,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Info } from 'lucide-react';
+import { ArrowLeft, Info, AlertTriangle } from 'lucide-react';
 import { timetableData } from '@/lib/timetable-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const timeSlots = [
@@ -62,6 +63,12 @@ export default function TimetablePage() {
   const [activeBranch, setActiveBranch] = useState('CE');
   const [activeSection, setActiveSection] = useState('A');
 
+  const showWarning = useMemo(() => {
+    const sem = parseInt(activeSemester, 10);
+    return [3, 5, 7].includes(sem);
+  }, [activeSemester]);
+
+
   useEffect(() => {
     if (student) {
       setActiveProgram('UG'); // Assuming B.Tech is UG
@@ -90,26 +97,20 @@ export default function TimetablePage() {
   }, [activeSemester, activeBranch, activeSection]);
   
    useEffect(() => {
-    if (semestersForProgram.length > 0) {
-      if (!semestersForProgram.includes(activeSemester)) {
-        setActiveSemester(semestersForProgram[0]);
-      }
+    if (semestersForProgram.length > 0 && !semestersForProgram.includes(activeSemester)) {
+      setActiveSemester(semestersForProgram[0]);
     }
   }, [activeSemester, semestersForProgram]);
   
   useEffect(() => {
-    if (branchesForSemester.length > 0) {
-      if (!branchesForSemester.includes(activeBranch)) {
-        setActiveBranch(branchesForSemester[0]);
-      }
+    if (branchesForSemester.length > 0 && !branchesForSemester.includes(activeBranch)) {
+      setActiveBranch(branchesForSemester[0]);
     }
   }, [activeBranch, branchesForSemester]);
   
   useEffect(() => {
-    if (sectionsForBranch.length > 0) {
-      if (!sectionsForBranch.includes(activeSection)) {
-        setActiveSection(sectionsForBranch[0]);
-      }
+    if (sectionsForBranch.length > 0 && !sectionsForBranch.includes(activeSection)) {
+      setActiveSection(sectionsForBranch[0]);
     }
   }, [activeSection, sectionsForBranch]);
 
@@ -181,6 +182,15 @@ export default function TimetablePage() {
             <CardDescription>Select program, semester, branch, and section to view the schedule. Your defaults are pre-selected.</CardDescription>
         </CardHeader>
         <CardContent>
+            {showWarning && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertTitle>Disclaimer</AlertTitle>
+                <AlertDescription>
+                  This timetable may not be accurate. Please confirm with your class representative.
+                </AlertDescription>
+              </Alert>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
               <div className="grid gap-2">
                 <label>Program</label>
@@ -281,5 +291,3 @@ export default function TimetablePage() {
     </div>
   );
 }
-
-    

@@ -3,15 +3,16 @@
 
 import { useEffect, useState } from 'react';
 import { useStudentData } from '@/hooks/use-student-data';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import UpcomingEvents from '@/components/upcoming-events';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Instagram } from 'lucide-react';
+import { ArrowLeft, Instagram, AlertTriangle } from 'lucide-react';
 import TodaysMenu from '@/components/todays-menu';
 import TodaysTimetable from '@/components/todays-timetable';
 import Link from 'next/link';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 
 interface Subject {
   id: string;
@@ -109,6 +110,15 @@ export default function ProfilePage() {
                 </Card>
             </div>
         </CardContent>
+        <CardFooter>
+          <Alert variant="destructive" className="w-full">
+            <AlertTriangle className="h-4 w-4" />
+            <AlertTitle>Disclaimer</AlertTitle>
+            <AlertDescription>
+              The SGPA and CGPA data shown here is based on unofficial sources and may not be accurate. Please confirm with the official results.
+            </AlertDescription>
+          </Alert>
+        </CardFooter>
       </Card>
       
       <div className="grid gap-6 lg:grid-cols-3">
