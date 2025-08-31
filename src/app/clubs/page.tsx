@@ -35,7 +35,7 @@ const clubsList = [
   { name: "Machine Learning Club NIT Silchar", description: "Machine Learning Club NIT Silchar", icon: Users, link: "https://www.mlclubnits.com/" },
   { name: "Finance and Investment Club NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://financeclubnits.in/", instagram: "https://www.instagram.com/financeclubnits/" },
   { name: "NSS NIT Silchar", description: "National Service Scheme, NIT Silchar. NOT ME BUT YOU. A Government Organisation. Official Account Of NSS Cell, NIT SILCHAR", icon: Users, link: "https://www.instagram.com/nss_nits/" },
-  { name: "Advay", description: "Advay - Dramatics Club, NIT Silchar. Unleash the Drama within... Join the Stage, Where Drama Meets Family: Uniting Hearts on Stage..!!", icon: Users, link: "https://www.instagram.com/advaynits/" },
+  { name: "Advay", description: "Advay - Dramatics Club, NIT Silchar. Unleash the Drama within... Join the Stage, Where Drama Meets Family: Uniting Hearts on Stage..!!", icon: Users, link: "https://www.instagram.com/p/DN_kLswky0l/" },
   { name: "NCC NIT Silchar", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/ncc_nits/" },
   { name: "NIT Silchar Basketball Club", description: "Details will be updated soon.", icon: Users, link: "https://www.instagram.com/nits_basketball/" },
   { name: "Gyansagar", description: "Details will be updated soon.", icon: Users, link: "https://bit.ly/gyansagar", instagram: "https://www.instagram.com/gyansagar.npo.nits/" },
@@ -49,22 +49,15 @@ const clubsList = [
 ];
 
 const clubActivityAnnouncements = [
-    { 
-      text: "New Machine Learning Club, NIT Silchar team for 2025-26.", 
-      link: "https://www.instagram.com/p/DNvPoDY5KDr/?img_index=1" 
-    },
-    { 
-      text: "Meet the new NITS ECO Family.", 
-      link: "https://www.instagram.com/p/DNvFiTyZu7N/?img_index=1" 
-    },
-    { 
-      text: "Leads of Mountaineering, Trekking, karate and Skating Club for the upcoming term.", 
-      link: "https://www.instagram.com/p/DNmlyfaTOzc/?img_index=4" 
-    },
-    { 
-      text: "Core Team of Illuminits for the year 2025—26.", 
-      link: "https://www.instagram.com/p/DNe-lhYSetI/?img_index=1" 
-    },
+    { text: "Advay Club announces its upcoming holiday event!", link: "https://www.instagram.com/p/DN_kLswky0l/" },
+    { text: "Dojo NITS & Mountaineering Club Orientation on Sep 1st at 5:30 PM in New Gallery.", link: "https://www.instagram.com/p/DN-sKPrkmG6/" },
+    { text: "Aaveg Club proudly presents its new crew members!", link: "https://www.instagram.com/p/DN-pFyHE1FY/" },
+    { text: "IEI NIT Silchar announces the new Junior Core Team for 2025-2026.", link: "https://www.instagram.com/p/DN-GE1kiUCb/?img_index=6" },
+    { text: "2-Day Data Science Workshop by GDG on Campus, 1st & 2nd September.", link: "https://www.instagram.com/p/DN5Hapvkk75/" },
+    { text: "New Machine Learning Club, NIT Silchar team for 2025-26.", link: "https://www.instagram.com/p/DNvPoDY5KDr/?img_index=1" },
+    { text: "Meet the new NITS ECO Family.", link: "https://www.instagram.com/p/DNvFiTyZu7N/?img_index=1" },
+    { text: "Leads of Mountaineering, Trekking, karate and Skating Club for the upcoming term.", link: "https://www.instagram.com/p/DNmlyfaTOzc/?img_index=4" },
+    { text: "Core Team of Illuminits for the year 2025—26.", link: "https://www.instagram.com/p/DNe-lhYSetI/?img_index=1" },
 ];
 
 export default function ClubsPage() {

@@ -50,6 +50,28 @@ const events = [
     type: 'Competition'
   },
   {
+    title: 'DojoNITS & Trekking Club Orientation',
+    date: 'September 1, 2024',
+    location: 'New Gallery',
+    description: 'Joint orientation session for Dojonits and the Mountaineering and Trekking Club.',
+    organizer: 'Dojonits & MTC',
+    type: 'Event',
+    links: {
+      website: 'https://www.instagram.com/p/DN-sKPrkmG6/'
+    }
+  },
+  {
+    title: '2-Day Data Science Workshop',
+    date: 'September 1-2, 2024',
+    location: 'Online / Campus',
+    description: 'A comprehensive workshop on Data Science organized by GDG on Campus.',
+    organizer: 'GDG on Campus',
+    type: 'Workshop',
+    links: {
+      website: 'https://www.instagram.com/p/DN5Hapvkk75/'
+    }
+  },
+  {
     title: 'Alpha Crescendo',
     date: 'January 12, 2025',
     location: 'Campus Auditorium',

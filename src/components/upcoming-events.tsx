@@ -8,6 +8,9 @@ import { Bell } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const allEvents: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
+  '2025-09-01': { title: 'DojoNITS & MTC Orientation', type: 'event' },
+  '2025-09-01': { title: 'Data Science Workshop Day 1', type: 'event' },
+  '2025-09-02': { title: 'Data Science Workshop Day 2', type: 'event' },
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
   '2025-07-22': { title: 'Semester Registration', type: 'event' },
   '2025-07-23': { title: 'Semester Registration', type: 'event' },
@@ -74,8 +77,8 @@ export default function UpcomingEvents() {
             <CardContent>
                 {upcomingEvents.length > 0 ? (
                     <ul className="space-y-3">
-                        {upcomingEvents.map((event) => (
-                            <li key={event.date} className="flex items-center justify-between p-3 bg-muted rounded-md">
+                        {upcomingEvents.map((event, index) => (
+                            <li key={`${event.date}-${index}`} className="flex items-center justify-between p-3 bg-muted rounded-md">
                                 <div>
                                     <p className="font-semibold">{event.title}</p>
                                     <p className="text-sm text-muted-foreground">{format(parseISO(event.date), 'MMMM d, yyyy')}</p>

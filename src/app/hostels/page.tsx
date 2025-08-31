@@ -275,34 +275,36 @@ export default function HostelsPage() {
                       </DialogDescription>
                     </DialogHeader>
                     <ScrollArea className="h-[60vh] pr-4">
-                      <Table>
-                        <TableHeader>
-                          <TableRow>
-                            <TableHead>Day</TableHead>
-                            <TableHead>Breakfast</TableHead>
-                            <TableHead>Lunch</TableHead>
-                            <TableHead>Snacks</TableHead>
-                            <TableHead>Dinner (Veg)</TableHead>
-                            <TableHead>Dinner (Non-Veg)</TableHead>
-                          </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {dayOrder.map((day) => {
-                            const meals = selectedHostelWeeklyMenu.days[day];
-                            if (!meals) return null; 
-                            return (
-                              <TableRow key={day}>
-                                <TableCell className="font-medium">{day}</TableCell>
-                                <TableCell>{meals.breakfast || "N/A"}</TableCell>
-                                <TableCell>{meals.lunch || "N/A"}</TableCell>
-                                <TableCell>{meals.snacks || "N/A"}</TableCell>
-                                <TableCell>{meals.dinner?.veg || "N/A"}</TableCell>
-                                <TableCell>{meals.dinner?.nonVeg || "N/A"}</TableCell>
-                              </TableRow>
-                            );
-                          })}
-                        </TableBody>
-                      </Table>
+                      <div className="overflow-x-auto">
+                        <Table>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>Day</TableHead>
+                              <TableHead>Breakfast</TableHead>
+                              <TableHead>Lunch</TableHead>
+                              <TableHead>Snacks</TableHead>
+                              <TableHead>Dinner (Veg)</TableHead>
+                              <TableHead>Dinner (Non-Veg)</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            {dayOrder.map((day) => {
+                              const meals = selectedHostelWeeklyMenu.days[day];
+                              if (!meals) return null; 
+                              return (
+                                <TableRow key={day}>
+                                  <TableCell className="font-medium">{day}</TableCell>
+                                  <TableCell>{meals.breakfast || "N/A"}</TableCell>
+                                  <TableCell>{meals.lunch || "N/A"}</TableCell>
+                                  <TableCell>{meals.snacks || "N/A"}</TableCell>
+                                  <TableCell>{meals.dinner?.veg || "N/A"}</TableCell>
+                                  <TableCell>{meals.dinner?.nonVeg || "N/A"}</TableCell>
+                                </TableRow>
+                              );
+                            })}
+                          </TableBody>
+                        </Table>
+                      </div>
                       <Separator className="my-6" />
                       <Card>
                         <CardHeader>
@@ -351,4 +353,3 @@ export default function HostelsPage() {
     </div>
   );
 }
-

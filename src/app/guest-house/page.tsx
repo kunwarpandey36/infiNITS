@@ -154,39 +154,6 @@ export default function GuestHousePage() {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
-             <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline">Contact Details</CardTitle>
-                </CardHeader>
-                <CardContent className="grid md:grid-cols-2 gap-6">
-                    <Card className="p-4 bg-muted/50">
-                        <p className="font-semibold text-primary">Dr. Ujjal Chakraborty</p>
-                        <p className="text-sm text-muted-foreground">Assistant Prof. (Dept. of ECE) & Faculty-in-Charge, Guest House</p>
-                        <Separator className="my-2"/>
-                        <div className="flex items-center gap-2 mt-2">
-                            <Phone className="h-4 w-4 text-primary"/>
-                            <a href="tel:03842-240251" className="text-sm hover:underline">03842-240251</a>
-                        </div>
-                        <div className="flex items-center gap-2 mt-1">
-                            <Mail className="h-4 w-4 text-primary"/>
-                             <a href="mailto:guesthouse@nits.ac.in" className="text-sm hover:underline">guesthouse@nits.ac.in</a>
-                        </div>
-                    </Card>
-                    <Card className="p-4 bg-muted/50">
-                        <p className="font-semibold text-primary">Mr. Indrajit Goswami</p>
-                        <p className="text-sm text-muted-foreground">Caretaker</p>
-                         <Separator className="my-2"/>
-                        <div className="flex items-center gap-2 mt-2">
-                            <Phone className="h-4 w-4 text-primary"/>
-                            <a href="tel:+919707910108" className="text-sm hover:underline">+91 9707910108</a>, <a href="tel:+918473088573" className="text-sm hover:underline">+91 8473088573</a>
-                        </div>
-                         <div className="flex items-center gap-2 mt-1">
-                            <Mail className="h-4 w-4 text-primary"/>
-                            <a href="mailto:igoswami34@gmail.com" className="text-sm hover:underline">igoswami34@gmail.com</a>, <a href="mailto:nits.guesthouse@gmail.com" className="text-sm hover:underline">nits.guesthouse@gmail.com</a>
-                        </div>
-                    </Card>
-                </CardContent>
-            </Card>
             
             <Card>
                 <CardHeader>
