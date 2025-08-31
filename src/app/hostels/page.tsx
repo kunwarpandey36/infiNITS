@@ -57,15 +57,15 @@ export default function HostelsPage() {
       const today = new Date();
       const currentDayKey = getCurrentDayName(today);
 
+      const menuForDisplay = currentHostelMenuData.days[currentDayKey] ? { ...currentHostelMenuData.days[currentDayKey] } : null;
+      setTodaysMenu(menuForDisplay);
+      
       if (isLastSundayOfMonth(today)) {
         setIsGrandFeastDay(true);
         setGrandFeastDetails(currentHostelMenuData.grandFeast);
-        setTodaysMenu(null);
       } else {
         setIsGrandFeastDay(false);
         setGrandFeastDetails(null);
-        const menuForDisplay = currentHostelMenuData.days[currentDayKey] ? { ...currentHostelMenuData.days[currentDayKey] } : null;
-        setTodaysMenu(menuForDisplay);
       }
     } else {
       setTodaysMenu(null);
@@ -217,22 +217,9 @@ export default function HostelsPage() {
                <p className="text-xs text-muted-foreground mb-2">
                   Timings: Breakfast: {messMenuTimings.Breakfast}, Lunch: {messMenuTimings.Lunch},
                   Snacks: {messMenuTimings.Snacks}, Dinner: {messMenuTimings.Dinner}.
-                  {isGrandFeastDay && <span className="font-bold text-destructive block mt-1">🎉 Today is Grand Feast Day! 🎉</span>}
+                  {isGrandFeastDay && <span className="font-bold text-destructive block mt-1">🎉 Grand Feast for Dinner! 🎉</span>}
               </p>
-              {isGrandFeastDay && grandFeastDetails ? (
-                  <div className="space-y-1 text-xs">
-                    <p className="font-semibold text-primary text-md">Grand Feast Menu:</p>
-                    <div>
-                      <p className="font-semibold text-sm">Veg Menu:</p>
-                      <p className="text-muted-foreground text-xs sm:text-sm">{grandFeastDetails?.veg || "N/A"}</p>
-                    </div>
-                    <Separator className="my-0.5"/>
-                    <div>
-                      <p className="font-semibold text-sm">Non-Veg Menu:</p>
-                      <p className="text-muted-foreground text-xs sm:text-sm">{grandFeastDetails?.nonVeg || "N/A"}</p>
-                    </div>
-                  </div>
-              ) : todaysMenu ? (
+              {todaysMenu ? (
                 <div className="space-y-1 text-xs">
                   <div>
                     <p className="font-medium text-xs sm:text-sm">Breakfast:</p>
@@ -250,9 +237,18 @@ export default function HostelsPage() {
                   </div>
                   <Separator orientation="horizontal" className="my-0.5" />
                   <div>
-                    <p className="font-medium text-xs sm:text-sm">Dinner:</p>
-                    <p className="text-muted-foreground text-xs sm:text-sm"><strong>Veg:</strong> {todaysMenu?.dinner?.veg || "N/A"}</p>
-                    <p className="text-muted-foreground text-xs sm:text-sm"><strong>Non-Veg:</strong> {todaysMenu?.dinner?.nonVeg || "N/A"}</p>
+                     <p className="font-medium text-xs sm:text-sm">Dinner:</p>
+                    {isGrandFeastDay && grandFeastDetails ? (
+                       <div className="space-y-1 text-xs sm:text-sm">
+                          <p className="text-muted-foreground"><strong>Veg:</strong> {grandFeastDetails.veg}</p>
+                          <p className="text-muted-foreground"><strong>Non-Veg:</strong> {grandFeastDetails.nonVeg}</p>
+                       </div>
+                    ) : (
+                       <div className="text-xs sm:text-sm">
+                          <p className="text-muted-foreground"><strong>Veg:</strong> {todaysMenu?.dinner?.veg || "N/A"}</p>
+                          <p className="text-muted-foreground"><strong>Non-Veg:</strong> {todaysMenu?.dinner?.nonVeg || "N/A"}</p>
+                       </div>
+                    )}
                   </div>
                 </div>
               ) : (

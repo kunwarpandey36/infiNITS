@@ -6,8 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, Pin, ArrowLeft, Info, ExternalLink } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { parse, compareAsc } from 'date-fns';
 
-const events = [
+const eventsList = [
   {
     title: 'Incandescence',
     date: 'February 15-18, 2025',
@@ -48,6 +49,17 @@ const events = [
     description: 'An opportunity for budding entrepreneurs to pitch their ideas to investors and mentors.',
     organizer: 'E-Cell',
     type: 'Competition'
+  },
+  {
+    title: 'Innovision 2025',
+    date: 'September 13-14, 2024',
+    location: 'Management Studies Dept.',
+    description: 'The flagship event of the Department of Management Studies, NIT Silchar.',
+    organizer: 'DOMS',
+    type: 'Event',
+    links: {
+      website: 'https://www.linkedin.com/posts/doms-nit-silchar_innovision2025-innovationmeetsvision-nitsilchar-activity-7367253065650860032-_4Nq?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD55tPIBoY9yy_VvhBG9TkXc5LZTGW-GzQs&utm_campaign=copy_link'
+    }
   },
   {
     title: 'DojoNITS & Trekking Club Orientation',
@@ -159,6 +171,21 @@ const events = [
   }
 ];
 
+const parseDate = (dateString: string): Date => {
+  // Handles formats like "Month Day, YYYY" and "Month Day-Day, YYYY"
+  const year = new Date().getFullYear();
+  const monthDatePart = dateString.split(',')[0];
+  const firstMonthDay = monthDatePart.split(' ')[0] + ' ' + monthDatePart.split(' ')[1].split('-')[0];
+  return parse(`${firstMonthDay}, ${year}`, 'MMMM d, yyyy', new Date());
+};
+
+const sortedEvents = eventsList.sort((a, b) => {
+  const dateA = parseDate(a.date);
+  const dateB = parseDate(b.date);
+  return compareAsc(dateA, dateB);
+});
+
+
 export default function EventsPage() {
   const router = useRouter();
   
@@ -173,7 +200,7 @@ export default function EventsPage() {
         </h1>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {events.map((event) => (
+        {sortedEvents.map((event) => (
           <Card key={event.title} className="flex flex-col">
             <CardHeader>
               <div className="flex justify-between items-start">

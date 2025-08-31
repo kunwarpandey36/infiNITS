@@ -21,15 +21,15 @@ export default function TodaysMenu() {
     const today = new Date();
     const currentDayKey = getCurrentDayName(today);
 
-    if (isLastSundayOfMonth(today)) {
+    const menuForDisplay = currentHostelMenuData.days[currentDayKey] ?? null;
+    setTodaysMenu(menuForDisplay);
+
+    if (currentDayKey === 'Sunday' && isLastSundayOfMonth(today)) {
       setIsGrandFeastDay(true);
       setGrandFeastDetails(currentHostelMenuData.grandFeast);
-      setTodaysMenu(null);
     } else {
       setIsGrandFeastDay(false);
       setGrandFeastDetails(null);
-      const menuForDisplay = currentHostelMenuData.days[currentDayKey] ?? null;
-      setTodaysMenu(menuForDisplay);
     }
   }, []);
 
@@ -41,23 +41,11 @@ export default function TodaysMenu() {
         </CardTitle>
         <CardDescription>
           The daily menu is the same for all hostels.
+           {isGrandFeastDay && <span className="font-bold text-destructive block mt-1">🎉 Grand Feast for Dinner! 🎉</span>}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        {isGrandFeastDay && grandFeastDetails ? (
-            <div className="space-y-2">
-                <p className="font-bold text-lg text-center text-destructive">🎉 Grand Feast Day! 🎉</p>
-                <div>
-                    <p className="font-semibold text-primary">Veg Menu:</p>
-                    <p className="text-muted-foreground">{grandFeastDetails?.veg || "N/A"}</p>
-                </div>
-                <Separator/>
-                <div>
-                    <p className="font-semibold text-primary">Non-Veg Menu:</p>
-                    <p className="text-muted-foreground">{grandFeastDetails?.nonVeg || "N/A"}</p>
-                </div>
-            </div>
-        ) : todaysMenu ? (
+        {todaysMenu ? (
           <div className="space-y-2 text-sm">
             <div>
               <p className="font-semibold">Breakfast ({messMenuTimings.Breakfast}):</p>
@@ -75,9 +63,18 @@ export default function TodaysMenu() {
             </div>
             <Separator />
             <div>
-              <p className="font-semibold">Dinner ({messMenuTimings.Dinner}):</p>
-              <p className="text-muted-foreground"><strong>Veg:</strong> {todaysMenu?.dinner?.veg || "N/A"}</p>
-              <p className="text-muted-foreground"><strong>Non-Veg:</strong> {todaysMenu?.dinner?.nonVeg || "N/A"}</p>
+               <p className="font-semibold">Dinner ({messMenuTimings.Dinner}):</p>
+               {isGrandFeastDay && grandFeastDetails ? (
+                  <>
+                    <p className="text-muted-foreground"><strong>Veg:</strong> {grandFeastDetails.veg}</p>
+                    <p className="text-muted-foreground"><strong>Non-Veg:</strong> {grandFeastDetails.nonVeg}</p>
+                  </>
+               ) : (
+                  <>
+                    <p className="text-muted-foreground"><strong>Veg:</strong> {todaysMenu?.dinner?.veg || "N/A"}</p>
+                    <p className="text-muted-foreground"><strong>Non-Veg:</strong> {todaysMenu?.dinner?.nonVeg || "N/A"}</p>
+                  </>
+               )}
             </div>
           </div>
         ) : (

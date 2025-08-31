@@ -9,8 +9,9 @@ import { useEffect, useState } from 'react';
 
 const allEvents: Record<string, { title: string; type: 'holiday' | 'exam' | 'event' }> = {
   '2025-09-01': { title: 'DojoNITS & MTC Orientation', type: 'event' },
-  '2025-09-01': { title: 'Data Science Workshop Day 1', type: 'event' },
   '2025-09-02': { title: 'Data Science Workshop Day 2', type: 'event' },
+  '2025-09-13': { title: 'Innovision 2025 Day 1', type: 'event' },
+  '2025-09-14': { title: 'Innovision 2025 Day 2', type: 'event' },
   '2025-07-21': { title: 'Semester Registration', type: 'event' },
   '2025-07-22': { title: 'Semester Registration', type: 'event' },
   '2025-07-23': { title: 'Semester Registration', type: 'event' },

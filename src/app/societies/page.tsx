@@ -38,7 +38,9 @@ const societiesList = [
     name: "Civil Engineering Society (CES)",
     description: "The students and the staff of the Civil Engineering Department are the members of the Society. The Society aims at organising various activities for the professional development of the students. The most important function organised annually by the Society is “aaghaz”. It involves a wide variety of events including seminars, paper presentations, debate, quiz and software contests.",
     icon: Shield,
-    events: [],
+    events: [
+      { name: "Core Team Selection", date: "August 2024", description: "Selection of the new core team for the society.", gallery: "https://www.instagram.com/p/DN2eu3RQv-k/?igsh=Z2FsYWI0bDIyZjB3" }
+    ],
     instagram: "https://www.instagram.com/civilengineeringsocietynits/"
   },
   {
@@ -74,7 +76,9 @@ const societiesList = [
     name: "Management Society",
     description: "Vision\nTo nurture an environment for the managers to be inspiring, intercultural and ethical pioneers of change with management knowledge of global standards and to create knowledge that nurtures innovative leaders and develop leaders of enterprises who add value to society and nation-building.\n\nMission\nTo be a pre-eminent centre of excellence with a holistic concern for significant impact on business and society bygenerating and imparting knowledge in management and providing socially conscious and globally relevant thought leadership and to promote creative solutions for and with responsible organizations.\n\nKey Personalities\nChairman: Dr. Ashim Kr Das\nSecretary: Dr. Soma Panja\nFaculty-in – Charge: Mr. Subhadeep Mukherjee\nFounding Members: Mr. Tomin Sabu Paul, Mr. Bishal De and Mr. Prakash Giri.",
     icon: Shield,
-    events: [],
+    events: [
+      { name: "Innovision 2025", date: "September 13-14, 2024", description: "The flagship event of the Department of Management Studies.", gallery: "https://www.linkedin.com/posts/doms-nit-silchar_innovision2025-innovationmeetsvision-nitsilchar-activity-7367253065650860032-_4Nq?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD55tPIBoY9yy_VvhBG9TkXc5LZTGW-GzQs&utm_campaign=copy_link" }
+    ],
   },
 ];
 
