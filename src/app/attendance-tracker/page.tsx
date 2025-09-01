@@ -38,7 +38,7 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
 
 const isLab = (subjectCode: string): boolean => {
   const codePart = subjectCode.replace(/^[A-Z]*/, '');
-  return codePart.length >= 3 && codePart.charAt(1) === '1';
+  return codePart.startsWith('12');
 };
 
 export default function AttendanceTrackerPage() {
@@ -99,10 +99,10 @@ export default function AttendanceTrackerPage() {
 
           // If incrementing attended classes, also increment total classes
           if (type === 'attended' && value > s.attended) {
-            newTotal = s.total + 1;
+            newTotal = s.total + (value - s.attended);
           }
           
-          return { ...s, attended: newAttended, total: newTotal };
+          return { ...s, attended: Math.min(newAttended, newTotal), total: newTotal };
         }
         return s;
       })
