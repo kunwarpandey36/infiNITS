@@ -125,7 +125,7 @@ export default function TimetablePage() {
         processedSchedule[day] = {};
         const daySchedule = sectionData[day] || {};
         
-        timeSlots.forEach((slot) => {
+        timeSlots.forEach((slot, slotIndex) => {
             if (processedSchedule[day][slot] === null) return;
 
             const classKey = Object.keys(daySchedule).find(s => {
@@ -134,8 +134,7 @@ export default function TimetablePage() {
                 if (!start || !end) return false;
                 const startHour = getHour(start);
                 const currentHour = getHour(slot.split('-')[0]);
-                const endHour = getHour(end);
-                return currentHour >= startHour && currentHour < endHour;
+                return currentHour === startHour;
             });
             
             if (classKey) {
@@ -145,13 +144,11 @@ export default function TimetablePage() {
                     const endHour = getHour(end);
                     const span = endHour - startHour;
 
-                    if (slot.startsWith(start)) {
-                        processedSchedule[day][slot] = { content: daySchedule[classKey], span: span };
-                        for (let i = 1; i < span; i++) {
-                            const nextSlotIndex = timeSlots.indexOf(slot) + i;
-                            if (nextSlotIndex < timeSlots.length) {
-                                processedSchedule[day][timeSlots[nextSlotIndex]] = null;
-                            }
+                    processedSchedule[day][slot] = { content: daySchedule[classKey], span: span };
+                    for (let i = 1; i < span; i++) {
+                        const nextSlotIndex = slotIndex + i;
+                        if (nextSlotIndex < timeSlots.length) {
+                            processedSchedule[day][timeSlots[nextSlotIndex]] = null;
                         }
                     }
                 } else {
@@ -267,7 +264,7 @@ export default function TimetablePage() {
                                             )}
                                         >
                                             <div className={cn(
-                                                "h-full w-full min-w-[150px] p-2 rounded-md",
+                                                "h-full w-full min-w-[150px] p-2 rounded-md flex items-center justify-center text-center",
                                                 hasClass ? `${getColorForCourse(cellData.content)} font-semibold` : 'text-muted-foreground'
                                             )}>
                                                 {cellData?.content || '-'}
