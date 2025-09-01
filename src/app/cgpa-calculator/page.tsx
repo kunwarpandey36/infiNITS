@@ -157,6 +157,7 @@ export default function SgpaCalculatorPage() {
                 if (s.id === id) {
                     const updatedSubject = { ...s, [field]: value };
                     if (field === 'isLab') {
+                       updatedSubject.isLab = isLab(updatedSubject.code) || updatedSubject.isLab;
                        const finalMarks = calculateFinalMarks(updatedSubject);
                        if(finalMarks > updatedSubject.topperMarks) {
                           updatedSubject.topperMarks = Math.floor(finalMarks);
@@ -277,6 +278,8 @@ export default function SgpaCalculatorPage() {
                             {subjects.map(subject => {
                                 const finalMarks = calculateFinalMarks(subject);
                                 const gradeInfo = calculateGrade(finalMarks, subject.topperMarks);
+                                const isSubjectLab = isLab(subject.code) || subject.isLab;
+
                                 return (
                                     <TableRow key={subject.id}>
                                         <TableCell>
@@ -287,25 +290,27 @@ export default function SgpaCalculatorPage() {
                                            />
                                            <div className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
                                             {subject.code}
-                                            <button onClick={() => handleSubjectChange(subject.id, 'isLab', !subject.isLab)} title="Toggle Lab/Theory">
-                                                <FlaskConical className={`h-4 w-4 cursor-pointer ${subject.isLab ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`} />
-                                            </button>
+                                            {isSubjectLab && (
+                                              <button onClick={() => handleSubjectChange(subject.id, 'isLab', !subject.isLab)} title="Toggle Lab/Theory">
+                                                  <FlaskConical className={`h-4 w-4 cursor-pointer ${isSubjectLab ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`} />
+                                              </button>
+                                            )}
                                            </div>
                                         </TableCell>
                                         <TableCell>
                                             <Input type="number" min="0" value={subject.credits} onChange={e => handleSubjectChange(subject.id, 'credits', parseInt(e.target.value) || 0)} className="w-20" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.midSem} onChange={e => handleMarkChange(subject.id, 'midSem', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.midSem} onChange={e => handleMarkChange(subject.id, 'midSem', parseInt(e.target.value) || 0)} disabled={isSubjectLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.teacherAssessment} onChange={e => handleMarkChange(subject.id, 'teacherAssessment', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24"/>
+                                            <Input type="number" value={subject.marks.teacherAssessment} onChange={e => handleMarkChange(subject.id, 'teacherAssessment', parseInt(e.target.value) || 0)} disabled={isSubjectLab} className="w-24"/>
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.endSem} onChange={e => handleMarkChange(subject.id, 'endSem', parseInt(e.target.value) || 0)} disabled={subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.endSem} onChange={e => handleMarkChange(subject.id, 'endSem', parseInt(e.target.value) || 0)} disabled={isSubjectLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
-                                            <Input type="number" value={subject.marks.lab} onChange={e => handleMarkChange(subject.id, 'lab', parseInt(e.target.value) || 0)} disabled={!subject.isLab} className="w-24" />
+                                            <Input type="number" value={subject.marks.lab} onChange={e => handleMarkChange(subject.id, 'lab', parseInt(e.target.value) || 0)} disabled={!isSubjectLab} className="w-24" />
                                         </TableCell>
                                         <TableCell>
                                             <Input type="number" min="0" max="100" value={subject.topperMarks} onChange={e => handleSubjectChange(subject.id, 'topperMarks', parseInt(e.target.value) || 0)} className="w-24" />
@@ -384,5 +389,3 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
-
-    
