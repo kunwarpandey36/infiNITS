@@ -30,6 +30,7 @@ interface Subject {
 }
 
 const isLab = (subjectCode: string): boolean => {
+  if (!subjectCode) return false;
   const codePart = subjectCode.replace(/^[A-Z]*/, '');
   return codePart.startsWith('12');
 };
@@ -383,3 +384,5 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
+
+    
