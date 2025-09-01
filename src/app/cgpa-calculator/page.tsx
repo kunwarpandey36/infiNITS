@@ -37,8 +37,8 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
     const subjectsFromData = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
     
     const isLab = (subjectCode: string): boolean => {
-        const codePart = subjectCode.replace(/^[A-Z]*/, '');
-        return codePart.length >= 3 && codePart.charAt(1) === '1';
+      const codePart = subjectCode.replace(/^[A-Z]*/, '');
+      return codePart.startsWith('12');
     };
 
     return subjectsFromData.map((s: { code: any; credits: any; name: any; }) => ({
