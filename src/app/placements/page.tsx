@@ -38,6 +38,15 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
+const placementData24_25 = [
+    { branch: 'CE', total: 138, placed: 69, avg: 7.49, median: 6.57, highest: 19.9 },
+    { branch: 'CSE', total: 183, placed: 126, avg: 16.74, median: 16.0, highest: 45.22 },
+    { branch: 'EE', total: 142, placed: 101, avg: 10.41, median: 7.96, highest: 52.0 },
+    { branch: 'ECE', total: 176, placed: 115, avg: 14.4, median: 12.6, highest: 54.0 },
+    { branch: 'EIE', total: 77, placed: 63, avg: 13.48, median: 13.65, highest: 28.0 },
+    { branch: 'ME', total: 139, placed: 98, avg: 8.87, median: 7.5, highest: 20.0 },
+];
+
 const placementData22_23 = [
     { branch: 'CE', total: 132, placed: 85, avg: 9.39, median: 7.5, highest: 28.8 },
     { branch: 'CSE', total: 167, placed: 157, avg: 23.81, median: 18, highest: 80 },
@@ -227,13 +236,17 @@ export default function PlacementsPage() {
                 <h1 className="text-3xl font-bold tracking-tight font-headline">Placement Statistics</h1>
             </div>
             <p className="text-muted-foreground mb-6 ml-14">Based on official RTI responses and placement reports.</p>
-            <Tabs defaultValue="2023-24" className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+            <Tabs defaultValue="2024-25" className="w-full">
+                <TabsList className="grid w-full grid-cols-5">
+                    <TabsTrigger value="2024-25">2024-25</TabsTrigger>
                     <TabsTrigger value="2023-24">2023-24</TabsTrigger>
                     <TabsTrigger value="2022-23">2022-23</TabsTrigger>
                     <TabsTrigger value="2020-21">2020-21</TabsTrigger>
                     <TabsTrigger value="2019-20">2019-20</TabsTrigger>
                 </TabsList>
+                <TabsContent value="2024-25">
+                    <PlacementStatsComponent data={placementData24_25} year="2024-25" />
+                </TabsContent>
                 <TabsContent value="2023-24">
                     <PlacementStatsComponent data={placementData23_24} year="2023-24" />
                 </TabsContent>
