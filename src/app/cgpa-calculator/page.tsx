@@ -29,6 +29,11 @@ interface Subject {
   topperMarks: number;
 }
 
+const isLab = (subjectCode: string): boolean => {
+  const codePart = subjectCode.replace(/^[A-Z]*/, '');
+  return codePart.startsWith('12');
+};
+
 const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] => {
     const branchKey = Object.keys(branchCodeMapping).find(key => branchCodeMapping[key as keyof typeof branchCodeMapping] === branch);
     if (!branchKey || !courseData[branchKey as keyof typeof courseData]?.[semester as keyof typeof courseData[keyof typeof courseData]]) {
@@ -36,11 +41,6 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
     }
     const subjectsFromData = courseData[branchKey as keyof typeof courseData][semester as keyof typeof courseData[keyof typeof courseData]];
     
-    const isLab = (subjectCode: string): boolean => {
-      const codePart = subjectCode.replace(/^[A-Z]*/, '');
-      return codePart.startsWith('12');
-    };
-
     return subjectsFromData.map((s: { code: any; credits: any; name: any; }) => ({
       id: s.code,
       code: s.code,
