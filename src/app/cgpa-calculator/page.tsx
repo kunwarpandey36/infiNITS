@@ -31,7 +31,9 @@ interface Subject {
 
 const isLab = (subjectCode: string): boolean => {
   if (!subjectCode) return false;
+  // Extracts the numerical part of the subject code
   const codePart = subjectCode.replace(/^[A-Z]*/, '');
+  // A subject is a lab if its numerical code starts with '12'
   return codePart.startsWith('12');
 };
 
@@ -47,7 +49,7 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
       code: s.code,
       name: s.name,
       credits: s.credits,
-      isLab: isLab(s.code),
+      isLab: isLab(s.code), // Determine if it's a lab from the start
       marks: {
           midSem: 0,
           endSem: 0,
@@ -156,8 +158,13 @@ export default function SgpaCalculatorPage() {
             subjects.map((s) => {
                 if (s.id === id) {
                     const updatedSubject = { ...s, [field]: value };
+                    
+                    if (field === 'code') {
+                        updatedSubject.isLab = isLab(value as string);
+                    }
+                    
                     if (field === 'isLab') {
-                       updatedSubject.isLab = isLab(updatedSubject.code) || updatedSubject.isLab;
+                       updatedSubject.isLab = value as boolean;
                        const finalMarks = calculateFinalMarks(updatedSubject);
                        if(finalMarks > updatedSubject.topperMarks) {
                           updatedSubject.topperMarks = Math.floor(finalMarks);
@@ -278,7 +285,7 @@ export default function SgpaCalculatorPage() {
                             {subjects.map(subject => {
                                 const finalMarks = calculateFinalMarks(subject);
                                 const gradeInfo = calculateGrade(finalMarks, subject.topperMarks);
-                                const isSubjectLab = isLab(subject.code) || subject.isLab;
+                                const isSubjectLab = subject.isLab;
 
                                 return (
                                     <TableRow key={subject.id}>
@@ -291,9 +298,7 @@ export default function SgpaCalculatorPage() {
                                            <div className="text-sm text-muted-foreground flex items-center gap-2 mt-1">
                                             {subject.code}
                                             {isSubjectLab && (
-                                              <button onClick={() => handleSubjectChange(subject.id, 'isLab', !subject.isLab)} title="Toggle Lab/Theory">
-                                                  <FlaskConical className={`h-4 w-4 cursor-pointer ${isSubjectLab ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`} />
-                                              </button>
+                                                <FlaskConical className="h-4 w-4 text-primary" />
                                             )}
                                            </div>
                                         </TableCell>
@@ -373,7 +378,7 @@ export default function SgpaCalculatorPage() {
             <ul className="list-disc pl-5 text-muted-foreground">
                 <li><strong>Theory Subjects:</strong> Total marks (100) = Mid-Sem (out of 30) + End-Sem (out of 50) + Teacher's Assessment (out of 20).</li>
                 <li><strong>Lab Subjects:</strong> Total marks are out of 100.</li>
-                <li>Use the <FlaskConical className="inline h-4 w-4" /> icon to toggle a subject between Theory and Lab.</li>
+                <li>The flask icon <FlaskConical className="inline h-4 w-4" /> indicates a lab subject. The app detects this automatically from the subject code.</li>
             </ul>
             <p><strong>2. Relative Grading:</strong></p>
             <p className="text-muted-foreground">
@@ -389,3 +394,5 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
+
+    
