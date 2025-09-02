@@ -57,12 +57,12 @@ const placementData22_23 = [
 ];
   
 const placementData23_24 = [
-    { branch: 'CE', total: 133, placed: 67, avg: 7.81, median: 7.0, highest: 19.9 },
-    { branch: 'CSE', total: 168, placed: 116, avg: 18.57, median: 14, highest: 52.89 },
-    { branch: 'EE', total: 149, placed: 79, avg: 11.7, median: 8, highest: 52.89 },
-    { branch: 'ECE', total: 169, placed: 86, avg: 15.7, median: 12, highest: 52.89 },
-    { branch: 'EIE', total: 78, placed: 53, avg: 12.4, median: 9.0, highest: 52.89 },
-    { branch: 'ME', total: 134, placed: 67, avg: 8.86, median: 7.5, highest: 19.9 },
+    { branch: 'CE', total: 136, placed: 74, avg: 8.35, median: 6.57, highest: 19.9 },
+    { branch: 'CSE', total: 182, placed: 122, avg: 19.34, median: 16.16, highest: 52.89 },
+    { branch: 'EE', total: 152, placed: 86, avg: 13.23, median: 10, highest: 52.89 },
+    { branch: 'ECE', total: 176, placed: 103, avg: 14.91, median: 10, highest: 52.89 },
+    { branch: 'EIE', total: 84, placed: 60, avg: 14.90, median: 13, highest: 52.89 },
+    { branch: 'ME', total: 135, placed: 75, avg: 9.45, median: 8, highest: 19.9 },
 ];
 
 const placementData20_21 = [
@@ -145,7 +145,7 @@ const PlacementStatsComponent = ({ data, year }: { data: typeof placementData22_
                                     className={`p-3 text-left rounded-md transition-colors ${selectedBranch.branch === branch.branch ? 'bg-primary text-primary-foreground' : 'hover:bg-accent'}`}>
                                     <div className="font-semibold">{branchFullNames[branch.branch]}</div>
                                     <div className="text-sm opacity-80">{branch.branch}</div>
-                               </button>
+                                </button>
                            ))}
                         </CardContent>
                     </Card>
