@@ -31,6 +31,14 @@ export default function FeedbackPage() {
           This website is still in the development phase. Any error in the data or misinformation is highly regretted. Please inform us regarding any issues using the anonymous feedback form below.
         </AlertDescription>
       </Alert>
+
+      <Alert className="mb-8">
+        <Info className="h-4 w-4" />
+        <AlertTitle className="font-headline">Security Statement.</AlertTitle>
+        <AlertDescription>
+        We haven't implemented password security yet, but we will add it soon. This is a trial rollout.
+        </AlertDescription>
+      </Alert>
       
       <div className="grid gap-8">
         <Card className="flex flex-col">
