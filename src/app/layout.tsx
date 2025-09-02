@@ -14,6 +14,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'infiNITS Hub',
   description: 'Your NIT Silchar student companion.',
+  icons: {
+    icon: '/icon (1).jpg',
+  },
 };
 
 export default function RootLayout({
