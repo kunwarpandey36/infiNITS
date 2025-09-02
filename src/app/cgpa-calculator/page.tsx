@@ -31,9 +31,7 @@ interface Subject {
 
 const isLab = (subjectCode: string): boolean => {
   if (!subjectCode) return false;
-  // Extracts the numerical part of the subject code
   const codePart = subjectCode.replace(/^[A-Z]*/, '');
-  // A subject is a lab if its numerical code starts with '12'
   return codePart.startsWith('12');
 };
 
@@ -49,14 +47,14 @@ const getSubjectsByBranchAndSem = (branch: string, semester: string): Subject[] 
       code: s.code,
       name: s.name,
       credits: s.credits,
-      isLab: isLab(s.code), // Determine if it's a lab from the start
+      isLab: isLab(s.code),
       marks: {
           midSem: 0,
           endSem: 0,
           teacherAssessment: 0,
           lab: 0,
       },
-      topperMarks: 94, // Default topper marks
+      topperMarks: 94,
     }));
 };
 

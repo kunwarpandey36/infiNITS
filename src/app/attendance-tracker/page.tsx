@@ -98,7 +98,6 @@ export default function AttendanceTrackerPage() {
           const newAttended = type === 'attended' ? Math.max(0, value) : s.attended;
           let newTotal = type === 'total' ? Math.max(0, value) : s.total;
 
-          // If incrementing attended classes, also increment total classes
           if (type === 'attended' && value > s.attended) {
             newTotal = s.total + (value - s.attended);
           }
