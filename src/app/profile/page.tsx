@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import UpcomingEvents from '@/components/upcoming-events';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Instagram, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Instagram, AlertTriangle, Linkedin } from 'lucide-react';
 import TodaysMenu from '@/components/todays-menu';
 import TodaysTimetable from '@/components/todays-timetable';
 import Link from 'next/link';
@@ -143,6 +143,17 @@ export default function ProfilePage() {
             </CardContent>
         </Card>
 
+        <div className="text-center text-sm text-muted-foreground mt-8">
+          <p>Built by Kunwar Pandey</p>
+          <div className="flex justify-center gap-4 mt-2">
+            <a href="https://www.linkedin.com/in/kunwarpandey36/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/kunwarpandey36" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+              <Instagram className="h-5 w-5" />
+            </a>
+          </div>
+        </div>
     </div>
   );
 }
