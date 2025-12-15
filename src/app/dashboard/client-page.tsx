@@ -78,7 +78,7 @@ export default function DashboardClientPage() {
           </CardContent>
         </Card>
         <div className="text-center text-sm text-muted-foreground mt-8">
-          <p>Built by Kunwar Pandey</p>
+          <p>Built with ❤️ by Kunwar Pandey</p>
           <div className="flex justify-center gap-4 mt-2">
             <a href="https://www.linkedin.com/in/kunwarpandey36/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
               <Linkedin className="h-5 w-5" />

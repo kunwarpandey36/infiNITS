@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Linkedin, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import { branchCodeMapping, newBranchCodeMapping } from '@/lib/course-data';
@@ -164,6 +164,17 @@ export default function LoginPage() {
           </CardFooter>
         </form>
       </Card>
+      <div className="absolute bottom-4 text-center text-sm text-white w-full">
+        <p>Built with ❤️ by Kunwar Pandey</p>
+        <div className="flex justify-center gap-4 mt-2">
+            <a href="https://www.linkedin.com/in/kunwarpandey36/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/kunwarpandey36" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary">
+              <Instagram className="h-5 w-5" />
+            </a>
+        </div>
+      </div>
     </div>
   );
 }
