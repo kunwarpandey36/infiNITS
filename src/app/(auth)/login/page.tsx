@@ -94,8 +94,6 @@ export default function LoginPage() {
       sgpa: student.sgpa || 'N/A',
       cgpa: student.cgpa || 'N/A',
     };
-
-    localStorage.setItem('userProfile', JSON.stringify(userProfile));
     
     setShowConfetti(true);
     setTimeout(() => {
