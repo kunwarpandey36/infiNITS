@@ -10,6 +10,7 @@ import {
   CardContent,
 } from '@/components/ui/card';
 import UpcomingEvents from '@/components/upcoming-events';
+import RedditFeed from '@/components/reddit-feed';
 import { features } from '@/lib/features-data';
 import { useStudentData } from '@/hooks/use-student-data';
 
@@ -25,6 +26,7 @@ export default function DashboardPage() {
       </div>
       <div className="space-y-6">
         <UpcomingEvents />
+        <RedditFeed />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>

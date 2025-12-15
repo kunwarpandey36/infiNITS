@@ -19,7 +19,7 @@ const eventsList = [
   },
   {
     title: 'Tecnoesis',
-    date: 'October 28-31, 2024',
+    date: 'January 15-18, 2025',
     location: 'New Gallery',
     description: 'The annual techno-management festival, featuring workshops, competitions, and guest lectures.',
     organizer: 'Technical Board',
