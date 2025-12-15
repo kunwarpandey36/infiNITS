@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -16,11 +15,27 @@ export function useStudentData(): StudentProfile | null {
   const [student, setStudent] = useState<StudentProfile | null>(null);
 
   useEffect(() => {
-    // This code runs only on the client side
     const storedProfile = localStorage.getItem('userProfile');
     if (storedProfile) {
       try {
-        setStudent(JSON.parse(storedProfile));
+        const parsedProfile: StudentProfile = JSON.parse(storedProfile);
+        if (parsedProfile.name && parsedProfile.name !== 'Student') {
+            setStudent(parsedProfile);
+        } else {
+            // If name is missing or default, refetch from API
+            fetch(`/api/student/${parsedProfile.scholarId}`)
+                .then(res => res.json())
+                .then(fullProfile => {
+                    // Assuming the API returns a full profile
+                    const updatedProfile = { ...parsedProfile, ...fullProfile };
+                    localStorage.setItem('userProfile', JSON.stringify(updatedProfile));
+                    setStudent(updatedProfile);
+                })
+                .catch(e => {
+                    console.error("Failed to refetch student profile", e);
+                    setStudent(parsedProfile); // Fallback to stored profile
+                });
+        }
       } catch (e) {
         console.error("Failed to parse user profile from localStorage", e);
         setStudent(null);
