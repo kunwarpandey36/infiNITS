@@ -18,6 +18,8 @@ import Confetti from 'react-confetti';
 import BranchResults from '@/components/branch-results';
 import { Instagram, Linkedin } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default function DashboardPage() {
   const student = useStudentData();
   const searchParams = useSearchParams();
