@@ -25,10 +25,10 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 180 5% 15%;
+    --border: 0 62.8% 30.6%;
     --input: 180 5% 15%;
     --ring: 198 93% 45%;
-    --radius: 0.5rem;
+    --radius: 1rem;
     --chart-1: 0 62.8% 30.6%;
     --chart-2: 198 93% 45%;
     --chart-3: 210 40% 96.1%;
@@ -53,7 +53,7 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 180 5% 90%;
+    --border: 0 62.8% 30.6%;
     --input: 180 5% 90%;
     --ring: 0 62.8% 30.6%;
   }

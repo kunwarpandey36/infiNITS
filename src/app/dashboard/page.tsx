@@ -15,6 +15,7 @@ import { useStudentData } from '@/hooks/use-student-data';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Confetti from 'react-confetti';
+import BranchResults from '@/components/branch-results';
 
 export default function DashboardPage() {
   const student = useStudentData();
@@ -37,7 +38,7 @@ export default function DashboardPage() {
         <div>
           <h2 className="text-lg font-medium">Happy New Year!</h2>
           <h2 className="text-3xl font-bold tracking-tight font-headline">
-            swagatam, <span className="text-primary">{student?.name || 'Student'}</span>!
+            swagatam, <span className="text-primary">{student?.name ? `${student.name} ji` : 'Student'}</span>!
           </h2>
         </div>
       </div>
@@ -45,6 +46,7 @@ export default function DashboardPage() {
         <UpcomingEvents />
         <RedditFeed />
       </div>
+      <BranchResults />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>

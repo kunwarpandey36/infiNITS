@@ -153,11 +153,12 @@ export default function LoginPage() {
                 />
             </div>
             </CardContent>
-            <CardFooter>
-            <Button className="w-full" type="submit" disabled={loading}>
-                {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Log In
-            </Button>
+            <CardFooter className="flex-col gap-2">
+              <Button className="w-full" type="submit" disabled={loading}>
+                  {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  Log In
+              </Button>
+              <p className="text-sm text-muted-foreground">result 23 ko aayega 💀</p>
             </CardFooter>
         </form>
       </Card>

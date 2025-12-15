@@ -57,11 +57,11 @@ export default function ProfilePage() {
       <Card>
         <CardHeader className="flex flex-col md:flex-row items-center gap-6 space-y-0">
           <Avatar className="h-24 w-24">
-            <AvatarImage src="/teddy profilkepicture.jpeg" alt={student.name} data-ai-hint="profile picture" />
+            <AvatarImage src="/teddy profilkepicture.jpeg" alt={student.name ? `${student.name} ji` : 'Student'} data-ai-hint="profile picture" />
             <AvatarFallback>{student.name ? student.name.charAt(0) : 'U'}</AvatarFallback>
           </Avatar>
           <div className="text-center md:text-left">
-            <CardTitle className="font-headline text-3xl">{student.name || 'Student'}</CardTitle>
+            <CardTitle className="font-headline text-3xl">{student.name ? `${student.name} ji` : 'Student'}</CardTitle>
             <CardDescription className="text-lg">Scholar ID: {student.scholarId}</CardDescription>
           </div>
         </CardHeader>
