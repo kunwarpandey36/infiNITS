@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -75,7 +74,7 @@ export function SiteHeader() {
                   <DropdownMenuTrigger asChild>
                     <Button variant="secondary" className="relative h-8 w-8 rounded-full border-2 border-primary">
                       <Avatar className="h-8 w-8">
-                        <AvatarImage src="/photo_2025-08-24_16-00-10.jpg" alt="User" />
+                        <AvatarImage src="/teddy profilkepicture.jpeg" alt="User" />
                         <AvatarFallback>U</AvatarFallback>
                       </Avatar>
                     </Button>

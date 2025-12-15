@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -13,20 +12,39 @@ import UpcomingEvents from '@/components/upcoming-events';
 import RedditFeed from '@/components/reddit-feed';
 import { features } from '@/lib/features-data';
 import { useStudentData } from '@/hooks/use-student-data';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import Confetti from 'react-confetti';
 
 export default function DashboardPage() {
   const student = useStudentData();
+  const searchParams = useSearchParams();
+  const showConfettiParam = searchParams.get('confetti');
+  const [showConfetti, setShowConfetti] = useState(showConfettiParam === 'true');
+
+  useEffect(() => {
+    if (showConfetti) {
+      const timer = setTimeout(() => setShowConfetti(false), 3000); // Confetti lasts for 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [showConfetti]);
+
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+      {showConfetti && <Confetti />}
       <div className="flex items-center justify-between space-y-2 mb-4">
-        <h2 className="text-3xl font-bold tracking-tight font-headline">
-          swagatam, <span className="text-primary">{student?.name || 'Student'}</span>!
-        </h2>
+        <div>
+          <h2 className="text-lg font-medium">Happy New Year!</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-headline">
+            swagatam, <span className="text-primary">{student?.name || 'Student'}</span>!
+          </h2>
+        </div>
       </div>
-      <div className="space-y-6">
+      <div className="space-y-6 bg-cover bg-center p-6 rounded-lg" style={{backgroundImage: `url("/merry christmas.webp")`}}>
         <UpcomingEvents />
         <RedditFeed />
+      </div>
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>
@@ -56,7 +74,6 @@ export default function DashboardPage() {
             ))}
           </CardContent>
         </Card>
-      </div>
     </div>
   );
 }

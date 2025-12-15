@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { mergedStudentData } from '@/lib/student-data';
 import Image from 'next/image';
 import { branchCodeMapping, newBranchCodeMapping } from '@/lib/course-data';
+import Confetti from 'react-confetti';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function LoginPage() {
   const [scholarId, setScholarId] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,17 +97,19 @@ export default function LoginPage() {
 
     localStorage.setItem('userProfile', JSON.stringify(userProfile));
     
+    setShowConfetti(true);
     setTimeout(() => {
       toast({
         title: 'Login Successful',
         description: `Welcome, ${student.name}!`,
       });
-      router.push('/dashboard');
+      router.push('/dashboard?confetti=true');
     }, 1000);
   };
-
+  
   return (
     <div className="relative flex items-center justify-center min-h-screen">
+       {showConfetti && <Confetti />}
        <Image
           src="/photo_2025-08-20_23-53-37.jpg"
           alt="Background"
