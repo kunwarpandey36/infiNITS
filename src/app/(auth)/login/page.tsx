@@ -6,104 +6,51 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Loader2, Linkedin, Instagram } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
-import { branchCodeMapping, newBranchCodeMapping } from '@/lib/course-data';
-import Confetti from 'react-confetti';
+import { Combobox } from '@/components/ui/combo-box';
 
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
+  const [nit, setNit] = useState('');
   const [scholarId, setScholarId] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    if (!scholarId || !password) {
-      toast({
-        variant: 'destructive',
-        title: 'Error',
-        description: 'Scholar ID and Password cannot be empty.',
-      });
-      setLoading(false);
-      return;
-    }
-
-    if (scholarId !== password) {
-      toast({
-        variant: 'destructive',
-        title: 'Login Failed',
-        description: 'Invalid credentials. Password must be the same as the Scholar ID.',
-      });
-      setLoading(false);
-      return;
-    }
-
     try {
-      const response = await fetch(`/api/student/${scholarId}`);
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nit, scholarId, password }),
+      });
+
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Student not found');
-      }
-      const student = await response.json();
-
-      const admissionYear = parseInt(scholarId.substring(0, 2), 10);
-      let branch = 'Unknown';
-      let semester = 1;
-
-      const currentYear = new Date().getFullYear() % 100;
-      const currentMonth = new Date().getMonth() + 1;
-      let yearDiff = currentYear - admissionYear;
-
-      if (scholarId.startsWith('25')) {
-        const branchKey = scholarId.substring(2, 4);
-        branch = newBranchCodeMapping[branchKey as keyof typeof newBranchCodeMapping] || 'Unknown';
-      } else {
-        const branchCode = parseInt(scholarId.substring(3, 4), 10);
-        const branchKey = Object.keys(branchCodeMapping).find(
-          (key) => parseInt(key) === branchCode
-        );
-        branch = branchKey ? branchCodeMapping[branchKey as keyof typeof branchCodeMapping] : 'Unknown';
+        throw new Error(data.message || 'An unexpected error occurred.');
       }
 
-      if (currentMonth >= 7 && currentMonth <= 12) {
-        semester = yearDiff * 2 + 1;
-      } else {
-        semester = yearDiff * 2;
-      }
-
-      if (semester > 8) semester = 8;
-      if (semester <= 0) semester = 1;
-
-      const userProfile = {
-        scholarId: student.scholarId,
-        name: student.name,
-        branch: branch,
-        semester: semester.toString(),
-        sgpa: student.sgpa || 'N/A',
-        cgpa: student.cgpa || 'N/A',
-      };
-
-      localStorage.setItem('userProfile', JSON.stringify(userProfile));
+      localStorage.setItem('userProfile', JSON.stringify(data));
       
-      setShowConfetti(true);
-      setTimeout(() => {
-        toast({
-          title: 'Login Successful',
-          description: `Welcome, ${student.name}!`,
-        });
-        router.push('/dashboard?confetti=true');
-      }, 1000);
+      toast({
+        title: 'Login Successful',
+        description: `Welcome, ${data.name}!`,
+      });
+      router.push('/dashboard');
 
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: 'destructive',
         title: 'Login Failed',
-        description: 'Invalid Scholar ID. Please check your credentials.',
+        description: "Invalid credentials",
       });
       setLoading(false);
     }
@@ -111,7 +58,6 @@ export default function LoginPage() {
 
   return (
     <div className="relative flex items-center justify-center min-h-screen">
-      {showConfetti && <Confetti />}
       <Image
         src="/photo_2025-08-20_23-53-37.jpg"
         alt="Background"
@@ -134,6 +80,13 @@ export default function LoginPage() {
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
+                <Label htmlFor="nit">NIT</Label>
+                <Combobox
+                    value={nit}
+                    onChange={(value) => setNit(value)}
+                />
+            </div>
+            <div className="space-y-2">
               <Label htmlFor="scholarId">Scholar ID</Label>
               <Input
                 id="scholarId"
@@ -155,26 +108,14 @@ export default function LoginPage() {
               />
             </div>
           </CardContent>
-          <CardFooter className="flex-col gap-2">
+          <CardFooter className="flex-col">
             <Button className="w-full" type="submit" disabled={loading}>
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Log In
             </Button>
-            <p className="text-sm text-muted-foreground">result 23 ko aayega 💀</p>
           </CardFooter>
         </form>
       </Card>
-      <div className="absolute bottom-4 text-center text-sm text-white w-full">
-        <p>Built with ❤️ by Kunwar Pandey</p>
-        <div className="flex justify-center gap-4 mt-2">
-            <a href="https://www.linkedin.com/in/kunwarpandey36/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="https://www.instagram.com/kunwarpandey36" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary">
-              <Instagram className="h-5 w-5" />
-            </a>
-        </div>
-      </div>
     </div>
   );
 }

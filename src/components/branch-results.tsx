@@ -1,7 +1,7 @@
 'use client';
 
 import { useStudentData } from '@/hooks/use-student-data';
-import { mergedStudentData } from '@/lib/student-data';
+import { mergedStudentData } from '@/lib/nit-silchar-student-data';
 import {
   Card,
   CardHeader,

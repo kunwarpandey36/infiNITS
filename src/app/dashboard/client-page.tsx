@@ -12,29 +12,13 @@ import UpcomingEvents from '@/components/upcoming-events';
 import RedditFeed from '@/components/reddit-feed';
 import { features } from '@/lib/features-data';
 import { useStudentData } from '@/hooks/use-student-data';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import Confetti from 'react-confetti';
 import BranchResults from '@/components/branch-results';
-import { Instagram, Linkedin } from 'lucide-react';
 
 export default function DashboardClientPage() {
   const student = useStudentData();
-  const searchParams = useSearchParams();
-  const showConfettiParam = searchParams.get('confetti');
-  const [showConfetti, setShowConfetti] = useState(showConfettiParam === 'true');
-
-  useEffect(() => {
-    if (showConfetti) {
-      const timer = setTimeout(() => setShowConfetti(false), 3000); // Confetti lasts for 3 seconds
-      return () => clearTimeout(timer);
-    }
-  }, [showConfetti]);
-
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-      {showConfetti && <Confetti />}
       <div className="flex items-center justify-between space-y-2 mb-4">
         <div>
           <h2 className="text-lg font-medium">Happy New Year!</h2>
@@ -77,17 +61,6 @@ export default function DashboardClientPage() {
             ))}
           </CardContent>
         </Card>
-        <div className="text-center text-sm text-muted-foreground mt-8">
-          <p>Built with ❤️ by Kunwar Pandey</p>
-          <div className="flex justify-center gap-4 mt-2">
-            <a href="https://www.linkedin.com/in/kunwarpandey36/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="https://www.instagram.com/kunwarpandey36" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-              <Instagram className="h-5 w-5" />
-            </a>
-          </div>
-        </div>
     </div>
   );
 }
