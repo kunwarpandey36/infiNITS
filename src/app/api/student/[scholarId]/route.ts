@@ -4,7 +4,7 @@ import { mergedStudentData } from '@/lib/nit-silchar-student-data';
 
 export async function GET(request: Request, { params }: { params: { scholarId: string } }) {
     const { scholarId } = params;
-    const student = mergedStudent-data.find(s => s.scholarId === scholarId);
+    const student = mergedStudentData.find(s => s.scholarId === scholarId);
 
     if (student) {
         return NextResponse.json(student);

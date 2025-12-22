@@ -360,6 +360,7 @@ export default function SgpaCalculatorPage() {
             )}
         </CardContent>
       </Card>
+
       <Alert variant="destructive" className="mt-8">
         <AlertTriangle className="h-4 w-4" />
         <AlertTitle>Disclaimer</AlertTitle>
@@ -392,5 +393,3 @@ export default function SgpaCalculatorPage() {
     </div>
   );
 }
-
-    

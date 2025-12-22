@@ -14,7 +14,7 @@ import { Combobox } from '@/components/ui/combo-box';
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const [nit, setNit] = useState('');
+  const [nit, setNit] = useState('national institute of technology, silchar');
   const [scholarId, setScholarId] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);

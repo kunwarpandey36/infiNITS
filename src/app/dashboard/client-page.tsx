@@ -13,6 +13,7 @@ import RedditFeed from '@/components/reddit-feed';
 import { features } from '@/lib/features-data';
 import { useStudentData } from '@/hooks/use-student-data';
 import BranchResults from '@/components/branch-results';
+import PerformanceGraph from '@/components/performance-graph';
 
 export default function DashboardClientPage() {
   const student = useStudentData();
@@ -32,6 +33,7 @@ export default function DashboardClientPage() {
         <RedditFeed />
       </div>
       <BranchResults />
+      <PerformanceGraph />
         <Card>
           <CardHeader>
             <CardTitle className="font-headline">Explore Features</CardTitle>
