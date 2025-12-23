@@ -16,7 +16,6 @@ export default function LoginPage() {
   const { toast } = useToast();
   const [nit, setNit] = useState('national institute of technology, silchar');
   const [scholarId, setScholarId] = useState('');
-  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -29,7 +28,7 @@ export default function LoginPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nit, scholarId, password }),
+        body: JSON.stringify({ nit, scholarId }),
       });
 
       const data = await response.json();
@@ -61,9 +60,8 @@ export default function LoginPage() {
       <Image
         src="/photo_2025-08-20_23-53-37.jpg"
         alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="blur-sm"
+        fill
+        className="object-cover blur-sm"
       />
       <div className="absolute inset-0 bg-black/50" />
       <Card className="w-full max-w-sm z-10 bg-background/80 backdrop-blur-sm">
@@ -94,17 +92,6 @@ export default function LoginPage() {
                 required
                 value={scholarId}
                 onChange={(e) => setScholarId(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Should be same as Scholar ID"
               />
             </div>
           </CardContent>

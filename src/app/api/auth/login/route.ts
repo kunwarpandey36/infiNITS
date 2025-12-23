@@ -13,13 +13,13 @@ interface Student {
 
 export async function POST(request: Request) {
   try {
-    const { nit, scholarId, password } = await request.json();
+    const { nit, scholarId } = await request.json();
 
-    if (!scholarId || !password || !nit) {
-      return NextResponse.json({ message: 'NIT, Scholar ID and Password cannot be empty.' }, { status: 400 });
+    if (!scholarId || !nit) {
+      return NextResponse.json({ message: 'NIT and Scholar ID cannot be empty.' }, { status: 400 });
     }
 
-    if (scholarId !== password || nit.toLowerCase() !== 'national institute of technology, silchar') {
+    if (nit.toLowerCase() !== 'national institute of technology, silchar') {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
 
