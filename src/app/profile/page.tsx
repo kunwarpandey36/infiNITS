@@ -93,10 +93,26 @@ export default function ProfilePage() {
                 </Card>
                  <Card className="p-4">
                     <CardHeader className="p-2">
-                        <CardTitle className="text-sm font-medium text-muted-foreground">Current SGPA</CardTitle>
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Previous Sem SGPA</CardTitle>
                     </CardHeader>
                     <CardContent className="p-2">
                         <p className="text-2xl font-bold">{student.sgpa || 'N/A'}</p>
+                    </CardContent>
+                </Card>
+                 <Card className="p-4">
+                    <CardHeader className="p-2">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Previous SGPA</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-2">
+                        <p className="text-2xl font-bold">{student.sgpa_prev || 'N/A'}</p>
+                    </CardContent>
+                </Card>
+                 <Card className="p-4">
+                    <CardHeader className="p-2">
+                        <CardTitle className="text-sm font-medium text-muted-foreground">Current SGPA</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-2">
+                        <p className="text-2xl font-bold">{student.sgpa_curr || 'N/A'}</p>
                     </CardContent>
                 </Card>
                  <Card className="p-4">

@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   DropdownMenu,
@@ -8,12 +9,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Sun, Moon, Search } from 'lucide-react';
+import { Sun, Moon, Search, MoreHorizontal } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { MainNav } from './main-nav';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { features } from '@/lib/features-data';
@@ -56,7 +55,6 @@ export function SiteHeader() {
             infi<span className="text-primary">NITS</span>
           </span>
         </Link>
-        <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-2">
             {isClient ? (
@@ -70,6 +68,26 @@ export function SiteHeader() {
                   <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                   <span className="sr-only">Toggle theme</span>
                 </Button>
+
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                      <MoreHorizontal className="h-[1.2rem] w-[1.2rem]" />
+                      <span className="sr-only">More Features</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    {features.map(feature => (
+                      <DropdownMenuItem key={feature.href} asChild>
+                        <Link href={feature.href} className="flex items-center gap-2 w-full">
+                          {feature.icon}
+                          <span>{feature.title}</span>
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="secondary" className="relative h-8 w-8 rounded-full border-2 border-primary">

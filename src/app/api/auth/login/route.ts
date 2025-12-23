@@ -7,6 +7,8 @@ interface Student {
   name: string;
   sgpa?: string[];
   cgpa?: string;
+  sgpa_prev?: string[];
+  sgpa_curr?: string;
 }
 
 export async function POST(request: Request) {
@@ -62,6 +64,8 @@ export async function POST(request: Request) {
       semester: semester.toString(),
       sgpa: student.sgpa || 'N/A',
       cgpa: student.cgpa || 'N/A',
+      sgpa_prev: student.sgpa_prev || 'N/A',
+      sgpa_curr: student.sgpa_curr || 'N/A',
     };
 
     return NextResponse.json(userProfile);

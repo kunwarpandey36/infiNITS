@@ -6,14 +6,30 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardContent,
 } from '@/components/ui/card';
 import UpcomingEvents from '@/components/upcoming-events';
 import RedditFeed from '@/components/reddit-feed';
-import { features } from '@/lib/features-data';
+import { features } from '@/lib/features-data.tsx';
 import { useStudentData } from '@/hooks/use-student-data';
 import BranchResults from '@/components/branch-results';
 import PerformanceGraph from '@/components/performance-graph';
+import BranchPerformanceGraph from '@/components/branch-performance-graph';
+
+const primaryFeatureTitles = [
+  'Profile',
+  'Academic Calendar',
+  'Attendance Tracker',
+  'Branch Resources',
+  'Timetable',
+  'SGPA Calculator',
+];
+
+const primaryFeatures = features.filter((f) =>
+  primaryFeatureTitles.includes(f.title)
+);
+const secondaryFeatures = features.filter(
+  (f) => !primaryFeatureTitles.includes(f.title)
+);
 
 export default function DashboardClientPage() {
   const student = useStudentData();
@@ -34,35 +50,45 @@ export default function DashboardClientPage() {
       </div>
       <BranchResults />
       <PerformanceGraph />
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-headline">Explore Features</CardTitle>
-            <CardDescription>
-              All the tools and information you need for your campus life.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature) => (
-              <Link href={feature.href} key={feature.title} className="group">
-                <Card className="h-full transition-all group-hover:shadow-md group-hover:-translate-y-1 flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                       {feature.icon}
-                       <CardTitle className="text-lg font-medium font-headline leading-tight">
-                         {feature.title}
-                       </CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-grow pt-0">
-                    <CardDescription>
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </CardContent>
-        </Card>
+      <BranchPerformanceGraph />
+
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">Features</h2>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {primaryFeatures.map((feature) => (
+            <Link href={feature.href} key={feature.href}>
+              <Card className="hover:bg-muted/50 transition-colors">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    {feature.icon}
+                    {feature.title}
+                  </CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">More Features</h2>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {secondaryFeatures.map((feature) => (
+            <Link href={feature.href} key={feature.href}>
+              <Card className="hover:bg-muted/50 transition-colors">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    {feature.icon}
+                    {feature.title}
+                  </CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

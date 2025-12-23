@@ -1,123 +1,140 @@
-'use client';
-
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { useStudentData } from '@/hooks/use-student-data';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Skeleton } from '@/components/ui/skeleton';
 
-/**
- * A more advanced, optimistic momentum-based predictor.
- * It assumes students will always strive to improve and dampens predictions at high SGPAs for realism.
- */
-function predictOptimistically(s1: number, s2: number): { pred: number; lowerBound: number; upperBound: number } {
-    const trend = s2 - s1;
+interface ChartDataPoint {
+    semester: number;
+    "Your SGPA"?: number | null;
+    "Predicted SGPA"?: number | null;
+  }
 
-    let determinedPred: number;
+// Simple linear regression to predict the next SGPA
+function predictNextSgpa(data: { semester: number, sgpa: number }[]): number | null {
+  const knownData = data.filter(d => d.sgpa > 0);
+  if (knownData.length < 2) return null;
 
-    if (trend > 0) {
-        // Positive Trend: Apply a dampened momentum.
-        // The damping factor increases as s2 gets higher, making improvements harder.
-        const dampingFactor = 0.5 * (1 - (Math.max(0, s2 - 8.0) / 2.0) * 0.8);
-        determinedPred = s2 + dampingFactor * trend;
-    } else {
-        // Negative or Stable Trend: Assume a small, optimistic course correction.
-        // This prevents the model from ever predicting a decline.
-        determinedPred = s2 + 0.05;
-    }
+  let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+  const n = knownData.length;
 
-    const clampedPred = Math.max(0, Math.min(10, determinedPred));
-    
-    // Confidence is based on the magnitude of the last change.
-    const std = Math.abs(trend) / 2;
-    const conf = Math.max(0.2, 0.8 * std);
-    
-    return {
-        pred: clampedPred,
-        lowerBound: Math.max(0, clampedPred - conf),
-        upperBound: Math.min(10, clampedPred + conf),
-    };
+  for (const point of knownData) {
+    sumX += point.semester;
+    sumY += point.sgpa;
+    sumXY += point.semester * point.sgpa;
+    sumX2 += point.semester * point.semester;
+  }
+
+  const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+  const intercept = (sumY - slope * sumX) / n;
+
+  if (isNaN(slope) || isNaN(intercept)) return null;
+
+  const nextSemester = Math.max(...knownData.map(d => d.semester)) + 1;
+  const prediction = slope * nextSemester + intercept;
+
+  return Math.max(0, Math.min(10, prediction));
 }
 
 export default function PerformanceGraph() {
   const student = useStudentData();
+  const [chartData, setChartData] = useState<ChartDataPoint[] | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  const predictionResult = useMemo(() => {
-    if (!student?.cgpa || !student?.sgpa) {
-      return null;
+  useEffect(() => {
+    setHasMounted(true);
+    if (student && student.semester && student.sgpa_curr && student.sgpa_prev) {
+      const semesterNumber = Number(student.semester);
+      if (isNaN(semesterNumber)) return;
+
+      const historicalData = [
+        { semester: semesterNumber - 1, sgpa: student.sgpa_prev },
+        { semester: semesterNumber, sgpa: student.sgpa_curr }
+      ];
+
+      const prediction = predictNextSgpa(historicalData);
+
+      const data: ChartDataPoint[] = historicalData.map(p => ({
+        semester: p.semester,
+        "Your SGPA": p.sgpa,
+      }));
+
+      if (prediction !== null) {
+        // This creates the start point for the dotted line from the last known SGPA
+        data[data.length - 1] = {
+          ...data[data.length - 1],
+          "Predicted SGPA": student.sgpa_curr,
+        };
+        // This adds the single predicted point for the next semester
+        data.push({
+          semester: semesterNumber + 1,
+          "Predicted SGPA": prediction,
+        });
+      }
+      setChartData(data);
     }
-    
-    const cgpa = parseFloat(student.cgpa);
-    const s2 = parseFloat(student.sgpa);
-    const s1 = (cgpa * 2) - s2;
-
-    if (isNaN(s1) || isNaN(s2) || isNaN(cgpa)) return null;
-
-    return predictOptimistically(s1, s2);
   }, [student]);
 
-  const chartData = useMemo(() => {
-    if (!predictionResult || !student?.cgpa || !student?.sgpa) {
-      return [];
+  if (!hasMounted) {
+      return (
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-headline">Your Performance Analysis</CardTitle>
+            <CardDescription>Your SGPA trend and prediction for the next semester.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Skeleton className="w-full h-[350px]" />
+          </CardContent>
+        </Card>
+      );
     }
-    const cgpa = parseFloat(student.cgpa);
-    const s2 = parseFloat(student.sgpa);
-    const s1 = (cgpa * 2) - s2;
-
-    if (isNaN(s1) || isNaN(s2) || isNaN(cgpa)) return [];
-
-    return [
-      { name: 'Sem N-2 (Calc)', sgpa: s1, predicted_sgpa: null },
-      { name: 'Sem N-1', sgpa: s2, predicted_sgpa: s2 }, // Anchor point
-      { name: 'Sem N (Pred)', sgpa: null, predicted_sgpa: predictionResult.pred },
-    ];
-  }, [student, predictionResult]);
-
-  if (!predictionResult) {
-    return (
-       <Card>
-         <CardHeader>
-           <CardTitle className="font-headline">Performance Analysis</CardTitle>
-           <CardDescription>
-             Your SGPA trend and prediction for the next semester.
-           </CardDescription>
-         </CardHeader>
-         <CardContent>
-           <p className="text-muted-foreground">
-             Not enough data to generate a prediction. We need at least one SGPA and CGPA from your profile.
-           </p>
-         </CardContent>
-       </Card>
-    );
-  }
+  
+    if (!chartData || chartData.length === 0) {
+      return (
+         <Card>
+           <CardHeader>
+             <CardTitle className="font-headline">Your Performance Analysis</CardTitle>
+             <CardDescription>Your SGPA trend and prediction for the next semester.</CardDescription>
+           </CardHeader>
+           <CardContent>
+             <p className="text-muted-foreground">
+               Not enough data to generate a prediction. 
+             </p>
+           </CardContent>
+         </Card>
+      );
+    }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline">Performance Analysis</CardTitle>
-        <CardDescription>
-          Your SGPA trend and a rule-based prediction for the next semester.
-        </CardDescription>
+        <CardTitle className="font-headline">Your Performance Analysis</CardTitle>
+        <CardDescription>An analysis of your SGPA trend and a prediction for the upcoming semester.</CardDescription>
       </CardHeader>
       <CardContent>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={chartData} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+        <ResponsiveContainer width="100%" height={350}>
+          <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis 
+                dataKey="semester"
+                type="number"
+                domain={['dataMin', 'dataMax']}
+                tickFormatter={(tick) => `Sem ${tick}`}
+                allowDecimals={false}
+                interval={0}
+                ticks={[...new Set(chartData.map(d => d.semester))]}
+            />
             <YAxis domain={[0, 10]} />
-            <Tooltip />
+            <Tooltip
+              contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
+              labelFormatter={(label) => `Semester ${label}`}
+              formatter={(value: number, name: string) => [value.toFixed(2), name]}
+            />
             <Legend />
-            <Line type="monotone" dataKey="sgpa" stroke="#8884d8" name="Past SGPA" strokeWidth={2} />
-            <Line type="monotone" dataKey="predicted_sgpa" stroke="#82ca9d" name="Predicted SGPA" strokeDasharray="5 5" strokeWidth={2} />
+            <Line connectNulls type="monotone" dataKey="Your SGPA" stroke="red" strokeWidth={2} />
+            <Line connectNulls type="monotone" dataKey="Predicted SGPA" name="Predicted SGPA" stroke="red" strokeDasharray="5 5" />
           </LineChart>
         </ResponsiveContainer>
-        <div className="text-center mt-4 space-y-1">
-            <p className="font-bold text-lg">
-                Predicted SGPA for Next Semester: {predictionResult.pred.toFixed(2)}
-            </p>
-            <p className="text-sm text-muted-foreground">
-                Based on your recent performance, your SGPA is likely to be in the range of <strong>{predictionResult.lowerBound.toFixed(2)}</strong> to <strong>{predictionResult.upperBound.toFixed(2)}</strong>.
-            </p>
-        </div>
       </CardContent>
     </Card>
   );

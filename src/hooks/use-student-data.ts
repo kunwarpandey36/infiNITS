@@ -7,8 +7,10 @@ interface StudentProfile {
   name: string;
   branch: string;
   semester: string;
-  sgpa?: number | string;
+  sgpa?: number | string | string[];
   cgpa?: number | string;
+  sgpa_prev?: number | string | string[];
+  sgpa_curr?: number | string;
 }
 
 export function useStudentData(): StudentProfile | null {
