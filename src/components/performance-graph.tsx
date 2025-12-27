@@ -1,3 +1,4 @@
+'use client';
 import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -128,7 +129,7 @@ export default function PerformanceGraph() {
             <Tooltip
               contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
               labelFormatter={(label) => `Semester ${label}`}
-              formatter={(value: number, name: string) => [value.toFixed(2), name]}
+              formatter={(value: number, name: string) => [typeof value === 'number' ? value.toFixed(2) : 'N/A', name]}
             />
             <Legend />
             <Line connectNulls type="monotone" dataKey="Your SGPA" stroke="red" strokeWidth={2} />

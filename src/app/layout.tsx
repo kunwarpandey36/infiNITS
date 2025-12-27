@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -45,7 +46,11 @@ export default function RootLayout({
         >
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
+            <div className='p-4 text-center text-red-500'>The data has been extracted through AI and can be wrong, so do check from the official website.</div>
             <div className="flex-1">{children}</div>
+            <footer className="p-4 text-center text-gray-500">
+              Thank you for visiting. Please note that this is the final version of this website, and no further updates will be made.
+            </footer>
           </div>
           <Toaster />
         </ThemeProvider>
