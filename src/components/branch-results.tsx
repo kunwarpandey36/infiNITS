@@ -102,7 +102,7 @@ export default function BranchResults() {
               {branchStudents.map((s, index) => (
                 <TableRow key={s.scholarId}>
                   <TableCell>{index + 1}</TableCell>
-                  <TableCell>{s.name} ji</TableCell>
+                  <TableCell>{s.name}</TableCell>
                   <TableCell>{s.cgpa || 'N/A'}</TableCell>
                 </TableRow>
               ))}
