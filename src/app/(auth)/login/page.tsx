@@ -9,12 +9,10 @@ import { Label } from '@/components/ui/label';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
-import { Combobox } from '@/components/ui/combo-box';
 
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
-  const [nit, setNit] = useState('national institute of technology, silchar');
   const [scholarId, setScholarId] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +26,7 @@ export default function LoginPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nit, scholarId }),
+        body: JSON.stringify({ scholarId }),
       });
 
       const data = await response.json();
@@ -77,13 +75,6 @@ export default function LoginPage() {
         </CardHeader>
         <form onSubmit={handleLogin}>
           <CardContent className="space-y-4">
-            <div className="space-y-2">
-                <Label htmlFor="nit">NIT</Label>
-                <Combobox
-                    value={nit}
-                    onChange={(value) => setNit(value)}
-                />
-            </div>
             <div className="space-y-2">
               <Label htmlFor="scholarId">Scholar ID</Label>
               <Input

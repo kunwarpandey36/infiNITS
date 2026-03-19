@@ -13,14 +13,10 @@ interface Student {
 
 export async function POST(request: Request) {
   try {
-    const { nit, scholarId } = await request.json();
+    const { scholarId } = await request.json();
 
-    if (!scholarId || !nit) {
-      return NextResponse.json({ message: 'NIT and Scholar ID cannot be empty.' }, { status: 400 });
-    }
-
-    if (nit.toLowerCase() !== 'national institute of technology, silchar') {
-      return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
+    if (!scholarId) {
+      return NextResponse.json({ message: 'Scholar ID cannot be empty.' }, { status: 400 });
     }
 
     const student = mergedStudentData.find((s: any) => s.scholarId === scholarId);
