@@ -94,6 +94,21 @@ export default function LoginPage() {
           </CardFooter>
         </form>
       </Card>
+
+{/* hitwebcounter Code START */}
+      <div className="absolute bottom-4 z-10">
+        <a href="https://www.hitwebcounter.com/split-pdf" target="_blank" rel="noopener" title="Make Small Pdfs with large">
+          <img 
+            src="https://www.hitwebcounter.com/counter/counter.php?page=21500933&style=0001&nbdigits=5&type=page" 
+            alt="Make Small Pdfs with large" 
+            decoding="async" 
+            style={{ border: 0, maxWidth: '100%', height: 'auto' }} 
+          />
+        </a>
+      </div>
+      {/* hitwebcounter Code END */}
+
+      
     </div>
   );
 }
