@@ -18967,6 +18967,942 @@
   {"scholarId": "25EI10097", "name": "PALLAWI KUMARI", "cgpa": 7.68, "sgpa": 8.32},
   {"scholarId": "25EI10098", "name": "RAJ KUMAR", "cgpa": 8.89, "sgpa": 8.95},
   {"scholarId": "25EI10099", "name": "DHEERAJ TR", "cgpa": 8.61, "sgpa": 9.05},
+{
+"scholarId": "25EE10001",
+"name": "NEEL MADHAV THAKUR",
+"cgpa": 8.21,
+"sgpa": 7.89
+},
+{
+"scholarId": "25EE10002",
+"name": "TANAYA HAZARIKA",
+"cgpa": 6.42,
+"sgpa": 6.26
+},
+{
+"scholarId": "25EE10003",
+"name": "PRACHI PHUKAN",
+"cgpa": 7.13,
+"sgpa": 6.74
+},
+{
+"scholarId": "25EE10004",
+"name": "DURLAV KUMAR BORA",
+"cgpa": 9.24,
+"sgpa": 9.37
+},
+{
+"scholarId": "25EE10006",
+"name": "RAJDEEP GOGOI",
+"cgpa": 7.26,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10007",
+"name": "SANCHITA GOSWAMI",
+"cgpa": 8.92,
+"sgpa": 9.00
+},
+{
+"scholarId": "25EE10008",
+"name": "PRAYASH PRATIM HAZARIKA",
+"cgpa": 6.87,
+"sgpa": 7.11
+},
+{
+"scholarId": "25EE10009",
+"name": "SUNAYNA DAS",
+"cgpa": 7.42,
+"sgpa": 7.58
+},
+{
+"scholarId": "25EE10010",
+"name": "ABHIGYAN SAIKIA",
+"cgpa": 9.32,
+"sgpa": 9.37
+},
+{
+"scholarId": "25EE10011",
+"name": "ABHIGYAN BHARADWAZ",
+"cgpa": 8.24,
+"sgpa": 7.95
+},
+{
+"scholarId": "25EE10012",
+"name": "ΤΟΝMOYEE BORGOHAIN",
+"cgpa": 7.66,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10013",
+"name": "PRATISTHA KASHYAP",
+"cgpa": 7.37,
+"sgpa": 7.32
+},
+{
+"scholarId": "25EE10014",
+"name": "VIOLINA SARMA",
+"cgpa": 7.24,
+"sgpa": 7.21
+},
+{
+"scholarId": "25EE10015",
+"name": "KALYAN SARKAR",
+"cgpa": 8.68,
+"sgpa": 8.47
+},
+{
+"scholarId": "25EE10016",
+"name": "PIYUSH KASHYAP",
+"cgpa": 7.82,
+"sgpa": 7.42
+},
+{
+"scholarId": "25EE10017",
+"name": "RITIK LOSON DAS",
+"cgpa": 6.89,
+"sgpa": 6.89
+},
+{
+"scholarId": "25EE10018",
+"name": "ARYAN KASHYAP",
+"cgpa": 6.61,
+"sgpa": 6.95
+},
+{
+"scholarId": "25EE10019",
+"name": "SONAKSHI HALDAR",
+"cgpa": 8.05,
+"sgpa": 7.74
+},
+{
+"scholarId": "25EE10020",
+"name": "PALASHJYOTI BAISHYA",
+"cgpa": 7.26,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10021",
+"name": "DARSHIT BORO",
+"cgpa": 5.08,
+"sgpa": 4.53
+},
+{
+"scholarId": "25EE10022",
+"name": "MOHD FAHAD SIRAJ",
+"cgpa": 7.55,
+"sgpa": 7.11
+},
+{
+"scholarId": "25EE10023",
+"name": "RIYAN MEDHI",
+"cgpa": 7.29,
+"sgpa": 6.84
+},
+{
+"scholarId": "25EE10024",
+"name": "ADITI VIVEK GHULE",
+"cgpa": 8.71,
+"sgpa": 8.68
+},
+{
+"scholarId": "25EE10025",
+"name": "SRIJONA BHATTACHARJEE",
+"cgpa": 6.92,
+"sgpa": 6.58
+},
+{
+"scholarId": "25EE10026",
+"name": "VIBHU PRIYA",
+"cgpa": 8.82,
+"sgpa": 8.58
+},
+{
+"scholarId": "25EE10027",
+"name": "PRIYANKA DEVI",
+"cgpa": 8.08,
+"sgpa": 8.32
+},
+{
+"scholarId": "25EE10028",
+"name": "VINITA KUMARI",
+"cgpa": 7.34,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10029",
+"name": "GAURAV NANDAN NATH",
+"cgpa": 7.79,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10030",
+"name": "SOUMYJIT CHOUDHURY",
+"cgpa": 7.76,
+"sgpa": 7.79
+},
+{
+"scholarId": "25EE10031",
+"name": "SHREYANSH KUMAR PANDEY",
+"cgpa": 8.53,
+"sgpa": 8.32
+},
+{
+"scholarId": "25EE10032",
+"name": "DIVYANSH PANDEY",
+"cgpa": 8.63,
+"sgpa": 8.89
+},
+{
+"scholarId": "25EE10033",
+"name": "TRIPURARI YADAV",
+"cgpa": 7.95,
+"sgpa": 7.47
+},
+{
+"scholarId": "25EE10034",
+"name": "HARISH KUMAR",
+"cgpa": 8.29,
+"sgpa": 8.42
+},
+{
+"scholarId": "25EE10035",
+"name": "ABHAY KUMAR SAH",
+"cgpa": 7.89,
+"sgpa": 7.37
+},
+{
+"scholarId": "25EE10036",
+"name": "JISHNU BORGOHAIN",
+"cgpa": 8.34,
+"sgpa": 8.21
+},
+{
+"scholarId": "25EE10037",
+"name": "SONAM MISHRA",
+"cgpa": 7.63,
+"sgpa": 7.16
+},
+{
+"scholarId": "25EE10038",
+"name": "HIMALI DAS",
+"cgpa": 8.37,
+"sgpa": 8.58
+},
+{
+"scholarId": "25EE10039",
+"name": "SURAJ DAS",
+"cgpa": 8.53,
+"sgpa": 8.47
+},
+{
+"scholarId": "25EE10040",
+"name": "MISS SRISTI PARASHAR",
+"cgpa": 8.84,
+"sgpa": 8.84
+},
+{
+"scholarId": "25EE10041",
+"name": "MOIRANGTHEM URMAINI",
+"cgpa": 8.55,
+"sgpa": 8.26
+},
+{
+"scholarId": "25EE10042",
+"name": "REZOWAN HUSSAIN",
+"cgpa": 9.26,
+"sgpa": 9.16
+},
+{
+"scholarId": "25EE10043",
+"name": "TAJMAHMUD TALUKDAR",
+"cgpa": 9.11,
+"sgpa": 9.26
+},
+{
+"scholarId": "25EE10044",
+"name": "MANISH KUMAR",
+"cgpa": 6.34,
+"sgpa": 6.32
+},
+{
+"scholarId": "25EE10045",
+"name": "DILBAG SINGH",
+"cgpa": 6.74,
+"sgpa": 6.11
+},
+{
+"scholarId": "25EE10046",
+"name": "MUSKAN SHAH",
+"cgpa": 6.50,
+"sgpa": 6.53
+},
+{
+"scholarId": "25EE10047",
+"name": "SACHIN PAUL",
+"cgpa": 8.34,
+"sgpa": 8.00
+},
+{
+"scholarId": "25EE10048",
+"name": "AYUSHI GUPTA",
+"cgpa": 7.74,
+"sgpa": 7.21
+},
+{
+"scholarId": "25EE10049",
+"name": "BISRUT DAS",
+"cgpa": 8.26,
+"sgpa": 8.37
+},
+{
+"scholarId": "25EE10050",
+"name": "KAMAL NATH",
+"cgpa": 7.74,
+"sgpa": 7.47
+},
+{
+"scholarId": "25EE10051",
+"name": "DIWAKAR CHOUBEY",
+"cgpa": 8.00,
+"sgpa": 8.11
+},
+{
+"scholarId": "25EE10052",
+"name": "MANDIP BORO",
+"cgpa": 7.39,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10053",
+"name": "ARPITA DAS",
+"cgpa": 6.13,
+"sgpa": 6.42
+},
+{
+"scholarId": "25EE10054",
+"name": "UDDIPTA DUTTA CHOUDHURY",
+"cgpa": 7.24,
+"sgpa": 7.32
+},
+{
+"scholarId": "25EE10055",
+"name": "SILVAS BASUMATARY",
+"cgpa": 8.18,
+"sgpa": 8.16
+},
+{
+"scholarId": "25EE10056",
+"name": "ADITYA MISRA",
+"cgpa": 8.03,
+"sgpa": 7.74
+},
+{
+"scholarId": "25EE10057",
+"name": "PRATEEK KIROLA",
+"cgpa": 8.29,
+"sgpa": 8.21
+},
+{
+"scholarId": "25EE10058",
+"name": "ANUJ GOGOI",
+"cgpa": 6.32,
+"sgpa": 6.11
+},
+{
+"scholarId": "25EE10059",
+"name": "KRISHNA RAJKHOWA",
+"cgpa": 7.97,
+"sgpa": 7.74
+},
+{
+"scholarId": "25EE10060",
+"name": "PRACHURYA PRANAB BARMAN",
+"cgpa": 8.00,
+"sgpa": 7.68
+},
+{
+"scholarId": "25EE10061",
+"name": "MD ABUL AFSAR LASKAR",
+"cgpa": 8.08,
+"sgpa": 7.84
+},
+{
+"scholarId": "25EE10062",
+"name": "BISWAYAN DHAR",
+"cgpa": 6.29,
+"sgpa": 5.58
+},
+{
+"scholarId": "25EE10063",
+"name": "KESHAV KUMAR",
+"cgpa": 5.74,
+"sgpa": 5.58
+},
+{
+"scholarId": "25EE10064",
+"name": "GOURAV",
+"cgpa": 7.76,
+"sgpa": 7.74
+},
+{
+"scholarId": "25EE10065",
+"name": "KISHAN BURATHOKI",
+"cgpa": 6.95,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10066",
+"name": "VARUN SETHIA",
+"cgpa": 7.39,
+"sgpa": 7.05
+},
+{
+"scholarId": "25EE10067",
+"name": "PRAGYAN TRIDIB GOSWAMI",
+"cgpa": 7.00,
+"sgpa": 6.68
+},
+{
+"scholarId": "25EE10068",
+"name": "DEBOJIT CHETRY",
+"cgpa": 8.00,
+"sgpa": 8.58
+},
+{
+"scholarId": "25EE10069",
+"name": "GOURAV KUMAR SINGH",
+"cgpa": 6.68,
+"sgpa": 6.95
+},
+{
+"scholarId": "25EE10070",
+"name": "RAJ PRATIM KONWAR",
+"cgpa": 6.29,
+"sgpa": 6.11
+},
+{
+"scholarId": "25EE10071",
+"name": "AVIKSHIT BEZBARUAH",
+"cgpa": 6.05,
+"sgpa": 6.00
+},
+{
+"scholarId": "25EE10072",
+"name": "ANURAG KUMAR",
+"cgpa": 6.47,
+"sgpa": 6.84
+},
+{
+"scholarId": "25EE10073",
+"name": "RISHI RAJ SAHU",
+"cgpa": 8.34,
+"sgpa": 8.26
+},
+{
+"scholarId": "25EE10074",
+"name": "PRABAL DAS",
+"cgpa": 9.13,
+"sgpa": 9.11
+},
+{
+"scholarId": "25EE10075",
+"name": "NILOY CHOWDHURY",
+"cgpa": 8.29,
+"sgpa": 8.37
+},
+{
+"scholarId": "25EE10076",
+"name": "SANDEPON DASGUPTA",
+"cgpa": 8.05,
+"sgpa": 8.05
+},
+{
+"scholarId": "25EE10077",
+"name": "MRINMAY TALUKDAR",
+"cgpa": 8.05,
+"sgpa": 8.32
+},
+{
+"scholarId": "25EE10078",
+"name": "SUBHAM JYOTI DAS",
+"cgpa": 7.84,
+"sgpa": 7.84
+},
+{
+"scholarId": "25EE10079",
+"name": "RISHABH KUMAR PANDEY",
+"cgpa": 7.66,
+"sgpa": 7.84
+},
+{
+"scholarId": "25EE10080",
+"name": "MD ASIF AHMED",
+"cgpa": 7.05,
+"sgpa": 7.11
+},
+{
+"scholarId": "25EE10081",
+"name": "DIYA VERMA",
+"cgpa": 7.29,
+"sgpa": 7.58
+},
+{
+"scholarId": "25EE10082",
+"name": "VIDIT SINGH",
+"cgpa": 6.47,
+"sgpa": 6.58
+},
+{
+"scholarId": "25EE10083",
+"name": "SAURAV KUMAR",
+"cgpa": 8.55,
+"sgpa": 8.74
+},
+{
+"scholarId": "25EE10084",
+"name": "RONIT BISWAS",
+"cgpa": 8.68,
+"sgpa": 8.58
+},
+{
+"scholarId": "25EE10085",
+"name": "DHRUV MISHRA",
+"cgpa": 8.71,
+"sgpa": 8.42
+},
+{
+"scholarId": "25EE10086",
+"name": "RAJ SHUKLA",
+"cgpa": 6.63,
+"sgpa": 6.84
+},
+{
+"scholarId": "25EE10087",
+"name": "KOUSHIK MADUR",
+"cgpa": 7.18,
+"sgpa": 7.21
+},
+{
+"scholarId": "25EE10088",
+"name": "Y HRISHIKESH SINGHA",
+"cgpa": 7.92,
+"sgpa": 8.05
+},
+{
+"scholarId": "25EE10089",
+"name": "ANKIT SHARMA",
+"cgpa": 7.37,
+"sgpa": 7.21
+},
+{
+"scholarId": "25EE10090",
+"name": "HEMANTA CHAKRABORTY",
+"cgpa": 7.26,
+"sgpa": 7.16
+},
+{
+"scholarId": "25EE10091",
+"name": "ΡΑΝΚAJ PASWAN",
+"cgpa": 6.82,
+"sgpa": 6.74
+},
+{
+"scholarId": "25EE10092",
+"name": "AYUSH KUMAR",
+"cgpa": 8.58,
+"sgpa": 8.47
+},
+{
+"scholarId": "25EE10093",
+"name": "AYUSH KUMAR",
+"cgpa": 8.34,
+"sgpa": 8.00
+},
+{
+"scholarId": "25EE10094",
+"name": "MAYUR JYOTI SARMA KASHYAP",
+"cgpa": 8.05,
+"sgpa": 7.95
+},
+{
+"scholarId": "25EE10095",
+"name": "MRITYUNJOY BORA",
+"cgpa": 7.89,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10096",
+"name": "ANKIT KUMAR MAHARATHA",
+"cgpa": 8.05,
+"sgpa": 8.95
+},
+{
+"scholarId": "25EE10097",
+"name": "YEAHYEA CHOUDHURY",
+"cgpa": 7.11,
+"sgpa": 6.79
+},
+{
+"scholarId": "25EE10098",
+"name": "KISHAN BABU",
+"cgpa": 7.37,
+"sgpa": 6.42
+},
+{
+"scholarId": "25EE10099",
+"name": "SUDARSHAN SARKAR",
+"cgpa": 7.24,
+"sgpa": 7.53
+},
+{
+"scholarId": "25EE10100",
+"name": "ARYAN DAS",
+"cgpa": 7.71,
+"sgpa": 7.32
+},
+{
+"scholarId": "25EE10101",
+"name": "B SHANTANU SHARMA",
+"cgpa": 7.18,
+"sgpa": 6.47
+},
+{
+"scholarId": "25EE10102",
+"name": "SHOUKOT UZZAMAN CHOUDHURY",
+"cgpa": 6.34,
+"sgpa": 6.11
+},
+{
+"scholarId": "25EE10103",
+"name": "FIRUJUR RAHMAN BARBHUIYA",
+"cgpa": 7.32,
+"sgpa": 7.21
+},
+{
+"scholarId": "25EE10104",
+"name": "MAHARSHI DAS",
+"cgpa": 5.76,
+"sgpa": 5.84
+},
+{
+"scholarId": "25EE10105",
+"name": "ANSHUMAN KUMAR SINGH",
+"cgpa": 6.42,
+"sgpa": 6.32
+},
+{
+"scholarId": "25EE10106",
+"name": "TUSHAR PAUL",
+"cgpa": 7.00,
+"sgpa": 6.42
+},
+{
+"scholarId": "25EE10107",
+"name": "GULLA YOGESWARA NAIDU",
+"cgpa": 7.05,
+"sgpa": 6.37
+},
+{
+"scholarId": "25EE10108",
+"name": "THUNAM BHARGAVI",
+"cgpa": 7.63,
+"sgpa": 7.53
+},
+{
+"scholarId": "25EE10109",
+"name": "VOLETI DINESH KUMAR",
+"cgpa": 7.16,
+"sgpa": 6.58
+},
+{
+"scholarId": "25EE10110",
+"name": "PORANKI JAHNAVI SUNDARI",
+"cgpa": 6.92,
+"sgpa": 6.68
+},
+{
+"scholarId": "25EE10111",
+"name": "ΟΒΙΝINDI SRIJA",
+"cgpa": 4.18,
+"sgpa": 3.79
+},
+{
+"scholarId": "25EE10112",
+"name": "ADARSH RAJEEV SINGH",
+"cgpa": 8.00,
+"sgpa": 8.26
+},
+{
+"scholarId": "25EE10113",
+"name": "REZIN SALAM NARIKKODN",
+"cgpa": 7.61,
+"sgpa": 7.58
+},
+{
+"scholarId": "25EE10114",
+"name": "DHARAMSOTH RAMU",
+"cgpa": 4.61,
+"sgpa": 4.00
+},
+{
+"scholarId": "25EE10115",
+"name": "ΝΑΝΙ PALURI",
+"cgpa": 7.71,
+"sgpa": 6.84
+},
+{
+"scholarId": "25EE10116",
+"name": "ALISHA SADANGI",
+"cgpa": 5.92,
+"sgpa": 5.47
+},
+{
+"scholarId": "25EE10117",
+"name": "LENKA SAI CHARAN",
+"cgpa": 7.32,
+"sgpa": 6.79
+},
+{
+"scholarId": "25EE10118",
+"name": "JEET SARKAR",
+"cgpa": 7.18,
+"sgpa": 7.11
+},
+{
+"scholarId": "25EE10119",
+"name": "SAYAN ROY",
+"cgpa": 8.53,
+"sgpa": 8.37
+},
+{
+"scholarId": "25EE10120",
+"name": "JASON DANIEL F",
+"cgpa": 7.66,
+"sgpa": 7.37
+},
+{
+"scholarId": "25EE10121",
+"name": "YOGITA NAGAR",
+"cgpa": 8.55,
+"sgpa": 8.74
+},
+{
+"scholarId": "25EE10122",
+"name": "UDIT PATHAK",
+"cgpa": 8.55,
+"sgpa": 8.32
+},
+{
+"scholarId": "25EE10123",
+"name": "ADWAIT RAMDAS E",
+"cgpa": 9.08,
+"sgpa": 9.42
+},
+{
+"scholarId": "25EE10124",
+"name": "BASHAB SONOWAL",
+"cgpa": 7.32,
+"sgpa": 7.53
+},
+{
+"scholarId": "25EE10125",
+"name": "ANAND RAJ GUPTA",
+"cgpa": 6.63,
+"sgpa": 6.58
+},
+{
+"scholarId": "25EE10126",
+"name": "TANU KUMARI",
+"cgpa": 9.03,
+"sgpa": 9.11
+},
+{
+"scholarId": "25EE10127",
+"name": "S ROHITH",
+"cgpa": 4.55,
+"sgpa": 5.00
+},
+{
+"scholarId": "25EE10128",
+"name": "GUGULOTH RAJESH",
+"cgpa": 6.68,
+"sgpa": 6.84
+},
+{
+"scholarId": "25EE10129",
+"name": "BHUKYA HARSHITH KUMAR",
+"cgpa": 6.47,
+"sgpa": 6.32
+},
+{
+"scholarId": "25EE10130",
+"name": "PUSHPENDRA KUMAR MOURYA",
+"cgpa": 7.08,
+"sgpa": 7.05
+},
+{
+"scholarId": "25EE10131",
+"name": "AYUSH SHARMA",
+"cgpa": 7.11,
+"sgpa": 6.42
+},
+{
+"scholarId": "25EE10132",
+"name": "SHUBHAM KUMAR MISHRA",
+"cgpa": 5.24,
+"sgpa": 5.53
+},
+{
+"scholarId": "25EE10133",
+"name": "NILESH RAJ",
+"cgpa": 8.16,
+"sgpa": 7.53
+},
+{
+"scholarId": "25EE10134",
+"name": "VISMAYA SURESH",
+"cgpa": 7.68,
+"sgpa": 7.63
+},
+{
+"scholarId": "25EE10135",
+"name": "YARLAGADDA RAMA TULASI",
+"cgpa": 8.18,
+"sgpa": 8.11
+},
+{
+"scholarId": "25EE10136",
+"name": "SHYAMSUNDAR CHAUHAN",
+"cgpa": 7.66,
+"sgpa": 7.16
+},
+{
+"scholarId": "25EE10137",
+"name": "GUPTA ANKITKUMAR MADANKUMAR",
+"cgpa": 7.53,
+"sgpa": 7.42
+},
+{
+"scholarId": "25EE10138",
+"name": "UPPU HIMESH KUMAR",
+"cgpa": 8.58,
+"sgpa": 8.63
+},
+{
+"scholarId": "25EE10139",
+"name": "PRIYANSHI",
+"cgpa": 6.55,
+"sgpa": 6.21
+},
+{
+"scholarId": "25EE10140",
+"name": "CHANDER PARKASH",
+"cgpa": 7.21,
+"sgpa": 6.79
+},
+{
+"scholarId": "25EE10141",
+"name": "ASHISH VERMA",
+"cgpa": 7.84,
+"sgpa": 7.74
+},
+{
+"scholarId": "25EE10142",
+"name": "RAHUL BHATIA",
+"cgpa": 6.95,
+"sgpa": 6.79
+},
+{
+"scholarId": "25EE10143",
+"name": "SANIL SONKAR",
+"cgpa": 7.37,
+"sgpa": 7.16
+},
+{
+"scholarId": "25EE10144",
+"name": "SHREY GARG",
+"cgpa": 8.29,
+"sgpa": 7.95
+},
+{
+"scholarId": "25EE10145",
+"name": "WAGHMODE RAHUL RAJARAM",
+"cgpa": 7.39,
+"sgpa": 7.26
+},
+{
+"scholarId": "25EE10146",
+"name": "PRASHANT DEEP VERMA",
+"cgpa": 8.55,
+"sgpa": 8.63
+},
+{
+"scholarId": "25EE10147",
+"name": "DARSH SHARAD YEOLE",
+"cgpa": 4.39,
+"sgpa": 4.58
+},
+{
+"scholarId": "25EE10148",
+"name": "ANKIT VERMA",
+"cgpa": 7.68,
+"sgpa": 7.37
+},
+{
+"scholarId": "25EE10149",
+"name": "MAYANK KUMAR TIWARI",
+"cgpa": 8.82,
+"sgpa": 8.68
+},
+{
+"scholarId": "25EE10150",
+"name": "VARLA SUSHANTH",
+"cgpa": 6.24,
+"sgpa": 6.16
+},
+{
+"scholarId": "25EE10151",
+"name": "MUDAVATH MAGESH",
+"cgpa": 6.61,
+"sgpa": 6.11
+},
+{
+"scholarId": "25EE10152",
+"name": "NAGIREDDY SATYA VENKATA JAGADEESH",
+"cgpa": 8.37,
+"sgpa": 7.58
+},
+{
+"scholarId": "25EE10153",
+"name": "PADAM KUMAR SAINI",
+"cgpa": 6.89,
+"sgpa": 6.89
+},
+{
+"scholarId": "25EE10154",
+"name": "OM TRIPATHI",
+"cgpa": 4.87,
+"sgpa": 4.42
+},
+{
+"scholarId": "25EE10155",
+"name": "KRISHNA MONI BORA",
+"cgpa": 0.21,
+"sgpa": 0.00
+},
+{
+"scholarId": "25EE10156",
+"name": "PREM KUMAR",
+"cgpa": 8.05,
+"sgpa": 8.00
+},
+{
+"scholarId": "25EE10157",
+"name": "KATRAVATH SANTOSH ΝΑΙΚ",
+"cgpa": 3.66,
+"sgpa": 3.05
+},
   {
     "scholarId": "2412181",
     "name": "R V Padma Priya",
