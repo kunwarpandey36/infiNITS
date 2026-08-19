@@ -20412,5 +20412,10757 @@
 "cgpa": 8.72,
 "sgpa_curr": 9.43,
 "sgpa_prev": 0
-}
+},
+  {
+    "scholarId": "26CS10154",
+    "name": "BIDISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311059",
+    "name": "MEDHI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10034",
+    "name": "DALIA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310651",
+    "name": "MONDAL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10081",
+    "name": "PRACHEETA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310525",
+    "name": "BAISHYA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10048",
+    "name": "ANJALI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310630",
+    "name": "YADAV EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10018",
+    "name": "KOLA YASHMITHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310280",
+    "name": "LAKSHMI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10118",
+    "name": "ANWESHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310094",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10013",
+    "name": "MAUPRIYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310756",
+    "name": "PAUL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10106",
+    "name": "TUSHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310361",
+    "name": "BHATTACHARJYA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10121",
+    "name": "FAHMIDA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310151",
+    "name": "ANJUM CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10135",
+    "name": "RITU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311286",
+    "name": "EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10061",
+    "name": "NABIHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310594",
+    "name": "AHMAD EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10037",
+    "name": "NISHAT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311386",
+    "name": "TASNIM EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10103",
+    "name": "FLORISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310433",
+    "name": "NANDI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10080",
+    "name": "KANAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310771",
+    "name": "SHEKHAWAT EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10004",
+    "name": "KAVITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310392",
+    "name": "CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10075",
+    "name": "SUPRIYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310142",
+    "name": "KUMARI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10165",
+    "name": "SONAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310238",
+    "name": "RAI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10164",
+    "name": "HIMANSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310962",
+    "name": "GAUTAM EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10120",
+    "name": "AYUSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310805",
+    "name": "PANDEY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10081",
+    "name": "NILANJANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310000",
+    "name": "ROY ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10097",
+    "name": "ANGANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310682",
+    "name": "LAHON ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10060",
+    "name": "ANISAH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310052",
+    "name": "ALIF CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10117",
+    "name": "NANDITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310372",
+    "name": "BISWAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10159",
+    "name": "SANSKRITI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310570",
+    "name": "SINGH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10004",
+    "name": "SRIJITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310090",
+    "name": "GHOSHAL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10072",
+    "name": "PRARTHANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310459",
+    "name": "CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10075",
+    "name": "KOPPULA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310236",
+    "name": "TEJASWI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10028",
+    "name": "SHINJINI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310892",
+    "name": "GHATAK EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10036",
+    "name": "RITISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310726",
+    "name": "GHOSH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10037",
+    "name": "NEHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310212",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10126",
+    "name": "KONGKI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310782",
+    "name": "SAHARIA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10081",
+    "name": "MEHJEBIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310721",
+    "name": "SIDDIKA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10097",
+    "name": "TRISHNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310781",
+    "name": "DEVI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10039",
+    "name": "ARKIZA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310457",
+    "name": "BORUAH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10159",
+    "name": "POOJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310178",
+    "name": "SHARMA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10148",
+    "name": "DULUMONI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310358",
+    "name": "PEGU EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10127",
+    "name": "BASUNDHORA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310210",
+    "name": "BHATTACHAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10108",
+    "name": "KRITIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310933",
+    "name": "KUMARI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10159",
+    "name": "AYUSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310257",
+    "name": "TIWARI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10004",
+    "name": "MANJARI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310711",
+    "name": "SHARMA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10042",
+    "name": "SHREYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310779",
+    "name": "MITRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10034",
+    "name": "NAZIA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320115",
+    "name": "MAZUMDER EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10036",
+    "name": "KANISHKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310246",
+    "name": "SHARMA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10004",
+    "name": "ANANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310629",
+    "name": "KUMARI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10013",
+    "name": "LUNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310611",
+    "name": "MORAN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10094",
+    "name": "SUBHRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310063",
+    "name": "GHOSH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10121",
+    "name": "VIOLINA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311378",
+    "name": "SARMA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10112",
+    "name": "RITAJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310725",
+    "name": "DEB CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10135",
+    "name": "NANDINI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310415",
+    "name": "KUMARI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10078",
+    "name": "MONALI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311404",
+    "name": "DAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10067",
+    "name": "SUMI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310964",
+    "name": "BORAH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10088",
+    "name": "NAZMIN SULTANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310062",
+    "name": "TALUKDAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10018",
+    "name": "GANTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310009",
+    "name": "PRAJNASRI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10051",
+    "name": "AKANKSHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311205",
+    "name": "EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10143",
+    "name": "SAESHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310838",
+    "name": "DUA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10047",
+    "name": "TEESTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310535",
+    "name": "BORA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10137",
+    "name": "TANIA GOHAIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311003",
+    "name": "BARUAH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10027",
+    "name": "ANANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310583",
+    "name": "PAUL EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10042",
+    "name": "ALISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310226",
+    "name": "OJHA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10110",
+    "name": "POONAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310104",
+    "name": "GAWARIYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10152",
+    "name": "MATHAPATHI SAI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310997",
+    "name": "LASYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10120",
+    "name": "ANANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310174",
+    "name": "CHATTERJEE ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10141",
+    "name": "STUTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310201",
+    "name": "CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10026",
+    "name": "JANNU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310184",
+    "name": "AKSHAYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10028",
+    "name": "SAMRISTHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310203",
+    "name": "BORUAH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10137",
+    "name": "SUBHANGI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310044",
+    "name": "SARMA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10075",
+    "name": "MANPREET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310038",
+    "name": "KAUR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10028",
+    "name": "NASHRA BANDHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310436",
+    "name": "DUTTA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10004",
+    "name": "ANWESHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311102",
+    "name": "GHOSH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10050",
+    "name": "GUGULOTH SRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310098",
+    "name": "LAKSHMI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10034",
+    "name": "AAHELI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320072",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10036",
+    "name": "KOTHAPALLI JNANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310031",
+    "name": "LAHARI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10106",
+    "name": "RASHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310064",
+    "name": "JAIN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10072",
+    "name": "PRACHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310972",
+    "name": "CHOUDHARY EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10034",
+    "name": "DEBAJANI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310093",
+    "name": "MALAKAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10158",
+    "name": "MADISHETTY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311015",
+    "name": "VAMIKHA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10049",
+    "name": "MITTAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310374",
+    "name": "PATEL EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10102",
+    "name": "FALGUNI PRAMOD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310213",
+    "name": "SAHARE CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10087",
+    "name": "PRAPTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310904",
+    "name": "NANDI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10042",
+    "name": "DEEPTI SUBHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310368",
+    "name": "DEVI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10050",
+    "name": "PUSHPA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310396",
+    "name": "HEMBROM EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10158",
+    "name": "VANSHIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310536",
+    "name": "BALIYAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10152",
+    "name": "ISSAH MARY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310103",
+    "name": "BINOY EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10028",
+    "name": "ADITI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10076",
+    "name": "DEBASMITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310239",
+    "name": "SAIKIA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10081",
+    "name": "PRACHETA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310097",
+    "name": "BANIK CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10008",
+    "name": "SIVANGI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311006",
+    "name": "CHOUDHURY EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10036",
+    "name": "VENNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310377",
+    "name": "GEETHIKA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10118",
+    "name": "PROTHITI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310399",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10110",
+    "name": "PRIYANKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310765",
+    "name": "EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10088",
+    "name": "KARRA HITHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310325",
+    "name": "SRI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10148",
+    "name": "ANUSKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310312",
+    "name": "DEORI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10034",
+    "name": "RITUMITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10121",
+    "name": "TRIPARNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310072",
+    "name": "HAZARIKA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10126",
+    "name": "PANDIRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310187",
+    "name": "PRASHAMSA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10058",
+    "name": "TANISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310879",
+    "name": "BISHT EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10042",
+    "name": "FAHIMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311367",
+    "name": "KAWSAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10116",
+    "name": "JUHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310387",
+    "name": "ROY CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10164",
+    "name": "SRISHTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310130",
+    "name": "YADAV EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10008",
+    "name": "SANJU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310825",
+    "name": "SHARMA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10120",
+    "name": "JANVI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10018",
+    "name": "VELDANDI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310730",
+    "name": "SREEJITHA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10152",
+    "name": "ISHITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310482",
+    "name": "YADAV EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10013",
+    "name": "NISTHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311051",
+    "name": "BORA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10101",
+    "name": "PRANJAL NANDU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310487",
+    "name": "MHASKE EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10104",
+    "name": "KATRAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310037",
+    "name": "HARIKA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10110",
+    "name": "MERUGU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10126",
+    "name": "GOURIMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10017",
+    "name": "LIPAKSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310970",
+    "name": "SEN EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10012",
+    "name": "SRUTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310249",
+    "name": "KUMARI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10080",
+    "name": "KOSURU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310645",
+    "name": "SWETHA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10144",
+    "name": "ANWESHA CHETIA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310320",
+    "name": "PATRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10028",
+    "name": "AVINITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310232",
+    "name": "BASU ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10088",
+    "name": "ANUSHKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310230",
+    "name": "SHAHI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10076",
+    "name": "PENUMAKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310300",
+    "name": "SRAVYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10004",
+    "name": "K",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310717",
+    "name": "PRASASYA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10037",
+    "name": "BHASWATI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311091",
+    "name": "SAIKIA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10025",
+    "name": "VAISHNAVI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10061",
+    "name": "NIKITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10164",
+    "name": "VIBHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10106",
+    "name": "ANWESHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10068",
+    "name": "ANAMIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310025",
+    "name": "SINGH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10152",
+    "name": "SNEHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310737",
+    "name": "RANI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10102",
+    "name": "AKSHARA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310596",
+    "name": "MAURYA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10102",
+    "name": "NAKKA MADHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310434",
+    "name": "HASINI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10082",
+    "name": "NITHILA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310192",
+    "name": "SUKUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10124",
+    "name": "ANANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10102",
+    "name": "APARNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310385",
+    "name": "KUMARI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10132",
+    "name": "KHYATI TRISHNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311274",
+    "name": "DEVI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10042",
+    "name": "TANISHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310016",
+    "name": "BORAH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10103",
+    "name": "HITIMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310219",
+    "name": "RABHA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10118",
+    "name": "MRINALINI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310395",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10026",
+    "name": "NIHARIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310045",
+    "name": "EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10085",
+    "name": "RATNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310351",
+    "name": "NAMA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10088",
+    "name": "SHREYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310861",
+    "name": "SHARMA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10126",
+    "name": "DORIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310398",
+    "name": "GOGOI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10102",
+    "name": "ADRIJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310132",
+    "name": "KAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10144",
+    "name": "TANVI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310084",
+    "name": "RANDHAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10050",
+    "name": "SAPNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310065",
+    "name": "FENGTE CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10059",
+    "name": "DIPSHIKHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10034",
+    "name": "PRAJALITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310353",
+    "name": "DAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10060",
+    "name": "NALLAMOTHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10148",
+    "name": "DHARITRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310027",
+    "name": "BASUMATARY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10026",
+    "name": "PRATIBHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10008",
+    "name": "SMRITY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311153",
+    "name": "KALITA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10120",
+    "name": "SHRUTI DNYANESHWAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10088",
+    "name": "KIRTIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310316",
+    "name": "RAI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10050",
+    "name": "CHEVURU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311407",
+    "name": "JYOSHNA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10051",
+    "name": "AYUSHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311145",
+    "name": "GUPTA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10147",
+    "name": "PADU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10135",
+    "name": "AYUSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10013",
+    "name": "NIKITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310778",
+    "name": "BARMAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10051",
+    "name": "BOMMIDENY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310234",
+    "name": "VAISHNVE EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10137",
+    "name": "UDIPTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310002",
+    "name": "DEWRI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10026",
+    "name": "RIDDHIMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311246",
+    "name": "VISHWAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10051",
+    "name": "AVHAD ANVI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310282",
+    "name": "PRASHANT ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10144",
+    "name": "ASLESHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310319",
+    "name": "TALUKDAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10170",
+    "name": "ANANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310024",
+    "name": "BAISHNAB CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10054",
+    "name": "PRIYANKSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310425",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10080",
+    "name": "THATIGUTLA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310279",
+    "name": "TEJASWINI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10097",
+    "name": "DIKSHITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311150",
+    "name": "NATH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10097",
+    "name": "PRAYASHEE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310592",
+    "name": "RAJBONGSHI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10135",
+    "name": "ANNANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310571",
+    "name": "KUMARI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10121",
+    "name": "MAN MAYURI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310943",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10137",
+    "name": "GARIMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310470",
+    "name": "AGARWALA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10075",
+    "name": "HARSHITA KUNWAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310623",
+    "name": "CHOU ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10075",
+    "name": "SUDIKSHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310241",
+    "name": "RATHAUR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10051",
+    "name": "PUSHPITA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310743",
+    "name": "KUMARI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10106",
+    "name": "YOGANKSHI PRAGYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10008",
+    "name": "SHREYASHREE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310573",
+    "name": "BORTHAKUR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10126",
+    "name": "GARLIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310224",
+    "name": "NATH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10018",
+    "name": "YANDRAPU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310217",
+    "name": "JAHNAVI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10008",
+    "name": "KASTURI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310869",
+    "name": "KALITA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10036",
+    "name": "SHREYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311120",
+    "name": "DUBEY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10144",
+    "name": "BRATATI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310285",
+    "name": "KASHYAP CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10150",
+    "name": "SRIJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310336",
+    "name": "GHOSE CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10110",
+    "name": "MRINMAYEE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310365",
+    "name": "MONDAL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10078",
+    "name": "FRANKLINA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10061",
+    "name": "ANJALI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310887",
+    "name": "DHANUKA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10018",
+    "name": "ANAMIKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310667",
+    "name": "SACHAN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10050",
+    "name": "RATHLAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310469",
+    "name": "AKHILA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10013",
+    "name": "CUMBIKANANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310397",
+    "name": "DUTTA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10026",
+    "name": "SNEHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310716",
+    "name": "KUMARI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10113",
+    "name": "ANKURJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320065",
+    "name": "GOGOI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10072",
+    "name": "RISHU RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310067",
+    "name": "PANDEY EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10127",
+    "name": "KASULA BALU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311258",
+    "name": "GOUD EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10078",
+    "name": "RITISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310344",
+    "name": "PATIR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10156",
+    "name": "ARPIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10037",
+    "name": "DEEPKISHOR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310150",
+    "name": "SARMA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10127",
+    "name": "PRATYUSH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311200",
+    "name": "SINGH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10162",
+    "name": "MD ABID",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310023",
+    "name": "HUSSAIN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10043",
+    "name": "TEERTHENDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310357",
+    "name": "MISHRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10105",
+    "name": "YUVRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310106",
+    "name": "YADAV EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10037",
+    "name": "MRIGANKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310769",
+    "name": "BORAH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10127",
+    "name": "PATTEM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311249",
+    "name": "SAIKUMAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10156",
+    "name": "GAUDA LAXMIDEEPAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310290",
+    "name": "D ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10094",
+    "name": "ABHAY PRATAP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310014",
+    "name": "SINGH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10133",
+    "name": "KANGULE PARTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310902",
+    "name": "VAIJANATH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10061",
+    "name": "SIRLA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310449",
+    "name": "JASWANTH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10012",
+    "name": "TANOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310983",
+    "name": "CHOUDHURY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10069",
+    "name": "SHIVANOLLA ARUN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310252",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10064",
+    "name": "KINKU PRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310910",
+    "name": "BRAHMA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10156",
+    "name": "ASHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310364",
+    "name": "KUMAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10073",
+    "name": "RATHNAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10070",
+    "name": "TANMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310543",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10039",
+    "name": "PRAJWAL PRALHAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310905",
+    "name": "SURYA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10062",
+    "name": "SNEH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320012",
+    "name": "BABU CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10101",
+    "name": "SHUBH RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310388",
+    "name": "SINGH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10127",
+    "name": "P",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310760",
+    "name": "PRABHUNANDAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10078",
+    "name": "KAUSHIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310950",
+    "name": "BARMAN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10019",
+    "name": "SUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310163",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10115",
+    "name": "HARSHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311106",
+    "name": "MISHRA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10086",
+    "name": "ANSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310678",
+    "name": "BELOKAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10100",
+    "name": "AMAN KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310767",
+    "name": "JAISWAL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10099",
+    "name": "NIKHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310625",
+    "name": "RAWAT EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10063",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310852",
+    "name": "ADHIKARI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10108",
+    "name": "SANGADI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310141",
+    "name": "RAMACHARANTEJA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10010",
+    "name": "NIHAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310331",
+    "name": "DOHRE EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10153",
+    "name": "ANNALADASU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310268",
+    "name": "MAHITH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10107",
+    "name": "AKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310356",
+    "name": "GOGOI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10057",
+    "name": "MRIDUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310586",
+    "name": "SINGH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10053",
+    "name": "ANIKET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310021",
+    "name": "PAUL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10065",
+    "name": "IKRAMUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311248",
+    "name": "KHAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10049",
+    "name": "NISHANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310393",
+    "name": "BARUAH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10017",
+    "name": "JUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10091",
+    "name": "ABHISHEK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310465",
+    "name": "KARMAKAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10059",
+    "name": "PRASHANT KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310666",
+    "name": "SINGH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10084",
+    "name": "SANDIPAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10046",
+    "name": "ATHARVA ANAND",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310993",
+    "name": "KAITHWAS EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10115",
+    "name": "KEVIN GEORGE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310431",
+    "name": "MATHEW EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10011",
+    "name": "SAGAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310939",
+    "name": "JAIPAL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10090",
+    "name": "JITU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310801",
+    "name": "KALITA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10089",
+    "name": "MOHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311124",
+    "name": "DEORI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10039",
+    "name": "DARSHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310562",
+    "name": "SINGH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10154",
+    "name": "SRI JON",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10122",
+    "name": "CHINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310755",
+    "name": "HAZARIKA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10010",
+    "name": "HARSHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310584",
+    "name": "ANAND EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10056",
+    "name": "AROHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310458",
+    "name": "BURAGOHAIN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10021",
+    "name": "ABHINOB KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310237",
+    "name": "KOIRY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10057",
+    "name": "KANCHARLA VENKATA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310199",
+    "name": "PRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10123",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10163",
+    "name": "JUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310851",
+    "name": "KONWAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10066",
+    "name": "KRISHANU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311287",
+    "name": "TAMULI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10152",
+    "name": "BHIMAVARAPU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310754",
+    "name": "GOWTHAM CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10168",
+    "name": "VISHANT MUKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310472",
+    "name": "KHAIRALIA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10064",
+    "name": "ABHAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310302",
+    "name": "YADAV EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10079",
+    "name": "MANISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310802",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10114",
+    "name": "BHASKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311061",
+    "name": "DEURI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10109",
+    "name": "KATHITH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10023",
+    "name": "TANMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10153",
+    "name": "SAYAN KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10095",
+    "name": "SOUVIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310250",
+    "name": "BISWAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10006",
+    "name": "SHASHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10052",
+    "name": "ISHAAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310338",
+    "name": "KAPOOR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10117",
+    "name": "RAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310464",
+    "name": "NARAYAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10111",
+    "name": "VASADA SATYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310059",
+    "name": "KARTHIK EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10131",
+    "name": "SAGNIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310007",
+    "name": "GHOSH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10105",
+    "name": "ASTITVA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310615",
+    "name": "BARUAH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10151",
+    "name": "KUMAR KOUSHIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310580",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10055",
+    "name": "AHNIKJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310572",
+    "name": "BORBORUAH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10025",
+    "name": "CHOWTA REVANTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310211",
+    "name": "KUMAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10057",
+    "name": "SHAURYA PRATAP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10058",
+    "name": "MANISH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310706",
+    "name": "MAHTO EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10013",
+    "name": "LAVDIYA AKHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311008",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10125",
+    "name": "AKHIL PRATAP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310969",
+    "name": "SINGH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10043",
+    "name": "DARSHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310522",
+    "name": "BHARADWAJ EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10159",
+    "name": "BHARNAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310944",
+    "name": "DANGARIA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10149",
+    "name": "APRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310188",
+    "name": "PAUL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10122",
+    "name": "ARNAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310262",
+    "name": "SAIKIA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10130",
+    "name": "ANOWAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311199",
+    "name": "HUSSAIN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10060",
+    "name": "ANIKET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310061",
+    "name": "BORGOHAIN EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10104",
+    "name": "ADITYA SATISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10045",
+    "name": "SHSHANK SHEKHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310172",
+    "name": "GUPTA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10021",
+    "name": "GEETARTHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10142",
+    "name": "PERVALA BHAVIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10063",
+    "name": "AMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310354",
+    "name": "CHETRY ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10046",
+    "name": "JEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310183",
+    "name": "SINGH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10133",
+    "name": "SIDHARTHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10030",
+    "name": "BOMBA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310946",
+    "name": "BAM CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10076",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310345",
+    "name": "BARODIA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10030",
+    "name": "KARAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310515",
+    "name": "BORO ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10077",
+    "name": "EMON",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310857",
+    "name": "GHOSH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10101",
+    "name": "JYOTIRSHMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310999",
+    "name": "TALUKDAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10085",
+    "name": "ANTAREEKSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311028",
+    "name": "ACHINT CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10044",
+    "name": "ASHVIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310223",
+    "name": "SHARMA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10049",
+    "name": "AVIRAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10118",
+    "name": "SHUBHAM SUDARSHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310418",
+    "name": "S CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10129",
+    "name": "ATUL KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310803",
+    "name": "JHA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10102",
+    "name": "DIPAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310389",
+    "name": "GHOSH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10009",
+    "name": "NAVYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310448",
+    "name": "MISHRA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10125",
+    "name": "RISHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310875",
+    "name": "BORA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10033",
+    "name": "RIMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311119",
+    "name": "SAPKOTA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10011",
+    "name": "KHWAIRAKPAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10124",
+    "name": "DILEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310954",
+    "name": "KUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10155",
+    "name": "RAIHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310733",
+    "name": "HUSSAIN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10148",
+    "name": "AHAMED",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310699",
+    "name": "FARAHAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10031",
+    "name": "RISHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310877",
+    "name": "GUPTA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10151",
+    "name": "DEBAJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311128",
+    "name": "SARKAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10062",
+    "name": "KUCHANNAGARI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10068",
+    "name": "PATHLAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310794",
+    "name": "STALIN EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10056",
+    "name": "SURAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310598",
+    "name": "SHARMA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10072",
+    "name": "RAZNIP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310113",
+    "name": "KEMPRAI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10108",
+    "name": "ANSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310412",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10115",
+    "name": "BHAVYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310958",
+    "name": "SHARMA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10142",
+    "name": "SHAH DARSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310407",
+    "name": "PRASHANTK EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10005",
+    "name": "ADITRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10040",
+    "name": "OM DIXIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10159",
+    "name": "YASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310227",
+    "name": "CHANDEL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10171",
+    "name": "MOHD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310427",
+    "name": "HAMDAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10121",
+    "name": "S",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10057",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310109",
+    "name": "RANJAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10001",
+    "name": "SIDDHANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310435",
+    "name": "KALITA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10151",
+    "name": "GAMBHIR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310474",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10011",
+    "name": "ANIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310186",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10113",
+    "name": "RITURAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310026",
+    "name": "KARMAKAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10040",
+    "name": "LALIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310200",
+    "name": "KUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10065",
+    "name": "AYAAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311117",
+    "name": "SHAMID ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10089",
+    "name": "DEEPRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310156",
+    "name": "BRAHMA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10041",
+    "name": "VIVEK KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311121",
+    "name": "VYAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10079",
+    "name": "SHAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310405",
+    "name": "DEBNATH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10020",
+    "name": "DHRUV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10113",
+    "name": "JOYDEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310323",
+    "name": "PAUL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10055",
+    "name": "ANKITRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10009",
+    "name": "NIHAR K",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310015",
+    "name": "HIREMATH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10138",
+    "name": "RISHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310373",
+    "name": "CHUTIA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10009",
+    "name": "NAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310005",
+    "name": "JAT CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10032",
+    "name": "OMKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10065",
+    "name": "MINAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310772",
+    "name": "PRADHAN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10031",
+    "name": "RISHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310744",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10131",
+    "name": "PARTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10113",
+    "name": "JAYANTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310865",
+    "name": "DUTTA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10014",
+    "name": "SHREYASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310809",
+    "name": "JAGDALE EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10044",
+    "name": "KAUSTAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310430",
+    "name": "TALUKDAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10138",
+    "name": "ANIRBAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311076",
+    "name": "HAZARIKA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10019",
+    "name": "GURKARAN SINGH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310001",
+    "name": "BAGGA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10156",
+    "name": "VEDPRAKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10070",
+    "name": "SALMAN AHMED",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310870",
+    "name": "KHAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10132",
+    "name": "DIBYAJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10160",
+    "name": "KANDIMALLA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311080",
+    "name": "PRASANTH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10145",
+    "name": "GULLIPALLI CHETAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10057",
+    "name": "TANMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310723",
+    "name": "SUTRADHAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10095",
+    "name": "PRATHAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10140",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10069",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310479",
+    "name": "MISHRA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10067",
+    "name": "RANDEV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310033",
+    "name": "BALMIKI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10044",
+    "name": "RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310776",
+    "name": "MUKUTA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10046",
+    "name": "BHARGAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310923",
+    "name": "JHAWAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10050",
+    "name": "PRODIP DAS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10089",
+    "name": "BISHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310855",
+    "name": "BASUMATARY EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10047",
+    "name": "KATHIRIYA OM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310326",
+    "name": "RAMESHB EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10033",
+    "name": "PRAGYAN PRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10066",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10155",
+    "name": "SHANTANU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310514",
+    "name": "GOGOI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10133",
+    "name": "PRAGYA NAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310480",
+    "name": "BORGOHAIN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10055",
+    "name": "KUNAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310585",
+    "name": "GOGOI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10143",
+    "name": "B K",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10128",
+    "name": "ANIRBAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320070",
+    "name": "DASGUPTA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10147",
+    "name": "RISHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310013",
+    "name": "BORAH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10077",
+    "name": "SUMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310428",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10035",
+    "name": "UDIT NARAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310390",
+    "name": "DEKA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10161",
+    "name": "ARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310424",
+    "name": "YADAV CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10012",
+    "name": "NABAJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310089",
+    "name": "SHIL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10150",
+    "name": "SHUBHAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10024",
+    "name": "SHARDHANAND",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310751",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10041",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310164",
+    "name": "ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10139",
+    "name": "PRADIPTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310367",
+    "name": "CHOWDHURY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10049",
+    "name": "PARANTAPA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310074",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10076",
+    "name": "NILANJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10059",
+    "name": "MONJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310883",
+    "name": "PEGU EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10146",
+    "name": "VAIBHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310748",
+    "name": "PATEL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10156",
+    "name": "SINGARAM AKSHAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311131",
+    "name": "GUNA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10130",
+    "name": "PRAGYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310530",
+    "name": "BHAGAWATI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10025",
+    "name": "SIDDH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310057",
+    "name": "GARG CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10055",
+    "name": "JONAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310563",
+    "name": "KASHYAP EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10112",
+    "name": "MAYANK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311362",
+    "name": "TYAGI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10100",
+    "name": "KSHITIZ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310362",
+    "name": "AGRAHARI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10024",
+    "name": "PRATEEK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310135",
+    "name": "MOHANTY EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10069",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310410",
+    "name": "KUMAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10040",
+    "name": "KSHETRIMAYUM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310806",
+    "name": "DHANRAJ ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10150",
+    "name": "SUMIT KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310932",
+    "name": "SHARMA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10081",
+    "name": "HIMANSHU PRASAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10061",
+    "name": "PRINCE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310069",
+    "name": "RAJ CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10104",
+    "name": "ASHMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311108",
+    "name": "SINGH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10112",
+    "name": "SYED MOHAMMAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10009",
+    "name": "NIDHEESH REDDY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310635",
+    "name": "CHAP ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10006",
+    "name": "CHARITRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310550",
+    "name": "NATH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10149",
+    "name": "ABHISHEK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10021",
+    "name": "GAUTAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310876",
+    "name": "KHARGA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10069",
+    "name": "AMISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310122",
+    "name": "PANWAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10078",
+    "name": "KARTIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310019",
+    "name": "KASHYAP EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10054",
+    "name": "DEBOJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310193",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10145",
+    "name": "SHASHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310588",
+    "name": "BHUSHAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10108",
+    "name": "BADAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10136",
+    "name": "NOMAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311383",
+    "name": "ALI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10077",
+    "name": "NIKHILESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310506",
+    "name": "GOGOI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10143",
+    "name": "SOUVIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310532",
+    "name": "NASKAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10098",
+    "name": "BHARGAB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10086",
+    "name": "RAVI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310839",
+    "name": "RAJ EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10085",
+    "name": "MONISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10073",
+    "name": "TOAPLANG S",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310856",
+    "name": "TANGJANG CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10098",
+    "name": "NGAMGOULAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310087",
+    "name": "KHONGSAI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10150",
+    "name": "PRIYESH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310484",
+    "name": "PAL CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10027",
+    "name": "ARYAN KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10005",
+    "name": "HAREKRISHNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310846",
+    "name": "KUMBANG EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10014",
+    "name": "MARNEE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310936",
+    "name": "BAGRA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10122",
+    "name": "BRAJESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310118",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10062",
+    "name": "JYOTISHMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310631",
+    "name": "BORUAH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10103",
+    "name": "ANISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310040",
+    "name": "SARKAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10133",
+    "name": "RAUNAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310891",
+    "name": "JHA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10016",
+    "name": "ARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310258",
+    "name": "PAREEK CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10077",
+    "name": "PARAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310182",
+    "name": "BARMAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10029",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310112",
+    "name": "CHANGMAI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10035",
+    "name": "MRINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310076",
+    "name": "BARUAH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10048",
+    "name": "TANMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310551",
+    "name": "NATH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10047",
+    "name": "AARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310077",
+    "name": "SHARMA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10097",
+    "name": "DAKSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311284",
+    "name": "SINGHI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10043",
+    "name": "OM PRAKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10073",
+    "name": "PADMA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311265",
+    "name": "GURMET EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10062",
+    "name": "SHAURYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310400",
+    "name": "PATWAL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10060",
+    "name": "CHINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10131",
+    "name": "TANAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310556",
+    "name": "PRAKASH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10071",
+    "name": "MD. ZEESHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310937",
+    "name": "ALI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10048",
+    "name": "BIRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310681",
+    "name": "GOALA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10058",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310445",
+    "name": "GADHWAL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10048",
+    "name": "HEMANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310700",
+    "name": "BIDVE EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10001",
+    "name": "MD ARIF",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310533",
+    "name": "UDDIN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10136",
+    "name": "SHYAM MOHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310095",
+    "name": "PANDEY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10150",
+    "name": "SHANTANU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311158",
+    "name": "SHIVAM ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10089",
+    "name": "SWAPNIL DEB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10022",
+    "name": "DARSHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10020",
+    "name": "AYUSH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310350",
+    "name": "BEHERA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10160",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10080",
+    "name": "SAIF",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310360",
+    "name": "ALI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10072",
+    "name": "SHIVAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10043",
+    "name": "GAURAV JYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320140",
+    "name": "KASHYAP CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10002",
+    "name": "NITESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10015",
+    "name": "SAMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310256",
+    "name": "SINGH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10020",
+    "name": "ASHUTOSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310383",
+    "name": "PANDEY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10019",
+    "name": "NABIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311270",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10003",
+    "name": "HIMANGSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311135",
+    "name": "MAZUMDAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10019",
+    "name": "TONMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310547",
+    "name": "DAS CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10067",
+    "name": "PARASHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310058",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10111",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10025",
+    "name": "RONIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310335",
+    "name": "TAPARIA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10158",
+    "name": "RAJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310453",
+    "name": "JAISWAL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10049",
+    "name": "GITAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310381",
+    "name": "SARMA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10114",
+    "name": "ANKIT KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310091",
+    "name": "SAHU CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10160",
+    "name": "BINIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310800",
+    "name": "KURMI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10017",
+    "name": "AVICHAL PRATAP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310166",
+    "name": "SINGH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10046",
+    "name": "MD RAISULLAH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310749",
+    "name": "KHAN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10053",
+    "name": "ABHIJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310384",
+    "name": "AADARSH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10060",
+    "name": "NITISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10072",
+    "name": "ADITHYA M",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310240",
+    "name": "S NAIR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10070",
+    "name": "MRINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310513",
+    "name": "BHUYAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10064",
+    "name": "SENGMYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311026",
+    "name": "SHYAM CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10071",
+    "name": "SUBHASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310228",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10077",
+    "name": "BISHWAJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10003",
+    "name": "MAHARSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10118",
+    "name": "DHRISHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310359",
+    "name": "SARMA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10138",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310270",
+    "name": "BHUYAN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10062",
+    "name": "BEEMIDI KARUNYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10059",
+    "name": "ANVESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310125",
+    "name": "CHOURE EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10149",
+    "name": "SUBHAJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10003",
+    "name": "ROHIT KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311132",
+    "name": "RAM EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10009",
+    "name": "ATUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310310",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10016",
+    "name": "SANDIPAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310333",
+    "name": "SARMA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10140",
+    "name": "AMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310994",
+    "name": "MANDAL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10015",
+    "name": "R RISHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310554",
+    "name": "REDDY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10153",
+    "name": "TARUN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10053",
+    "name": "NISHANT KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10039",
+    "name": "RAJU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310276",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10147",
+    "name": "ROHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310042",
+    "name": "SINGHA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10117",
+    "name": "NISHIT RANJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310624",
+    "name": "HAZARIKA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10147",
+    "name": "TANMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10079",
+    "name": "ASISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311032",
+    "name": "SAIKIA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10155",
+    "name": "KULDEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310753",
+    "name": "SEN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10148",
+    "name": "BABAI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10145",
+    "name": "JONNAPALLI JYOTHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10007",
+    "name": "MRIGAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10063",
+    "name": "HARSHABRAT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310528",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10016",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310010",
+    "name": "KRISHNA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10071",
+    "name": "NIKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310330",
+    "name": "CHETRY CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10116",
+    "name": "SHUBHAM KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10029",
+    "name": "KENAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10140",
+    "name": "MANINDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10098",
+    "name": "DEBOJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10098",
+    "name": "DRISHTANT GEORGE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310039",
+    "name": "RUNDA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10151",
+    "name": "BHARGAB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310008",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10033",
+    "name": "CHINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310299",
+    "name": "KALITA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10157",
+    "name": "MANISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10035",
+    "name": "SANTOSH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311212",
+    "name": "GUPTA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10116",
+    "name": "PONNANA DURGA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10009",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10006",
+    "name": "SHIVANKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310500",
+    "name": "DUTTA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10035",
+    "name": "KRISHANU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310220",
+    "name": "BORAH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10074",
+    "name": "CHIRANDIP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310376",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10141",
+    "name": "CHIRAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10101",
+    "name": "LAKSHYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10005",
+    "name": "AMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10143",
+    "name": "PARUSU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10040",
+    "name": "NGANTHOIBA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10002",
+    "name": "R",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310665",
+    "name": "SHASCIN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10115",
+    "name": "LOKENDRA SINGH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310830",
+    "name": "KAKAN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10131",
+    "name": "PRATEEK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310619",
+    "name": "VATS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10032",
+    "name": "LOKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311425",
+    "name": "NAGAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10024",
+    "name": "UTTAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310757",
+    "name": "EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10053",
+    "name": "AKARSHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10165",
+    "name": "THAKUR PRINCE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10012",
+    "name": "SOUMIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310229",
+    "name": "PATI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10153",
+    "name": "PRITAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310421",
+    "name": "SAHARIA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10030",
+    "name": "ARABINDA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260320225",
+    "name": "SONOWAL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10023",
+    "name": "MRIGEN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10087",
+    "name": "RITHIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10136",
+    "name": "CHINNAPARAPU SIVA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310491",
+    "name": "SAI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10023",
+    "name": "SOUBHAGYA SEKHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10016",
+    "name": "KOTHA DURGA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310096",
+    "name": "GOVIND SAI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10107",
+    "name": "SAKIB AL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310647",
+    "name": "HASAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10030",
+    "name": "PREM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10131",
+    "name": "NAITIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10047",
+    "name": "SANTANU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310758",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10035",
+    "name": "PRAGYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310463",
+    "name": "CHETIA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10002",
+    "name": "SARTHAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310813",
+    "name": "SAMRIDHI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10052",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310591",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10096",
+    "name": "SHRIYANSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310440",
+    "name": "KALITA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10117",
+    "name": "SURJAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10007",
+    "name": "NAMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10105",
+    "name": "MANEESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310131",
+    "name": "KANDPAL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10022",
+    "name": "ASHISH DIKAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10067",
+    "name": "SOURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10108",
+    "name": "VIKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311310",
+    "name": "KUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10083",
+    "name": "SHIVAM KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310597",
+    "name": "PODDAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10111",
+    "name": "NIKUNJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310607",
+    "name": "SUT CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10021",
+    "name": "ANGSHUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310207",
+    "name": "BORAH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10134",
+    "name": "KATRAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310085",
+    "name": "PRAKASH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10023",
+    "name": "SAJIDUR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311193",
+    "name": "RAHMAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10006",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311064",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10040",
+    "name": "ATUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310117",
+    "name": "GAUTAM CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10032",
+    "name": "TANOJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10016",
+    "name": "RAGHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310674",
+    "name": "RAJ ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10056",
+    "name": "NILANJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310066",
+    "name": "DEB CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10059",
+    "name": "N SRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310018",
+    "name": "VENKAT RAMANA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10113",
+    "name": "DIPANKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310965",
+    "name": "BHUYAN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10063",
+    "name": "NIRANJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310160",
+    "name": "THAKURIA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10109",
+    "name": "ARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310890",
+    "name": "PURI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10079",
+    "name": "SOHOM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310789",
+    "name": "PAUL ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10058",
+    "name": "PARAS DINESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310828",
+    "name": "KAWALE EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10032",
+    "name": "KAMALESH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10114",
+    "name": "ABHINAB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10073",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10093",
+    "name": "SATYAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310903",
+    "name": "KESHARI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10091",
+    "name": "NIKHILESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310787",
+    "name": "CHOUDHURY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10104",
+    "name": "KRISHNA CHANDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310303",
+    "name": "DUBEY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10149",
+    "name": "ARIZ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310110",
+    "name": "ZAMAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10040",
+    "name": "PALLABJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310123",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10146",
+    "name": "CHITLA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10096",
+    "name": "ISHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310423",
+    "name": "KHETAWAT EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10015",
+    "name": "PUNIT RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310053",
+    "name": "SINGH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10052",
+    "name": "PARTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311116",
+    "name": "VYAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10042",
+    "name": "NITIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310989",
+    "name": "KUMAWAT EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10043",
+    "name": "AMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310882",
+    "name": "SAH EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10031",
+    "name": "MISHRA RITESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310696",
+    "name": "VINAYKU CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10022",
+    "name": "CHINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310555",
+    "name": "BHARALI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10139",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311002",
+    "name": "GUPTA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10153",
+    "name": "BIRUSANTI JEDIDIAH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10094",
+    "name": "NISHANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310313",
+    "name": "SUMAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10101",
+    "name": "SHREE DHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311040",
+    "name": "SHARMA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10002",
+    "name": "VIRENDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310747",
+    "name": "KUMAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10116",
+    "name": "YOGESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310929",
+    "name": "EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10026",
+    "name": "DHRUV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10124",
+    "name": "RAMNARAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311435",
+    "name": "ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10002",
+    "name": "AMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310649",
+    "name": "YADAV EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10073",
+    "name": "PRIYANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10092",
+    "name": "HIMANKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310208",
+    "name": "PATGIRI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10165",
+    "name": "JOGENDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310797",
+    "name": "EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10109",
+    "name": "PRASOON",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310688",
+    "name": "PANDYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10089",
+    "name": "ROBERTO",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310071",
+    "name": "DHADUMIA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10154",
+    "name": "ANANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10136",
+    "name": "NAMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310190",
+    "name": "RUKHAIYAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10032",
+    "name": "PRATYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10139",
+    "name": "PRIYANGSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10069",
+    "name": "JAI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310831",
+    "name": "GAUTAM CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10012",
+    "name": "MAHMUDUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10017",
+    "name": "GITARTHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10015",
+    "name": "DEEPANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310107",
+    "name": "KUMAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10099",
+    "name": "NAMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10099",
+    "name": "ASHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310477",
+    "name": "BHARADWAJ CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10119",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310835",
+    "name": "THAPA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10155",
+    "name": "WALIUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10167",
+    "name": "BISHAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310564",
+    "name": "CHETRI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10029",
+    "name": "DRISTIRAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10157",
+    "name": "SAGAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10052",
+    "name": "MANVENDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10146",
+    "name": "SOUMADIP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10035",
+    "name": "BIBEKJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310206",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10033",
+    "name": "MD AHSAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10056",
+    "name": "SUBHRAJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310417",
+    "name": "NATH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10115",
+    "name": "DARAPUREDDY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10067",
+    "name": "HRIDOYJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310181",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10101",
+    "name": "RANEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10129",
+    "name": "AAYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10011",
+    "name": "PRABHAT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10119",
+    "name": "APURBA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310637",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10114",
+    "name": "SUPRAJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10044",
+    "name": "DIVYANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10094",
+    "name": "KABIR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311039",
+    "name": "SHARAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10141",
+    "name": "SANSKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310442",
+    "name": "TRIPATHI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10120",
+    "name": "DAMANKYRPANG S.",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310960",
+    "name": "MAW CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10087",
+    "name": "RAJDEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310626",
+    "name": "MANDAL ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10029",
+    "name": "RAJ DEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10024",
+    "name": "JAGADABI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310466",
+    "name": "BALAJI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10019",
+    "name": "PRANJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10123",
+    "name": "ASHIRWAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310920",
+    "name": "ABHISHEK CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10008",
+    "name": "SUTIRTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310980",
+    "name": "MOHAPATRA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10017",
+    "name": "PRAJESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10038",
+    "name": "SHREYOM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310411",
+    "name": "SENGUPTA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10111",
+    "name": "SOURABH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310914",
+    "name": "SAINI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10122",
+    "name": "NARAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10154",
+    "name": "CHINMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310180",
+    "name": "SINGH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10011",
+    "name": "YADVENDRA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10063",
+    "name": "KARRMANYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310092",
+    "name": "TIWARY EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10095",
+    "name": "TELGOTE SIDDHANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310444",
+    "name": "DHARA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10147",
+    "name": "TUHIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310082",
+    "name": "DEBNATH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10105",
+    "name": "RICH RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10039",
+    "name": "RAVISHANKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10052",
+    "name": "DONGURI VIJAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310202",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10138",
+    "name": "SAYEN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311431",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10024",
+    "name": "AMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310403",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10085",
+    "name": "SOUVIK DEB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310841",
+    "name": "ROY ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10003",
+    "name": "MANASH JYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310582",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10128",
+    "name": "PARASHMONI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310784",
+    "name": "SHARMA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10135",
+    "name": "HARSH VARDHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10079",
+    "name": "TARUN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311127",
+    "name": "CHOUHAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10001",
+    "name": "RISHIRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10020",
+    "name": "ASWINI KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310296",
+    "name": "GOGOI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10041",
+    "name": "NAMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10151",
+    "name": "SUBHAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10145",
+    "name": "LOKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310799",
+    "name": "JAT CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10002",
+    "name": "SUBHASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310116",
+    "name": "RANJAN CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10096",
+    "name": "GOURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10158",
+    "name": "BAMMIDI PARDHIV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310154",
+    "name": "KUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10027",
+    "name": "YETURI SAI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310379",
+    "name": "KRISHNA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10091",
+    "name": "SHIVAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310277",
+    "name": "BHARTI EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10066",
+    "name": "KONATALA RUSHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10075",
+    "name": "ARINDAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10056",
+    "name": "ABHIJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10157",
+    "name": "HENDRICK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10112",
+    "name": "SWAYAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10134",
+    "name": "AMGOTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310854",
+    "name": "MOHAN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10112",
+    "name": "OM PRASAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10082",
+    "name": "KRISHNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310315",
+    "name": "ASOKAKUMAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10069",
+    "name": "NIKHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310736",
+    "name": "KUMAR EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10095",
+    "name": "CHINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310524",
+    "name": "DEORI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10033",
+    "name": "HRISHIKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310577",
+    "name": "DAS EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10070",
+    "name": "MRINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310447",
+    "name": "BORA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10046",
+    "name": "MD FARNAZ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310729",
+    "name": "SIDDIQUE EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10015",
+    "name": "GAURANG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10092",
+    "name": "RAKSIIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10032",
+    "name": "YOGESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310609",
+    "name": "CHHIPA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10125",
+    "name": "ARJUN NARAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10161",
+    "name": "MONOJOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10095",
+    "name": "HARGUN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10158",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310766",
+    "name": "NITHARWAL ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10014",
+    "name": "RAMAVATH CHARANTEJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10033",
+    "name": "CHIRAAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310050",
+    "name": "CHIRANIA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10163",
+    "name": "BAPPI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310785",
+    "name": "BAISHNAB CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10097",
+    "name": "UJAWAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310872",
+    "name": "MISHRA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10140",
+    "name": "DHRUBA JYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10142",
+    "name": "NIKHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310780",
+    "name": "PUNDIR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10169",
+    "name": "HAVAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10163",
+    "name": "NAYANJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310568",
+    "name": "RABHA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10104",
+    "name": "MRINMAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10134",
+    "name": "KATRAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310642",
+    "name": "NIKHIL CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10038",
+    "name": "JABED",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310713",
+    "name": "AKTER ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10039",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10129",
+    "name": "ALLU LOHITH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10064",
+    "name": "SARMEN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310945",
+    "name": "TERON EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10067",
+    "name": "PADMA BIKASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310020",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10047",
+    "name": "RUDRA PRATAP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310274",
+    "name": "SINGH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10001",
+    "name": "HRISHIKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10161",
+    "name": "PRAGYAN JYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310680",
+    "name": "MISRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10099",
+    "name": "ANSHUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310520",
+    "name": "SINGHAL EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10016",
+    "name": "VIJAY NATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310574",
+    "name": "JHA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10080",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310460",
+    "name": "SHUKLA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10074",
+    "name": "SHIVAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10045",
+    "name": "JAYANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10134",
+    "name": "VARUN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310378",
+    "name": "PAREEK CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10107",
+    "name": "SUHAN RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311079",
+    "name": "GOGOI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10087",
+    "name": "KOUSTAV KRISHNAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10098",
+    "name": "NENAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10014",
+    "name": "BANOTHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10043",
+    "name": "MOHAMMAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310145",
+    "name": "ZAKARIA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10139",
+    "name": "DISHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310176",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10161",
+    "name": "SAGNIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10134",
+    "name": "BANAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310301",
+    "name": "CHINTU EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10105",
+    "name": "PUSKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10082",
+    "name": "SRIJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10076",
+    "name": "HARSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310404",
+    "name": "PRATAP CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10074",
+    "name": "CHITALKAR ATHARVA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310832",
+    "name": "MOHAN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10027",
+    "name": "UTKARSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310676",
+    "name": "AGARWAL ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10048",
+    "name": "SAMRAT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10080",
+    "name": "GULSHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10157",
+    "name": "SANJEEP",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10093",
+    "name": "INUKONDA DATTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10128",
+    "name": "MD SAJJAD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311345",
+    "name": "ANSARI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10146",
+    "name": "PIYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10110",
+    "name": "GAJULA VENKATA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310070",
+    "name": "BHASKA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10087",
+    "name": "GAURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310664",
+    "name": "MALAKAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10068",
+    "name": "POLURU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310510",
+    "name": "PAVAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10146",
+    "name": "VANTAKU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310143",
+    "name": "KARTHIK EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10019",
+    "name": "NILOTPAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310168",
+    "name": "BAISHYA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10007",
+    "name": "UDDIPTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310254",
+    "name": "KALITA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10145",
+    "name": "SUPRATIK DEY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310391",
+    "name": "SARKAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10005",
+    "name": "PALLAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310886",
+    "name": "TAYE CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10091",
+    "name": "SUKRIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10066",
+    "name": "PAWAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10139",
+    "name": "RAKTIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10099",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310759",
+    "name": "CHOWDHURY CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10045",
+    "name": "RONAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311288",
+    "name": "SAHA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10056",
+    "name": "IMRAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310341",
+    "name": "EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10103",
+    "name": "JAY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10015",
+    "name": "HARSH KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10064",
+    "name": "DEISAMBUING",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10036",
+    "name": "ABHIJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10077",
+    "name": "RISHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310952",
+    "name": "ADHIKARI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10017",
+    "name": "LAHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310079",
+    "name": "DEKA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10031",
+    "name": "YASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311268",
+    "name": "RAJ CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10154",
+    "name": "SUBHAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10136",
+    "name": "BADRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310119",
+    "name": "ABHINAY CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10021",
+    "name": "PRANJAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311010",
+    "name": "NATH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10006",
+    "name": "GUNASEKHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310858",
+    "name": "CHETIA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10132",
+    "name": "SIMANTA PRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310863",
+    "name": "NATH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10155",
+    "name": "MAHMUDUL HASAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310243",
+    "name": "MRIDHA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10060",
+    "name": "TEJASH RAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10045",
+    "name": "KOMMINENI SASHANK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310196",
+    "name": "K ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10059",
+    "name": "ASHEESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10142",
+    "name": "ARYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310251",
+    "name": "PATEL ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10161",
+    "name": "TANWEER",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310157",
+    "name": "ABRAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10123",
+    "name": "DUNGA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10064",
+    "name": "SRI LOHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310111",
+    "name": "BORO EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10007",
+    "name": "JULKAR MUSTAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310922",
+    "name": "HUSSAIN CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10065",
+    "name": "ANISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310981",
+    "name": "BARMAN EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10014",
+    "name": "MOODU.JASWANTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310741",
+    "name": "EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10144",
+    "name": "SOURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10162",
+    "name": "KAMAL KANT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10058",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310600",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10038",
+    "name": "CHAYANK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311056",
+    "name": "APURBA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10141",
+    "name": "ASHWANI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310818",
+    "name": "RAJ EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10099",
+    "name": "KALLURI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10005",
+    "name": "SIMANTO",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10096",
+    "name": "HIMAN PRACHURJA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10092",
+    "name": "SUHAYEL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10103",
+    "name": "SUBHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10065",
+    "name": "SWAPNIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310068",
+    "name": "PHUKAN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10085",
+    "name": "MRINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10025",
+    "name": "C",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310804",
+    "name": "NAGENDRA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10055",
+    "name": "ANKUR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10065",
+    "name": "MRINMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10090",
+    "name": "KULJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10123",
+    "name": "RAPAKA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310715",
+    "name": "RAJESH EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10093",
+    "name": "ANTARIKSHA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10063",
+    "name": "AKSHAT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310194",
+    "name": "GUPTA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10041",
+    "name": "KUBER",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10014",
+    "name": "TARAKESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10137",
+    "name": "SAMAGEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310169",
+    "name": "DUTTA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10094",
+    "name": "NUSRATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310322",
+    "name": "AMEEN ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10061",
+    "name": "HRITTIK RANJAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310561",
+    "name": "SAIKIA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10038",
+    "name": "PRIYANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310661",
+    "name": "BAJAJ EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10068",
+    "name": "YUVRAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311155",
+    "name": "JANGIR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10143",
+    "name": "ANANMAYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10100",
+    "name": "SHIV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310768",
+    "name": "MALIK CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10142",
+    "name": "MOKSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310732",
+    "name": "TALEJA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10093",
+    "name": "PRADHAN SUBHANKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310175",
+    "name": "PR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10094",
+    "name": "AMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311423",
+    "name": "RAJ CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10086",
+    "name": "ABHIJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310833",
+    "name": "CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10003",
+    "name": "ANKIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10001",
+    "name": "BHRINGISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310569",
+    "name": "KALITA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10012",
+    "name": "FARHAZ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310369",
+    "name": "HUSSAIN EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10037",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10078",
+    "name": "DHRUV RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311196",
+    "name": "DAS EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10114",
+    "name": "PRADIPTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310380",
+    "name": "BORAH ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10054",
+    "name": "SAURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310177",
+    "name": "DAS ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10164",
+    "name": "ASHIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310032",
+    "name": "KUMAR CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10090",
+    "name": "AMLAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310499",
+    "name": "BORUAH CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10095",
+    "name": "SAYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10128",
+    "name": "SUMAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10068",
+    "name": "GATTI JNANA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310275",
+    "name": "SIVA SRIYUKTH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10109",
+    "name": "NIRMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310503",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10122",
+    "name": "PARTHA PRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10057",
+    "name": "YOGESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310786",
+    "name": "DWIVEDI CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10028",
+    "name": "DHAHIN AQIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10092",
+    "name": "JEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310834",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10074",
+    "name": "ASHUTOSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10007",
+    "name": "BIJIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10104",
+    "name": "ABHINAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310683",
+    "name": "MISHRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10003",
+    "name": "HRITUSHMIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10038",
+    "name": "AMBARISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10071",
+    "name": "BINOD",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310827",
+    "name": "GOUTAM ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10133",
+    "name": "DEBASHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10130",
+    "name": "ARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10027",
+    "name": "SAUNDRYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10086",
+    "name": "SANDIPAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10047",
+    "name": "GARVIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10096",
+    "name": "PRIYANUJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310343",
+    "name": "NATH CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10093",
+    "name": "DIPANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310654",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10096",
+    "name": "ATUL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10140",
+    "name": "K VENKATESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310049",
+    "name": "NAIK CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10132",
+    "name": "VIKAS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10105",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10091",
+    "name": "ABHINAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310100",
+    "name": "PAUL CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10045",
+    "name": "ARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10070",
+    "name": "GOVIND MOHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10023",
+    "name": "BIKIRON",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10125",
+    "name": "SARTHAK KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10027",
+    "name": "KALLURI VAMSIVARDHAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10125",
+    "name": "VEDANT SANJEEV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10046",
+    "name": "JYOTIRADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310977",
+    "name": "UPADHYAYA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10100",
+    "name": "GORUSUPUDI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310658",
+    "name": "AKHIL EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10157",
+    "name": "UDIT KR.",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10031",
+    "name": "SATYAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311187",
+    "name": "KUMAR EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10162",
+    "name": "DEEPEN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310790",
+    "name": "EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10162",
+    "name": "RONTE VIKRAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10071",
+    "name": "MANOJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310501",
+    "name": "DEKA EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10079",
+    "name": "DIBAKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310670",
+    "name": "PAUL CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10010",
+    "name": "HADI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310810",
+    "name": "HUSSAIN EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10071",
+    "name": "DEEPJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10005",
+    "name": "PROYASH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10160",
+    "name": "RASHIDUZ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10093",
+    "name": "OM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310165",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10073",
+    "name": "URLAKA THILAK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310294",
+    "name": "TEJESWAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10129",
+    "name": "RAJESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10066",
+    "name": "AJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310703",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10030",
+    "name": "PRACHURJYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310355",
+    "name": "PRAGYANAM EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10022",
+    "name": "BHARGAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310102",
+    "name": "CHOUDHURY ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10055",
+    "name": "DEEPJYOTI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10100",
+    "name": "ASHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10124",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10007",
+    "name": "MANASH PRATIM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10023",
+    "name": "KRISHNAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10107",
+    "name": "MONJEET",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10109",
+    "name": "PRANAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10111",
+    "name": "NERELLA JAYANTH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10058",
+    "name": "ASHISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10022",
+    "name": "ANURAG",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310566",
+    "name": "DOLOI CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10020",
+    "name": "GARVIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310663",
+    "name": "EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10141",
+    "name": "KALLEPALLI JYOTHI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10044",
+    "name": "ADITYA RAJ",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10054",
+    "name": "DIBAKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310129",
+    "name": "DAS CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10045",
+    "name": "KRISHNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10029",
+    "name": "RITUPORNA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310873",
+    "name": "BORA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10090",
+    "name": "DIVYANSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310576",
+    "name": "VERMA EI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10119",
+    "name": "MOUSOM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310893",
+    "name": "GOGOI ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10010",
+    "name": "PIYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10128",
+    "name": "MRIGANKA BHUSAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310242",
+    "name": "DAS EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10021",
+    "name": "ABHIGYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310709",
+    "name": "GOGOI EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10163",
+    "name": "GAURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310498",
+    "name": "BASUMATARY EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10062",
+    "name": "GAYAM GOWRI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10048",
+    "name": "TUSHAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311344",
+    "name": "PATRA ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10053",
+    "name": "MANNAVA NIKHIL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310114",
+    "name": "RUDRA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10107",
+    "name": "KUSHAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310386",
+    "name": "CHETRY EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10129",
+    "name": "ABHISHEK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311188",
+    "name": "KUMAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10030",
+    "name": "DEBASISH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310698",
+    "name": "HAZARIKA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10029",
+    "name": "TANMOY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10041",
+    "name": "RAGHUVEER",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10010",
+    "name": "SHIVAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10092",
+    "name": "THADDI OMKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10098",
+    "name": "AARYAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310409",
+    "name": "MEENA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10066",
+    "name": "DYLAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310105",
+    "name": "CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10001",
+    "name": "RHYTHAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10160",
+    "name": "JINKU MANI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310796",
+    "name": "NATH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10124",
+    "name": "NITIN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310866",
+    "name": "BAIWAL CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10074",
+    "name": "AYUSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310422",
+    "name": "RAJ EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10132",
+    "name": "PRITESH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310140",
+    "name": "DEV EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10119",
+    "name": "SHUWAL",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310913",
+    "name": "AKTAR CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10119",
+    "name": "PRACHUJYA PRIYAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310120",
+    "name": "GOGOI EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10130",
+    "name": "MUKTAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10020",
+    "name": "MEHTAB",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10031",
+    "name": "YERASI SAI",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310770",
+    "name": "SUSAANTH RE EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10092",
+    "name": "VIVAAN ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260311082",
+    "name": "KALITA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10049",
+    "name": "ADITYA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10076",
+    "name": "PAWAN",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310746",
+    "name": "KUMAR EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10018",
+    "name": "SUMIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10123",
+    "name": "JASHOSKAM",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310909",
+    "name": "BORA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10041",
+    "name": "HARSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310545",
+    "name": "MISHRA EC",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10100",
+    "name": "RATHLAVATH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10038",
+    "name": "CHAGAMREDDY",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26ME10086",
+    "name": "PRIYANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310793",
+    "name": "LAXKAR ME",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10022",
+    "name": "TH BINIT",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10103",
+    "name": "SAURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10106",
+    "name": "DAMMALA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10024",
+    "name": "ANSH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10054",
+    "name": "KAUSTABH",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310523",
+    "name": "BAISHYA CE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10091",
+    "name": "RISHAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310056",
+    "name": "PHUKON EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10068",
+    "name": "R P",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310998",
+    "name": "PRANAV GOWDA CS",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EE10116",
+    "name": "PRIYANSHU",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "260310263",
+    "name": "SINGH EE",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CS10166",
+    "name": "PRANTIK",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10006",
+    "name": "KULDEEP KUMAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EI10011",
+    "name": "BOLANUJ SOURAV",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26EC10117",
+    "name": "HIMANGSHU DEV MAHANTA",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  },
+  {
+    "scholarId": "26CE10070",
+    "name": "PARVEJ HUSSAIN LASKAR",
+    "cgpa": 0,
+    "sgpa_prev": 0,
+    "sgpa_curr": 0
+  }
 ]
